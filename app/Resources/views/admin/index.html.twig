@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+     <title>Welcome!</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
+  </head>
+
+    <body>
+<div id="container">
+
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+  
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{path('projects')}}">travaux web</a></li>
+        <li><a href="#">travaux print</a></li>
+        <li><a href="{{path("loginOut")}}">se déconnecter</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+    
+      </div><!--fin site-->
+      
+      {% block body %}
+
+    {% endblock %}
+        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+
+</body>
+
+</html>
+
+
