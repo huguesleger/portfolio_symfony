@@ -13,6 +13,7 @@
  <div class="col-xs-6 col-xs-offset-4">
      <div class="bg-form">
 {% if id is defined%}
+
 {{form_start(formNewsPrint,{'attr':{'action':path('updateprint',{'id':id}),'enctype':'multipart/form-data'}})}}
 {% else%}
  {{form_start(formNewsPrint,{'attr':{'action':path('validprint'),'enctype':'multipart/form-data'}})}}
