@@ -1,0 +1,221 @@
+@media screen and(min-width: 769px){
+.main-icon{
+  z-index: 2000;
+  margin-top: 20px;
+  margin-right: 0px;
+  position: fixed;
+  transition: transform 0.5s;
+  width: 54px;
+  height: 54px;
+  background-color: rgba(19, 12, 28, 1);
+  border-radius: 50%;
+  cursor: pointer;
+  right: 50px;
+
+
+    span{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 22px;
+      height: 2px;
+      background-color: #fff;
+      transform: translateX(-50%) translateY(-50%);
+
+        &::before, &::after{
+          content:'';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 22px;
+          height: 2px;
+          background-color: #fff;
+          transform: translateY(-6px);
+          transition: transform 0.3s;
+        }
+        &::after{
+          transform: translateY(6px);
+        }
+    }
+
+        &:hover{
+
+          span{
+            transition: background 0.5s;
+          }
+
+            span::before{
+              transform: translateY(-8px);
+            }
+
+            span::after{
+              transform: translateY(8px);
+            }
+        }
+
+        &.is-open{
+
+            transform: rotate(180deg);
+            span{
+              background: transparent;
+            }
+            span::before{
+              transform: translateY(0) rotate(45deg);
+            }
+            span::after{
+              transform: translateY(0) rotate(-45deg);
+            }
+            &:hover{
+              transition: 0.7s;
+            }
+        }
+        &.is-open-color{
+          border: 1px solid #fff;
+          background-color: transparent;
+
+        }
+}
+}
+@media screen and(min-width: 300px)and(max-width: 768px){
+.main-icon{
+  z-index: 2000;
+  margin-top: 25px;
+  margin-right: 0px;
+  position: fixed;
+  transition: transform 0.5s;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(19, 12, 28, 1);
+  border-radius: 50%;
+  cursor: pointer;
+  right: 20px;
+
+
+    span{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 2px;
+      background-color: #fff;
+      transform: translateX(-50%) translateY(-50%);
+
+        &::before, &::after{
+          content:'';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 18px;
+          height: 2px;
+          background-color: #fff;
+          transform: translateY(-6px);
+          transition: transform 0.3s;
+        }
+        &::after{
+          transform: translateY(6px);
+        }
+    }
+
+        &:hover{
+
+          span{
+            transition: background 0.5s;
+          }
+
+            span::before{
+              transform: translateY(-8px);
+            }
+
+            span::after{
+              transform: translateY(8px);
+            }
+        }
+
+        &.is-open{
+
+            transform: rotate(180deg);
+            span{
+              background: transparent;
+            }
+            span::before{
+              transform: translateY(0) rotate(45deg);
+            }
+            span::after{
+              transform: translateY(0) rotate(-45deg);
+            }
+            &:hover{
+              transition: 0.7s;
+            }
+        }
+        &.is-open-color{
+          border: 1px solid #fff;
+          background-color: transparent;
+
+        }
+}
+}
+
+
+
+.push-main {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left:0;
+    background-color: rgba(19, 12, 28, 0.97);
+    overflow-x: hidden;
+    padding-top: 60px;
+    text-align:center;
+    display: none;
+    transition: height 0.9s;
+
+}
+.is-open-test{
+transition: height 0.9s;
+height: 105%;
+width: 100%;
+}
+
+
+.navbar {
+    margin-bottom: 8px;
+}
+
+.navbar-default{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+.navbar-default {
+  background-color: transparent;
+  border: 0;
+}
+
+
+.navbar-default .navbar-nav > li > a {
+  color: #818181;
+  transition: 0.3s;
+  font-size: 22px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #130C1B;
+  background-color: #818181;
+  transition: 0.3s;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 15px;
+    transition: 0.3s;
+    &:hover, &:focus{
+    padding: 15px 15px ;
+    transition: 0.3s;
+    }
+}

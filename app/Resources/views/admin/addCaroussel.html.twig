@@ -1,0 +1,32 @@
+{% extends ":admin:index.html.twig"%}
+{% block body %}
+
+<body>
+        
+        <h1 class="page-header">Mon caroussel</h1>
+       
+
+
+
+<div class="new-offre">
+<div class="container">
+ <div class="col-xs-6 col-xs-offset-4">
+     <div class="bg-form">
+{% if id is defined%}
+{{form_start(formNewsCaroussel,{'attr':{'action':path('update',{'id':id}),'enctype':'multipart/form-data'}})}}
+{% else%}
+ {{form_start(formNewsCaroussel,{'attr':{'action':path('validcaroussel'),'enctype':'multipart/form-data'}})}}
+{% endif%}
+        
+        
+        {{form_end(formNewsCaroussel)}}
+        
+
+    </div>
+</div>
+</div>
+</div>
+    </body>
+    {% endblock %}
+
+
