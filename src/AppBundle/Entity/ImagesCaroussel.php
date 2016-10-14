@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Repository\ImagesCarousselRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints\File;
@@ -33,8 +32,24 @@ class ImagesCaroussel
     private $images;
 
 
-
+    
     /**
+     * @var bool
+     * @ORM\Column(name="Publier", type="boolean") 
+     */
+    private $publier;
+    function getPublier() {
+        return $this->publier;
+    }
+
+    function setPublier($publier) {
+        $this->publier = $publier;
+    }
+
+    
+    
+    
+        /**
      * Get id
      *
      * @return int

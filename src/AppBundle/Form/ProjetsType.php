@@ -21,6 +21,7 @@ class ProjetsType extends AbstractType
             ->add('images', FileType::class, array('data_class' => null))
             ->add('descriptif')
             ->add('liens')
+            ->add('publier')
             ->add('save', SubmitType::class)
         ;
     }

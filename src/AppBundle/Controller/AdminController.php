@@ -108,6 +108,7 @@ class AdminController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
         $niouzes = $em->find('AppBundle:Projets', $id);
          $f = $this->createForm(ProjetsType::class, $niouzes);
+      
         //on renvoie le formulaire dans la vue
         return array("formNews" => $f->createView(), "id"=>$id);
     }
@@ -126,7 +127,7 @@ class AdminController extends Controller {
     /**
      *@Route("/admin/update{id}", name="update")
      */
-    public function updateNews(Request $request, $id) {
+    public function updateProjets(Request $request, $id) {
         $em = $this->getDoctrine()->getEntityManager();
         $niouzes = $em->find('AppBundle:Projets', $id);
         //liaison de l'objet avec le formulaire temporaire
@@ -374,5 +375,51 @@ class AdminController extends Controller {
         }
 }
        
-
+    /**
+     * @Route("/admin/publication/{id}", name="publi")
+     */
+     public function ajouterSiteCaroussel($id){
+         $em = $this->getDoctrine()->getEntityManager();
+         $niouzes = $em->find('AppBundle:ImagesCaroussel', $id);
+         $this->createForm(ImagesCarousselType::class, $niouzes);
+         
+         $niouzes->setPublier(1);
+         
+         $em->merge($niouzes);
+         $em->flush();
+         
+         return $this->redirectToRoute('projectscaroussel');
+     }
+     
+     /**
+     * @Route("/admin/publication/{id}", name="publiprint")
+     */
+     public function ajouterSitePrint($id){
+         $em = $this->getDoctrine()->getEntityManager();
+         $niouzes = $em->find('AppBundle:ProjetsPrint', $id);
+         $this->createForm(ProjetsPrintType::class, $niouzes);
+         
+          $niouzes->setPublier(1);
+          
+         $em->merge($niouzes);
+         $em->flush();
+         
+         return $this->redirectToRoute('projectsprint');
+     }
+     
+      /**
+     * @Route("/admin/publication/{id}", name="publiweb")
+     */
+     public function ajouterSiteWeb($id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:Projets', $id);
+        $this->createForm(ProjetsType::class, $niouzes);
+        
+        $niouzes->setPublier(1);
+          
+         $em->merge($niouzes);
+         $em->flush();
+         
+         return $this->redirectToRoute('projects');
+     }
     }

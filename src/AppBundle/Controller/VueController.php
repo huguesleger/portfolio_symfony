@@ -24,7 +24,7 @@ class VueController extends Controller {
      * @Template(":site:index.html.twig");
      */
     public function Index(){
-         return array ('projectscaroussel' => $this->getDoctrine()->getRepository('AppBundle:ImagesCaroussel')->findAll());
+         return array ('projectscaroussel' => $this->getDoctrine()->getRepository('AppBundle:ImagesCaroussel')->findByPublier(1));
         
     }
     
@@ -34,7 +34,7 @@ class VueController extends Controller {
      */
     public function Projets(){
        
-        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findAll());
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findByPublier(1));
     }
     
      /**
@@ -43,7 +43,7 @@ class VueController extends Controller {
      */
     public function ProjetsPrint(){
        
-        return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findAll());
+        return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findByPublier(1));
     }
     
     /**

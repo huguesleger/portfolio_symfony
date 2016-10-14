@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Repository\ProjetsRepository;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints\File;
@@ -54,7 +54,22 @@ class Projets
     private $liens;
 
 
+    
     /**
+     * @var bool
+     * @ORM\Column(name="Publier", type="boolean") 
+     */
+    private $publier;
+    function getPublier() {
+        return $this->publier;
+    }
+
+    function setPublier($publier) {
+        $this->publier = $publier;
+    }
+    
+
+        /**
      * Get id
      *
      * @return int
