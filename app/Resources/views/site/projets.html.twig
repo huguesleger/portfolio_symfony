@@ -1,0 +1,27 @@
+{% extends ":site:index.html.twig"%}
+
+{% block section %}
+    <div class="container">
+        <div class="row">
+       {% for projet in projects %}
+  
+      <div class="col-sm-6 col-md-4">
+    <div class="thumb-work">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="thumb-img">
+      <div class="thumb-effect">
+        <p class="thumb-title">{{projet.titre}}</p>
+      </div>
+      <div class="thumb-effect-2">
+      <p class="thumb-title">{{projet.descriptif}}</p>
+      <a class="fa fa-plus-circle" href="{{projet.liens}}" target="new">En voir +</a>
+      </div>
+    </div>
+    </div>
+ 
+
+ 
+ {% endfor %}
+  </div>
+
+</div>
+{% endblock%}

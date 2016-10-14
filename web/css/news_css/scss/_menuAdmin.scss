@@ -1,0 +1,29 @@
+/*nav---------admin----------------------*/
+
+.navbar-admin{
+    background-color: rgba(19, 12, 28, 1);
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-top: -70px;
+    
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  opacity: 0.5;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+@media screen and(min-width: 300px)and(max-width: 768px){
+  .logo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    opacity: 0.5;
+  }
+
+}

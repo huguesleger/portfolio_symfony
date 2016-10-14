@@ -1,0 +1,27 @@
+{% extends ":site:index.html.twig"%}
+
+{% block section %}
+    <div class="container">
+        <div class="row">
+       {% for projetprint in projectsprint %}
+  
+      <div class="col-sm-6 col-md-12">
+    
+      <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive">
+     
+        <p class="thumb-title">{{projetprint.titre}}</p>
+
+      
+      <p class="thumb-title">{{projetprint.description}}</p>
+      <a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>
+    
+    </div>
+   
+ 
+
+ 
+ {% endfor %}
+  </div>
+
+</div>
+{% endblock%}

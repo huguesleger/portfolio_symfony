@@ -1,0 +1,35 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+     <div class="container">
+            <a href="{{path("formprint")}}"><h1 class="add-work">ajouter work print</h1> </a>
+        </div>
+   <div class="container project-content">
+        <div class="row">
+       {% for projetprint in projectsprint %}
+   
+      <div class="col-sm-6 col-md-12">
+    <div class="k">
+      <img src="{{asset('uploads/img/')~projetprint.images}}" class="thumb-img">
+      <div class="">
+        <p class="">{{projetprint.titre}}</p>
+      </div>
+      <div class="">
+      <p class="">{{projetprint.description}}</p>
+      <a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>
+      </div>
+    </div>
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modifprint",{"id":projetprint.id})}}">Modifier work</a>
+            <a class="btn btn-primary" href="{{path("delateprint",{"id":projetprint.id})}}">Supprimer work</a>
+            </div>
+    </div>
+  
+
+
+ 
+ {% endfor %}
+ </div>
+
+</div>
+{% endblock%}

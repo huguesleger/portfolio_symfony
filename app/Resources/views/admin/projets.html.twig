@@ -1,0 +1,33 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+     <div class="container">
+            <a href="{{path("form")}}"><h1 class="add-work">ajouter work web</h1> </a>
+        </div>
+   <div class="container project-content">
+        <div class="row">
+       {% for projet in projects %}
+   
+      <div class="col-sm-6 col-md-12">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="thumb-img">
+        <p class="">{{projet.titre}}</p>
+     
+     
+      <p class="">{{projet.descriptif}}</p>
+      <a class="" href="{{projet.liens}}" target="new">En voir +</a>
+     
+    
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modif",{"id":projet.id})}}">Modifier work</a>
+            <a class="btn btn-primary" href="{{path("delate",{"id":projet.id})}}">Supprimer work</a>
+            </div>
+    </div>
+  
+
+
+ 
+ {% endfor %}
+ </div>
+
+</div>
+{% endblock%}
