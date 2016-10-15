@@ -107,8 +107,8 @@ class AdminController extends Controller {
      public function modifProjets($id) {
         $em = $this->getDoctrine()->getEntityManager();
         $niouzes = $em->find('AppBundle:Projets', $id);
-         $f = $this->createForm(ProjetsType::class, $niouzes);
-      
+        $f = $this->createForm(ProjetsType::class, $niouzes);
+       
         //on renvoie le formulaire dans la vue
         return array("formNews" => $f->createView(), "id"=>$id);
     }
@@ -387,12 +387,12 @@ class AdminController extends Controller {
          
          $em->merge($niouzes);
          $em->flush();
-         
          return $this->redirectToRoute('projectscaroussel');
+        
      }
      
      /**
-     * @Route("/admin/publication/{id}", name="publiprint")
+     * @Route("/admin/publicationprint/{id}", name="publiprint")
      */
      public function ajouterSitePrint($id){
          $em = $this->getDoctrine()->getEntityManager();
@@ -403,12 +403,11 @@ class AdminController extends Controller {
           
          $em->merge($niouzes);
          $em->flush();
-         
          return $this->redirectToRoute('projectsprint');
      }
      
-      /**
-     * @Route("/admin/publication/{id}", name="publiweb")
+     /**
+     * @Route("/admin/publicationweb/{id}", name="publiweb")
      */
      public function ajouterSiteWeb($id){
         $em = $this->getDoctrine()->getEntityManager();
@@ -421,5 +420,53 @@ class AdminController extends Controller {
          $em->flush();
          
          return $this->redirectToRoute('projects');
+     }
+     
+     /**
+     * @Route("/admin/supprimercaroussel/{id}", name="suppcaroussel")
+     */
+     public function supprimerSiteCaroussel($id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:ImagesCaroussel', $id);
+        $this->createForm(ImagesCarousselType::class, $niouzes);
+        
+        $niouzes->setPublier(0);
+          
+         $em->merge($niouzes);
+         $em->flush();
+         
+         return $this->redirectToRoute('projectscaroussel');
+     }
+     
+     /**
+     * @Route("/admin/supprimerweb/{id}", name="suppweb")
+     */
+     public function supprimerSiteWeb($id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:Projets', $id);
+        $this->createForm(ProjetsType::class, $niouzes);
+        
+        $niouzes->setPublier(0);
+          
+         $em->merge($niouzes);
+         $em->flush();
+         
+         return $this->redirectToRoute('projects');
+     }
+     
+     /**
+     * @Route("/admin/supprimerprint/{id}", name="suppprint")
+     */
+     public function supprimerSitePrint($id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:ProjetsPrint', $id);
+        $this->createForm(ProjetsPrintType::class, $niouzes);
+        
+        $niouzes->setPublier(0);
+          
+         $em->merge($niouzes);
+         $em->flush();
+         
+         return $this->redirectToRoute('projectsprint');
      }
     }
