@@ -4,8 +4,10 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\ImagesCaroussel;
 use AppBundle\Entity\Projets;
+use AppBundle\Entity\ProjetsDetail;
 use AppBundle\Entity\ProjetsPrint;
 use AppBundle\Form\ImagesCarousselType;
+use AppBundle\Form\ProjetsDetailType;
 use AppBundle\Form\ProjetsPrintType;
 use AppBundle\Form\ProjetsType;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
@@ -469,4 +471,138 @@ class AdminController extends Controller {
          
          return $this->redirectToRoute('projectsprint');
      }
+     
+   
+      
+    /**
+     * @Route("/admin/projets/detail", name="projectsdetail");
+     * @Template(":admin:projetsDetail.html.twig");
+     */
+     public function ProjetDetail(){
+        $em = $this->getDoctrine()->getEntityManager();
+        $rsm = new ResultSetMappingBuilder($em);
+        $rsm->addRootEntityFromClassMetadata('AppBundle:ProjetsDetail', 'projetsdetail');
+        $query = $em->createNativeQuery("select * from projets_detail", $rsm);
+        $projectdetail = $query->getResult();
+        return array ('projectsdetail' => $projectdetail);
+     }
+     
+     
+        /**
+     * @Route ("/admin/adddetail",name="formdetail")
+     * @Template (":admin:addProjetsDetail.html.twig")
+     * @param Request $request
+     */
+    public function formProjetsDetail(Request $request) {
+        //on créé un objet vide
+        $projectdetail = new ProjetsDetail();
+        //on lie un formulaire avec l'objet créé
+        $f= $this->createForm(ProjetsDetailType::class, $projectdetail);
+       
+        return array("formNewsDetail" => $f->createView());
+    }
+     
+    
+     /**
+     *@Route ("/admin/valprojetdetail", name="validprojetdetail")
+     */
+    public function addProjetsDetail(Request $request) {
+       $niouzes = new ProjetsDetail();
+        //liaison de l'objet avec le formulaire temporaire
+        //creation du formulaire tampon
+        
+        $f = $this->createForm(ProjetsDetailType::class, $niouzes);
+        //on fait quand meme une verif pour s'assurer d'avoir eu un POST comme requete http
+        if ($request->getMethod() == 'POST') {
+            //on lie le formulaire temporaire avec les valeurs de la requete de type post
+            //en gros on se retrouve avec un fork de notre formulaire en local ;) 
+            $f->handleRequest($request);
+           
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgPresentation()->getClientOriginalExtension();
+            $niouzes->getImgPresentation()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgPresentation($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgLogo()->getClientOriginalExtension();
+            $niouzes->getImgLogo()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgLogo($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgTemplate()->getClientOriginalExtension();
+            $niouzes->getImgTemplate()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgTemplate($nomDuFichier);
+            //Partie persistance des données ou l'on sauvegarde notre news en base de données
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($niouzes);
+            $em->flush();
+            //J'avoue n'avoir implementer aucun test pour m'assurer de la validité des données en database
+            //quoi qu'il en soit après avoir ajouter une news on appele la methode qui va nous afficher la liste des news
+            //Bien entendu j'utilise les alias pour le routage ;) 
+            //faire un redirect vers getNews();
+            return $this->redirectToRoute('projectsdetail');
+        }
+        //si jamais le post a pas marché je reviens vers l'edition
+        //faire un redirect sur ajout de news
+        return $this->redirectToRoute('formdetail');
+    }
+    
+    
+     /**
+    *@Route("/admin/modifdetail/{id}", name="modifdetail")
+    *@Template(":admin:addProjetsDetail.html.twig")
+    */
+     public function modifProjetsDetail($id) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:ProjetsDetail', $id);
+        $f = $this->createForm(ProjetsDetailType::class, $niouzes);
+       
+        //on renvoie le formulaire dans la vue
+        return array("formNewsDetail" => $f->createView(), "id"=>$id);
+    }
+    
+    /**
+     *@Route("/admin/delatedetail/{id}", name="delatedetail")
+     */
+     public function delateProjetsDetail($id) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:ProjetsDetail', $id);
+        $em->remove($niouzes);
+        $em->flush();
+        return $this->redirect($this->generateUrl('projectsdetail'));
+    }
+    
+    /**
+     *@Route("/admin/updatedetail/{id}", name="updatedetail")
+     */
+    public function updateProjetsDetail(Request $request, $id) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $niouzes = $em->find('AppBundle:ProjetsDetail', $id);
+        //liaison de l'objet avec le formulaire temporaire
+        //creation du formulaire tampon
+        $f = $this->createForm(ProjetsDetailType::class, $niouzes);
+        //on fait quand meme une verif pour s'assurer d'avoir eu un POST comme requete http
+        if ($request->getMethod() == 'POST') {
+            //on lie le formulaire temporaire avec les valeurs de la requete de type post
+            //en gros on se retrouve avec un fork de notre formulaire en local ;) 
+            $f->handleRequest($request);
+           $nomDuFichier = md5(uniqid()).".".$niouzes->getImgPresentation()->getClientOriginalExtension();
+            $niouzes->getImgPresentation()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgPresentation($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgLogo()->getClientOriginalExtension();
+            $niouzes->getImgLogo()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgLogo($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgTemplate()->getClientOriginalExtension();
+            $niouzes->getImgTemplate()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgTemplate($nomDuFichier);
+           // Partie persistance des données ou l'on sauvegarde notre news en base de données
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->merge($niouzes);
+            $em->flush();
+            
+            return $this->redirect($this->generateUrl('projectsdetail'));
+            
+        }
+}
+
+    
     }

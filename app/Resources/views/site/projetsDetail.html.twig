@@ -1,0 +1,27 @@
+{% extends ":site:index.html.twig"%}
+
+{% block section %}
+    <div class="container project-content">
+        <div class="row">
+       {% for projetdetail in projectsdetail %}
+   
+      <div class="col-sm-6 col-md-12">
+      <img src="{{asset('uploads/img/')~projetdetail.imgPresentation}}" class="thumb-img">
+        <p class="">{{projetdetail.descriptionSociete}}</p>
+     
+      <p class="">{{projetdetail.societe}}</p>
+      <p class="">{{projetdetail.realisation}}</p>
+      <p class="">{{projetdetail.anneeRealisation}}</p>
+      <p class="">{{projetdetail.descriptionRealisation}}</p>
+      <img src="{{asset('uploads/img/')~projetdetail.imgLogo}}" class="thumb-img">
+      <img src="{{asset('uploads/img/')~projetdetail.imgTemplate}}" class="thumb-img">
+      <p class="">{{projetdetail.descriptionTemplate}}</p>
+    </div>
+  
+
+
+ 
+ {% endfor %}
+ </div>
+</div>
+{% endblock%}

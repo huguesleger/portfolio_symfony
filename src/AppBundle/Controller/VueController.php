@@ -47,6 +47,17 @@ class VueController extends Controller {
     }
     
     /**
+     * @Route("/projets/detail", name="detailweb")
+     * @Template(":site:projetsDetail.html.twig");
+     */
+    public function ProjetsDetail(){
+        return array ('projectsdetail' => $this->getDoctrine()->getRepository('AppBundle:ProjetsDetail')->findAll());
+    }
+    
+    
+    
+    
+    /**
      * @Route("/onepale",name="connexion");
      * @Template(":site:connexion.html.twig");
      */
