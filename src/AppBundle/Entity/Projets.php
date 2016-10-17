@@ -39,7 +39,9 @@ class Projets
      */
     private $images;
 
-    /**
+    
+
+        /**
      * @var string
      *
      * @ORM\Column(name="Descriptif", type="string", length=512)

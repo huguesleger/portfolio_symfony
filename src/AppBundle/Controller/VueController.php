@@ -47,11 +47,11 @@ class VueController extends Controller {
     }
     
     /**
-     * @Route("/projets/detail", name="detailweb")
+     * @Route("/projets/detail/{id}", name="detailweb")
      * @Template(":site:projetsDetail.html.twig");
      */
-    public function ProjetsDetail(){
-        return array ('projectsdetail' => $this->getDoctrine()->getRepository('AppBundle:ProjetsDetail')->findAll());
+    public function ProjetsDetail($id){
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findById($id));
     }
     
     

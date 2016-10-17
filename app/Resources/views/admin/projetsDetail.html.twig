@@ -1,29 +1,21 @@
 {% extends ":admin:index.html.twig"%}
 
 {% block body %}
-    <div class="container">
-            <a href="{{path("formdetail")}}"><h1 class="add-work">ajouter detail web</h1> </a>
-        </div>
-      <div class="container project-content">
+        <a href="{{path("formdetail")}}"><h1 class="add-work">ajouter detail web</h1> </a>
+        <div class="project-content"> 
+      <div class="container project">
         <div class="row">
-       {% for projetdetail in projectsdetail %}
+       {% for projet in projects %}
    
-      <div class="col-sm-6 col-md-12">
-      <img src="{{asset('uploads/img/')~projetdetail.imgPresentation}}" class="thumb-img">
-        <p class="">{{projetdetail.descriptionSociete}}</p>
+      <div class="col-sm-6 col-md-6">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive img">
+        <p class="">{{projet.titre}}</p>
      
-      <p class="">{{projetdetail.societe}}</p>
-      <p class="">{{projetdetail.realisation}}</p>
-      <p class="">{{projetdetail.anneeRealisation}}</p>
-      <p class="">{{projetdetail.descriptionRealisation}}</p>
-      <img src="{{asset('uploads/img/')~projetdetail.imgLogo}}" class="thumb-img">
-      <img src="{{asset('uploads/img/')~projetdetail.imgTemplate}}" class="thumb-img">
-      <p class="">{{projetdetail.descriptionTemplate}}</p>
-     
-    
+      <p class="">{{projet.descriptif}}</p>
+      <p class="">{{projet.liens}}</p>
       <div class="btn-projet">
-            <a class="btn btn-primary" href="{{path("modifdetail",{"id":projetdetail.id})}}">Modifier</a>
-            <a class="btn btn-danger" href="{{path("delatedetail",{"id":projetdetail.id})}}">Supprimer</a>
+            <a class="btn btn-primary" href="{{path("modifdetail",{"id":projet.id})}}">Modifier</a>
+            <a class="btn btn-danger" href="{{path("delatedetail",{"id":projet.id})}}">Supprimer</a>
             </div>
     </div>
   
@@ -32,6 +24,7 @@
  
  {% endfor %}
  </div>
+      </div>
 </div>
 {% endblock%}
 

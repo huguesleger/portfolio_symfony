@@ -444,11 +444,16 @@ a:focus {
   display: none; }
 
 /*------------fin-footer---------------*/
+/*------------formulaire-admin---------------*/
+.bg-form {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #F2F1EF;
+  width: 100%;
+  height: auto; }
+
 a:hover {
   text-decoration: none; }
-
-.project-content {
-  padding-bottom: 50px; }
 
 .thumb-work {
   width: 300px;
@@ -494,15 +499,6 @@ a:hover {
   color: black;
   z-index: 2000;
   text-align: center; }
-
-.btn-projet {
-  padding-top: 20px;
-  margin-left: 40px;
-  margin-right: 40px; }
-
-.add-work {
-  text-align: center;
-  margin: auto; }
 
 /*.header-conect{
     padding-bottom: 0;
@@ -626,5 +622,33 @@ logo {
     justify-content: center;
     padding-bottom: 15px;
     opacity: 0.5; } }
+.project-content {
+  background-color: #F2F1EF;
+  padding-bottom: 50px; }
+
+.project {
+  padding-top: 40px; }
+
+.btn-projet {
+  padding-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px; }
+
+.add-work {
+  padding: 20px 0 20px;
+  text-align: center;
+  margin: auto; }
+
+.img {
+  padding-bottom: 60px; }
+
+.add-caroussel {
+  background-color: #F2F1EF;
+  padding: 20px 0 20px;
+  text-align: center;
+  margin: auto; }
+
+.img-caroussel {
+  padding-top: 30px; }
 
 /*# sourceMappingURL=main.css.map */
