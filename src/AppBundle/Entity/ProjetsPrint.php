@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints\File;
  * ProjetsPrint
  *
  * @ORM\Table(name="projets_print")
- * @ORM\Entity(repositoryClass="ProjetsPrintRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProjetsPrintRepository")
  */
 class ProjetsPrint
 {

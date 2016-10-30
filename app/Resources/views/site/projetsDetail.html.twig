@@ -3,20 +3,26 @@
 {% block section %}
     <div class="container">
         <div class="row">
-       {% for projet in projects %}
-   
-      <div class="col-sm-6 col-md-12">
-      <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive">
-        <p class="">{{projet.titre}}</p>
+       {% for projetdetail in projectsdetail %}
+  
+      <div class="col-sm-6 col-md-4">
+    <div class="thumb-work">
+       <img src="{{projetdetail.imgPresentation}}" class="img-responsive img col-md-5">
+        <h2 class="">{{projetdetail.descriptionSociete}}</h2>
      
-      <p class="">{{projet.descriptif}}</p>
-      <p class="">{{projet.liens}}</p>
+      <p class="">{{projetdetail.societe}}</p>
+      <p class="">{{projetdetail.annee}}</p>
+       <p class="">{{projetdetail.realisations}}</p>
+        <p class="">{{projetdetail.imgTemplate}}</p>
+         <p class="">{{projetdetail.descriptionTemplate}}</p>
+          <p class="">{{projetdetail.lienSite}}</p>
+      
+      </div>
     </div>
-
-
-
+    </div>
  
  {% endfor %}
- </div>
+  </div>
+
 </div>
 {% endblock%}

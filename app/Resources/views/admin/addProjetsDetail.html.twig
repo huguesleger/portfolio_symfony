@@ -15,7 +15,7 @@
 {% if id is defined%}
 {{form_start(formNewsDetail,{'attr':{'action':path('updatedetail',{'id':id}),'enctype':'multipart/form-data'}})}}
 {% else%}
- {{form_start(formNewsDetail,{'attr':{'action':path('validprojetdetail'),'enctype':'multipart/form-data'}})}}
+ {{form_start(formNewsDetail,{'attr':{'action':path('validdetail'),'enctype':'multipart/form-data'}})}}
 {% endif%}
         
         
@@ -28,4 +28,3 @@
 </div>
     </body>
     {% endblock %}
-

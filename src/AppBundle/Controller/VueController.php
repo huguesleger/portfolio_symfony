@@ -44,18 +44,18 @@ class VueController extends Controller {
     public function ProjetsPrint(){
        
         return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findByPublier(1));
+        
     }
-    
-    /**
-     * @Route("/projets/detail/{id}", name="detailweb")
+
+     /**
+     * @Route("/projets/detail/{id}", name="detailprojets")
      * @Template(":site:projetsDetail.html.twig");
      */
     public function ProjetsDetail($id){
-        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findById($id));
+        return array ('projectsdetail' => $this->getDoctrine()->getRepository('AppBundle:ProjetsDetail')->findById($id));
+        
     }
-    
-    
-    
+
     
     /**
      * @Route("/onepale",name="connexion");

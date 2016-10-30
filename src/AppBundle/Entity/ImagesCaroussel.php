@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints\File;
  * ImagesCaroussel
  *
  * @ORM\Table(name="images_caroussel")
- * @ORM\Entity(repositoryClass="ImagesCarousselRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ImagesCarousselRepository")
  */
 class ImagesCaroussel
 {

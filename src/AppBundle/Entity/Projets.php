@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints\File;
@@ -11,7 +10,7 @@ use Symfony\Component\Validator\Constraints\File;
  * Projets
  *
  * @ORM\Table(name="projets")
- * @ORM\Entity(repositoryClass="ProjetsRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProjetsRepository")
  */
 class Projets
 {
@@ -39,8 +38,11 @@ class Projets
      */
     private $images;
 
-    
+   
 
+           
+
+    
         /**
      * @var string
      *
@@ -55,8 +57,20 @@ class Projets
      */
     private $liens;
 
-
     
+    
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="ProjetsDetail")
+     * @ORM\JoinColumn(name="fk_projetsDetail", referencedColumnName="id")
+     */
+    private $projetsDetail;
+   
+    
+    
+
+        
     /**
      * @var bool
      * @ORM\Column(name="Publier", type="boolean") 
@@ -66,11 +80,15 @@ class Projets
         return $this->publier;
     }
 
+    
+    
     function setPublier($publier) {
         $this->publier = $publier;
     }
     
+    
 
+        
         /**
      * Get id
      *
@@ -176,4 +194,18 @@ class Projets
     {
         return $this->liens;
     }
+    
+    function getProjetsDetail() {
+        return $this->projetsDetail;
+    }
+
+    function setProjetsDetail($projetsDetail) {
+        $this->projetsDetail = $projetsDetail;
+    }
+
+    public function __toString() {
+        return $this->getTitre();
+    }
+
+
 }

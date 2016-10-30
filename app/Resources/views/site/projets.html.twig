@@ -13,12 +13,11 @@
       </div>
       <div class="thumb-effect-2">
       <p class="thumb-title">{{projet.descriptif}}</p>
-      <a class="fa fa-plus-circle" href="{{path("detailweb",{"id":projet.id})}}">En voir +</a>
+      
+      <a class="fa fa-plus-circle" href="{{path("detailprojets",{"id":projet.projetsdetail.id})}}">En voir +</a>
       </div>
     </div>
     </div>
- 
-
  
  {% endfor %}
   </div>
