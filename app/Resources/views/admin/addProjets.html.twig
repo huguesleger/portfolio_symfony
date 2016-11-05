@@ -1,0 +1,32 @@
+{% extends ":admin:index.html.twig"%}
+{% block body %}
+
+<body>
+        
+        <h1 class="page-header">Mes Travaux web</h1>
+       
+
+
+
+<div class="bg-form">
+<div class="container">
+ <div class="col-xs-6 col-xs-offset-4">
+     <div class="">
+{% if id is defined%}
+{{form_start(formNews,{'attr':{'action':path('update',{'id':id}),'enctype':'multipart/form-data'}})}}
+{% else%}
+ {{form_start(formNews,{'attr':{'action':path('valid'),'enctype':'multipart/form-data'}})}}
+
+{% endif%}
+        
+        
+        {{form_end(formNews)}}
+
+        
+
+    </div>
+</div>
+</div>
+</div>
+    </body>
+    {% endblock %}

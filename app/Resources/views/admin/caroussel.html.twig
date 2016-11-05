@@ -1,0 +1,31 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+            <a href="{{path("formcaroussel")}}"><h1 class="add-caroussel">ajouter une image</h1> </a>
+         
+   <div class="container project">
+        <div class="row">
+       {% for projetcaroussel in projectscaroussel %}
+   
+      <div class="col-sm-6 col-md-12">
+    <div class="img-caroussel">
+      <img src="{{asset('uploads/img/')~projetcaroussel.images}}" class="img-responsive">
+     
+    </div>
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modifcaroussel",{"id":projetcaroussel.id})}}">Modifier</a>
+            <a class="btn btn-success" href="{{path("publi",{"id":projetcaroussel.id})}}">publier</a>
+            <a class="btn btn-warning" href="{{path("suppcaroussel",{"id":projetcaroussel.id})}}">Enlever</a>
+            <a class="btn btn-danger" href="{{path("delatecaroussel",{"id":projetcaroussel.id})}}">Supprimer</a>
+            </div>
+    </div>
+  
+
+
+ 
+ {% endfor %}
+ </div>
+
+</div>
+{% endblock%}
+

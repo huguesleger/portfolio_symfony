@@ -1,0 +1,37 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+     
+            <a href="{{path("formdetail")}}"><h1 class="add-work">ajouter un detail web</h1> </a>
+     <div class="project-content">   
+   <div class="container project">
+        <div class="row">
+       {% for projetdetail in projectsdetail %}
+   
+      <div class="col-sm-6 col-md-12">
+      <img src="{{projetdetail.imgPresentation}}" class="img-responsive img col-md-5">
+        <h2 class="">{{projetdetail.descriptionSociete}}</h2>
+     
+      <p class="">{{projetdetail.societe}}</p>
+      <p class="">{{projetdetail.annee}}</p>
+       <p class="">{{projetdetail.realisations}}</p>
+        <p class="">{{projetdetail.imgTemplate}}</p>
+         <p class="">{{projetdetail.descriptionTemplate}}</p>
+          <p class="">{{projetdetail.lienSite}}</p>
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modifdetail",{"id":projetdetail.id})}}">Modifier</a>
+            <a class="btn btn-danger" href="{{path("delatedetail",{"id":projetdetail.id})}}">Supprimer</a>
+            </div>
+           
+    </div>
+
+
+ 
+ {% endfor %}
+ </div>
+</div>
+ 
+     </div>
+{% endblock%}
+
+
