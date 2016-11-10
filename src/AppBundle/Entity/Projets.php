@@ -50,23 +50,9 @@ class Projets
      */
     private $descriptif;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Liens", type="string", length=255)
-     */
-    private $liens;
+    
+    
 
-    
-    
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="ProjetsDetail")
-     * @ORM\JoinColumn(name="fk_projetsDetail", referencedColumnName="id")
-     */
-    private $projetsDetail;
-   
     
     
 
@@ -88,6 +74,67 @@ class Projets
     
     
 
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ImgPresentation", type="string", length=512)
+     */
+    private $imgPresentation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DescriptionSociete", type="text")
+     */
+    private $descriptionSociete;
+
+ 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Annee", type="string", length=255)
+     */
+    private $annee;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Realisations", type="text")
+     */
+    private $realisations;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ImgLogo", type="string", length=512)
+     */
+    private $imgLogo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ImgTemplate", type="string", length=512)
+     */
+    private $imgTemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DescriptionTemplate", type="text")
+     */
+    private $descriptionTemplate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LienSite", type="string", length=512)
+     */
+    private $lienSite;
+
+
+    
         
         /**
      * Get id
@@ -171,40 +218,170 @@ class Projets
         return $this->descriptif;
     }
 
-    /**
-     * Set liens
-     *
-     * @param string $liens
-     *
-     * @return Projets
-     */
-    public function setLiens($liens)
-    {
-        $this->liens = $liens;
-
-        return $this;
-    }
-
-    /**
-     * Get liens
+    
+  
+    
+  
+ /**
+     * Get imgPresentation
      *
      * @return string
      */
-    public function getLiens()
-    {
-        return $this->liens;
-    }
-    
-    function getProjetsDetail() {
-        return $this->projetsDetail;
+    function getImgPresentation() {
+        return $this->imgPresentation;
     }
 
-    function setProjetsDetail($projetsDetail) {
-        $this->projetsDetail = $projetsDetail;
+     /**
+     * Get descriptionSociete
+     *
+     * @return string
+     */
+    function getDescriptionSociete() {
+        return $this->descriptionSociete;
     }
 
-    public function __toString() {
-        return $this->getTitre();
+  
+     /**
+     * Get annee
+     *
+     * @return string
+     */
+    function getAnnee() {
+        return $this->annee;
+    }
+
+    /**
+     * Get realisations
+     *
+     * @return string
+     */
+    function getRealisations() {
+        return $this->realisations;
+    }
+
+    /**
+     * Get imgLogo
+     *
+     * @return string
+     */
+    function getImgLogo() {
+        return $this->imgLogo;
+    }
+
+     /**
+     * Get imgTemplate
+     *
+     * @return string
+     */
+    function getImgTemplate() {
+        return $this->imgTemplate;
+    }
+
+    /**
+     * Get descriptionTemplate
+     *
+     * @return string
+     */
+    function getDescriptionTemplate() {
+        return $this->descriptionTemplate;
+    }
+
+     /**
+     * Get lienSite
+     *
+     * @return string
+     */
+    function getLienSite() {
+        return $this->lienSite;
+    }
+
+     /**
+     * Set imgPresentation
+     *
+     * @param string $imgPresentation
+     *
+     * @return Projets
+     */
+    function setImgPresentation($imgPresentation) {
+        $this->imgPresentation = $imgPresentation;
+    }
+
+    /**
+     * Set descriptionSociete
+     *
+     * @param string $descriptionSociete
+     *
+     * @return Projets
+     */
+    function setDescriptionSociete($descriptionSociete) {
+        $this->descriptionSociete = $descriptionSociete;
+    }
+
+
+      /**
+     * Set annee
+     *
+     * @param string $annee
+     *
+     * @return Projets
+     */
+    function setAnnee($annee) {
+        $this->annee = $annee;
+    }
+
+     /**
+     * Set realisations
+     *
+     * @param string $realisations
+     *
+     * @return Projets
+     */
+    function setRealisations($realisations) {
+        $this->realisations = $realisations;
+    }
+
+     /**
+     * Set imgLogo
+     *
+     * @param string $imgLogo
+     *
+     * @return Projets
+     */
+    function setImgLogo($imgLogo) {
+        $this->imgLogo = $imgLogo;
+    }
+
+     /**
+     * Set imgTemplate
+     *
+     * @param string $imgTemplate
+     *
+     * @return Projets
+     */
+    function setImgTemplate($imgTemplate) {
+        $this->imgTemplate = $imgTemplate;
+    }
+
+    /**
+     * Set descriptionTemplate
+     *
+     * @param string $descriptionTemplate
+     *
+     * @return Projets
+     */
+    function setDescriptionTemplate($descriptionTemplate) {
+        $this->descriptionTemplate = $descriptionTemplate;
+    }
+
+     /**
+     * Set lienSite
+     *
+     * @param string $lienSite
+     *
+     * @return Projets
+     */
+    function setLienSite($lienSite) {
+        $this->lienSite = $lienSite;
     }
 
 

@@ -5,24 +5,21 @@
   {% block ariane %}<ol class="breadcrumb">
   <li><a href="{{path('home')}}">Home</a></li>
   <li><a href="{{path('travauxweb')}}">Travaux Web</a></li>
-   {% for projetdetail in projectsdetail %}
-  <li class="active">Détail {{projetdetail.Societe}}</li>
-  {% endfor %}
+  <li class="active">Détail</li>
 </ol>{% endblock %}
     <div class="container">
         <div class="row">
-       {% for projetdetail in projectsdetail %}
+       {% for projet in projects %}
       <div class="col-sm-6 col-md-4">
     <div class="thumb-work">
-       <img src="{{projetdetail.imgPresentation}}" class="img-responsive img col-md-5">
-        <h2 class="">{{projetdetail.descriptionSociete}}</h2>
-     
-      <p class="">{{projetdetail.societe}}</p>
-      <p class="">{{projetdetail.annee}}</p>
-       <p class="">{{projetdetail.realisations}}</p>
-        <p class="">{{projetdetail.imgTemplate}}</p>
-         <p class="">{{projetdetail.descriptionTemplate}}</p>
-          <p class="">{{projetdetail.lienSite}}</p>
+       <img src="{{projet.imgPresentation}}" class="img-responsive img col-md-5">
+        <h2 class="">{{projet.descriptionSociete}}</h2>
+     <p class="">{{projet.titre}}</p>
+      <p class="">{{projet.annee}}</p>
+       <p class="">{{projet.realisations}}</p>
+        <p class="">{{projet.imgTemplate}}</p>
+         <p class="">{{projet.descriptionTemplate}}</p>
+          <p class="">{{projet.lienSite}}</p>
       
       </div>
     </div>

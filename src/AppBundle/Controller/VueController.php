@@ -52,7 +52,7 @@ class VueController extends Controller {
      * @Template(":site:projetsDetail.html.twig");
      */
     public function ProjetsDetail($id){
-        return array ('projectsdetail' => $this->getDoctrine()->getRepository('AppBundle:ProjetsDetail')->findById($id));
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findById($id));
         
     }
 

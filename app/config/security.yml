@@ -57,12 +57,15 @@ security:
         AdminBundle\Entity\User:
             algorithm: plaintext
             ignore_case: false
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-             # evidement on peut jouer sur differents niveaux de restrictions   
+           
     access_control:   
         # Un admin ou un user classique peut ajouter une annonce ... quelque chose d'étrange est ici ....
         - { path: ^/admin , roles: [ROLE_ADMIN] }       
-        # seul un admin peut ajouter une categorie   
+        # seul un admin peut ajouter une categorie
+        
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+            # evidement on peut jouer sur differents niveaux de restrictions   
+             
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html

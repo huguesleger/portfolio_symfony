@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\ProjetsDetail;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,8 +21,14 @@ class ProjetsType extends AbstractType
             ->add('titre')
             ->add('images', FileType::class, array('data_class' => null))
             ->add('descriptif')
-            ->add('liens')
-             ->add('projetsDetail')
+             ->add('imgPresentation')
+                ->add('descriptionSociete')
+                ->add('annee')
+                ->add('realisations')
+                ->add('imgLogo')
+                ->add('imgTemplate')
+                ->add('descriptionTemplate')
+                ->add('lienSite') 
             ->add('publier')
             ->add('save', SubmitType::class)
         ;
