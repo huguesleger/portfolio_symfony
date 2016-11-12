@@ -4,7 +4,7 @@
 {% block section %}
               {% block ariane %}<ol class="breadcrumb">
   <li><a href="{{path('home')}}">Home</a></li>
-  <li href="active">Travaux Web</li>
+  <li  class="active">Travaux Web</li>
 </ol>{% endblock %}
     <div class="container-fluid">
         <div class="row">
@@ -29,4 +29,6 @@
   </div>
 
 </div>
+ {% block javascript %}
+     {% endblock%}
 {% endblock%}

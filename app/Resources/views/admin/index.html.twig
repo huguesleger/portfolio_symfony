@@ -36,10 +36,57 @@
   </div><!-- /.container-fluid -->
 </nav> 
     </div>
+      
+      
+        <!--nav-vertical-->
+{# {% block nav %}
+<div id="nav-vertical">
+<nav class="navbar-vert navbar-admin-vert" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <form class="navbar-form navbar-left">
+          <br>
+      </form>
+    <ul class="nav navbar-nav-vert">
+     <a href="{{path("form")}}"><h1 class="add-work">ajouter un projet web</h1> </a>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+</div>
+    <!--fin-nav-vertical-->
+  {% endblock %}#}
+
+{% block navadd %}
+     <div class="nav-add">
+            
+              <h3 class="title-rubrique-nav">Travaux</h3>
+              
+                 
+              <a href="{{path("form")}}"><p class="txt-nav-add"><i class="icon-add fa fa-desktop"></i>ajouter travaux web</p></a>
+            
+              <a href="{{path("formprint")}}"><p class="txt-nav-add"><i class="icon-add fa fa-pencil"></i>ajouter travaux print</p> </a>
+              <a href="{{path("formcaroussel")}}"><p class="txt-nav-add"><i class="icon-add fa fa-picture-o"></i>ajouter img carousel</p> </a>
+              <a href="#"><p class="no-border txt-nav-add"><i class="icon-add fa fa-cloud-download"></i>ajouter img portfolio</p> </a>
+              <h3 class="title-rubrique-nav">Mes Listes</h3>
+              <a href="{{path("listeweb")}}"><p class="txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste travaux web</p> </a>
+              <a href="#"><p class="txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste travaux print</p></a>
+              <a href="#"><p class="no-border txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste img carousel</p> </a>
+              
+              
+              </div> 
+      {% endblock %}
       </div><!--fin site-->
       
+      
+      
+      
       {% block body %}
-          <h1>salut</h1>
+          
+                
+       
+          
+         
     {% endblock %}
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>

@@ -76,9 +76,10 @@ class Projets
 
     
     /**
-     * @var string
+     * @var UploadedFile
      *
      * @ORM\Column(name="ImgPresentation", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
      */
     private $imgPresentation;
 
@@ -106,16 +107,18 @@ class Projets
     private $realisations;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
      * @ORM\Column(name="ImgLogo", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
      */
     private $imgLogo;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
      * @ORM\Column(name="ImgTemplate", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"}) 
      */
     private $imgTemplate;
 

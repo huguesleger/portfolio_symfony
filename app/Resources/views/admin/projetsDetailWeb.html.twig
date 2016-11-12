@@ -1,14 +1,23 @@
 {% extends ":admin:index.html.twig"%}
 
 {% block body %}
+            
+      
+     <div class="project-content">
      
-     <div class="project-content">   
+         
    <div class="container project">
+       
+         
         <div class="row">
        {% for projet in projects %}
    
       <div class="col-sm-6 col-md-12">
-     <img src="{{asset('uploads/img/')~projet.imgPresentation}}" class="img-responsive img">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive img">
+        <h2 class="">{{projet.titre}}</h2>
+     
+      <p class="">{{projet.descriptif}}</p>
+       <img src="{{asset('uploads/img/')~projet.imgPresentation}}" class="img-responsive img">
         <h2 class="">{{projet.descriptionSociete}}</h2>
      
      
@@ -18,6 +27,7 @@
         <img src="{{asset('uploads/img/')~projet.imgTemplate}}" class="img-responsive img">
          <p class="">{{projet.descriptionTemplate}}</p>
           <p class="">{{projet.lienSite}}</p>
+      
       <div class="btn-projet">
             <a class="btn btn-primary" href="{{path("modif",{"id":projet.id})}}">Modifier</a>
             <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}">Supprimer</a>
@@ -28,10 +38,14 @@
 
  
  {% endfor %}
+ 
+
  </div>
 </div>
- 
+
+
      </div>
 {% endblock%}
+
 
 

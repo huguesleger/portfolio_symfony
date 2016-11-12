@@ -1,16 +1,18 @@
 {% extends ":admin:index.html.twig"%}
+{#{% block navadd %} {% endblock %}#}
 {% block body %}
 
 <body>
-        
-        <h1 class="page-header">Mes Travaux web</h1>
+         <div class="project-content">
+       
        
 
 
 
 <div class="bg-form">
-<div class="container-fluid">
- <div class="">
+     <h1 class="title-header">Mes Travaux web</h1>
+<div class="container">
+
      <div class="">
 {% if id is defined%}
 {{form_start(formNews,{'attr':{'action':path('update',{'id':id}),'enctype':'multipart/form-data'}})}}
@@ -20,36 +22,36 @@
 
 {% endif%}
 <div class="row">
-<div class="col-sm-6 col-md-6">
+<div class="col-sm-6 col-md-12 col-md-offset-1">
 
 
-    <h1>appercu</h1>
-<div class="form-group"><h3>{{form_row(formNews.titre,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.images)}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.descriptif,{'attr':{'class':('form-control')}})}}</h3></div>
-
-</div>
-<div class="col-sm-6 col-md-6">
-
-
-<h1>detail</h1>
-<div class="form-group"><h3>{{form_row(formNews.imgPresentation,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.descriptionSociete,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.annee,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.realisations,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.imgLogo,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.imgTemplate,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.descriptionTemplate,{'attr':{'class':('form-control')}})}}</h3></div>
-<div class="form-group"><h3>{{form_row(formNews.lienSite,{'attr':{'class':('form-control')}})}}</h3></div>
+    <h1 class="title-form"><i class="icon-add fa fa-camera-retro"></i>Miniature</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Titre</span>{{form_widget(formNews.titre,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Thumbnail</span>{{form_widget(formNews.images,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description</span>{{form_widget(formNews.descriptif,{'attr':{'class':('form-control')}})}}</div>
 
 </div>
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+<h1 class="title-form"><i class="icon-add fa fa-search-plus"></i>Détail</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Présentation</span>{{form_widget(formNews.imgPresentation,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description Societé</span>{{form_widget(formNews.descriptionSociete,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Années</span>{{form_widget(formNews.annee,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Réalisations</span>{{form_widget(formNews.realisations,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Logo</span>{{form_widget(formNews.imgLogo,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Template</span>{{form_widget(formNews.imgTemplate,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description Template</span>{{form_widget(formNews.descriptionTemplate,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Site Web</span>{{form_widget(formNews.lienSite,{'attr':{'class':('form-control')}})}}</div>
+
 </div>
 
-<div class="container">
-    <div class="col-xs-6 col-xs-offset-4">
-        
-        <div class="btn btn-info"><h3>{{form_row(formNews.publier,{'attr':{'class':('form-group')}})}}</h3></div>
 
+
+    <div class="col-sm-6 col-md-12 col-md-offset-1">
+        <br><br>
+        <div class="input-group"><span class="input-group-addon publier">Publier</span>{{form_widget(formNews.publier,{'attr':{'class':('form-group ')}})}}</div>
+        <div class="input-group right">{{form_widget(formNews.sauvegarder,{'attr':{'class':('btn btn-success ')}})}}</div>
     </div>
 </div>
 

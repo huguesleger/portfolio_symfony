@@ -1,10 +1,14 @@
 {% extends ":admin:index.html.twig"%}
 
 {% block body %}
+            
+      
+     <div class="project-content">
      
-            <a href="{{path("form")}}"><h1 class="add-work">ajouter un projet web</h1> </a>
-     <div class="project-content">   
+         
    <div class="container project">
+       
+         
         <div class="row">
        {% for projet in projects %}
    
@@ -16,10 +20,10 @@
       
       <div class="btn-projet">
             <a class="btn btn-primary" href="{{path("modif",{"id":projet.id})}}">Modifier</a>
+             <a class="btn btn-info" href="{{path("projectsdetail",{"id":projet.id})}}">detail</a>
             <a class="btn btn-success" href="{{path("publiweb",{"id":projet.id})}}">publier</a>
-            <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>
+           {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
             <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}">Supprimer</a>
-            <a class="btn btn-info" href="{{path("projectsdetail",{"id":projet.id})}}">detail</a>
             </div>
            
     </div>
@@ -31,7 +35,8 @@
 
  </div>
 </div>
- 
+
+
      </div>
 {% endblock%}
 

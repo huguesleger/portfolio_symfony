@@ -142,7 +142,7 @@ a:focus {
 /*------------formulaire-admin---------------*/
 
 .bg-form{
-    padding-top: 50px;
+    padding-top: 0;
     padding-bottom: 50px;
     background-color: #F2F1EF;
     width: 100%;
@@ -167,4 +167,184 @@ input[type=checkbox], input[type=radio] {
     box-sizing: border-box;
     padding: 0;
     height: 30px;
+    width: 100px;
+    
+}
+
+
+
+
+/*--nav-vertical---*/
+/*#nav-vertical{
+    margin-top: 80px;
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        
+    }
+@media (min-width: 768px) {
+  .navbar-collapse {
+    height: auto;
+    border-top: 0;
+    box-shadow: none;
+    max-height: none;
+    padding-left:0;
+    padding-right:0;
+  }
+  .navbar-collapse.collapse {
+    display: block !important;
+    width: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .navbar-collapse.in {
+    overflow-x: visible;
+  }
+
+.navbar-vert
+{
+	max-width:220px;
+        height: auto;
+	margin: 0;
+        background-color: #222;
+        border: none;
+        border-radius: 0;
+        position: relative;
+}	
+
+.navbar-nav-vert li a{
+    border-bottom: 1px solid #000;
+}
+
+.navbar-nav-vert,
+.navbar-nav-vert > li,
+.navbar-left,
+.navbar-header-vert
+{float:none !important;
+}
+
+.dropdown-menu {left:0;right:0;background-color: #333; border-radius: 0;}
+.dropdown-menu li a {color:#777;}
+.navbar-collapse .navbar-nav-vert.navbar-left:last-child {
+    margin-right: 0;
+}
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    border-color: #26A65B;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+}
+.navbar-admin-vert .navbar-nav-vert > li > a{
+     color: #999;
+}
+.navbar-admin-vert .navbar-nav-vert > li > a:hover,
+.navbar-admin-vert .navbar-nav-vert > li > a:focus {
+  color: #777;
+  background-color: #333;
+}*/
+
+/*--fin-nav-vertical---*/
+
+
+.nav-add{
+    width: 250px;
+    background-color: #130c1c;
+    position: absolute;
+    
+/*    border-top: 2px solid #fff;*/
+}
+
+.txt-nav-add{
+    font-size: 19px;
+    text-align: right;
+    padding-right: 20px;
+    width: 100%;
+    border-bottom: 1px solid #666;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    color: #777;
+    transition: 0.4s; 
+    &:hover{
+        color: #999;
+        transition: 0.3s;
+    }
+    
+}
+.no-border{
+    border: none;
+}
+
+
+.title-rubrique-nav{
+    margin-top: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: #222;
+    background-color: #f7ab35;
+    text-align: center;   
+}
+
+.icon-add{
+float: left;
+color: #f7ab35;
+padding: 10px 10px;
+margin-left: 10px;
+margin-top: -5px;
+}
+
+.title-header {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0px 0 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    background-color: #fff;
+}
+
+
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #130c1c;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 156px;
+}
+
+.publier{
+
+  background-color: #f7ab35;
+  color: #130c1c;
+}
+
+.no-publier{
+  background-color: #130c1c;
+  color: #130c1c;
+}
+
+.fa-camera-retro{
+    margin-top: -8px;
+}
+
+.title-form{
+    margin-left: -18px;
+
+}
+
+textarea.form-control {
+    min-height: 180px;
+    resize: none;
+}
+
+.right{
+    float: right;
 }

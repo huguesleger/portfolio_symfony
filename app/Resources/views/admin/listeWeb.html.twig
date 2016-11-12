@@ -1,0 +1,42 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+     
+     <div class="project-content">   
+   <div class="container project">
+        <div class="row">
+       {% for projet in projects %}
+   
+    <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><a class="lien-projet-web" href="{{path("detailprojetsweb",{"id":projet.id})}}"><i class="icon-add fa fa-desktop"></i>{{projet.titre}}</a></div>
+
+  <!-- Table -->
+  <table class="table">
+      <thead> <tr>
+              <th>id</th>
+              <th>description</th>
+              <th>années</th>
+              <th>publier</th>
+          </tr>
+            <td>{{projet.id}}</td>
+            <td>{{projet.descriptif}}</td>
+            <td>{{projet.annee}}</td>
+            {% if projet.publier ==[1] %}
+             <td><i class="fa fa-check"></i></td>
+             {% else %}
+         <td><i class="fa fa-times"></i></td>
+         {% endif %}
+         </thead>
+  </table>
+</div>
+
+ 
+ {% endfor %}
+ </div>
+</div>
+ 
+     </div>
+{% endblock%}
+
+

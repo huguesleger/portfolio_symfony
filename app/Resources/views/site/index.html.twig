@@ -267,11 +267,13 @@
       </footer>
 
       </div>
+
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+        {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
-
+        {% endblock %}
 </body>
 
 </html>

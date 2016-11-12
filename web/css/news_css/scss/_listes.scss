@@ -1,0 +1,21 @@
+.fa-check{
+    color: #5cb85c;
+}
+
+.fa-times{
+   color: #c9302c;
+}
+
+.panel-default > .panel-heading {
+  background-color: #130c1c;
+  border-color: #ddd;
+}
+
+.lien-projet-web{
+    color: #777;
+     transition: 0.4s;
+    &:hover{
+        color: #f7ab35;
+        transition: 0.3s;
+    }
+}

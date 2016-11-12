@@ -21,16 +21,16 @@ class ProjetsType extends AbstractType
             ->add('titre')
             ->add('images', FileType::class, array('data_class' => null))
             ->add('descriptif')
-             ->add('imgPresentation')
+             ->add('imgPresentation', FileType::class, array('data_class' => null))
                 ->add('descriptionSociete')
                 ->add('annee')
                 ->add('realisations')
-                ->add('imgLogo')
-                ->add('imgTemplate')
+                ->add('imgLogo', FileType::class, array('data_class' => null))
+                ->add('imgTemplate', FileType::class, array('data_class' => null))
                 ->add('descriptionTemplate')
                 ->add('lienSite') 
             ->add('publier')
-            ->add('save', SubmitType::class)
+            ->add('sauvegarder', SubmitType::class)
         ;
     }
     

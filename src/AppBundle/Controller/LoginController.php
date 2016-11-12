@@ -8,8 +8,12 @@
 
 namespace AppBundle\Controller;
 
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
+
+
 
 /**
  * Description of LoginController
@@ -33,5 +37,11 @@ class LoginController extends Controller {
     public function logout() {
         throw new Exception('Verifiez votre fichier security');
     }
+    
+    
+    
+    
+    
+    
     
 }

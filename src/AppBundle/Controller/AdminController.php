@@ -91,9 +91,17 @@ class AdminController extends Controller {
             $niouzes->getImages()->move('uploads/img', $nomDuFichier);
             $niouzes->setImages($nomDuFichier);
             
-//            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgtemplate()->getClientOriginalExtension();
-//            $niouzes->getImgtemplate()->move('uploads/img', $nomDuFichier);
-//            $niouzes->setImgtemplate($nomDuFichier);
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgPresentation()->getClientOriginalExtension();
+            $niouzes->getImgPresentation()->move('uploads/img', $nomDuFichier);
+            $niouzes->setimgPresentation($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgLogo()->getClientOriginalExtension();
+            $niouzes->getImgLogo()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgLogo($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgTemplate()->getClientOriginalExtension();
+            $niouzes->getImgTemplate()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgTemplate($nomDuFichier);
             
             
             //Partie persistance des données ou l'on sauvegarde notre news en base de données
@@ -152,6 +160,18 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()).".".$niouzes->getImages()->getClientOriginalExtension();
             $niouzes->getImages()->move('uploads/img', $nomDuFichier);
             $niouzes->setImages($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgPresentation()->getClientOriginalExtension();
+            $niouzes->getImgPresentation()->move('uploads/img', $nomDuFichier);
+            $niouzes->setimgPresentation($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgLogo()->getClientOriginalExtension();
+            $niouzes->getImgLogo()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgLogo($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImgTemplate()->getClientOriginalExtension();
+            $niouzes->getImgTemplate()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImgTemplate($nomDuFichier);
             
             //Partie persistance des données ou l'on sauvegarde notre news en base de données
             $em = $this->getDoctrine()->getEntityManager();
@@ -434,53 +454,53 @@ class AdminController extends Controller {
          return $this->redirectToRoute('projects');
      }
      
-     /**
-     * @Route("/admin/supprimercaroussel/{id}", name="suppcaroussel")
-     */
-     public function supprimerSiteCaroussel($id){
-        $em = $this->getDoctrine()->getEntityManager();
-        $niouzes = $em->find('AppBundle:ImagesCaroussel', $id);
-        $this->createForm(ImagesCarousselType::class, $niouzes);
-        
-        $niouzes->setPublier(0);
-          
-         $em->merge($niouzes);
-         $em->flush();
-         
-         return $this->redirectToRoute('projectscaroussel');
-     }
+//     /**
+//     * @Route("/admin/supprimercaroussel/{id}", name="suppcaroussel")
+//     */
+//     public function supprimerSiteCaroussel($id){
+//        $em = $this->getDoctrine()->getEntityManager();
+//        $niouzes = $em->find('AppBundle:ImagesCaroussel', $id);
+//        $this->createForm(ImagesCarousselType::class, $niouzes);
+//        
+//        $niouzes->setPublier(0);
+//          
+//         $em->merge($niouzes);
+//         $em->flush();
+//         
+//         return $this->redirectToRoute('projectscaroussel');
+//     }
      
-     /**
-     * @Route("/admin/supprimerweb/{id}", name="suppweb")
-     */
-     public function supprimerSiteWeb($id){
-        $em = $this->getDoctrine()->getEntityManager();
-        $niouzes = $em->find('AppBundle:Projets', $id);
-        $this->createForm(ProjetsType::class, $niouzes);
-        
-        $niouzes->setPublier(0);
-          
-         $em->merge($niouzes);
-         $em->flush();
-         
-         return $this->redirectToRoute('projects');
-     }
+//     /**
+//     * @Route("/admin/supprimerweb/{id}", name="suppweb")
+//     */
+//     public function supprimerSiteWeb($id){
+//        $em = $this->getDoctrine()->getEntityManager();
+//        $niouzes = $em->find('AppBundle:Projets', $id);
+//        $this->createForm(ProjetsType::class, $niouzes);
+//        
+//        $niouzes->setPublier(0);
+//          
+//         $em->merge($niouzes);
+//         $em->flush();
+//         
+//         return $this->redirectToRoute('projects');
+//     }
      
-     /**
-     * @Route("/admin/supprimerprint/{id}", name="suppprint")
-     */
-     public function supprimerSitePrint($id){
-        $em = $this->getDoctrine()->getEntityManager();
-        $niouzes = $em->find('AppBundle:ProjetsPrint', $id);
-        $this->createForm(ProjetsPrintType::class, $niouzes);
-        
-        $niouzes->setPublier(0);
-          
-         $em->merge($niouzes);
-         $em->flush();
-         
-         return $this->redirectToRoute('projectsprint');
-     }
+//     /**
+//     * @Route("/admin/supprimerprint/{id}", name="suppprint")
+//     */
+//     public function supprimerSitePrint($id){
+//        $em = $this->getDoctrine()->getEntityManager();
+//        $niouzes = $em->find('AppBundle:ProjetsPrint', $id);
+//        $this->createForm(ProjetsPrintType::class, $niouzes);
+//        
+//        $niouzes->setPublier(0);
+//          
+//         $em->merge($niouzes);
+//         $em->flush();
+//         
+//         return $this->redirectToRoute('projectsprint');
+//     }
      
       /**
      * @Route("/admin/projets/detail/{id}", name="projectsdetail");
@@ -595,4 +615,23 @@ return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Proje
 //        }
 //}
 //    
+    
+      /**
+     * @Route("/admin/liste/projets/web", name="listeweb");
+     * @Template(":admin:listeWeb.html.twig");
+     */
+    public function listeProjets(){
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findAll());
+    }
+    
+    
+     /**
+     * @Route("/admin/projets/web/detail/{id}", name="detailprojetsweb");
+     * @Template(":admin:projetsDetailWeb.html.twig");
+     */
+    public function afficheProjets($id){
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findById($id));
+    }
+    
+    
     }

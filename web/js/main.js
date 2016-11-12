@@ -58,7 +58,13 @@ $('#home .container-fluid').css( { marginLeft : "15px", marginRight : "15px"} );
 
 
 
+ var navHeight = $('.project-content').height();
+	$('.nav-add').css('height',navHeight);
 
+   $(window).resize(function () {
+        var navHeight = $('.project-content').height();
+	$('.nav-add').css('height',navHeight);
+    });
 
 
 });
