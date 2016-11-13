@@ -326,11 +326,6 @@ margin-top: -5px;
   color: #130c1c;
 }
 
-.no-publier{
-  background-color: #130c1c;
-  color: #130c1c;
-}
-
 .fa-camera-retro{
     margin-top: -8px;
 }
@@ -347,4 +342,37 @@ textarea.form-control {
 
 .right{
     float: right;
+}
+
+.fa-calendar{
+    color: #f7ab35;
+}
+
+
+    .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+     background-color: #130c1c;
+     color: #777;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.confirm{
+    color: #777;
+    opacity: 1;
+    text-shadow: none;
+    &:hover{
+        color: #f7ab35;
+        opacity: 1;
+    }
 }

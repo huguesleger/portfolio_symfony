@@ -128,6 +128,9 @@ class AdminController extends Controller {
         $niouzes = $em->find('AppBundle:Projets', $id);
         $f = $this->createForm(ProjetsType::class, $niouzes);
        
+        
+        
+        
         //on renvoie le formulaire dans la vue
         return array("formNews" => $f->createView(), "id"=>$id);
     }

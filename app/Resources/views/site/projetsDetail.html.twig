@@ -15,7 +15,7 @@
        <img src="{{asset('uploads/img/')~projet.imgPresentation}}" class="img-responsive img">
         <h2 class="">{{projet.descriptionSociete}}</h2>
      <p class="">{{projet.titre}}</p>
-      <p class="">{{projet.annee}}</p>
+      <p class="">{{projet.annee|date('d/m/y')}}</p>
        <p class="">{{projet.realisations}}</p>
        <img src="{{asset('uploads/img/')~projet.imgLogo}}" class="img-responsive img">
         <img src="{{asset('uploads/img/')~projet.imgTemplate}}" class="img-responsive img">

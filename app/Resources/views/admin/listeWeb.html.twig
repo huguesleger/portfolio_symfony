@@ -21,7 +21,7 @@
           </tr>
             <td>{{projet.id}}</td>
             <td>{{projet.descriptif}}</td>
-            <td>{{projet.annee}}</td>
+            <td>{{projet.annee|date('d/m/y')}}</td>
             {% if projet.publier ==[1] %}
              <td><i class="fa fa-check"></i></td>
              {% else %}

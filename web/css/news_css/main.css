@@ -686,10 +686,6 @@ input[type=checkbox], input[type=radio] {
   background-color: #f7ab35;
   color: #130c1c; }
 
-.no-publier {
-  background-color: #130c1c;
-  color: #130c1c; }
-
 .fa-camera-retro {
   margin-top: -8px; }
 
@@ -702,6 +698,33 @@ textarea.form-control {
 
 .right {
   float: right; }
+
+.fa-calendar {
+  color: #f7ab35; }
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #130c1c;
+  color: #777; }
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2; }
+
+.confirm {
+  color: #777;
+  opacity: 1;
+  text-shadow: none; }
+  .confirm:hover {
+    color: #f7ab35;
+    opacity: 1; }
 
 a:hover {
   text-decoration: none; }
@@ -836,7 +859,7 @@ logo {
   border-radius: 0;
   border: 0; }
 
-.form-control {
+.form-control-connect {
   display: block;
   width: 100%;
   height: 34px;
@@ -1028,7 +1051,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .btn-projet {
   padding-top: 20px;
   margin-left: 40px;
-  margin-right: 40px; }
+  margin-right: -40px; }
 
 .add-work {
   padding: 20px 0 20px;

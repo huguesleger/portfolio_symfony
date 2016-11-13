@@ -2,8 +2,8 @@
 
 namespace AppBundle\Form;
 
-use AppBundle\Entity\ProjetsDetail;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,13 +17,17 @@ class ProjetsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $d = date('Y-m-d');
         $builder
             ->add('titre')
             ->add('images', FileType::class, array('data_class' => null))
             ->add('descriptif')
              ->add('imgPresentation', FileType::class, array('data_class' => null))
                 ->add('descriptionSociete')
-                ->add('annee')
+                ->add('annee', DateType::class, array(
+                   'widget' => 'single_text',
+                    'input' => 'datetime',
+                   'attr' => ['max' => $d,'min' => '']))
                 ->add('realisations')
                 ->add('imgLogo', FileType::class, array('data_class' => null))
                 ->add('imgTemplate', FileType::class, array('data_class' => null))

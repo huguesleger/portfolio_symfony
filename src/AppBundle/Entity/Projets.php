@@ -93,9 +93,9 @@ class Projets
  
 
     /**
-     * @var string
+     * @var DateTime
      *
-     * @ORM\Column(name="Annee", type="string", length=255)
+     * @ORM\Column(name="Annee", type="date")
      */
     private $annee;
 
