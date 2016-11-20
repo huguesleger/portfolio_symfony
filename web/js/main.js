@@ -57,14 +57,14 @@ $('#home .container-fluid').css( { marginLeft : "15px", marginRight : "15px"} );
 });
 
 
-$(function(){
- var navHeight = $('.project-content').height();
-	$('.nav-add').css('height',navHeight);
-        });
+//$(function(){
+// var navHeight = $('.project-content').height();
+//	$('.nav-add').css('height',navHeight);
+//        });
         
-   $(window).resize(function () {
+   $('.project-content').ready(function () {
         var navHeight = $('.project-content').height();
-	$('.nav-add').css('height',navHeight);
+	$('.nav-add').css('minHeight',navHeight);
     });
 
 

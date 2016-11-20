@@ -33,7 +33,7 @@ class Projets
     /**
      * @var UploadedFile
      *
-     * @ORM\Column(name="Images", type="string", length=512)
+     * @ORM\Column(name="Images", type="string", length=512, nullable=true)
      * @File(mimeTypes={"image/jpeg"})
      */
     private $images;

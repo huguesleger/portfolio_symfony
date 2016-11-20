@@ -65,13 +65,20 @@
                  
               <a href="{{path("form")}}"><p class="txt-nav-add"><i class="icon-add fa fa-desktop"></i>ajouter travaux web</p></a>
             
-              <a href="{{path("formprint")}}"><p class="txt-nav-add"><i class="icon-add fa fa-pencil"></i>ajouter travaux print</p> </a>
-              <a href="{{path("formcaroussel")}}"><p class="txt-nav-add"><i class="icon-add fa fa-picture-o"></i>ajouter img carousel</p> </a>
-              <a href="#"><p class="no-border txt-nav-add"><i class="icon-add fa fa-cloud-download"></i>ajouter img portfolio</p> </a>
+              <a href="{{path("formprint")}}"><p class="txt-nav-add"><i class="icon-add fa fa-pencil"></i>ajouter travaux print</p></a>
+              <a href="{{path("formcaroussel")}}"><p class="txt-nav-add"><i class="icon-add fa fa-picture-o"></i>ajouter img carousel</p></a>
+              <a href="#"><p class="no-border txt-nav-add"><i class="icon-add fa fa-cloud-download"></i>ajouter img portfolio</p></a>
               <h3 class="title-rubrique-nav">Mes Listes</h3>
-              <a href="{{path("listeweb")}}"><p class="txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste travaux web</p> </a>
+              <a href="{{path("listeweb")}}"><p class="txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste travaux web</p></a>
               <a href="#"><p class="txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste travaux print</p></a>
-              <a href="#"><p class="no-border txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste img carousel</p> </a>
+              <a href="#"><p class="no-border txt-nav-add"><i class="icon-add fa fa-bars"></i>Liste img carousel</p></a>
+               <div class="dropdown">
+          <h3 class="title-rubrique-nav dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon Compte<span class="caret"></span></h3>
+          <div class="dropdown-menu">
+              <p class="txt-nav-add"><i class="icon-add fa fa-user"></i>bonjour {{(app.user.name)}}</p>
+            <a href="{{path("editUser",{"id":app.user.id})}}"><p class="no-border txt-nav-add"><i class="icon-add fa fa-pencil-square-o"></i>Modifier infos</p></a>
+          </div>
+        </div>
               
               
               </div> 

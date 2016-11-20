@@ -255,7 +255,8 @@ input[type=checkbox], input[type=radio] {
     width: 250px;
     background-color: #130c1c;
     position: absolute;
-    
+    height: auto;
+    min-height: 1100px;
 /*    border-top: 2px solid #fff;*/
 }
 
@@ -348,6 +349,9 @@ textarea.form-control {
     color: #f7ab35;
 }
 
+.fa-user{
+    color: #5cb85c;
+}
 
     .modal-header {
     padding: 15px;
@@ -375,4 +379,34 @@ textarea.form-control {
         color: #f7ab35;
         opacity: 1;
     }
+    }
+  .dropdown-menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 250px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
 }
+
+.caret {
+    margin-left: 10px;
+    border-top: 6px dashed;
+    border-top: 6px solid\9;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+

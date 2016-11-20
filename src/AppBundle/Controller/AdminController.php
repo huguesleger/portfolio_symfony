@@ -127,14 +127,16 @@ class AdminController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
         $niouzes = $em->find('AppBundle:Projets', $id);
         $f = $this->createForm(ProjetsType::class, $niouzes);
-       
         
         
-        
+            //on lie le formulaire temporaire avec les valeurs de la requete de type post
+            //en gros on se retrouve avec un fork de notre formulaire en local ;) 
+     
         //on renvoie le formulaire dans la vue
         return array("formNews" => $f->createView(), "id"=>$id);
-    }
-    
+     }
+     
+        
     /**
      *@Route("/admin/delate{id}", name="delate")
      */
@@ -163,7 +165,7 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()).".".$niouzes->getImages()->getClientOriginalExtension();
             $niouzes->getImages()->move('uploads/img', $nomDuFichier);
             $niouzes->setImages($nomDuFichier);
-            
+           
             $nomDuFichier = md5(uniqid()).".".$niouzes->getImgPresentation()->getClientOriginalExtension();
             $niouzes->getImgPresentation()->move('uploads/img', $nomDuFichier);
             $niouzes->setimgPresentation($nomDuFichier);
@@ -624,7 +626,12 @@ return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Proje
      * @Template(":admin:listeWeb.html.twig");
      */
     public function listeProjets(){
-        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findAll());
+         $em = $this->getDoctrine()->getEntityManager();
+        $rsm = new ResultSetMappingBuilder($em);
+        $rsm->addRootEntityFromClassMetadata('AppBundle:Projets', 'projets');
+        $query = $em->createNativeQuery("select * from projets ORDER BY annee DESC", $rsm);
+        $project = $query->getResult();
+        return array ('projects' => $project); 
     }
     
     
