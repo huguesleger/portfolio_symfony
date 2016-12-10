@@ -8,8 +8,10 @@
      <title>Welcome!</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/bootstrap-datepicker3.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
+        
   </head>
 
     <body>
@@ -17,7 +19,7 @@
 <div id="container">
 
     <div class="navbar-admin">
-   <nav class="navbar navbar-default">
+   <nav class="navbar navbar-default admin">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
   
@@ -30,7 +32,7 @@
         <li><a href="{{path('projects')}}">travaux web</a></li>
         <li><a href="{{path('projectsprint')}}">travaux print</a></li>
         <li><a href="#">portfolio</a></li>
-        <li><a href="{{path("loginOut")}}">déconnexion</a></li>
+        <li><a class="connect" href="{{path("loginOut")}}">déconnexion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -75,13 +77,11 @@
                <div class="dropdown">
           <h3 class="title-rubrique-nav dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon Compte<span class="caret"></span></h3>
           <div class="dropdown-menu">
-              <p class="txt-nav-add"><i class="icon-add fa fa-user"></i>bonjour {{(app.user.name)}}</p>
-            <a href="{{path("editUser",{"id":app.user.id})}}"><p class="no-border txt-nav-add"><i class="icon-add fa fa-pencil-square-o"></i>Modifier infos</p></a>
+              <p class="txt-nav-add"><i class="icon-add fa fa-user"></i>Bonjour {{(app.user.name)}}</p>
+            <a href="{{path("editUser",{"id":app.user.id})}}"><p class="no-border txt-nav-add"data-toggle="modal" data-target="#myModal"><i class="icon-add fa fa-pencil-square-o"></i>Gestion du compte</p></a>
           </div>
         </div>
-              
-              
-              </div> 
+
       {% endblock %}
       </div><!--fin site-->
       
@@ -90,13 +90,13 @@
       
       {% block body %}
           
-                
-       
-          
-         
     {% endblock %}
+    
+    
+
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
+          <script type="text/javascript" src="{{asset('./js/bootstrap-datepicker.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
 
 </body>

@@ -1,3 +1,5 @@
+@import "_variable.scss";
+
 @media screen and(min-width: 769px){
 .main-icon{
   z-index: 2000;
@@ -7,7 +9,7 @@
   transition: transform 0.5s;
   width: 54px;
   height: 54px;
-  background-color: rgba(19, 12, 28, 1);
+  background-color: $violet;
   border-radius: 50%;
   cursor: pointer;
   right: 50px;
@@ -87,7 +89,7 @@
   transition: transform 0.5s;
   width: 44px;
   height: 44px;
-  background-color: rgba(19, 12, 28, 1);
+  background-color: $violet;
   border-radius: 50%;
   cursor: pointer;
   right: 20px;
@@ -163,59 +165,139 @@
 
 .push-main {
     height: 100%;
-    width: 100%;
+    width: 50%;
     position: fixed;
     z-index: 5;
     top: 0;
     left:0;
-    background-color: rgba(19, 12, 28, 0.97);
+    background-color: rgba(19, 12, 28, 1);
     overflow-x: hidden;
     padding-top: 60px;
     text-align:center;
     display: none;
-    transition: height 0.9s;
+    transition:  0.5s;
+
 
 }
 .is-open-test{
-transition: height 0.9s;
+transition:  0.5s;
 height: 105%;
-width: 100%;
+width: 50%;
+overflow: hidden;
+
+}
+
+@media screen and(min-width: 300px)and(max-width: 767px){
+    .push-main {
+    width: 100%;
+    }
+
 }
 
 
 .navbar {
     margin-bottom: 8px;
+
 }
 
-.navbar-default{
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-}
 .navbar-default {
   background-color: transparent;
   border: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.navbar-default.admin {
+  margin-top: 10%;
 }
 
 
 .navbar-default .navbar-nav > li > a {
   color: #818181;
   transition: 0.3s;
+  font-size: 35px;
+}
+
+.navbar-default.admin .navbar-nav > li > a {
+  color: #818181;
+  transition: 0.3s;
   font-size: 22px;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #130C1B;
-  background-color: #818181;
+
+.connect{
+    background-color: #c9302c;
+}
+
+.btn-print{
+     transition: 0.4s;
+    &:hover{
+        background-color: rgba(46, 204, 113, 0.3);
+         transition: 0.4s;
+    }
+}
+
+.btn-work{
+     transition: 0.4s;
+    &:hover{
+        background-color: rgba(27, 163, 156, 0.3);
+         transition: 0.4s;
+    }
+}
+
+.btn-portfolio{
+     transition: 0.4s;
+    &:hover{
+        background-color: rgba(231, 76, 60, 0.3);
+         transition: 0.4s;
+    }
+}
+
+.btn-moi{
+     transition: 0.4s;
+    &:hover{
+        background-color: rgba(27, 163, 156, 0.3);
+         transition: 0.4s;
+    }
+}
+
+.btn-contactmoi{
+     transition: 0.4s;
+    &:hover{
+        background-color: rgba(247, 171, 53, 0.3);
+         transition: 0.4s;
+    }
+}
+
+.navbar-default.admin .navbar-nav .connect {
+    color: #fff;
+    &:hover{
+        color: $violet;
+    }
+}
+
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: $violet;
+/*  background-color: rgba(255, 255, 255, 0.2);*/
   transition: 0.3s;
 }
+
+.navbar-default .navbar-nav > li > a:focus {
+    color: #818181;
+}
+
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 5px 15px;
+/*    padding: 5px 15px;*/
+    padding-top: 40px;
+    padding-bottom: 40px;
     transition: 0.3s;
     &:hover, &:focus{
-    padding: 15px 15px ;
-    transition: 0.3s;
+/*    padding: 15px 15px ;*/
+    transition: 0.3s; 
     }
 }
+
+

@@ -31,10 +31,10 @@
 
 }
 @media screen and(min-width: 769px){
-.opaque{
+/*.opaque{
   margin-top: 4.90%;
   padding-top: 60px;
-  padding-bottom: 50px;
+  padding-bottom: 58px;
   top: 0;
   left: 6%;
   position: absolute;
@@ -53,37 +53,13 @@
     text-transform: capitalize;
     font-weight: 500;
   }
-}
+}*/
 .tif h2{
     width: 160px;
 }
 }
-@media screen and(min-width: 300px)and(max-width: 768px){
-  .opaque{
-    margin-top: 4%;
-    padding-top: 60px;
-    top: 0;
-    left: 6%;
-    position: absolute;
-    width: 30%;
-    height: 91%;
-    background-color: rgba(255, 255, 255, 0.5);
-    p{
-      padding-left: 5px;
-      font-size: 15px;
-      margin-top: -10px;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-    }
-    .txt-bienvenue{
-      font-size: 20px;
-      text-transform: capitalize;
-      font-weight: 500;
-    }
-  }
 
-}
+
 .present{
   float: left;
   margin-left: 70px;
@@ -281,13 +257,116 @@ margin-top: 20px;
     border-radius: 50%;
 }
 
-
-.icon-me{
+/*.icon-me{
     display: flex;
     justify-content: center;
     margin-top: 250px;
-}
+}*/
+
 
 .icon-me img{
     margin-left: 20px;
+}
+
+@media screen and(min-width: 300px)and(max-width: 767px){
+.icon-me{
+   display: none;
+}
+
+
+.icon-me img{
+    margin-left: 20px;
+}
+}
+
+
+
+
+
+.icon-connect{
+    position: absolute;
+    float: left;
+    top: 40px;
+    margin-left: 20px;
+}
+
+@media screen and(min-width: 300px)and(max-width: 767px){
+.anim-title{
+display: none;
+.icon-me{
+display: none;
+}
+}
+}
+
+@media screen and(min-width: 768px)and(max-width: 1023px){
+.anim-title{
+position: absolute;
+top: 0%;
+left: 10%;
+font-size: 25px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+background-color: rgba(255, 255, 255, 0.5);
+height: 100%;
+padding-top: 30px;
+padding-left: 3%;
+padding-right: 3%;
+.icon-me img{
+padding-top: 0px;
+width: 40px;
+height: 40px;
+}
+}
+.icon-me img.grafflogo{
+    width: 60px;
+    height: 40px;
+}
+}
+
+@media screen and(min-width: 1024px)and(max-width: 1219px){
+.anim-title{
+position: absolute;
+top: 0%;
+left: 10%;
+font-size: 30px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+background-color: rgba(255, 255, 255, 0.5);
+height: 100%;
+padding-top: 30px;
+padding-left: 3%;
+padding-right: 3%;
+.icon-me img{
+padding-top: 0px;
+width: 60px;
+height: 60px;
+}
+}
+.icon-me img.grafflogo{
+    width: 80px;
+    height: 60px;
+}
+}
+
+@media screen and(min-width: 1220px){
+.anim-title{
+position: absolute;
+top: 0%;
+left: 10%;
+font-size: 45px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+background-color: rgba(255, 255, 255, 0.5);
+height: 100%;
+padding-top: 30px;
+padding-left: 3%;
+padding-right: 3%;
+.icon-me{
+padding-top: 20px;
+}
+}
 }

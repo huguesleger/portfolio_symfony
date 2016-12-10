@@ -16,24 +16,36 @@
     <body>
 <div id="container">
  <div class="container-fluid">
-<a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+     {% if is_granted("ROLE_ADMIN") %}
+<i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+{% else %}
+    <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+    {% endif %}
     <div class="main-icon">
       <span></span>
     </div>
  </div>
 
+{#<div class="type-js headline">
+    <h1 class="text-js">Color Your Life</h1>
+</div>#}
 
-    <div id="pushMain" class="push-main is-open-test">
-          <div class="logo">
+<div class="big-logo">
+    <img src="{{asset('images/big-logoX2.png')}}"></a>
+</div>
+
+
+    <div id="pushMain" class="push-main">
+         {# <div class="logo">
           <img src="{{asset('images/minlogo-hl.png')}}"></a>
-        </div>
+        </div>#}
           <nav class="navbar navbar-default">
             <ul class="nav navbar-nav">
-              <li><a href="{{path('travauxweb')}}" class="">Travaux Web</a></li>
-              <li><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">A Propos</a></li>
-              <li class="mail"><a href="#">Contact</a></li>
+              <li class="col-sm-12 col-md-12 btn-work"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
+              <li class="col-sm-12 col-md-12 btn-print"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
+              <li class="col-sm-12 col-md-12 btn-portfolio"><a href="#">Portfolio</a></li>
+              <li class="col-sm-12 col-md-12 btn-moi"><a href="#">A Propos</a></li>
+              <li class="mail col-sm-12 col-md-12 btn-contactmoi"><a href="#">Contact</a></li>
             </ul>
           </nav>
        
@@ -104,13 +116,26 @@
   </a>
          
 </div>
+             <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="550ms">
+        <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="650ms">web design</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="850ms">dév web</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1050ms">graphisme</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1250ms">illustration</p>
+               <div class="icon-me">
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1550ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1650ms" src="{{ asset('./images/deglingos.png') }}"/>
+                <img class="grafflogo animated wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1750ms" src="{{ asset('./images/logo-pale.png') }}"/>
+            
+    </div>
+    
+  </div>
       </div>  
     
-      
-    <div class="opaque">
+    </div>
+    {#<div class="opaque">
       <p class="txt-bienvenue">welcome :)</p><br>
       <p>web design</p>
-      <p>développement</p>
+      <p>dév web</p>
       <p>graphisme</p>
       <p>illustration</p>
          <div class="icon-me">
@@ -118,8 +143,9 @@
                 <img src="{{ asset('./images/deglingos.png') }}"/>
                 <img src="{{ asset('./images/logo-pale.png') }}"/>
             </div>
-  </div>
-  </div>
+  </div>#}
+    
+
 
 </section>
     
@@ -271,8 +297,10 @@
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
         {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
+
          
         {% endblock %}
 </body>

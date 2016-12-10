@@ -34,10 +34,10 @@
              {% if projet.publier ==[1] %}
            
             {% else %}
-                <a class="btn btn-success" href="{{path("publiweb",{"id":projet.id})}}"data-confirm="Tes sur de vouloir publier?">publier</a>
+                <a class="btn btn-success" href="{{path("publiweb",{"id":projet.id})}}"data-confirm="Tes sur de vouloir publier {{projet.titre}} ?">publier</a>
                  {% endif %}
            {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
-            <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}"data-confirm="Tes sur de vouloir supprimer?">Supprimer</a>
+            <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}"data-confirm="Tes sur de vouloir supprimer {{projet.titre}} ?">Supprimer</a>
             </div>
                        
     </div>

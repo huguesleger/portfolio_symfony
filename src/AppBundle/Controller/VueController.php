@@ -62,6 +62,7 @@ class VueController extends Controller {
      * @Template(":site:connexion.html.twig");
      */
     public function Connexion(){
-        
-    }
+
+  }
+    
 }

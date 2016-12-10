@@ -32,6 +32,7 @@ class LoginController extends Controller {
      */
     public function check() {
         throw new Exception('Verifiez votre fichier security');
+        
     }
     /**
      * idem déconnexion
@@ -112,8 +113,8 @@ $uzer->setPass($password);
         }
        
        }
-
-    
+       
+      
     
     
 }

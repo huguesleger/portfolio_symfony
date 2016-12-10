@@ -9,8 +9,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
+     /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -18,12 +19,12 @@ class UserType extends AbstractType
                 ->add('name')
                 ->add('pass')
                 ->add('roles')
-                ->add('envoyer', SubmitType::class);
+                ->add('enregistrer', SubmitType::class);
                 
     }
     
-    /**
-     * {@inheritdoc}
+      /**
+     * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -32,8 +33,8 @@ class UserType extends AbstractType
         ));
     }
 
-    /**
-     * {@inheritdoc}
+     /**
+     * @param OptionsResolver $resolver
      */
     public function getBlockPrefix()
     {
