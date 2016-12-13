@@ -246,7 +246,7 @@ class ProjetsPrint
         return $this->descriptionImg3;
     }
 
-    function setImage1(UploadedFile $image1) {
+    function setImage1($image1) {
         $this->image1 = $image1;
     }
 
@@ -254,7 +254,7 @@ class ProjetsPrint
         $this->technique = $technique;
     }
 
-    function setImage2(UploadedFile $image2) {
+    function setImage2($image2) {
         $this->image2 = $image2;
     }
 
@@ -262,7 +262,7 @@ class ProjetsPrint
         $this->descriptionImg2 = $descriptionImg2;
     }
 
-    function setImage3(UploadedFile $image3) {
+    function setImage3($image3) {
         $this->image3 = $image3;
     }
 

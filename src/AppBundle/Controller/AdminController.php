@@ -236,6 +236,20 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()).".".$niouzes->getImages()->getClientOriginalExtension();
             $niouzes->getImages()->move('uploads/img', $nomDuFichier);
             $niouzes->setImages($nomDuFichier);
+            
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImage1()->getClientOriginalExtension();
+            $niouzes->getImage1()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImage1($nomDuFichier);
+            
+             
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImage2()->getClientOriginalExtension();
+            $niouzes->getImage2()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImage2($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImage3()->getClientOriginalExtension();
+            $niouzes->getImage3()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImage3($nomDuFichier);
             //Partie persistance des données ou l'on sauvegarde notre news en base de données
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($niouzes);
@@ -291,6 +305,19 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()).".".$niouzes->getImages()->getClientOriginalExtension();
             $niouzes->getImages()->move('uploads/img', $nomDuFichier);
             $niouzes->setImages($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImage1()->getClientOriginalExtension();
+            $niouzes->getImage1()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImage1($nomDuFichier);
+            
+             
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImage2()->getClientOriginalExtension();
+            $niouzes->getImage2()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImage2($nomDuFichier);
+            
+            $nomDuFichier = md5(uniqid()).".".$niouzes->getImage3()->getClientOriginalExtension();
+            $niouzes->getImage3()->move('uploads/img', $nomDuFichier);
+            $niouzes->setImage3($nomDuFichier);
             //Partie persistance des données ou l'on sauvegarde notre news en base de données
             $em = $this->getDoctrine()->getEntityManager();
             $em->merge($niouzes);

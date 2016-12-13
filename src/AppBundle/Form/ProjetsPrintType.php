@@ -25,11 +25,11 @@ class ProjetsPrintType extends AbstractType
                 ->add('image2', FileType::class, array('data_class' => null))
                 ->add('descriptionImg2')
                 ->add('image3', FileType::class, array('data_class' => null))
-                -add('descriptionImg3')
+                ->add('descriptionImg3')
                 ->add('liens')
                 ->add('publier')
                 
-                ->add('save', SubmitType::class)
+                ->add('sauvegarder', SubmitType::class)
                 ;
     }
     

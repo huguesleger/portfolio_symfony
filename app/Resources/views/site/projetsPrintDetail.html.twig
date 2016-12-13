@@ -1,0 +1,36 @@
+{% extends ":site:index.html.twig"%}
+
+{% block section %}
+
+  {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  <li><a href="{{path('travauxweb')}}">Travaux Print</a></li>
+  <li class="active">Détail</li>
+</ol>{% endblock %}
+    
+      
+       {% for projetprint in projectsprint %}
+      <div class="col-sm-6 col-md-12">
+    <div class="detail-work">
+        <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive img col-md-5">
+      <h2 class="">{{projetprint.titre}}</h2>
+      <p class="">{{projetprint.description}}</p>
+      <a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>
+      <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive img col-md-5">
+      <p class="">{{projetprint.technique}}</p>
+      <img src="{{asset('uploads/img/')~projetprint.image2}}" class="img-responsive img col-md-5">
+      <p class="">{{projetprint.descriptionImg2}}</p>
+      <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive img col-md-5">
+       <p class="">{{projetprint.descriptionImg3}}</p>
+      
+      </div>
+    </div>
+    
+ 
+ {% endfor %}
+  </div>
+
+
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}
