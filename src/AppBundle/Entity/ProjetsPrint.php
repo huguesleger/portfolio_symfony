@@ -52,7 +52,56 @@ class ProjetsPrint
      */
     private $liens;
 
-
+    
+    /**
+     * @var UploadedFile
+     *
+     * @ORM\Column(name="Image1", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
+     */
+    private $image1;
+    
+ 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Technique", type="string", length=512)
+     */
+    private $technique;
+    
+     /**
+     * @var UploadedFile
+     *
+     * @ORM\Column(name="Image2", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
+     */
+    private $image2;
+    
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DescriptionImg2", type="text")
+     */
+    private $descriptionImg2;
+    
+    
+    
+     /**
+     * @var UploadedFile
+     *
+     * @ORM\Column(name="Image3", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
+     */
+    private $image3;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="DescriptionImg3", type="text")
+     */
+    private $descriptionImg3;
+    
      /**
      * @var bool
      * @ORM\Column(name="Publier", type="boolean") 
@@ -171,5 +220,56 @@ class ProjetsPrint
     {
         return $this->liens;
     }
+    
+    
+    function getImage1() {
+        return $this->image1;
+    }
+
+    function getTechnique() {
+        return $this->technique;
+    }
+
+    function getImage2() {
+        return $this->image2;
+    }
+
+    function getDescriptionImg2() {
+        return $this->descriptionImg2;
+    }
+
+    function getImage3() {
+        return $this->image3;
+    }
+
+    function getDescriptionImg3() {
+        return $this->descriptionImg3;
+    }
+
+    function setImage1(UploadedFile $image1) {
+        $this->image1 = $image1;
+    }
+
+    function setTechnique($technique) {
+        $this->technique = $technique;
+    }
+
+    function setImage2(UploadedFile $image2) {
+        $this->image2 = $image2;
+    }
+
+    function setDescriptionImg2($descriptionImg2) {
+        $this->descriptionImg2 = $descriptionImg2;
+    }
+
+    function setImage3(UploadedFile $image3) {
+        $this->image3 = $image3;
+    }
+
+    function setDescriptionImg3($descriptionImg3) {
+        $this->descriptionImg3 = $descriptionImg3;
+    }
+
+
 }
 

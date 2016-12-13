@@ -1,7 +1,7 @@
 /*changer theme du site*/
 @media screen and (min-width: 769px) {
   .main-icon {
-    z-index: 2000;
+    z-index: 5000;
     margin-top: 20px;
     margin-right: 0px;
     position: fixed;
@@ -193,12 +193,16 @@
 
 .navbar-default .navbar-nav > li > a:hover {
   color: #130c1c;
-  /*  background-color: rgba(255, 255, 255, 0.2);*/
   transition: 0.3s; }
 
-.navbar-default .navbar-nav > li > a:focus {
-  color: #818181; }
+.navbar-default.admin .navbar-nav > li > a:hover {
+  color: #130c1c;
+  background-color: #818181;
+  transition: 0.3s; }
 
+/*.navbar-default .navbar-nav > li > a:focus {
+    color: #818181;
+}*/
 .nav > li > a {
   position: relative;
   display: block;
@@ -308,7 +312,8 @@
     background-attachment: fixed;*/
   /*  padding-top: 50px;*/
   padding-bottom: 50px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
 
 .title-services {
   position: relative;
@@ -344,7 +349,7 @@
   padding-top: 0;
   color: #333;
   text-align: center;
-  z-index: 1000;
+  z-index: 5;
   color: #fff; }
 
 .icon-services {
@@ -366,9 +371,9 @@
   text-align: center; }
 
 .carousel-control {
-  z-index: 2;
   font-size: 50px;
-  text-shadow: none; }
+  text-shadow: none;
+  z-index: 2; }
   .carousel-control:hover {
     opacity: 0.5; }
 
@@ -395,7 +400,6 @@
   position: absolute;
   top: 50%;
   margin-top: -10px;
-  z-index: 5;
   display: inline-block; }
 
 .carousel-control .icon-prev,
@@ -997,7 +1001,7 @@ Left pointing
   display: none;
   z-index: 6000; }
 
-body.color {
+.color {
   background-color: #f7ab35;
   -webkit-animation: color 8s ease-in  0s infinite alternate running;
   -moz-animation: color 8s linear  0s infinite alternate running;

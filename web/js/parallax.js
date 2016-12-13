@@ -15,4 +15,3 @@ var options = {
 };
 var particleCanvas = new ParticleNetwork(canvasDiv, options);
 
-

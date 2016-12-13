@@ -2,7 +2,8 @@
 
 .carousel {
   margin-top: 40px;
-    position: relative;
+  position: relative;
+
 }
 
 
@@ -13,8 +14,6 @@
 
  .carousel img{
   overflow-y: hidden;
-
-
 }
 
 .navbar-brand {
@@ -119,6 +118,7 @@ margin-top: 20px;
 /*  padding-top: 50px;*/
   padding-bottom: 50px;
   margin-bottom: 50px;
+  position: relative;
   
 }
 
@@ -159,7 +159,7 @@ margin-top: 20px;
   padding-top: 0;
   color: #333;
   text-align: center;
-  z-index: 1000;
+  z-index: 5;
   color: #fff;
 }
 
@@ -179,9 +179,9 @@ margin-top: 20px;
  }
 
 .carousel-control {
-    z-index: 2;
     font-size: 50px;
     text-shadow: none;
+    z-index: 2;
     &:hover{
         opacity: 0.5;
     }
@@ -212,7 +212,6 @@ margin-top: 20px;
   position: absolute;
   top: 50%;
   margin-top: -10px;
-  z-index: 5;
   display: inline-block;
 }
 .carousel-control .icon-prev,

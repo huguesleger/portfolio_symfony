@@ -7,12 +7,13 @@
   <li><a href="{{path('travauxweb')}}">Travaux Web</a></li>
   <li class="active">Détail</li>
 </ol>{% endblock %}
-    <div class="container">
+    
       
        {% for projet in projects %}
       <div class="col-sm-6 col-md-12">
     <div class="detail-work">
        <img src="{{asset('uploads/img/')~projet.imgPresentation}}" class="img-responsive img">
+       <div class="container">
         <h2 class="">{{projet.descriptionSociete}}</h2>
      <p class="">{{projet.titre}}</p>
       <p class="">{{projet.annee|date('d/m/y')}}</p>

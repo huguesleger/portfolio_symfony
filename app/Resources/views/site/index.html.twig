@@ -90,11 +90,11 @@
       
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  {#<ol class="carousel-indicators">
+  <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol> #}
+  </ol> 
 
     <div class="carousel-inner" role="listbox">
         {% for projetcaroussel in projectscaroussel[0:] %}
@@ -106,14 +106,14 @@
       </div>
            {% endfor %} 
          <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+ {# <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="fa fa-angle-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="fa fa-angle-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </a>#}
          
 </div>
              <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="550ms">
@@ -124,7 +124,7 @@
                <div class="icon-me">
                 <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1550ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
                 <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1650ms" src="{{ asset('./images/deglingos.png') }}"/>
-                <img class="grafflogo animated wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1750ms" src="{{ asset('./images/logo-pale.png') }}"/>
+                <img class="grafflogo wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1750ms" src="{{ asset('./images/logo-pale.png') }}"/>
             
     </div>
     
@@ -296,8 +296,9 @@
 
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
+       <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
-        <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
+        
         {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
 

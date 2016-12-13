@@ -2,7 +2,7 @@
 
 @media screen and(min-width: 769px){
 .main-icon{
-  z-index: 2000;
+  z-index: 5000;
   margin-top: 20px;
   margin-right: 0px;
   position: fixed;
@@ -279,13 +279,18 @@ overflow: hidden;
 
 .navbar-default .navbar-nav > li > a:hover{
   color: $violet;
-/*  background-color: rgba(255, 255, 255, 0.2);*/
   transition: 0.3s;
 }
 
-.navbar-default .navbar-nav > li > a:focus {
-    color: #818181;
+.navbar-default.admin .navbar-nav > li > a:hover{
+  color: $violet;
+  background-color: #818181;
+  transition: 0.3s;
 }
+
+/*.navbar-default .navbar-nav > li > a:focus {
+    color: #818181;
+}*/
 
 .nav>li>a {
     position: relative;

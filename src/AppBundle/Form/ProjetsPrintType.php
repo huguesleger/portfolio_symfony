@@ -20,8 +20,15 @@ class ProjetsPrintType extends AbstractType
                 ->add('titre')
                 ->add('description')
                 ->add('images', FileType::class, array('data_class' => null))
+                ->add('image1', FileType::class, array('data_class' => null))
+                ->add('technique')
+                ->add('image2', FileType::class, array('data_class' => null))
+                ->add('descriptionImg2')
+                ->add('image3', FileType::class, array('data_class' => null))
+                -add('descriptionImg3')
                 ->add('liens')
                 ->add('publier')
+                
                 ->add('save', SubmitType::class)
                 ;
     }
