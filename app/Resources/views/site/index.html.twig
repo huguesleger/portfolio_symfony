@@ -8,9 +8,9 @@
     <title>{% block title %}HL Developerz{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
-           <link rel="stylesheet" type="text/css" href="{{asset('./css/animate.css')}}"/>
+         <link rel="stylesheet" type="text/css" href="{{asset('./css/animate.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
   </head>
 
     <body>
@@ -33,6 +33,7 @@
 <div class="big-logo">
     <img src="{{asset('images/big-logoX2.png')}}"></a>
 </div>
+
 
 
     <div id="pushMain" class="push-main">
@@ -85,17 +86,30 @@
 
 {% block section %}
     {% block ariane %}{% endblock %}
+
        <section id="home">
     <div class="container-fluid">
       
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
+{#  <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol> 
-
+  </ol> #}
+  <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="550ms">
+        <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="650ms">web design</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="850ms">dév web</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1050ms">graphisme</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1250ms">illustration</p>
+               <div class="icon-me">
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1550ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1650ms" src="{{ asset('./images/deglingos.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1750ms" src="{{ asset('./images/logo-pale.png') }}"/>
+            
+    </div>
+    
+  </div>
     <div class="carousel-inner" role="listbox">
         {% for projetcaroussel in projectscaroussel[0:] %}
       
@@ -106,29 +120,17 @@
       </div>
            {% endfor %} 
          <!-- Controls -->
- {# <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
     <span class="fa fa-angle-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  <a class="right carousel-control" data-target="#carousel-example-generic" role="button" data-slide="next">
     <span class="fa fa-angle-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>#}
+  </a>
          
 </div>
-             <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="550ms">
-        <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="650ms">web design</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="850ms">dév web</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1050ms">graphisme</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1250ms">illustration</p>
-               <div class="icon-me">
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1550ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1650ms" src="{{ asset('./images/deglingos.png') }}"/>
-                <img class="grafflogo wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1750ms" src="{{ asset('./images/logo-pale.png') }}"/>
-            
-    </div>
-    
-  </div>
+           
       </div>  
     
     </div>
@@ -196,8 +198,9 @@
 
     
 <div class="container-fluid">
+    
 <section class="services">
- <div id="particle-canvas">  
+<div id="particle-canvas">
 <div class="container">
   <div class="title-services">
     <h1>mes services</h1>
@@ -272,9 +275,12 @@
 
   </div>
 </div>
-     </div> 
+
+</div>
 </section>
-</div>    
+
+</div>
+   
     
 
 {% endblock %}
@@ -296,14 +302,13 @@
 
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
-       <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
-        
         {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
-
-         
         {% endblock %}
+        <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
+        
+       
 </body>
 
 </html>

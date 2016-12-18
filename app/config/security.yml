@@ -20,8 +20,8 @@ security:
             # important !!! renseignez le provider a utiliser !
             provider: gestionUser
             form_login:
+                login_path: connexion
                 check_path: loginCheck
-                login_path: login
                 default_target_path: admin
             logout:
                 path: loginOut

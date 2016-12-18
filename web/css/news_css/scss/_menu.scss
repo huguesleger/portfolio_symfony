@@ -161,7 +161,19 @@
 }
 }
 
+.navbar-brand {
 
+    float: left;
+    height: 50px;
+    padding: 15px 45px;
+    font-size: 18px;
+    line-height: 65px;
+    color: #000;
+    &:hover{
+      color: #000;
+    }
+
+}
 
 .push-main {
     height: 100%;

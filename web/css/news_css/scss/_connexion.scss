@@ -10,13 +10,16 @@
 
 }
 
-
-logo{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 20px;
+.logo{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  opacity: 0.5;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
+
+
 
 .title{
     color: #fff;

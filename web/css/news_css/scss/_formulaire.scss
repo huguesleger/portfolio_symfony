@@ -1,0 +1,70 @@
+/*------------formulaire-admin---------------*/
+
+.bg-form{
+    padding-top: 0;
+    padding-bottom: 50px;
+    background-color: #F2F1EF;
+    width: 100%;
+    height: auto;
+}
+
+input[type=checkbox], input[type=radio] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    height: 30px;
+    width: 100px;
+    
+}
+
+.title-header {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0px 0 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    background-color: #fff;
+}
+
+
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #130c1c;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 156px;
+}
+
+.publier{
+
+  background-color: #f7ab35;
+  color: #130c1c;
+}
+
+.fa-camera-retro{
+    margin-top: -8px;
+}
+
+.title-form{
+    margin-left: -18px;
+
+}
+
+textarea.form-control {
+    min-height: 180px;
+    resize: none;
+}
+
+.right{
+    float: right;
+}
+
+.fa-calendar{
+    color: #f7ab35;
+}
