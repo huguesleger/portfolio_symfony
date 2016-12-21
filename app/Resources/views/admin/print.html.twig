@@ -1,0 +1,40 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+    
+            
+      
+         <div class="project-content">   
+   <div class="container project">
+        <div class="row">
+       {% for projetprint in projectsprint %}
+   
+      <div class="col-sm-6 col-md-12">
+      <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive img col-md-5">
+      <h2 class="">{{projetprint.titre}}</h2>
+      <p class="">{{projetprint.description}}</p>
+      <a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>
+      <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive img col-md-5">
+      <p class="">{{projetprint.technique}}</p>
+      <img src="{{asset('uploads/img/')~projetprint.image2}}" class="img-responsive img col-md-5">
+      <p class="">{{projetprint.descriptionImg2}}</p>
+      <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive img col-md-5">
+       <p class="">{{projetprint.descriptionImg3}}</p>
+     
+    
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modifprint",{"id":projetprint.id})}}">Modifier</a>
+            <a class="btn btn-success" href="{{path("publiprint",{"id":projetprint.id})}}">publier</a>
+            {#<a class="btn btn-warning" href="{{path("suppprint",{"id":projetprint.id})}}">Enlever</a>#}
+            <a class="btn btn-danger" href="{{path("delateprint",{"id":projetprint.id})}}">Supprimer</a>
+            </div>
+    </div>
+  
+
+
+ 
+ {% endfor %}
+ </div>
+   </div>
+</div>
+{% endblock%}

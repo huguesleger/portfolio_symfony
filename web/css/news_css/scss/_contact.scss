@@ -1,0 +1,62 @@
+/*------formulaire------------*/
+
+#form-contact{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+       
+}
+
+.form-content{
+    background-color:rgba(247, 171, 53,1);
+}
+.contact-form {
+  position: relative;
+  margin-top: 90px;
+}
+
+.form-control-mail {
+  color: #000;
+  height:90px;
+  font-size: 35px;
+  box-shadow: inset 0 1px 0  rgba(0, 0, 0, .195);
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+}
+.form-control-mail:focus{
+box-shadow: inset 0 1px 0  rgba(0, 0, 0, .035);
+}
+
+.form-group-mail {
+    margin-bottom: 10px;
+}
+
+
+textarea.form-control-mail {
+    min-height: 160px;
+    resize: none;
+}
+
+/*------btn-envoyer------------*/
+.envoyer{
+    margin-top: 0px;
+  padding-bottom: 10px;
+  
+}
+
+textarea, input.form-control-mail{
+    outline: 0;
+    width: 70%;
+    
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+
+.contact-me{
+ font-size: 12px;
+ margin-top: 21%;
+ color:rgba(247, 171, 53,1);
+}
+

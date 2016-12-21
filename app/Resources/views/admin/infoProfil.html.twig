@@ -1,0 +1,105 @@
+{%extends ":admin:index.html.twig"%}
+
+
+
+{% block body %}
+   {# <div class="titre-connexion">
+        <h1>Mon compte </h1>
+    </div>#}
+{#  <div class="triangle-left"></div>#}
+        {#<div class="container monCompte">
+           
+                            <div class="row">
+   <div class="col-sm-8 col-md-8 col-md-offset-1">
+                    <h2 class="infoProfil">Gestion du compte
+                    <img src="{{ asset('./images/deglingos.png') }}" alt="..." class="img-circle"></h2> 
+                    
+                    
+                    <a><p class="info-compte"data-toggle="modal" data-target="#myModal">info du compte<i class="icon-add fa fa-list"></i></p></a>#}
+                    
+                
+                  
+              
+                  {#  <p class="nom">Mon nom d'utilisateur : {{(app.user.name)}} <a class="modif-compte" href="">
+    <i class="fa fa-thumbs-o-up"></i>
+  </a></p>#}
+
+                    
+                    
+        {#        <div class="col-sm-8 col-md-8 col-md-offset-1 thumbnail thumbInfo">
+                    <h2 class="infoProfil">Modifier mes informations</h2>
+
+                    {{form_start(formUser,{'attr':{'action':path('modifUser',{'id':id}),'enctype':'multipart/form-data'}})}}
+                    <div class="input-group champ">
+                        <span class="input-group-addon" >Nom</span>
+                        {{ form_widget(formUser.name, { 'attr': {'class': 'form-control'} })}}
+                    </div>
+                  
+                    <div class="input-group champ">
+                        <span class="input-group-addon">Mot de passe</span>
+                        <input type="password"{{ form_widget(formUser.pass, { 'attr': {'class': 'form-control'} })}}
+                    </div>
+                 
+                    <div class="boutonCompte">
+                        {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
+                    </div>
+                </div> 
+            </div>#}
+        
+        
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close confirm" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title" id="myModalLabel">Info du compte</h2>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-12">
+                  <img src="{{ asset('./images/biglogo-hl.png') }}" alt="..." class="logo-compte">
+       {{form_start(formUser,{'attr':{'action':path('modifUser',{'id':id}),'enctype':'multipart/form-data'}})}}
+                    <div class="input-group champ">
+                        <h4>Identifiant</h4>
+                        
+                        {{ form_widget(formUser.name, { 'attr': {'class': 'form-control',disabled:'false'} })}}
+                        
+                    </div>
+                        <a class="modif-compte">
+    <i class="fa fa-pencil" id="edit-compte"></i>
+    <i class="fa fa-close" id="edit-compte-close"></i>
+    
+  </a>
+                     <div class="input-group champ">
+                        <h4>Mot de passe</h4>
+                        <input type="password"{{ form_widget(formUser.pass, { 'attr': {'class': 'form-control',disabled:'false'} })}}
+                    </div> 
+                        <a class="modif-compte">
+    <i class="fa fa-pencil" id="edit-pass"></i>
+    <i class="fa fa-close" id="edit-pass-close"></i>
+    
+  </a>
+                  {# <div class="boutonCompte">
+                        {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-success'} })}}
+                    </div> #}
+                </div>  
+                 </div>
+      <div class="modal-footer">
+        {{ form_widget(formUser.enregistrer, { 'attr': {'class': 'btn btn-success'} })}}
+      </div>
+                    </div>
+   
+  </div>
+  </div>
+  </div>
+</div>
+        
+        
+        
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

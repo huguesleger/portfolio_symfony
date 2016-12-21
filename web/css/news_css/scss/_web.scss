@@ -1,0 +1,77 @@
+a:hover{
+  text-decoration: none;
+  color: red;
+}
+
+
+.thumb-work{
+/*width: 400px;*/
+height: 490px;
+margin-top: 100px;
+overflow: hidden;
+/*margin-left: 90px;*/
+
+}
+
+.thumb-img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+.thumb-effect{
+  background: rgba(27, 163, 156, 1);
+  height: 0px;
+  position: relative;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.thumb-effect-2{
+  height: 0px;
+  background: rgba(3, 201, 169, 1);
+  position: relative;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.thumb-work:hover .thumb-effect{
+background: rgba(27, 163, 156, 0.8);
+margin-top: -320px;
+height: 330px;
+opacity: 1;
+transition: 0.4s;
+
+}
+.thumb-work:hover .thumb-effect p{
+ 
+}
+
+.thumb-work:hover .thumb-effect-2{
+background: rgba(3, 201, 169, 0.6);
+height: 270px;
+margin-top: -250px;
+opacity:1;
+transition: 0.6s;
+
+
+}
+
+
+
+.thumb-title{
+  opacity: 1;
+  color: black;
+  z-index: 2000;
+  text-align: center;
+}
+@media (min-width: 992px){
+.col-md-3{
+    width: 23%;
+}
+}
+
+.detail-work{
+    padding-top: 50px;
+}

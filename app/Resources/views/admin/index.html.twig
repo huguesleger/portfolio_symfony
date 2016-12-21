@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+     <title>Admin</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
+        
+  </head>
+
+    <body>
+        
+<div id="container">
+
+    <div class="navbar-admin">
+   <nav class="navbar navbar-default admin">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+  
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="{{path('admin')}}">home</a></li>
+        <li><a href="{{path('projectscaroussel')}}">caroussel</a></li>
+        <li><a href="{{path('projects')}}">travaux web</a></li>
+        <li><a href="{{path('projectsprint')}}">travaux print</a></li>
+        <li><a href="#">portfolio</a></li>
+        <li><a class="connect" href="{{path("loginOut")}}">déconnexion</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+    </div>
+      
+      
+        <!--nav-vertical-->
+{# {% block nav %}
+<div id="nav-vertical">
+<nav class="navbar-vert navbar-admin-vert" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <form class="navbar-form navbar-left">
+          <br>
+      </form>
+    <ul class="nav navbar-nav-vert">
+     <a href="{{path("form")}}"><h1 class="add-work">ajouter un projet web</h1> </a>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+</div>
+    <!--fin-nav-vertical-->
+  {% endblock %}#}
+
+{% block navadd %}
+     <ul class="nav nav-add">
+        
+              <h3 class="title-rubrique-nav">Travaux</h3>
+              
+                 
+              <li class="txt-nav-add"><a href="{{path("form")}}"><i class="icon-add fa fa-desktop"></i>ajouter travaux web</a></li>
+            
+               <li class="txt-nav-add"><a href="{{path("formprint")}}"><i class="icon-add fa fa-pencil"></i>ajouter travaux print</a></li>
+               <li class="txt-nav-add"><a href="{{path("formcaroussel")}}"><i class="icon-add fa fa-picture-o"></i>ajouter img carousel</a></li>
+               <li class="no-border txt-nav-add"><a href="#"><i class="icon-add fa fa-cloud-download"></i>ajouter img portfolio</a></li>
+              <h3 class="title-rubrique-nav">Mes Listes</h3>
+               <li class="txt-nav-add"><a href="{{path("listeweb")}}"><i class="icon-add fa fa-bars"></i>Liste travaux web</a></li>
+               <li class="txt-nav-add"><a href="#"><i class="icon-add fa fa-bars"></i>Liste travaux print</a></li>
+               <li class="no-border txt-nav-add"><a href="#"><i class="icon-add fa fa-bars"></i>Liste img carousel</a></li>
+              
+               <div class="dropdown">
+          <h3 class="title-rubrique-nav dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon Compte<span class="caret"></span></h3>
+          <ul class="dropdown-menu">
+              <li class="name-admin"><i class="icon-add fa fa-user"></i>Bonjour {{(app.user.name)}}</li>
+               <li role="separator" class="divider"></li>
+              <li class="infos-compte" data-toggle="modal" data-target="#myModal"><a href="{{path("editUser",{"id":app.user.id})}}"><i class="icon-add fa fa-pencil-square-o"></i>Gestion du compte</a></li>
+          </ul>
+           
+        </div>
+      
+     </ul>
+      {% endblock %}
+      </div><!--fin site-->
+      
+      
+      
+      
+      {% block body %}
+       
+    {% endblock %}
+    
+    
+
+        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
+         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+
+</body>
+
+</html>
+
+

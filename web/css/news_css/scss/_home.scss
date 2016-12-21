@@ -1,0 +1,273 @@
+
+
+
+
+
+@media screen and(min-width: 769px){
+/*.opaque{
+  margin-top: 4.90%;
+  padding-top: 60px;
+  padding-bottom: 58px;
+  top: 0;
+  left: 6%;
+  position: absolute;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.5);
+  p{
+    padding-left: 30px;
+    font-size: 45px;
+    margin-top: -20px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .txt-bienvenue{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+}*/
+.tif h2{
+    width: 160px;
+}
+}
+
+
+.present{
+  float: left;
+  margin-left: 70px;
+  margin-right: 60px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.creatif,.reactif,.colaboratif,.tif{
+display: inline-block;
+margin-top: 30px;
+  h2{
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+}
+
+
+.icon {
+  margin-bottom:10px; /*-----reglage position txt-------*/
+  padding-top: 8px; /*-----reglage hauteur icon-------*/
+  font-size: 35px;  /*-----reglage size icon-------*/
+  color:#696969; /*-----color icon-------*/
+  display: block;
+  width: 70px; /*-----------taille background icon--------*/
+  height:70px;
+  border-radius: 50%;
+  border: 1px solid #888;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+ }
+
+@media screen and(min-width: 300px)and(max-width: 768px){
+  .tif .icon{
+    margin-left: 30px;
+  }
+  .colaboratif .icon{
+    margin-left: 25px;
+  }
+
+
+  .present{
+  margin: auto;
+    text-align: center;
+    padding-bottom: 30px;
+    width: 100%;
+  }
+}
+
+
+
+.services{
+  background-image: url('../../images/nuages.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+
+
+  
+}
+
+.title-services{
+    position: relative;
+    z-index: 2;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-transform: capitalize;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+.thumbnail {
+    position: relative;
+    z-index: 3;
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+.thumbnail > img,
+.thumbnail a > img {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.thumbnail .caption {
+  padding: 9px;
+  padding-top: 0;
+  color: #333;
+  text-align: center;
+  z-index: 5;
+  color: #fff;
+}
+
+.icon-services {
+  margin-top: 20px;
+  margin-bottom:10px; /*-----reglage position txt-------*/
+  font-size: 60px;  /*-----reglage size icon-------*/
+  color:#696969; /*-----color icon-------*/
+  display: block;
+  width: 90px; /*-----------taille background icon--------*/
+  height:90px;
+  border-radius: 5px;
+  background-color: #130C1B;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+ }
+
+
+
+/*.icon-me{
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+}*/
+
+
+.icon-me img{
+    margin-left: 20px;
+}
+
+@media screen and(min-width: 300px)and(max-width: 767px){
+.icon-me{
+   display: none;
+}
+
+
+.icon-me img{
+    margin-left: 20px;
+}
+}
+
+
+
+
+
+.icon-connect{
+    position: absolute;
+    float: left;
+    top: 40px;
+/*    margin-left: -200px;*/
+padding-left: 20px;
+display: inherit; 
+}
+
+@media screen and(min-width: 300px)and(max-width: 767px){
+.anim-title{
+display: none;
+.icon-me{
+display: none;
+}
+}
+}
+
+@media screen and(min-width: 768px)and(max-width: 1023px){
+.anim-title{
+position: absolute;
+top: 0%;
+left: 10%;
+font-size: 25px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+background-color: rgba(255, 255, 255, 0.5);
+height: 100%;
+padding-top: 30px;
+padding-left: 3%;
+padding-right: 3%;
+.icon-me img{
+padding-top: 0px;
+width: 40px;
+height: 40px;
+}
+}
+/*.icon-me img.grafflogo{
+    width: 60px;
+    height: 40px;
+}*/
+}
+
+@media screen and(min-width: 1024px)and(max-width: 1219px){
+.anim-title{
+position: absolute;
+top: 0%;
+left: 10%;
+font-size: 30px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+background-color: rgba(255, 255, 255, 0.5);
+height: 100%;
+padding-top: 30px;
+padding-left: 3%;
+padding-right: 3%;
+.icon-me img{
+padding-top: 0px;
+width: 60px;
+height: 60px;
+}
+}
+/*.icon-me img.grafflogo{
+    width: 80px;
+    height: 60px;
+}*/
+}
+
+@media screen and(min-width: 1220px){
+.anim-title{
+position: absolute;
+top: 0%;
+left: 10%;
+font-size: 45px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+background-color: rgba(255, 255, 255, 0.5);
+height: 100%;
+padding-top: 30px;
+padding-left: 3%;
+padding-right: 3%;
+z-index: 2;
+.icon-me{
+padding-top: 20px;
+}
+}
+}

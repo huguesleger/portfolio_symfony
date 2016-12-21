@@ -1,0 +1,57 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+            
+      
+     <div class="project-content">
+     
+         
+   <div class="container project">
+       
+         
+        <div class="row">
+       {% for projet in projects %}
+   
+      <div class="col-sm-6 col-md-12">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive img col-md-5">
+        <h2 class="">{{projet.titre}}</h2>
+     
+      <p class="">{{projet.descriptif}}</p>
+             {% if projet.publier ==[1] %}
+           <div class="col-sm-6 col-md-4">
+ <div class= "alert alert-success" role= "alert" > <strong> Bravo! </strong> ceci est bien publié
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+</div>
+           {% else %}
+                         <div class="col-sm-6 col-md-4">
+ <div class= "alert alert-danger" role= "alert" > <strong> Attention! </strong> ceci n'est pas encore publié 
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+</div>
+           {% endif %}
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modif",{"id":projet.id})}}">Modifier</a>
+             <a class="btn btn-info" href="{{path("projectsdetail",{"id":projet.id})}}">detail</a>
+             {% if projet.publier ==[1] %}
+           
+            {% else %}
+                <a class="btn btn-success" href="{{path("publiweb",{"id":projet.id})}}"data-confirm="Tes sur de vouloir publier {{projet.titre}} ?">publier</a>
+                 {% endif %}
+           {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
+            <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}"data-confirm="Tes sur de vouloir supprimer {{projet.titre}} ?">Supprimer</a>
+            </div>
+                       
+    </div>
+
+
+ 
+ {% endfor %}
+ 
+
+ </div>
+</div>
+
+
+     </div>
+{% endblock%}
+
+

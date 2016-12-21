@@ -1,0 +1,36 @@
+{% extends ":site:index.html.twig"%}
+
+{% block section %}
+
+  {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  <li><a href="{{path('travauxweb')}}">Travaux Web</a></li>
+  <li class="active">Détail</li>
+</ol>{% endblock %}
+    
+      
+       {% for projet in projects %}
+      <div class="col-sm-6 col-md-12">
+    <div class="detail-work">
+       <img src="{{asset('uploads/img/')~projet.imgPresentation}}" class="img-responsive img">
+       <div class="container">
+        <h2 class="">{{projet.descriptionSociete}}</h2>
+     <p class="">{{projet.titre}}</p>
+      <p class="">{{projet.annee|date('d/m/y')}}</p>
+       <p class="">{{projet.realisations}}</p>
+       <img src="{{asset('uploads/img/')~projet.imgLogo}}" class="img-responsive img">
+        <img src="{{asset('uploads/img/')~projet.imgTemplate}}" class="img-responsive img">
+         <p class="">{{projet.descriptionTemplate}}</p>
+          <p class="">{{projet.lienSite}}</p>
+      
+      </div>
+    </div>
+    
+ 
+ {% endfor %}
+  </div>
+
+
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}

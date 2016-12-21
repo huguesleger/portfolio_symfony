@@ -1,0 +1,85 @@
+{% extends ":admin:index.html.twig"%}
+{#{% block navadd %} {% endblock %}#}
+{% block body %}
+
+<body>
+         <div class="project-content">
+       
+       
+
+
+
+<div class="bg-form">
+     <h1 class="title-header">Mes Travaux web</h1>
+<div class="container">
+
+     <div class="">
+{% if id is defined%}
+{{form_start(formNews,{'attr':{'action':path('update',{'id':id}),'enctype':'multipart/form-data'}})}}
+
+{% else%}
+ {{form_start(formNews,{'attr':{'action':path('valid'),'enctype':'multipart/form-data'}})}}
+
+{% endif%}
+<div class="row">
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+    <h1 class="title-form"><i class="icon-add fa fa-camera-retro"></i>Miniature</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Titre</span>{{form_widget(formNews.titre,{'attr':{'class':('form-control')}})}}</div>
+
+   <div class="input-group col-md-12"><span class="input-group-addon">Image Thumbnail</span>{{form_widget(formNews.images,{'attr':{'class':('form-control')}})}}</div>
+
+
+<div class="input-group col-md-12"><span class="input-group-addon">Description</span>{{form_widget(formNews.descriptif,{'attr':{'class':('form-control')}})}}</div>
+
+</div>
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+<h1 class="title-form"><i class="icon-add fa fa-search-plus"></i>Détail</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Présentation</span>{{form_widget(formNews.imgPresentation,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description Societé</span>{{form_widget(formNews.descriptionSociete,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Années</span>{{form_widget(formNews.annee,{'attr':{'class':('form-control')}})}}<span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span></div>
+<div class="input-group col-md-12"><span class="input-group-addon">Réalisations</span>{{form_widget(formNews.realisations,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Logo</span>{{form_widget(formNews.imgLogo,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image Template</span>{{form_widget(formNews.imgTemplate,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description Template</span>{{form_widget(formNews.descriptionTemplate,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Site Web</span>{{form_widget(formNews.lienSite,{'attr':{'class':('form-control')}})}}</div>
+</div>
+
+
+
+    <div class="col-sm-6 col-md-12 col-md-offset-1">
+        
+        <div class="input-group"><span class="input-group-addon publier">Publier</span>{{form_widget(formNews.publier,{'attr':{'class':('form-group ')}})}}</div>
+        <div class="input-group right">{{form_widget(formNews.sauvegarder,{'attr':{'class':('btn btn-success ')}})}}</div>
+        
+    </div>
+
+</div>
+
+        {{form_end(formNews)}}
+        
+
+    </div>
+</div>
+</div>
+</div>
+    </body>
+    {% endblock %}
+
+      {#   <div class="[ form-group ]">
+            <input type="checkbox" name="fancy-checkbox-success" id="fancy-checkbox-success" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-success" class="[ btn btn-success ]">
+                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                    <span> </span>
+                </label>
+                <label for="fancy-checkbox-success" class="[ btn btn-default active ]">
+                    Success Checkbox
+                </label>
+            </div>
+        </div>#}
