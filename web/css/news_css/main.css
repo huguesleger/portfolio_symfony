@@ -513,9 +513,9 @@ body {
   transition: 0.4s;
   color: #130C1B; }
 
-a:focus {
-  display: none; }
-
+/*a:focus {
+  display: none;
+}*/
 /*------------fin-footer---------------*/
 /*------------fil-ariane---------------*/
 .breadcrumb {
@@ -1242,7 +1242,7 @@ input[type=checkbox], input[type=radio] {
   background-color: #130c1c;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 156px; }
+  width: 176px; }
 
 .publier {
   background-color: #f7ab35;
