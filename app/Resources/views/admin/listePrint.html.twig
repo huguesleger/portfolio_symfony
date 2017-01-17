@@ -1,0 +1,42 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+     
+     <div class="project-content">   
+   <div class="container project">
+        <div class="row">
+       {% for projetprint in projectsprint %}
+   
+    <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><a class="lien-projet-web" href="{{path("detailprojetsprint",{"id":projetprint.id})}}"><i class="icon-add fa fa-desktop"></i>{{projetprint.titre}}</a></div>
+
+  <!-- Table -->
+  <table class="table">
+      <thead> <tr>
+              <th>id</th>
+              <th>description</th>
+              <th>technique</th>
+              <th>publier</th>
+          </tr>
+            <td>{{projetprint.id}}</td>
+            <td>{{projetprint.description|truncate(10, false, ' ...')}}</td>
+            <td>{{projetprint.technique}}</td>
+            {% if projetprint.publier ==[1] %}
+             <td><i class="fa fa-check"></i></td>
+             {% else %}
+         <td><i class="fa fa-times"></i></td>
+         {% endif %}
+         </thead>
+  </table>
+</div>
+
+ 
+ {% endfor %}
+ </div>
+</div>
+ 
+     </div>
+{% endblock%}
+
+

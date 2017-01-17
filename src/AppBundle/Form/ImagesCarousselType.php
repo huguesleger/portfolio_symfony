@@ -19,7 +19,7 @@ class ImagesCarousselType extends AbstractType
         $builder
                 ->add('images', FileType::class, array('data_class' => null))
                 ->add('publier')
-                ->add('save', SubmitType::class)
+                ->add('sauvegarder', SubmitType::class)
                 ;
     }
     

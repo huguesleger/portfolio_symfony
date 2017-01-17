@@ -1,0 +1,45 @@
+{% extends ":site:index.html.twig"%}
+
+{% block title %} | Galerie{% endblock %}
+
+{% block section %}
+    
+    <section id="porfolio">
+    <div class="container">
+        <div class="row">
+
+       {% for galerie in projectsgal %}
+
+      <div class="col-sm-4">
+    <div class="folio-item">
+      <div class="folio-image">
+          <img src="{{asset('uploads/img/')~galerie.imageMin}}" class="img-responsive">
+           </div>
+                   <div class="overlay">
+            <div class="overlay-content">
+              <div class="overlay-text">
+                <div class="folio-info">
+                  <h3>{{galerie.titre}}</h3>
+                  <p>{{galerie.description}}</p>
+                  <p>{{galerie.technique}}</p>
+                </div>
+                <div class="folio-overview">
+                  <span class="folio-expand"><a href="{{asset('uploads/img/')~galerie.imageDetail}}" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+      {#<a class="fa fa-plus-circle" href="{{path("detailprojetsgal",{"id":galerie.id})}}">En voir +</a>#}
+      </div>
+    </div>
+    
+ 
+ {% endfor %}
+ </div>
+  </div>
+
+</section>
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}
+

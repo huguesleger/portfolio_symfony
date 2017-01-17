@@ -1,7 +1,38 @@
+@media screen and(min-width: 320px)and(max-width: 767px){
+#content{
+/*    	position: relative;
+ 	height:100%;
+ 	width:100%;
+        z-index: 0;
+ 	transition: all 0.7s cubic-bezier(.77,.06,.28,.85);
+        overflow:hidden;
+        left: 0;
+        opacity: 1;*/
+ 	&.push-content{
+           
+/*            left: 10%;*/
+/*            opacity: 0;*/
+ 	}
+}
+}
 
-
-
-
+@media screen and(min-width: 768px){
+#content{
+    	position: relative;
+ 	height:100%;
+ 	width:100%;
+        z-index: 0;
+ 	transition: all 0.7s cubic-bezier(.77,.06,.28,.85);
+        overflow:hidden;
+        left: 0;
+        opacity: 1;
+ 	&.push-content{
+            position: fixed;
+/*            left: 10%;*/
+            opacity: 0;
+ 	}
+}
+}
 
 @media screen and(min-width: 769px){
 /*.opaque{

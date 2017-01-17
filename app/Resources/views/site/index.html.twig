@@ -16,11 +16,13 @@
     <body>
 <div id="container">
  <div class="container-fluid">
+     <div id="logo">
      {% if is_granted("ROLE_ADMIN") %}
 <i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
 {% else %}
     <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
     {% endif %}
+     </div>
     <div class="main-icon">
       <span></span>
     </div>
@@ -30,13 +32,16 @@
     <h1 class="text-js">Color Your Life</h1>
 </div>#}
 
-<div class="big-logo">
-    <img src="{{asset('images/big-logoX2.png')}}"></a>
+{#<div class="big-logo" id="big">
+    <img src="{{asset('images/big-logoX2.png')}}"class=""></a>
+</div>#}
+
+<div id="big">
 </div>
 
-
-
-    <div id="pushMain" class="push-main">
+    <div class="menu-tint menu-type"></div>
+    {#<div id="pushMain" class="push-main">#}
+    <div class="menu menu-type">
          {# <div class="logo">
           <img src="{{asset('images/minlogo-hl.png')}}"></a>
         </div>#}
@@ -44,7 +49,7 @@
             <ul class="nav navbar-nav">
               <li class="col-sm-12 col-md-12 btn-work"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
               <li class="col-sm-12 col-md-12 btn-print"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-              <li class="col-sm-12 col-md-12 btn-portfolio"><a href="#">Portfolio</a></li>
+              <li class="col-sm-12 col-md-12 btn-portfolio"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
               <li class="col-sm-12 col-md-12 btn-moi"><a href="#">A Propos</a></li>
               <li class="mail col-sm-12 col-md-12 btn-contactmoi"><a href="#">Contact</a></li>
             </ul>
@@ -87,6 +92,7 @@
 {% block section %}
     {% block ariane %}{% endblock %}
 
+    <div id="content">
        <section id="home">
     <div class="container-fluid">
       
@@ -298,7 +304,7 @@
 </div>
         </div>
       </footer>
-
+</div>
       </div>
 
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
@@ -308,6 +314,7 @@
         {% endblock %}#}
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
         
        
 </body>

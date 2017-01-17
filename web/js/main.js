@@ -11,49 +11,92 @@ $(document).ready(function() {
 
 $(document).ready(function(){ 
 $('.main-icon').click(function(){
+    $('.menu-type').toggleClass('open');
+    
+     var wH= $(window).width();
+                if(wH > 767){
+                
+                
+                $('#logo').toggleClass('push');
+                $('.navbar-brand').addClass('white');
+                    
+//     $('#big').css('display','block');
+//     $('.big-logo').toggleClass('push-biglogo');
+                $('#content').toggleClass('push-content');
+                  $('#big').css({
+            top: ($(window).height() - $('.big-logo').outerHeight()) / 3 
+        });
+
+        $(window).resize(function () {
+         $('#big').css({
+             top: ($(window).height() - $('.big-logo').outerHeight()) / 3
+         });
+     });
+                }
+                
+                if(wH > 1024){
+    $('#big').css({
+            right: ($(window).width() - $('.big-logo').outerWidth()) / 7 ,
+            top: ($(window).height() - $('.big-logo').outerHeight()) / 3 
+        });
+
+        $(window).resize(function () {
+         $('#big').css({
+             right: ($(window).width() - $('.big-logo').outerWidth()) / 7,
+             top: ($(window).height() - $('.big-logo').outerHeight()) / 3
+         });
+     });
+                }
+     
+
 $this = $(this);
 if($this.hasClass('is-open')){
 	$this.addClass('is-close').removeClass('is-open , is-open-color');
-//        $('body').css('overflowY','visible');
-        
+      $('body').css('overflowY','visible');
         $('#form-contact').hide();
          $('.main-content').show();
          $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
-         $('#container').css({width: "100%", marginLeft: "0%"});
-         $('#carousel-example-generic').css({visibility: "visible"});
-         $('.anim-title').css({visibility: "visible", marginLeft:"0%", opacity:"1"});
-         $('#icon-present').css('display','');
-         $('.services').css('display','');
-         $('.footer').css('display','');
-         $('.breadcrumb').css('display','');
-         $('.thumb-work').css('display','');
-                 
-                $('body').removeClass('color');
-                $('.big-logo').hide();
+         $('.navbar-brand').removeClass('white');
+         $('#big').removeClass('animated fadeIn big-logo');
+//         $('#container').css({width: "100%", marginLeft: "0%"});
+//         $('#carousel-example-generic').css({visibility: "visible"});
+//         $('.anim-title').css({visibility: "visible", marginLeft:"0%", opacity:"1"});
+//         $('#icon-present').css('display','');
+//         $('.services').css('display','');
+//         $('.footer').css('display','');
+//         $('.breadcrumb').css('display','');
+//         $('.thumb-work').css('display','');
+//                 
+//                $('body').removeClass('color');
+                
           
            
          
 
 }else{
 		$this.removeClass('is-close').addClass('is-open is-open-color');
-//                $('body').css('overflowX','hidden');
+                $('#big').addClass('animated fadeIn big-logo');
+//                $('#big').append('<div class="big-logo"></div>'); 
+                 
+                $('body').css('overflowY','hidden');
 //                $('body').css('overflowY','hidden');
+  
                 
-                $('#container').css({width: "50%", marginLeft: "50%"});
-                $('#carousel-example-generic').css({visibility: "hidden"});
-                $('.anim-title').css({visibility: "hidden", marginLeft:"-50%", opacity:"0"});
-                $('#icon-present').css('display','none');
-                $('.services').css('display','none');
-                $('.footer').css('display','none');
-                $('.breadcrumb').css('display','none');
-                $('.thumb-work').css('display','none');
-                $('.big-logo').show().addClass('animated slideInRight');
-                var wH= $(window).width();
-                if(wH > 767){
-                    
-                     $('body').addClass('color');
-                      
-                }
+//                $('#logo')
+//                $('#carousel-example-generic').css({visibility: "hidden"});
+//                $('.anim-title').css({visibility: "hidden", marginLeft:"-50%", opacity:"0"});
+//                $('#icon-present').css('display','none');
+//                $('.services').css('display','none');
+//                $('.footer').css('display','none');
+//                $('.breadcrumb').css('display','none');
+//                $('.thumb-work').css('display','none');
+              
+//                var wH= $(window).width();
+//                if(wH > 767){
+//                    
+//                     $('body').addClass('color');
+//                      
+//                }
 
                 
                 
@@ -61,30 +104,30 @@ if($this.hasClass('is-open')){
 
 //open nav left
 
-$(function(){
-	if( $('#pushMain').toggle()){
-		$('.push-main').addClass('is-open-test animated slideInLeft');
-                
-                $('body').scrollTop(0);
-               
-                
-              
-                   
-                   
-           
-          
-	} else {
-		$('.push-main').removeClass('is-open-test animated slideInLeft');
-               
-             
-
-                
-                
-                
-                
-        
-	} 
-        });
+//$(function(){
+//	if( $('#pushMain').toggle()){
+//		$('.push-main').addClass('is-open-test animated slideInLeft');
+//                
+//                $('body').scrollTop(0);
+//               
+//                
+//              
+//                   
+//                   
+//           
+//          
+//	} else {
+//		$('.push-main').removeClass('is-open-test animated slideInLeft');
+//               
+//             
+//
+//                
+//                
+//                
+//                
+//        
+//	} 
+//        });
         
 $(function(){
         $('.mail').click(function(){
@@ -212,6 +255,9 @@ $('#myModal').modal('show');
      
         //Initiat WOW JS
 	new WOW().init();
+        
+        
+        
         
         
   });

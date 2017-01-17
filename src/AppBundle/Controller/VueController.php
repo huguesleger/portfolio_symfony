@@ -48,6 +48,17 @@ class VueController extends Controller {
     }
 
      /**
+     * @Route("/galerie", name="travauxgalerie");
+     * @Template(":site:galerie.html.twig");
+     */
+    public function Galerie(){
+       
+        return array ('projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findByPublier(1));
+        
+    }
+
+    
+     /**
      * @Route("/projets/detail/{id}", name="detailprojets")
      * @Template(":site:projetsDetail.html.twig");
      */
@@ -57,13 +68,15 @@ class VueController extends Controller {
     }
     
     /**
-     * @Route("/projets/detail/print/{id}", name="detailprojetsprint")
+     * @Route("/projets/detail/print/{id}", name="detailprint")
      * @Template(":site:projetsPrintDetail.html.twig");
      */
     public function ProjetsDetailPrint($id){
         return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findById($id));
         
     }
+    
+    
 
     
     /**

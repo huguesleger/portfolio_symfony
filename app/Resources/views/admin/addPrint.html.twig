@@ -1,32 +1,67 @@
 {% extends ":admin:index.html.twig"%}
-{% block navadd %} {% endblock %}
+{#{% block navadd %} {% endblock %}#}
 {% block body %}
 
 <body>
-        
-        <h1 class="page-header">Mes Travaux print</h1>
+        <div class="project-content">
+       
        
 
-
-
 <div class="bg-form">
+    <h1 class="title-header">Mes Travaux print</h1>
 <div class="container">
- <div class="col-xs-6 col-xs-offset-4">
-     <div class="">
+ <div class="">
+     
 {% if id is defined%}
 {{form_start(formNewsPrint,{'attr':{'action':path('updateprint',{'id':id}),'enctype':'multipart/form-data'}})}}
 {% else%}
  {{form_start(formNewsPrint,{'attr':{'action':path('validprint'),'enctype':'multipart/form-data'}})}}
 {% endif%}
+        <div class="row">
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+    <h1 class="title-form"><i class="icon-add fa fa-camera-retro"></i>Miniature</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Titre</span>{{form_widget(formNewsPrint.titre,{'attr':{'class':('form-control')}})}}</div>
+
+   <div class="input-group col-md-12"><span class="input-group-addon">Description</span>{{form_widget(formNewsPrint.description,{'attr':{'class':('form-control')}})}}</div>
+
+
+<div class="input-group col-md-12"><span class="input-group-addon">Image Thumbnail</span>{{form_widget(formNewsPrint.images,{'attr':{'class':('form-control')}})}}</div>
+
+</div>
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+<h1 class="title-form"><i class="icon-add fa fa-search-plus"></i>Détail</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Image 1</span>{{form_widget(formNewsPrint.image1,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Techniques</span>{{form_widget(formNewsPrint.technique,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image 2</span>{{form_widget(formNewsPrint.image2,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description Img 2</span>{{form_widget(formNewsPrint.descriptionImg2,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Image 3</span>{{form_widget(formNewsPrint.image3,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Description Img 3</span>{{form_widget(formNewsPrint.descriptionImg3,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Site Web</span>{{form_widget(formNewsPrint.liens,{'attr':{'class':('form-control')}})}}</div>
+</div>
+
+
+
+    <div class="col-sm-6 col-md-12 col-md-offset-1">
         
+        <div class="input-group"><span class="input-group-addon publier">Publier</span>{{form_widget(formNewsPrint.publier,{'attr':{'class':('form-group ')}})}}</div>
+        <div class="input-group right">{{form_widget(formNewsPrint.sauvegarder,{'attr':{'class':('btn btn-success ')}})}}</div>
+        
+    </div>
+
+</div>
         
         {{form_end(formNewsPrint)}}
         
 
-    </div>
+    
 </div>
 </div>
 </div>
+        </div>
     </body>
     {% endblock %}
 

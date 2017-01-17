@@ -1,0 +1,44 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+            
+      
+     <div class="project-content">
+     
+         
+   <div class="container project">
+       
+         
+        <div class="row">
+       {% for galerie in projectsgal %}
+   
+      <div class="col-sm-6 col-md-12">
+      <img src="{{asset('uploads/img/')~galerie.imageMin}}" class="img-responsive img">
+        <h2 class="">{{galerie.titre}}</h2>
+     
+      <p class="">{{galerie.description}}</p>
+      <p class="">{{galerie.technique}}</p>
+       <img src="{{asset('uploads/img/')~galerie.imageDetail}}" class="img-responsive img">
+     
+ 
+      <div class="btn-projet">
+            <a class="btn btn-primary" href="{{path("modifgal",{"id":galerie.id})}}">Modifier</a>
+            <a class="btn btn-danger" href="{{path("delategal",{"id":galerie.id})}}"data-confirm="Tes sur de vouloir supprimer?">Supprimer</a>
+            </div>
+           
+    </div>
+
+
+ 
+ {% endfor %}
+ 
+
+ </div>
+</div>
+
+
+     </div>
+{% endblock%}
+
+
+

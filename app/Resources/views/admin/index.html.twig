@@ -30,7 +30,7 @@
         <li><a href="{{path('projectscaroussel')}}">caroussel</a></li>
         <li><a href="{{path('projects')}}">travaux web</a></li>
         <li><a href="{{path('projectsprint')}}">travaux print</a></li>
-        <li><a href="#">portfolio</a></li>
+        <li><a href="{{path('projectsgal')}}">galerie</a></li>
         <li><a class="connect" href="{{path("loginOut")}}">déconnexion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -68,11 +68,11 @@
             
                <li class="txt-nav-add"><a href="{{path("formprint")}}"><i class="icon-add fa fa-pencil"></i>ajouter travaux print</a></li>
                <li class="txt-nav-add"><a href="{{path("formcaroussel")}}"><i class="icon-add fa fa-picture-o"></i>ajouter img carousel</a></li>
-               <li class="no-border txt-nav-add"><a href="#"><i class="icon-add fa fa-cloud-download"></i>ajouter img portfolio</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("formgalerie")}}"><i class="icon-add fa fa-cloud-download"></i>ajouter img galerie</a></li>
               <h3 class="title-rubrique-nav">Mes Listes</h3>
                <li class="txt-nav-add"><a href="{{path("listeweb")}}"><i class="icon-add fa fa-bars"></i>Liste travaux web</a></li>
-               <li class="txt-nav-add"><a href="#"><i class="icon-add fa fa-bars"></i>Liste travaux print</a></li>
-               <li class="no-border txt-nav-add"><a href="#"><i class="icon-add fa fa-bars"></i>Liste img carousel</a></li>
+               <li class="txt-nav-add"><a href="{{path("listeprint")}}"><i class="icon-add fa fa-bars"></i>Liste travaux print</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("listegal")}}"><i class="icon-add fa fa-bars"></i>Liste img galerie</a></li>
               
                <div class="dropdown">
           <h3 class="title-rubrique-nav dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon Compte<span class="caret"></span></h3>

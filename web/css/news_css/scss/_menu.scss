@@ -165,6 +165,18 @@
     height: 100px;
 }
 
+#logo{
+    	position: relative;
+ 	height:100%;
+ 	width:100%;
+        z-index: 100;
+ 	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
+ 	&.push{
+ 		margin-left:50%;
+                width: 50%;
+ 	}
+}
+
 .navbar-brand {
 
     float: left;
@@ -178,8 +190,11 @@
     }
 
 }
-
-.push-main {
+.white{
+    color:#fff;
+    transition: 0.7s;
+}
+/*.push-main {
     height: 100%;
     width: 50%;
     position: fixed;
@@ -193,14 +208,107 @@
     display: none;
     transition: 0.5s;
 
-
+}*/
+@media screen and(min-width: 320px)and(max-width: 767px){
+.menu{
+	position:fixed;
+	top:0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	z-index: 102;
+        overflow: hidden;
+	background: rgba(19, 12, 28, 1);
+	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
+	&.open{
+		left:0;
+	}
 }
-.is-open-test{
+.menu-tint{
+   
+}
+}
+@media screen and(min-width: 768px){
+.menu{
+	position:fixed;
+	top:0;
+	left: -50%;
+	width: 50%;
+	height: 100%;
+	z-index: 98;
+        overflow: hidden;
+	background: rgba(19, 12, 28, 1);
+	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
+	&.open{
+		left:0;
+                
+	}
+}
+
+.menu-tint{
+	position: fixed;
+	width:100%;
+	height:100%;
+/*	background: #52b3d9;*/
+        background-color: #f7ab35;
+    animation: bg 8s infinite alternate;
+    -webkit-animation: bg 8s infinite alternate;
+  -moz-animation: bg 8s infinite alternate;
+  -o-animation: bg 8s infinite alternate;
+	opacity:0;
+	z-index: -1;
+        top: 0;
+         overflow: hidden;
+	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
+	&.open{
+		opacity:1;
+		z-index: 97;
+                overflow: hidden;
+	}
+}
+
+@keyframes bg {
+  0% { background-color: #f7ab35; }
+    32% { background-color: #e74c3c; }
+    55% { background-color: #130c1c; }
+    76% { background-color: #16a085; }
+    100% { background-color: #2ecc71; }
+}
+
+@-webkit-keyframes bg {
+    0% { background-color: #f7ab35;}
+    32% { background-color: #e74c3c; }
+    55% { background-color: #130c1c; }
+    76% { background-color: #16a085; }
+    100% { background-color: #2ecc71; }
+}
+
+@-moz-keyframes bg {
+     0% { background-color: #f7ab35; }
+    32% { background-color: #e74c3c; }
+    55% { background-color: #130c1c; }
+    76% { background-color: #16a085; }
+    100% { background-color: #2ecc71; }
+}
+
+@-o-keyframes bg {
+     0% { background-color: #f7ab35; }
+    32% { background-color: #e74c3c; }
+    55% { background-color: #130c1c; }
+    76% { background-color: #16a085; }
+    100% { background-color: #2ecc71; }
+}
+
+.menu-type{
+    text-align: center;
+}
+}
+/*.is-open-test{
 transition: 0.5s;
 height: 105%;
 width: 50%;
 overflow: hidden;
-}
+}*/
 
 @media screen and(min-width: 300px)and(max-width: 767px){
     .push-main {
@@ -215,14 +323,22 @@ overflow: hidden;
 
 }
 
+
 .navbar-default {
   background-color: transparent;
   border: 0;
   display: flex;
   justify-content: center;
   margin-top: 20%;
-}
 
+}
+@media screen and(min-width: 568px)and(max-width: 736px){
+.navbar-default {
+  overflow: scroll;
+  margin-top: 0;
+  height: 100%;
+}
+}
 .navbar-default.admin {
   margin-top: 10%;
 }
@@ -232,6 +348,7 @@ overflow: hidden;
   color: #818181;
   transition: 0.3s;
   font-size: 35px;
+  text-align: center;
 }
 
 .navbar-default.admin .navbar-nav > li > a {

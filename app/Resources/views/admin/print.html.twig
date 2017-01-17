@@ -13,20 +13,28 @@
       <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive img col-md-5">
       <h2 class="">{{projetprint.titre}}</h2>
       <p class="">{{projetprint.description}}</p>
-      <a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>
-      <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive img col-md-5">
-      <p class="">{{projetprint.technique}}</p>
-      <img src="{{asset('uploads/img/')~projetprint.image2}}" class="img-responsive img col-md-5">
-      <p class="">{{projetprint.descriptionImg2}}</p>
-      <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive img col-md-5">
-       <p class="">{{projetprint.descriptionImg3}}</p>
-     
+      {% if projetprint.publier ==[1] %}
+           <div class="col-sm-6 col-md-4">
+ <div class= "alert alert-success" role= "alert" > <strong> Bravo! </strong> ceci est bien publié
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+</div>
+     {% else %}
+                         <div class="col-sm-6 col-md-4">
+ <div class= "alert alert-danger" role= "alert" > <strong> Attention! </strong> ceci n'est pas encore publié 
+ <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+</div>
+                         
+      {% endif %}
     
       <div class="btn-projet">
             <a class="btn btn-primary" href="{{path("modifprint",{"id":projetprint.id})}}">Modifier</a>
-            <a class="btn btn-success" href="{{path("publiprint",{"id":projetprint.id})}}">publier</a>
+            <a class="btn btn-info" href="{{path("detailprojetsprint",{"id":projetprint.id})}}">detail</a>
+             {% if projetprint.publier ==[1] %}
+                  {% else %}
+            <a class="btn btn-success" href="{{path("publiprint",{"id":projetprint.id})}}"data-confirm="Tes sur de vouloir publier {{projetprint.titre}} ?">publier</a>
+             {% endif %}
             {#<a class="btn btn-warning" href="{{path("suppprint",{"id":projetprint.id})}}">Enlever</a>#}
-            <a class="btn btn-danger" href="{{path("delateprint",{"id":projetprint.id})}}">Supprimer</a>
+            <a class="btn btn-danger" href="{{path("delateprint",{"id":projetprint.id})}}"data-confirm="Tes sur de vouloir supprimer {{projetprint.titre}} ?">Supprimer</a>
             </div>
     </div>
   
