@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class GalerieRepository extends \Doctrine\ORM\EntityRepository
 {
+     public function getNb3() {
+  
+        return $this->createQueryBuilder('l')
+  
+                        ->select('COUNT(l)')
+  
+                        ->getQuery()
+  
+                        ->getSingleScalarResult();
+  
+    }
 }

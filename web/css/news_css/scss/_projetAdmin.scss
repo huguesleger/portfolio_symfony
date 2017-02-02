@@ -1,20 +1,39 @@
-.project-content{
-/*    background-color: #F2F1EF;*/
-  
-    
+.project-admin{
+    padding-top: 90px;
+    width: 80%;
 }
 
-.project{
-    padding-top: 40px;
-    
+
+.project-content{
+   background-color: #EEEEEE;
+   padding-top: 50px;
+   min-height: 100%;
+   width: 90%;
+   float: right;
 }
+
+
+
+
 
 .btn-projet{
-    padding-top: 20px;
-    margin-left: 40px;
-    margin-right: -80px; 
+/*    padding-top: 30px;
+     padding-bottom: 60px;*/
+/*    margin-left: 40px;*/
+    margin-right: -25px;
+    margin-top: -65px;
+    float: right;
+/*    text-align: right;
+    border-left: 2px solid #F7AB35;*/
+    width: 45%;
         
 }
+
+.sep-status{
+    border-right: 2px solid #ddd;
+    text-align: center;
+}
+
 
 .add-work{
     padding:20px 0 20px;
@@ -37,3 +56,59 @@
     padding-top: 30px;
 }
 
+.project-img{
+    margin-left: 50px;
+    width: 100%;
+    float: left;
+}
+
+.project-description{
+    background-color: #fff;
+    padding-bottom: 10px;
+/*    border-bottom: 1px dashed #CCCCCC;*/
+    height: 190px;
+    margin-bottom: 7px;
+}
+
+
+.action-project{
+    text-align: right;
+    border-left: 2px solid #ddd;
+}
+
+
+/* .vignette{
+    padding-bottom: 10px;
+}*/
+
+.btn-action-publier{
+    float: left;
+    text-align: center;
+}
+
+.alert{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.id-project{
+    margin-left: -5px;
+    padding-top: 30px;
+}
+
+.title-nom-project{
+    text-align: center;
+}
+
+.thumbnail-project{
+    max-height:161px;
+    float: right;
+}

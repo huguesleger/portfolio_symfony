@@ -9,6 +9,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/clndr.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
         
   </head>
@@ -17,7 +18,7 @@
         
 <div id="container">
 
-    <div class="navbar-admin">
+    <div class="navbar-admin navbar-fixed-top">
    <nav class="navbar navbar-default admin">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,13 +26,29 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
       <ul class="nav navbar-nav">
-        <li><a href="{{path('admin')}}">home</a></li>
-        <li><a href="{{path('projectscaroussel')}}">caroussel</a></li>
+        {#<li><a href="{{path('admin')}}">home</a></li>#}
+        <li><a href="{{path('projectscaroussel')}}">slider</a></li>
         <li><a href="{{path('projects')}}">travaux web</a></li>
         <li><a href="{{path('projectsprint')}}">travaux print</a></li>
         <li><a href="{{path('projectsgal')}}">galerie</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right moncompte">
         <li><a class="connect" href="{{path("loginOut")}}">déconnexion</a></li>
+            <div class="monavatar">
+         <li><img class="avatar" src="{{ asset('./images/moi.png') }}"/></li>
+         </div>
+         <div class="hello-content title-hello">
+           <div class="dropdown">
+          <h3 class="title-rubrique-profil dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></h3>
+          <ul class="dropdown-menu">
+              <li class="name-admin"><i class="icon-add fa fa-user"></i>Bonjour {{(app.user.name)}}</li>
+               <li role="separator" class="divider"></li>
+              <li class="infos-compte" data-toggle="modal" data-target="#myModal"><a href="{{path("editUser",{"id":app.user.id})}}"><i class="icon-add fa fa-pencil-square-o"></i>Edit profil</a></li>
+          </ul>
+        </div>
+         </div>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -61,37 +78,194 @@
 {% block navadd %}
      <ul class="nav nav-add">
         
-              <h3 class="title-rubrique-nav">Travaux</h3>
+              <h3 class="title-rubrique-nav"><i class="icon-dashboard fa fa-dashboard"></i>Dasboard</h3>
               
-                 
-              <li class="txt-nav-add"><a href="{{path("form")}}"><i class="icon-add fa fa-desktop"></i>ajouter travaux web</a></li>
+              <li class="retour-home"><a href="{{path('admin')}}"><i class="icon-home fa fa-home"></i>home</a></li>  
+              <li class="txt-nav-add"><a href="{{path("form")}}"><i class="icon-add fa fa-desktop"></i>travaux web</a></li>
             
-               <li class="txt-nav-add"><a href="{{path("formprint")}}"><i class="icon-add fa fa-pencil"></i>ajouter travaux print</a></li>
-               <li class="txt-nav-add"><a href="{{path("formcaroussel")}}"><i class="icon-add fa fa-picture-o"></i>ajouter img carousel</a></li>
-               <li class="no-border txt-nav-add"><a href="{{path("formgalerie")}}"><i class="icon-add fa fa-cloud-download"></i>ajouter img galerie</a></li>
-              <h3 class="title-rubrique-nav">Mes Listes</h3>
+               <li class="txt-nav-add"><a href="{{path("formprint")}}"><i class="icon-add fa fa-pencil"></i>travaux print</a></li>
+               <li class="txt-nav-add"><a href="{{path("formcaroussel")}}"><i class="icon-add fa fa-picture-o"></i>slider</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("formgalerie")}}"><i class="icon-add fa fa-cloud-download"></i>galerie</a></li>
+               {#<h3 class="title-rubrique-nav">Mes Listes</h3>#}
                <li class="txt-nav-add"><a href="{{path("listeweb")}}"><i class="icon-add fa fa-bars"></i>Liste travaux web</a></li>
                <li class="txt-nav-add"><a href="{{path("listeprint")}}"><i class="icon-add fa fa-bars"></i>Liste travaux print</a></li>
-               <li class="no-border txt-nav-add"><a href="{{path("listegal")}}"><i class="icon-add fa fa-bars"></i>Liste img galerie</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("listegal")}}"><i class="icon-add fa fa-bars"></i>Liste galerie</a></li>
               
-               <div class="dropdown">
-          <h3 class="title-rubrique-nav dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon Compte<span class="caret"></span></h3>
-          <ul class="dropdown-menu">
-              <li class="name-admin"><i class="icon-add fa fa-user"></i>Bonjour {{(app.user.name)}}</li>
-               <li role="separator" class="divider"></li>
-              <li class="infos-compte" data-toggle="modal" data-target="#myModal"><a href="{{path("editUser",{"id":app.user.id})}}"><i class="icon-add fa fa-pencil-square-o"></i>Gestion du compte</a></li>
-          </ul>
-           
-        </div>
-      
+            
+      <div class="logo-hl-admin">
+              <img src="{{ asset('./images/minlogo-hl.png') }}"/>
+          </div>
      </ul>
+         
       {% endblock %}
-      </div><!--fin site-->
+       {% block nb %}
+          <div class="project-content">
+              <div class="container project-admin-home">
+              
+             <div class="col-md-3">
+               <div class="content-number">
+				<div class="col-md-8 content-title">
+                                <h5>travaux<i class="fa fa-folder bleu"></i></h5>
+                                <label>web</label>
+				</div>
+				<div class="col-md-4 content-number-project">	   
+					  <p class="number"><span class="count bleu">{{ nb }}</span></p>
+				</div>
+				</div>
+                                   </div>
+            
+          <div class="col-md-3 ">
+               <div class="content-number">
+				<div class="col-md-8 content-title">
+                                 <h5>travaux<i class="fa fa-folder jaune"></i></h5>
+				<label>print</label>	
+				</div>
+				<div class="col-md-4 content-number-project">	   
+					  <p class="number"><span class="count jaune">{{ nb2 }}</span></p>
+				</div>
+				</div>
+                                   </div>
+         
+          <div class="col-md-3 ">
+               <div class="content-number">
+				<div class="col-md-8 content-title">
+                                 <h5>travaux<i class="fa fa-folder vert"></i></h5>
+				<label>galerie</label>	
+				</div>
+				<div class="col-md-4 content-number-project">	   
+					  <p class="number"><span class="count vert">{{ nb3 }}</span></p>
+				</div>
+				</div>
+                                   </div>
+
+           <div class="col-md-3 ">
+               <div class="content-number">
+				<div class="col-md-8 content-title">
+                                <h5>travaux<i class="fa fa-folder violet"></i></h5>
+				<label>total</label>	
+				</div>
+				<div class="col-md-4 content-number-project">	   
+					   <p class="number"><span class="count violet">{{ nb +  nb2 +  nb3}}</span></p>
+				</div>
+				</div>
+                                   </div>
+         
+         
+             
+             
+           
+          
+             </div>
+          {% endblock %}
       
+
       
+     {% block workweb %}
+      {% for projet in projects %}
+       {#   <div class="project-img-home">#}
+       <div class="col-md-4">
+           <div class="min-img-thumb">
+  <div class="row last-project">
+       <div class="title-last-project">
+                   <h2>Derniers ajouts</h2>
+               </div>
+      <div class="col-md-5">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive">
+      </div>
+      <div class="col-md-6 txt-last-project">
+      <h4 class="bleu txt-bold">Web</h4>
+      <p class="">{{projet.titre}}</p>
+      </div>
+  </div>
+ 
+
       
-      
+
+ 
+ {% endfor %}
+     {% endblock %}
+     
+          {% block workprint %}
+      {% for projetprint in projectsprint %}
+    <div class="row last-project">
+      <div class="col-md-5">
+      <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive">
+       </div>
+        <div class="col-md-6 txt-last-project">
+       <h4 class="jaune txt-bold">Print</h4>
+        <p class="">{{projetprint.titre}}</p>
+        </div>
+    </div>
+       
+
+ 
+ {% endfor %}
+     {% endblock %}
+     
+     
+               {% block workgalerie %}
+      {% for galerie in projectsgal %}
+          <div class="row last-project-no-border">
+      <div class="col-md-5">
+      <img src="{{asset('uploads/img/')~galerie.imageMin}}" class="img-responsive">
+      </div>
+       <div class="col-md-6 txt-last-project">
+<h4 class="vert txt-bold">Galerie</h4>
+       <p class="">{{galerie.titre}}</p>
+       </div>
+       </div>
+      </div>
+      </div>
+            
+        {% block imgheader %}
+            {% for projetcaroussel in projectscaroussel %}
+           <div class="col-md-8">
+               <div class="img-header-content">
+                     <div class="row">
+                         <div class="title-img-header">
+               <h2>Image Couverture</h2>
+                         </div>
+                         <div class="min-img-header">
+                         <img src="{{asset('uploads/img/')~projetcaroussel.images}}" class="img-responsive col-md-12" id="imgHeader">
+                         </div>
+                          <div class="icon-header-publier" id="iconImgHeader">
+                            <i class="fa fa-check"></i>
+                            <p class="txt-active">Active</p>
+                            </div>
+                         <p class="name-img-header">Image: {{projetcaroussel.images}}</p>
+                         <div class="btn-edit-header col-md-12">
+                         <a class="btn btn-primary" href="{{path("modifcaroussel",{"id":projetcaroussel.id})}}">Modifier</a>
+                         </div>
+           </div>      
+            </div>
+           </div>
+            {% endfor %}
+            {% endblock %}
+     {#  </div>  #}
+           
+      </div>
+       
+
+       
+       
+ {% endfor %}
+     {% endblock %}
+     
+
+     
+     
+     
+     </div>
+     </div><!--fin site-->
+     
+     
+     
+     
+     
+     
+   
       {% block body %}
+       {% block ariane %}{% endblock %}
        
     {% endblock %}
     
@@ -100,7 +274,14 @@
         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/underscore-min.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/moment-2.2.1.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/clndr.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/site.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+        
+
+        
 
 </body>
 

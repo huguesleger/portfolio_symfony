@@ -27,14 +27,12 @@ class User implements UserInterface, Serializable
 
     /**
      * @var string
-     *
      * @ORM\Column(name="name", type="string", unique=true, length=255)
      */
     private $name;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="pass", type="string", unique=true, length=255)
      */
     private $pass;

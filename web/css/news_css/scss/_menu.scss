@@ -329,7 +329,7 @@ overflow: hidden;
   border: 0;
   display: flex;
   justify-content: center;
-  margin-top: 20%;
+/*  margin-top: 20%;*/
 
 }
 @media screen and(min-width: 568px)and(max-width: 736px){
@@ -340,7 +340,8 @@ overflow: hidden;
 }
 }
 .navbar-default.admin {
-  margin-top: 10%;
+/*  margin-top: 10%;*/
+margin-bottom: 0;
 }
 
 
@@ -354,12 +355,10 @@ overflow: hidden;
 .navbar-default.admin .navbar-nav > li > a {
   color: #818181;
   transition: 0.3s;
-  font-size: 22px;
+  font-size: 14px;
 }
 
-.connect{
-    background-color: #c9302c;
-}
+
 
 .btn-print{
      transition: 0.4s;
@@ -428,13 +427,22 @@ overflow: hidden;
     position: relative;
     display: block;
 /*    padding: 5px 15px;*/
-    padding-top: 40px;
-    padding-bottom: 40px;
+/*    padding-top: 40px;
+    padding-bottom: 40px;*/
     transition: 0.3s;
     &:hover, &:focus{
 /*    padding: 15px 15px ;*/
     transition: 0.3s; 
     }
+    
+}
+
+.rubrique{
+    padding-top: 40px;
+    padding-bottom: 40px; 
 }
 
 
+.primary{
+    margin-top: 20%;
+}

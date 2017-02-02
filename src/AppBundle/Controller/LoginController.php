@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 
+
 /**
  * Description of LoginController
  *
@@ -26,12 +27,17 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class LoginController extends Controller {
     
+    
       /**
      * @Route("/loginCheck",name="loginCheck")
      * @throws Exception
+     * @return type Description
      */
     public function check() {
+        
         throw new Exception('Verifiez votre fichier security');
+        
+        
         
     }
     /**
@@ -114,7 +120,21 @@ $uzer->setPass($password);
        
        }
        
-      
-    
-    
+
+public function sessionToken(){
+    $user = $this->getUser();
+    if (null === $user) {
+
+  // Ici, l'utilisateur est anonyme ou l'URL n'est pas derrière un pare-feu
+
+} else {
+
+  // Ici, $user est une instance de notre classe User
+
+}
+}
+
+
+
+
 }

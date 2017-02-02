@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;;
+namespace AppBundle\Controller;
 //use AppBundle\Entity\ProjetsDetail;
 
 //use AppBundle\Form\ProjetsDetailType;
@@ -40,12 +40,38 @@ class AdminController extends Controller {
      * @Template(":admin:index.html.twig");
      */
     public function homeAdmin(){
+        $em = $this->getDoctrine()->getManager();
+        $locationRepo = $em->getRepository('AppBundle:Projets');
+        $nb = $locationRepo->getNb();
+
+        $entitymanager = $this->getDoctrine()->getManager();
+        $event = $entitymanager->getRepository("AppBundle:ProjetsPrint");
+        $nb2 = $event->getNb2();
         
+        $entitymanagernb = $this->getDoctrine()->getManager();
+        $nbgal = $entitymanagernb->getRepository("AppBundle:Galerie");
+        $nb3 = $nbgal->getNb3();
+        
+        
+        $emm = $this->getDoctrine();
+        $web = $emm->getRepository("AppBundle:Projets")->findBy(array('publier' => '1'),
+        //filtrage par date croissant
+        array('annee'=>'DESC'), 1);
+        
+        $emmm = $this->getDoctrine();
+        $print = $emmm->getRepository("AppBundle:ProjetsPrint")->findBy(array('publier' => '1'),  array('id'=>'DESC'), 1);
+        
+        $emmmm = $this->getDoctrine();
+        $galerie = $emmmm->getRepository("AppBundle:Galerie")->findBy(array('publier' => '1'),  array('id'=>'DESC'), 1);
+        
+         $emmmmm = $this->getDoctrine();
+        $header = $emmmmm->getRepository("AppBundle:ImagesCaroussel")->findById(array('id', '1'));
+        
+       return array ('nb' => $nb,'nb2' => $nb2,'nb3' => $nb3,'projects' => $web,'projectsprint' => $print,'projectsgal' => $galerie,'projectscaroussel' => $header); 
+       
     }
     
-    
-    
-    
+
     /**
      * @Route("/admin/projets", name="projects");
      * @Template(":admin:projets.html.twig");
@@ -130,7 +156,7 @@ class AdminController extends Controller {
         $niouzes = $em->find('AppBundle:Projets', $id);
         $f = $this->createForm(ProjetsType::class, $niouzes);
         
-        
+   
             //on lie le formulaire temporaire avec les valeurs de la requete de type post
             //en gros on se retrouve avec un fork de notre formulaire en local ;) 
      
@@ -855,4 +881,7 @@ class AdminController extends Controller {
 //return array ('projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findById($id));
 //    }
     
+     
+
+     
     }

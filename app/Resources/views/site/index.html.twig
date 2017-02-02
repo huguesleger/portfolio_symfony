@@ -45,13 +45,13 @@
          {# <div class="logo">
           <img src="{{asset('images/minlogo-hl.png')}}"></a>
         </div>#}
-          <nav class="navbar navbar-default">
+          <nav class="navbar navbar-default primary">
             <ul class="nav navbar-nav">
-              <li class="col-sm-12 col-md-12 btn-work"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
-              <li class="col-sm-12 col-md-12 btn-print"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-              <li class="col-sm-12 col-md-12 btn-portfolio"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
-              <li class="col-sm-12 col-md-12 btn-moi"><a href="#">A Propos</a></li>
-              <li class="mail col-sm-12 col-md-12 btn-contactmoi"><a href="#">Contact</a></li>
+              <li class="col-sm-12 col-md-12 btn-work rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
+              <li class="col-sm-12 col-md-12 btn-print rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
+              <li class="col-sm-12 col-md-12 btn-portfolio rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
+              <li class="col-sm-12 col-md-12 btn-moi rubrique"><a href="#">A Propos</a></li>
+              <li class="mail col-sm-12 col-md-12 btn-contactmoi rubrique"><a href="#">Contact</a></li>
             </ul>
           </nav>
        
@@ -83,10 +83,10 @@
             </div>
                 
     </div>
-            <div class="contact-me">
+           {# <div class="contact-me">
                 <p>Mon profil vous intéresse ? Envie de collaborer sur un projet ?
                     Pour toute demande contactez-moi.</p>
-            </div>    
+            </div>    #}
     </div>
 
 {% block section %}
@@ -288,7 +288,6 @@
 
 </div>
    
-    
 
 {% endblock %}
 

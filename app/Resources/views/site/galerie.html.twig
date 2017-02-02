@@ -3,14 +3,13 @@
 {% block title %} | Galerie{% endblock %}
 
 {% block section %}
-    
-    <section id="porfolio">
-    <div class="container">
+    <section id="portfolio">
+    <div class="container project">
         <div class="row">
 
        {% for galerie in projectsgal %}
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-md-4">
     <div class="folio-item">
       <div class="folio-image">
           <img src="{{asset('uploads/img/')~galerie.imageMin}}" class="img-responsive">

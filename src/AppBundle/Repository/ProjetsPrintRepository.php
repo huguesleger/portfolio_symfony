@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class ProjetsPrintRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNb2() {
+  
+        return $this->createQueryBuilder('l')
+  
+                        ->select('COUNT(l)')
+  
+                        ->getQuery()
+  
+                        ->getSingleScalarResult();
+  
+    }
 }

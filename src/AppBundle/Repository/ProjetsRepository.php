@@ -10,4 +10,17 @@ namespace AppBundle\Repository;
  */
 class ProjetsRepository extends \Doctrine\ORM\EntityRepository
 {
+public function getNb() {
+  
+        return $this->createQueryBuilder('l')
+  
+                        ->select('COUNT(l)')
+  
+                        ->getQuery()
+  
+                        ->getSingleScalarResult();
+  
+    }
 }
+
+

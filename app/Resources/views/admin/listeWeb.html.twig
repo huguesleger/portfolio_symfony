@@ -1,8 +1,22 @@
 {% extends ":admin:index.html.twig"%}
 
 {% block body %}
-     
-     <div class="project-content">   
+      {% block nb %}   
+      {% endblock%}
+{% block workweb %}
+    {% endblock%}
+ {% block workprint %}
+        {% endblock%}
+ {% block workgalerie %}
+        {% endblock%}
+
+     <div class="project-content">
+         {% block ariane %}
+             <ol class=" ariane-admin breadcrumb">
+  <li><a href="{{path('admin')}}">Home</a></li>
+  <li  class="active"> Liste Print</li>
+</ol>
+             {% endblock %}
    <div class="container project">
         <div class="row">
        {% for projet in projects %}
