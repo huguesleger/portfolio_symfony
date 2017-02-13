@@ -1,0 +1,96 @@
+{% extends ":admin:index.html.twig"%}
+{#{% block navadd %} {% endblock %}#}
+{% block body %}
+ {% block nb %}   
+      {% endblock%}
+{% block workweb %}
+    {% endblock%}
+ {% block workprint %}
+        {% endblock%}
+ {% block workgalerie %}
+        {% endblock%}
+
+<body>
+         <div class="project-content">
+       
+       
+
+
+
+<div class="bg-form">
+         {% block ariane %}
+             <ol class=" ariane-admin breadcrumb">
+  <li><a href="{{path('admin')}}">Home</a></li>
+  <li><a href="{{path('contact')}}">Social</a></li>
+  <li  class="active">Edit</li>
+</ol>
+             {% endblock %}
+<div class="container">
+
+     <div class="block-project">
+{% if id is defined%}
+{{form_start(formSocial,{'attr':{'action':path('updatesocial',{'id':id}),'enctype':'multipart/form-data'}})}}
+
+{% else%}
+ {{form_start(formSocial,{'attr':{'action':path('validsocial'),'enctype':'multipart/form-data'}})}}
+
+{% endif%}
+<div class="row">
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+    <h1 class="title-form"><i class="icon-add-form fa fa-camera-retro"></i>Social</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Nom</span>{{form_widget(formSocial.nom,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Icon</span>{{form_widget(formSocial.icon,{'attr':{'class':('form-control'),'placeholder':('fa-')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Lien</span>{{form_widget(formSocial.lien,{'attr':{'class':('form-control')}})}}</div>
+
+
+</div>
+
+
+
+    <div class="col-sm-6 col-md-12 col-md-offset-1">
+        
+
+        <div class="input-group right">{{form_widget(formSocial.sauvegarder,{'attr':{'class':('btn btn-success ')}})}}</div>
+        
+    </div>
+
+</div>
+
+        {{form_end(formSocial)}}
+        
+
+    </div>
+
+
+        
+      </div>  
+     </div>   
+        
+</div>
+        
+        
+    
+             
+       
+        
+        
+    </body>
+    
+    
+    
+    {% endblock %}
+
+      {#   <div class="[ form-group ]">
+            <input type="checkbox" name="fancy-checkbox-success" id="fancy-checkbox-success" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-success" class="[ btn btn-success ]">
+                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                    <span> </span>
+                </label>
+                <label for="fancy-checkbox-success" class="[ btn btn-default active ]">
+                    Success Checkbox
+                </label>
+            </div>
+        </div>#}

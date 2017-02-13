@@ -61,6 +61,32 @@ class Galerie
     private $imageDetail;
 
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Texte", type="text")
+     */
+    private $texte;
+    
+     /**
+     * @var UploadedFile
+     *
+     * @ORM\Column(name="ImageDetail1", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
+     */
+    private $imageDetail1;
+    
+    
+    /**
+     * @var UploadedFile
+     *
+     * @ORM\Column(name="ImageDetail2", type="string", length=512)
+     * @File(mimeTypes={"image/jpeg"})
+     */
+    private $imageDetail2;
+    
+    
+    
      /**
      * @var bool
      * @ORM\Column(name="Publier", type="boolean") 
@@ -206,5 +232,32 @@ class Galerie
     {
         return $this->imageDetail;
     }
+    
+    
+    function getTexte() {
+        return $this->texte;
+    }
+
+    function getImageDetail1() {
+        return $this->imageDetail1;
+    }
+
+    function getImageDetail2() {
+        return $this->imageDetail2;
+    }
+
+    function setTexte($texte) {
+        $this->texte = $texte;
+    }
+
+    function setImageDetail1(UploadedFile $imageDetail1) {
+        $this->imageDetail1 = $imageDetail1;
+    }
+
+    function setImageDetail2(UploadedFile $imageDetail2) {
+        $this->imageDetail2 = $imageDetail2;
+    }
+
+
 }
 

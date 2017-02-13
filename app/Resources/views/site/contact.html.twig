@@ -1,0 +1,124 @@
+{% extends ":site:index.html.twig"%}
+
+
+{% block title %} | Contact{% endblock %}
+
+{% block section %}
+    
+   {#           {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  <li  class="active">Contact</li>
+</ol>{% endblock %}#}
+   
+   <div class="header-contact" id="HeaderContact">
+       <img src="../images/contact-header.jpg" class="img-responsive">
+       <div class="cloud-contact anim">
+           <img src="../images/nuage-contact.png">
+       </div>
+       <div class="title-contact" id="txtHeaderContact">
+           <h2>contact<span class="grey">|hello</span></h2>
+       </div>
+   </div>
+   
+  
+    <div class="container-fluid">
+        <div class="row">
+
+      {% block contact %}
+                    {#<form action="{{path('contact')}}" method="post" class="col-sm-offset-2 col-sm-8">
+                            <div class="input-group">
+                            <span class="input-group-addon">Nom</span>
+                            <p><input type="input" name="nom" class="form-control"></p>
+                            </div>
+                            <div class="input-group">
+                            <span class="input-group-addon">Email</span>
+                            <p><input type="email" name="email"class="form-control" ></p>
+                            </div>
+                            <div class="input-group">
+                            <span class="input-group-addon">En quoi puis-je vous être utile</span>
+                            <p><textarea type="textarea" name="corp" class="form-control"> </textarea></p>
+                            </div>
+                            <p><input type="submit" class="btn btn-default btn-success col-xs-12" value="Envoyer"></p>
+</form>#}
+                    
+    <div class="form-content col-sm-12 col-md-7">
+        
+        {% for flash_message in app.session.flashBag.get('succesmail') %}
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{ flash_message }}
+    </div>
+{% endfor %}
+        
+                <div id="form-contact">
+            <form action="{{path('contact')}}" id="contact" method="POST" class="contact-form-mail">
+            <div class="form-group-mail">
+            <input id="nom" type="text" name="nom" class="form-control-mail" placeholder="Nom" required="required">
+            <span id="msg_nom"></span>
+            </div>
+
+            <div class="form-group-mail">
+            <input id="email" type="email" name="email" class="form-control-mail" placeholder="Email" required="required">
+            <span id="msg_email"></span>
+            </div>
+           
+            
+            <div class="form-group-mail">
+            <textarea name="message" id="message" class="form-control-mail"  placeholder="Message" required="required"></textarea>
+            <span id="msg_message"></span>
+            </div>
+            <div class="form-group-mail">      
+            <div class="envoyer">
+                <div class="icon-down">
+                <i class="fa fa-angle-down anim-down"></i>
+                </div>
+              <input type="submit" class="btn btn-contact btn-lg" value="Envoyer"></input    
+            </div>
+            </div>
+              </form>
+              <span id="msg_all"></span>
+              
+            </div>
+                
+    </div>
+           
+</div>
+            
+    <div class="col-sm-12 col-md-3 col-md-offset-1">
+        <div class="infos-contact">
+        <h4 class="title-infos-contact">Contact</h4>
+        <div class="txt-infos-contact">
+
+          {% for contact in contacts %}
+                <p><a href="mailto:{{contact.lienSite}}">{{contact.emailSite}}</a></p>
+                <p><a href="mailto:{{contact.lienPro}}">{{contact.emailPro}}</a></p>
+        <p>{{contact.codePostal~" "~contact.ville}}</p>
+         {% endfor %}
+        </div>
+        </div>
+        <div class="social-perso">
+            <h4 class="title-social-contact"> Social</h4>
+            <div class="icon-social-contact">
+               {% for social in social %}
+            <a class="social-contact" href="{{social.lien}}" target="new"><i class="fa {{social.icon}}"></i></a>
+       {#     <a class="social-contact" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-instagram"></i></a>
+            <a class="social-contact" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-behance"></i></a>
+            <a class="social-contact" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-pinterest"></i></a>
+            <a class="social-contact" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-tumblr"></i></a>#}
+       {% endfor %}
+               
+        </div>
+        </div>
+
+    </div>
+      {% endblock %}      
+            
+  </div>
+
+</div>
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}
+
+
+    

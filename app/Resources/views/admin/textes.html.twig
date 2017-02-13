@@ -1,0 +1,111 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+          {% block nb %}   
+      {% endblock%}
+     <div class="project-content">
+     
+          {% block ariane %}
+             <ol class=" ariane-admin breadcrumb">
+  <li><a href="{{path('admin')}}">Home</a></li>
+  <li  class="active">Textes</li>
+</ol>
+             {% endblock %}
+             <div class="container-fluid">
+   <div class="container project-admin">
+       
+         
+       
+    <div class="row">
+   <div class="col-md-12">
+              <h3>A propos</h3>  
+         <a class="add-btn fa fa-download fa-5x" href="{{path("addpropos")}}"></a>
+         <p class="add-txt">add</p>
+   </div>
+{% for apropos in textes %}
+      <div class="col-md-12 project-description-textes">
+         
+          <table class="table">
+              <thead> <tr>
+              <th>texte</th>
+              
+          </tr>
+          
+            <td>{{apropos.texte}}</td>
+           
+              <td class="col-md-6 btn-action-contact">
+            <a class="btn btn-primary" href="{{path("modifpropos",{"id":apropos.id})}}">Editer</a>
+           {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
+            <a class="btn btn-danger" href="{{path("delatepropos",{"id":apropos.id})}}"data-confirm="Tes sur de vouloir supprimer ?">Suppr</a>
+            </td>  
+             
+         </thead>
+         
+  </table>
+                
+    </div>
+            
+      
+    {% endfor %} 
+    </div>
+
+                
+
+
+
+
+
+     
+                        
+         <div class="row">
+          <div class="col-md-12">
+              <h3 class="title-social">Formation</h3>  
+         <a class="add-btn fa fa-download fa-5x" href="{{path("formformation")}}"></a>
+         <p class="add-txt">add</p>
+   </div>
+          {% for formation in formation %}
+      <div class="col-md-12 project-description-textes">
+         <table class="table">
+      <thead> <tr>
+              <th class="col-md-3">année</th>
+              <th class="col-md-3">titre</th>
+              <th class="col-md-3">texte</th>
+              <th class="col-md-3 text-right">actions</th>
+          </tr>
+         
+            <td>{{formation.annee|date('d/m/y')}}</td>
+            <td>{{formation.titre}}</td>
+            <td>{{formation.texte}}</td>
+              <td class="col-md-6 btn-action-contact">
+            <a class="btn btn-primary" href="{{path("modifformation",{"id":formation.id})}}">Editer</a>
+           {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
+            <a class="btn btn-danger" href="{{path("delateformation",{"id":formation.id})}}"data-confirm="Tes sur de vouloir supprimer ?">Suppr</a>
+            </td>  
+             
+         </thead>
+         
+  </table>
+        {#  <div class="col-md-4">    
+        <p class="">{{social.nom}}</p>
+        <a class="social-contact" href="{{social.lien}}" target="new"><i class="fa {{social.icon}}"></i></a>
+          </div>#}
+             
+    </div>
+       {% endfor %} 
+      
+    
+         </div>
+
+         
+</div>
+             </div>
+
+     </div>
+{% endblock%}
+     {% block workweb %}
+        {% endblock%}
+      {% block workprint %}
+        {% endblock%}
+ {% block workgalerie %}
+        {% endblock%}
+

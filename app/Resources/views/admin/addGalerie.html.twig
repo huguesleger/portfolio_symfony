@@ -19,7 +19,8 @@
                 {% block ariane %}
              <ol class=" ariane-admin breadcrumb">
   <li><a href="{{path('admin')}}">Home</a></li>
-  <li  class="active"> Edit Galerie</li>
+  <li><a href="{{path('projectsgal')}}">Galerie</a></li>
+  <li  class="active"> Edit</li>
 </ol>
              {% endblock %}
 <div class="container">
@@ -49,6 +50,14 @@
 
 <h1 class="title-form"><i class="icon-add-form fa fa-search-plus"></i>Détail</h1>
 <div class="input-group col-md-12"><span class="input-group-addon">Image 1</span>{{form_widget(formNewsGalerie.imageDetail,{'attr':{'class':('form-control')}})}}</div>
+
+<div class="input-group col-md-12"><span class="input-group-addon">Image 2</span>{{form_widget(formNewsGalerie.imageDetail1,{'attr':{'class':('form-control')}})}}</div>
+
+<div class="input-group col-md-12"><span class="input-group-addon">Image 3</span>{{form_widget(formNewsGalerie.imageDetail2,{'attr':{'class':('form-control')}})}}</div>
+
+<div class="input-group col-md-12"><span class="input-group-addon">Texte</span>{{form_widget(formNewsGalerie.texte,{'attr':{'class':('form-control')}})}}</div>
+
+
 </div>
 
 

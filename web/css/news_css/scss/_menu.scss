@@ -161,14 +161,19 @@
 }
 }
 
-.container-fluid .navbar-brand{
+/*.container-fluid .navbar-brand{
     height: 100px;
+}*/
+
+.logo-home{
+    width: 100%;
+    height: 90px;
 }
 
 #logo{
     	position: relative;
- 	height:100%;
- 	width:100%;
+/* 	height:100%;
+ 	width:100%;*/
         z-index: 100;
  	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
  	&.push{
@@ -178,11 +183,11 @@
 }
 
 .navbar-brand {
-
+    font-family: "Inflecto", 'Open Sans', sans-serif;
     float: left;
     height: 50px;
     padding: 15px 45px;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 65px;
     color: #000;
     &:hover{
@@ -193,6 +198,7 @@
 .white{
     color:#fff;
     transition: 0.7s;
+    position: fixed;
 }
 /*.push-main {
     height: 100%;

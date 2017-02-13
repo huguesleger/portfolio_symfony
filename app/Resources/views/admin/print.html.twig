@@ -16,40 +16,59 @@
   <li  class="active">Travaux Print</li>
 </ol>
              {% endblock %}
-   <div class="container  project-admin">
+   <<div class="container-fluid">
+   <div class="container project-admin">  
         <div class="row">
        {% for projetprint in projectsprint %}
-   
-      <div class="col-sm-6 col-md-12">
-      <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive img col-md-5">
+            <div class="project-img">
+      <div class="col-md-4">
+      <img src="{{asset('uploads/img/')~projetprint.images}}" class="thumbnail-project img-responsive">
+      </div>
+      <div class="col-md-8 project-description">
+          <table class="table">
+         <thead> 
+         <tr>
+             <th class="col-md-1">id</th>
+              <th class="col-md-2 title-nom-project">Nom</th>
+              <th class="col-md-4 sep-status">Status</th>
+              <th class="col-md-5 action-project">Actions</th>
+          </tr>
+         </thead>
+          </table>
+          <div class="col-md-1">
+              <p class="id-project">{{projetprint.id}}</p>
+          </div>
+          <div class="col-md-2 btn-action-publier">
       <h2 class="">{{projetprint.titre}}</h2>
       <p class="">{{projetprint.description}}</p>
+          </div>
+          
       {% if projetprint.publier ==[1] %}
            <div class="col-sm-6 col-md-4">
- <div class= "alert alert-success" role= "alert" > <strong> Bravo! </strong> ceci est bien publié
- <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+ <div class= "alert alert-success" role= "alert" > <strong> Ok </strong> bien publié
+</div>
 </div>
      {% else %}
                          <div class="col-sm-6 col-md-4">
- <div class= "alert alert-danger" role= "alert" > <strong> Attention! </strong> ceci n'est pas encore publié 
- <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+ <div class= "alert alert-danger" role= "alert" > <strong> Oups! </strong> non publié 
+ </div>
 </div>
                          
       {% endif %}
     
-      <div class="btn-projet">
-            <a class="btn btn-primary" href="{{path("modifprint",{"id":projetprint.id})}}">Modifier</a>
-            <a class="btn btn-info" href="{{path("detailprojetsprint",{"id":projetprint.id})}}">detail</a>
+      <div class="col-md-5 btn-projet">
+            <a class="btn btn-primary" href="{{path("modifprint",{"id":projetprint.id})}}">Editer</a>
+            <a class="btn btn-info" href="{{path("detailprojetsprint",{"id":projetprint.id})}}">Détail</a>
              {% if projetprint.publier ==[1] %}
                   {% else %}
-            <a class="btn btn-success" href="{{path("publiprint",{"id":projetprint.id})}}"data-confirm="Tes sur de vouloir publier {{projetprint.titre}} ?">publier</a>
+            <a class="btn btn-success" href="{{path("publiprint",{"id":projetprint.id})}}"data-confirm="Tes sur de vouloir publier {{projetprint.titre}} ?">Publier</a>
              {% endif %}
             {#<a class="btn btn-warning" href="{{path("suppprint",{"id":projetprint.id})}}">Enlever</a>#}
-            <a class="btn btn-danger" href="{{path("delateprint",{"id":projetprint.id})}}"data-confirm="Tes sur de vouloir supprimer {{projetprint.titre}} ?">Supprimer</a>
+            <a class="btn btn-danger" href="{{path("delateprint",{"id":projetprint.id})}}"data-confirm="Tes sur de vouloir supprimer {{projetprint.titre}} ?">Suppr</a>
             </div>
     </div>
   
-
+            </div>
 
  
  {% endfor %}

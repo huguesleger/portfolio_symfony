@@ -1,6 +1,4 @@
-.fa-user{
-    color: #5cb85c;
-}
+
 
     .modal-header {
     padding: 15px;
@@ -43,10 +41,11 @@
 .input-group.champ {
     padding-top: 30px;
     float: left;
+    padding-left: 20px;
 }
 
 .modif-compte{
-    margin-right: 30px;
+/*    margin-right: 30px;*/
     margin-top: 80px;
     cursor: pointer;
     float: right;
@@ -103,7 +102,7 @@
     border-top: 1px solid #e5e5e5;
 }
 .input-group.champ{
-    padding-top: 30px;
+/*    padding-top: 30px;*/
     h4{
         border-bottom: 1px dashed #b5b5b5;
         padding-bottom: 5px;
@@ -165,4 +164,72 @@
     &:hover{
         opacity: 0.5;
     }
+}
+
+
+.block-left-infos{
+/*   background-color: yellow;*/
+   padding-top: 150px;
+   padding-bottom: 150px;
+}
+
+.block-right-infos{
+   background-color: #130C1C;
+   top: 10%;
+   bottom: 0;
+   position: absolute;
+   right: 0;
+   width: 45%;
+}
+
+.project-admin-compte{
+    padding-top:46px;
+    width: 100%;
+/*    padding-bottom: 50px;*/
+/*    margin-left: -15px;*/
+}
+
+.btn-profil{
+    margin-top: 90px;
+    /* padding-bottom: 60px;*/
+/*    margin-left: 40px;*/
+/*    margin-right: -25px;
+    margin-top: -65px;*/
+/*    float: right;*/
+    text-align: center;
+/*    width: 45%;*/
+        
+}
+
+.img-profil{
+    width: 100%;
+    height: 400px;
+    margin-top: 20%;
+    margin-left: 25%;
+}
+
+.btn-profil-img{
+/*    margin-top: 90px;*/
+    /* padding-bottom: 60px;*/
+/*    margin-left: 40px;*/
+/*    margin-right: -25px;
+    margin-top: -65px;*/
+/*    float: right;*/
+    text-align: center;
+/*    width: 45%;*/
+        
+}
+
+.name-admin{
+    font-family: "Inflecto", 'Open Sans', sans-serif;
+    font-size: 35px;
+    padding-top: 60px;
+    text-align: center;
+/*    padding-right: 20px;*/
+    color: #777;
+}
+
+.fa-user{
+    color: #5cb85c;
+    padding-right: 10px;
 }

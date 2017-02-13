@@ -19,6 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+//use Symfony\Component\Security\Core\Security;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -39,7 +40,19 @@ class AdminController extends Controller {
      * @Route("/admin", name="admin");
      * @Template(":admin:index.html.twig");
      */
-    public function homeAdmin(){
+    public function homeAdmin(Request $request){
+        
+//            $session = $request->getSession();
+//       
+//       if($request->attributes->has(Security::AUTHENTICATION_ERROR)){
+//           $error = $request->attributes->get(Security::AUTHENTICATION_ERROR);
+//       }else{
+//           $error = $session->get(Security::AUTHENTICATION_ERROR);
+//           $session->remove(Security::AUTHENTICATION_ERROR);
+//       }
+//       
+        
+       
         $em = $this->getDoctrine()->getManager();
         $locationRepo = $em->getRepository('AppBundle:Projets');
         $nb = $locationRepo->getNb();
@@ -67,7 +80,17 @@ class AdminController extends Controller {
          $emmmmm = $this->getDoctrine();
         $header = $emmmmm->getRepository("AppBundle:ImagesCaroussel")->findById(array('id', '1'));
         
-       return array ('nb' => $nb,'nb2' => $nb2,'nb3' => $nb3,'projects' => $web,'projectsprint' => $print,'projectsgal' => $galerie,'projectscaroussel' => $header); 
+       return array ('nb' => $nb,
+                    'nb2' => $nb2,
+                    'nb3' => $nb3,
+                    'projects' => $web,
+                    'projectsprint' => $print,
+                    'projectsgal' => $galerie,
+                    'projectscaroussel' => $header,
+//                    "last_username" => $session->get(Security::LAST_USERNAME)
+           ); 
+       
+       
        
     }
     

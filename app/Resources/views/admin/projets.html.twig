@@ -51,15 +51,15 @@
 </div>
            {% endif %}
       <div class="col-md-5 btn-projet">
-            <a class="btn btn-primary" href="{{path("modif",{"id":projet.id})}}">Modifier</a>
-             <a class="btn btn-info" href="{{path("detailprojetsweb",{"id":projet.id})}}">detail</a>
+            <a class="btn btn-primary" href="{{path("modif",{"id":projet.id})}}">Editer</a>
+             <a class="btn btn-info" href="{{path("detailprojetsweb",{"id":projet.id})}}">Détail</a>
              {% if projet.publier ==[1] %}
            
             {% else %}
-                <a class="btn btn-success" href="{{path("publiweb",{"id":projet.id})}}"data-confirm="Tes sur de vouloir publier {{projet.titre}} ?">publier</a>
+                <a class="btn btn-success" href="{{path("publiweb",{"id":projet.id})}}"data-confirm="Tes sur de vouloir publier {{projet.titre}} ?">Publier</a>
                  {% endif %}
            {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
-            <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}"data-confirm="Tes sur de vouloir supprimer {{projet.titre}} ?">Supprimer</a>
+            <a class="btn btn-danger" href="{{path("delate",{"id":projet.id})}}"data-confirm="Tes sur de vouloir supprimer {{projet.titre}} ?">Suppr</a>
             </div>               
     </div>
        </div>

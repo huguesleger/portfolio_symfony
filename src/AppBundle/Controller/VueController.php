@@ -8,9 +8,13 @@
 
 namespace AppBundle\Controller;
 
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
 
 
 
@@ -60,6 +64,8 @@ class VueController extends Controller {
     }
 
     
+    
+    
      /**
      * @Route("/projets/detail/{id}", name="detailprojets")
      * @Template(":site:projetsDetail.html.twig");
@@ -78,7 +84,14 @@ class VueController extends Controller {
         
     }
     
-    
+     /**
+     * @Route("/galerie/detail/{id}", name="detailgalerie")
+     * @Template(":site:galerieDetail.html.twig");
+     */
+    public function DetailGalerie($id){
+        return array ('projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findById($id));
+        
+    }
 
     
     /**
@@ -86,9 +99,79 @@ class VueController extends Controller {
      * @Template(":site:connexion.html.twig");
      */
     public function Connexion(){
-
-
   }
     
   
+//   /**
+//     * @Route("/contact",name="contact");
+//     * @Template(":site:contact.html.twig");
+//     */
+//  public function ActionContact(){
+////       $message = Swift_Message :: newInstance ()
+////        -> setSubject ( 'Hello Email' )
+////        -> setFrom ( 'hugueslegerdevweb@gmai.com' )
+////        -> setTo ('contact@hl-developerz.com')
+////        -> setBody ('body2');
+////      
+////      $this -> get ( 'mailer' ) -> send ( $message );
+//      
+//      
+//       
+//}
+
+/////////Formulaire Contact
+    /**
+     * @Route("/contact",name="contact")
+     * @Template(":site:contact.html.twig")
+     */
+  public function contactAction(Request $request)
+{
+        
+        
+      if ($request->getMethod()=='POST')
+      {
+        
+          
+          $nom = $request->get('nom');
+          $email = $request->get('email');
+          $message = $request->get('message');
+          
+          
+          
+    $contact = Swift_Message::newInstance();
+        $contact->toString();
+        $contact->setSubject($nom);
+        $contact->setFrom($email);
+        $contact->setTo('contact@hl-developerz.com');
+        $contact->setReplyTo($email);
+        $contact->setBody($message);
+                    
+    $this->get('mailer')->send($contact);
+    
+    
+    
+    $this->addFlash(
+            'succesmail',
+            'Email envoyé avec succés'
+        );
+    
+
 }
+
+ return $this->render(':site:contact.html.twig',
+
+                array(
+
+                    'contacts' => $this->getDoctrine()->getRepository('AppBundle:Contact')->findAll(),
+                    'social'=> $this->getDoctrine()->getRepository('AppBundle:Social')->findAll()
+
+                ));
+
+        
+}
+
+
+    
+}
+
+

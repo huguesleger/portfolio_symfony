@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <title>{% block title %}HL Developerz{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('./images/minlogo-black-hl.png') }}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('./vendor/bootstrap.min.css')}}"/>
          <link rel="stylesheet" type="text/css" href="{{asset('./css/animate.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
@@ -16,16 +16,17 @@
     <body>
 <div id="container">
  <div class="container-fluid">
-     <div id="logo">
+     <div class="logo-home" id="logo">
      {% if is_granted("ROLE_ADMIN") %}
 <i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
 {% else %}
     <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
     {% endif %}
-     </div>
+
     <div class="main-icon">
       <span></span>
     </div>
+     </div>
  </div>
 
 {#<div class="type-js headline">
@@ -51,38 +52,12 @@
               <li class="col-sm-12 col-md-12 btn-print rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
               <li class="col-sm-12 col-md-12 btn-portfolio rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
               <li class="col-sm-12 col-md-12 btn-moi rubrique"><a href="#">A Propos</a></li>
-              <li class="mail col-sm-12 col-md-12 btn-contactmoi rubrique"><a href="#">Contact</a></li>
+              <li class="mail col-sm-12 col-md-12 btn-contactmoi rubrique"><a href="{{path('contact')}}">Contact</a></li>
             </ul>
           </nav>
        
              
-              <div class="form-content">
-                <div id="form-contact">
-            <form id="contact" method="POST" class="contact-form-mail">
-            <div class="form-group-mail">
-            <input id="nom" type="text" name="nom" class="form-control-mail" placeholder="Name" required="required">
-            <span id="msg_nom"></span>
-            </div>
-
-            <div class="form-group-mail">
-            <input id="email" type="email" name="email" class="form-control-mail" placeholder="Email" required="required">
-            <span id="msg_email"></span>
-            </div>
-            <div class="form-group-mail">
-            <textarea name="message" id="message" class="form-control-mail"  placeholder="Message" required="required"></textarea>
-            <span id="msg_message"></span>
-            </div>
-            <div class="form-group-mail">      
-            <div class="envoyer">
-              <div class="btn btn-success">envoyer</div>    
-            </div>
-            </div>
-              </form>
-              <span id="msg_all"></span>
-              
-            </div>
-                
-    </div>
+     
            {# <div class="contact-me">
                 <p>Mon profil vous intéresse ? Envie de collaborer sur un projet ?
                     Pour toute demande contactez-moi.</p>
@@ -107,12 +82,12 @@
              <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="550ms">
         <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="650ms">web designer</p>
       <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="850ms">dév web</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1050ms">graphisme</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1250ms">illustration</p>
-               <div class="icon-me">
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1550ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1650ms" src="{{ asset('./images/deglingos.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1750ms" src="{{ asset('./images/logo-pale.png') }}"/>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1050ms">graphiste</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1250ms">illustrateur</p>
+      <div class="icon-me col-md-10 wow bounceInUp" data-wow-duration="1000ms" data-wow-delay="1750ms">
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1850ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1950ms" src="{{ asset('./images/deglingos.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="2050ms" src="{{ asset('./images/logo-pale.png') }}"/>
             
     </div>
     
@@ -158,8 +133,9 @@
 
 </section>
     
-      <div class="container" id="icon-present">
+      <div class="container icon-present">
     <div class="row">
+        <div class="background-mobile color-mobile">
     <div class="col-sm-6 col-md-3">
   <div class="present">
   <div class="creatif">
@@ -169,7 +145,9 @@
     </div>
   </div>
 </div>
+    </div>
 </div>
+        <div class="background-mobile">
 <div class="col-sm-6 col-md-3">
   <div class="present">
   <div class="reactif">
@@ -180,6 +158,8 @@
   </div>
 </div>
 </div>
+        </div>
+        <div class="background-mobile color-mobile">
 <div class="col-sm-6 col-md-3">
 <div class="present">
 <div class="colaboratif">
@@ -190,6 +170,8 @@
 </div>
 </div>
 </div>
+        </div>
+        <div class="background-mobile">
 <div class="col-sm-6 col-md-3">
   <div class="present">
   <div class="tif">
@@ -201,13 +183,14 @@
 </div>
 </div>
 </div>
+    </div>
 </div>
 
     
 <div class="container-fluid">
     
 <section class="services">
-
+<div id="particle-canvas">
 <div class="container">
   <div class="title-services">
     <h1>mes services</h1>
@@ -283,18 +266,19 @@
   </div>
 </div>
 
-
+</div>
 </section>
 
 </div>
    
+
 
 {% endblock %}
 
       <footer class="footer">
         <div class="container">
           <div class="credit">
-            <p>HL Developerz &copy 2016 Tous droits réservés</p>
+            <p>HL Developerz &copy 2017 Tous droits réservés</p>
           </div>
           <div class="social-content">
             <a class="social" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
@@ -306,11 +290,11 @@
 </div>
       </div>
 
-        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
-        {#{% block javascript %}
+        <script type="text/javascript" src="{{asset('./vendor/jquery.min.js')}}"></script>
+       <script type="text/javascript" src="{{asset('./vendor/bootstrap.min.js')}}"></script>
+        {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
-        {% endblock %}#}
+        {% endblock %}
         <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>

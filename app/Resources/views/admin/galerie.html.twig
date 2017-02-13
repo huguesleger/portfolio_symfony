@@ -24,32 +24,32 @@
         <div class="row">
        {% for galerie in projectsgal %}
    
-      <div class="col-sm-6 col-md-12">
-      <img src="{{asset('uploads/img/')~galerie.imageMin}}" class="img-responsive img col-md-5">
+      <div class="col-sm-6 col-md-3">
+      <img src="{{asset('uploads/img/')~galerie.imageMin}}" class="img-responsive">
+      <div class="col-md-8">
         <h2 class="">{{galerie.titre}}</h2>
      
       <p class="">{{galerie.description}}</p>
+      </div>
              {% if galerie.publier ==[1] %}
-           <div class="col-sm-6 col-md-4">
- <div class= "alert alert-success" role= "alert" > <strong> Bravo! </strong> ceci est bien publié
- <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+           <div class="col-sm-6 col-md-4 icon-publier">
+<i class="fa fa-check"></i>
 </div>
            {% else %}
-                         <div class="col-sm-6 col-md-4">
- <div class= "alert alert-danger" role= "alert" > <strong> Attention! </strong> ceci n'est pas encore publié 
- <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+                         <div class="col-sm-6 col-md-2">
+ <i class="fa fa-times"></i>
 </div>
            {% endif %}
-      <div class="btn-projet">
-            <a class="btn btn-primary" href="{{path("modifgal",{"id":galerie.id})}}">Modifier</a>
+      <div class="btn-projet btn-left col-md-12">
+            <a class="btn btn-primary" href="{{path("modifgal",{"id":galerie.id})}}">Editer</a>
              {#<a class="btn btn-info" href="{{path("projectsdetailgal",{"id":galerie.id})}}">detail</a>#}
              {% if galerie.publier ==[1] %}
            
             {% else %}
-                <a class="btn btn-success" href="{{path("publigal",{"id":galerie.id})}}"data-confirm="Tes sur de vouloir publier {{galerie.titre}} ?">publier</a>
+                <a class="btn btn-success" href="{{path("publigal",{"id":galerie.id})}}"data-confirm="Tes sur de vouloir publier {{galerie.titre}} ?">Publier</a>
                  {% endif %}
            {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
-            <a class="btn btn-danger" href="{{path("delategal",{"id":galerie.id})}}"data-confirm="Tes sur de vouloir supprimer {{galerie.titre}} ?">Supprimer</a>
+            <a class="btn btn-danger" href="{{path("delategal",{"id":galerie.id})}}"data-confirm="Tes sur de vouloir supprimer {{galerie.titre}} ?">Suppr</a>
             </div>
                        
     </div>

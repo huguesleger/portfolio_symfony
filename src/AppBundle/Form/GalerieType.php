@@ -22,6 +22,9 @@ class GalerieType extends AbstractType
                 ->add('technique')
                 ->add('imageMin', FileType::class, array('data_class' => null))
                 ->add('imageDetail', FileType::class, array('data_class' => null))
+                ->add('imageDetail1', FileType::class, array('data_class' => null))
+                ->add('imageDetail2', FileType::class, array('data_class' => null))
+                ->add('texte')
                 ->add('publier')
                 ->add('sauvegarder', SubmitType::class)
                 ;

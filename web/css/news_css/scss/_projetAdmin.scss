@@ -17,16 +17,25 @@
 
 
 .btn-projet{
-/*    padding-top: 30px;
-     padding-bottom: 60px;*/
+    padding-top: 30px;
+    /* padding-bottom: 60px;*/
 /*    margin-left: 40px;*/
-    margin-right: -25px;
-    margin-top: -65px;
-    float: right;
-/*    text-align: right;
-    border-left: 2px solid #F7AB35;*/
-    width: 45%;
+/*    margin-right: -25px;
+    margin-top: -65px;*/
+/*    float: right;*/
+    text-align: right;
+/*    width: 45%;*/
         
+}
+
+.btn-left{
+    text-align: left;
+    padding-top: 0; /*------pour-section-galerie------*/
+}
+
+.btn-left-carousel{
+    text-align: left;
+    padding-top: 30px;
 }
 
 .sep-status{
@@ -111,4 +120,9 @@
 .thumbnail-project{
     max-height:161px;
     float: right;
+}
+
+.icon-publier{
+    padding-top: 20px;
+    font-size: 25px;
 }

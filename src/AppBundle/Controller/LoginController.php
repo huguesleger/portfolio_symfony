@@ -8,7 +8,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\ImgProfil;
 use AppBundle\Entity\User;
+use AppBundle\Form\ImgProfilType;
 use AppBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -83,10 +85,14 @@ $u->setPass($password);
      * @Template(":admin:infoProfil.html.twig")
      */
     function editInfo($id) {
+        
+        
+        
           $em = $this->getDoctrine()->getEntityManager();
           $uzer = $em->find('AppBundle:User',$id);
           $f= $this->createForm(UserType::class, $uzer);
           
+        
         
           return array("formUser"=> $f->createView(), "id"=>$id);
     }
@@ -97,11 +103,15 @@ $u->setPass($password);
     * 
     */
    public function  updateEvent(Request $request, $id){
+     
+       
        $em = $this->getDoctrine()->getEntityManager(); 
        $uzer = $em->find('AppBundle:User',$id);
        $f= $this->createForm(UserType::class, $uzer);
        
        if ($request->getMethod() == 'POST'){
+          
+         
            
        $f->handleRequest($request);
         $factory = $this->get('security.encoder_factory');
@@ -111,9 +121,10 @@ $password = $encoder->encodePassword($uzer->getPass(), $uzer->getSalt());
 $uzer->setPass($password);
        
      $uzer->setRoles(array("ROLE_ADMIN")); 
-     
+       
        $em -> merge($uzer);
        $em->flush();
+       
        
        return $this->redirect($this->generateUrl('admin'));
         }
@@ -122,6 +133,7 @@ $uzer->setPass($password);
        
 
 public function sessionToken(){
+    
     $user = $this->getUser();
     if (null === $user) {
 

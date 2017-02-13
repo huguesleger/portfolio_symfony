@@ -27,7 +27,7 @@
         left: 0;
         opacity: 1;
  	&.push-content{
-            position: fixed;
+/*            position: fixed;*/
 /*            left: 10%;*/
             opacity: 0;
  	}
@@ -99,30 +99,45 @@ margin-top: 30px;
 
 @media screen and(min-width: 300px)and(max-width: 768px){
   .tif .icon{
-    margin-left: 30px;
+/*    margin-left: 30px;*/
   }
   .colaboratif .icon{
     margin-left: 25px;
   }
 
+  .background-mobile{
+      width: 100%;
+      margin: 0;
+      height: 200px;
+      margin-top: 10px;
+  }
+  
+  .color-mobile{
+      background-color: #F2F1EF;
+  }
 
   .present{
   margin: auto;
     text-align: center;
     padding-bottom: 30px;
     width: 100%;
+    margin-left: 10px;
   }
+  
+  .icon-present{
+    padding-left: 0;
+}
 }
 
 
 
 .services{
-  background-image: url('../../images/nuages.jpg');
+/*  background-image: url('../../images/nuages.jpg');*/
   background-size: cover;
   background-attachment: fixed;
   padding-top: 30px;
   padding-bottom: 50px;
-  margin-bottom: 50px;
+/*  margin-bottom: 190px;*/
 
 
   
@@ -293,12 +308,27 @@ text-transform: uppercase;
 font-weight: 800;
 background-color: rgba(255, 255, 255, 0.5);
 height: 100%;
-padding-top: 30px;
+padding-top: 70px;
 padding-left: 3%;
 padding-right: 3%;
 z-index: 2;
 .icon-me{
 padding-top: 20px;
+position: absolute;
+bottom: 0;
+padding-bottom: 50px;
 }
 }
+.icon-present{
+    padding-left: 50px;
 }
+}
+
+.icon-logohl-header{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-top: 35px;
+    margin-left: -35px;
+}
+

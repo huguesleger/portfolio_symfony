@@ -24,10 +24,12 @@ text-transform: uppercase;
     background-color: #130c1c;
     position: fixed;
     height: auto;
-    min-height: 100%;
+/*    min-height: 100%;*/
     float: left;
     margin-top: 50px;
 /*    border-top: 2px solid #fff;*/
+    top: 0;
+    bottom: 0;
 }
 
 .nav-add > li > a {
@@ -79,13 +81,7 @@ text-transform: uppercase;
     text-transform: uppercase;
 }
 
-.name-admin{
-    font-size: 15px;
-    padding: 10px 15px;
-    text-align: right;
-/*    padding-right: 20px;*/
-    color: #777;
-}
+
 
 .dropdown-menu{
   position: absolute;
@@ -94,7 +90,7 @@ text-transform: uppercase;
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 190px;
+  min-width: 185px;
   padding: 5px 0;
   margin: 0px 0 0;
   list-style: none;
@@ -107,6 +103,10 @@ text-transform: uppercase;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
   text-transform: none;
+}
+
+.dropdown-title {
+    text-align: right;
 }
 
 
@@ -131,7 +131,7 @@ text-transform: uppercase;
   transition: 0.3s;
 }
 
-.no-border{
+.no-border a{
     border: none;
 }
 

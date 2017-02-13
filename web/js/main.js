@@ -1,26 +1,26 @@
 $(document).ready(function() {
         var windowHeight = $(document).innerHeight();
 //        var navHeight = $('.project-content').height();
-	$('.nav-add').css('min-height', windowHeight);
+//	$('.nav-add').css('min-height', windowHeight);
         $('.logo-hl-admin').css('max-height', windowHeight);
     
      
-   $('.project-content').resize(function () {
-       var windowHeight = $(document).innerHeight();
-	$('.nav-add').css('min-height', windowHeight );
-    });
+//   $('.project-content').resize(function () {
+//       var windowHeight = $(document).innerHeight();
+//	$('.nav-add').css('min-height', windowHeight );
+//    });
     
      var windowHeight = $(document).innerHeight();
 //        var navHeight = $('.project-content').height();
 	$('.project-content').css('min-height', windowHeight);
-    
-    
+      
     
     $('#iconImgHeader').css({
         right: ($('#imgHeader').width() - $('#iconImgHeader').innerWidth()) / 2,
         top: ($('#imgHeader').height() - $('#iconImgHeader').innerHeight()) / 2 +80
     });
     
+  
   
     });
 
@@ -70,7 +70,6 @@ $this = $(this);
 if($this.hasClass('is-open')){
 	$this.addClass('is-close').removeClass('is-open , is-open-color');
       $('body').css('overflowY','visible');
-        $('#form-contact').hide();
          $('.main-content').show();
          $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
          $('.navbar-brand').removeClass('white');
@@ -148,14 +147,12 @@ if($this.hasClass('is-open')){
         
 $(function(){
         $('.mail').click(function(){
-                    $('#form-contact').show();
                     $('.navbar-default').css({marginTop: "-6.5%", transition :"0.4s"});
 
                     
                 });
                 
         $('.envoyer').click(function(){
-            $('#form-contact').hide();
             $('.main-content').show();
             $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
              $('.contact-me').css({marginTop: "32%", transition :"0.4s"});
@@ -252,7 +249,18 @@ $(function(){
          var $groupe = document.getElementById('appbundle_user_pass'); 
     $groupe.disabled = !false; 
 //    $('.boutonCompte').show();
+});
 
+ $('#edit-compte-close').click(function(){
+         var $groupe = document.getElementById('appbundle_imgprofil_image'); 
+    $groupe.disabled = !false; 
+    
+    });
+    
+     $('#edit-pass-close').click(function(){
+         var $groupe = document.getElementById('appbundle_imgprofil_image'); 
+    $groupe.disabled = !false; 
+//    $('.boutonCompte').show();
 });
  
   });
@@ -289,9 +297,7 @@ $('.count').each(function () {
         
  
  
- 
-
- 
-
   });
+  
+
    

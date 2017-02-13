@@ -1,0 +1,93 @@
+{% extends ":admin:index.html.twig"%}
+{#{% block navadd %} {% endblock %}#}
+{% block body %}
+ {% block nb %}   
+      {% endblock%}
+{% block workweb %}
+    {% endblock%}
+ {% block workprint %}
+        {% endblock%}
+ {% block workgalerie %}
+        {% endblock%}
+<body>
+         <div class="project-content">
+       
+       
+
+
+
+<div class="bg-form">
+         {% block ariane %}
+             <ol class=" ariane-admin breadcrumb">
+  <li><a href="{{path('admin')}}">Home</a></li>
+  <li><a href="{{path('textes')}}">A propos</a></li>
+  <li  class="active">Edit</li>
+</ol>
+             {% endblock %}
+<div class="container">
+  
+     <div class="block-project">
+{% if id is defined%}
+{{form_start(formPropos,{'attr':{'action':path('updatepropos',{'id':id}),'enctype':'multipart/form-data'}})}}
+
+{% else%}
+ {{form_start(formPropos,{'attr':{'action':path('validpropos'),'enctype':'multipart/form-data'}})}}
+
+{% endif%}
+<div class="row">
+<div class="col-sm-6 col-md-12 col-md-offset-1">
+
+
+    <h1 class="title-form"><i class="icon-add-form fa fa-camera-retro"></i>A propos</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Texte Présentation</span>{{form_widget(formPropos.texte,{'attr':{'class':('form-control')}})}}</div>
+
+
+
+
+</div>
+
+
+
+    <div class="col-sm-6 col-md-12 col-md-offset-1">
+        
+
+        <div class="input-group right">{{form_widget(formPropos.sauvegarder,{'attr':{'class':('btn btn-success ')}})}}</div>
+        
+    </div>
+
+</div>
+
+        {{form_end(formPropos)}}
+        
+
+    </div>
+
+</div>
+</div>
+</div>
+        
+        
+    
+             
+       
+        
+        
+    </body>
+    
+    
+    
+    {% endblock %}
+
+      {#   <div class="[ form-group ]">
+            <input type="checkbox" name="fancy-checkbox-success" id="fancy-checkbox-success" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-success" class="[ btn btn-success ]">
+                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                    <span> </span>
+                </label>
+                <label for="fancy-checkbox-success" class="[ btn btn-default active ]">
+                    Success Checkbox
+                </label>
+            </div>
+        </div>#}
+

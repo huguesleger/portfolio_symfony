@@ -6,10 +6,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
      <title>Admin</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('./images/minlogo-black-hl.png') }}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('./vendor/bootstrap.min.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/clndr.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
         
   </head>
@@ -33,6 +32,7 @@
         <li><a href="{{path('projects')}}">travaux web</a></li>
         <li><a href="{{path('projectsprint')}}">travaux print</a></li>
         <li><a href="{{path('projectsgal')}}">galerie</a></li>
+        <li><a href="{{path('contacts')}}">contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right moncompte">
         <li><a class="connect" href="{{path("loginOut")}}">déconnexion</a></li>
@@ -43,9 +43,10 @@
            <div class="dropdown">
           <h3 class="title-rubrique-profil dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></h3>
           <ul class="dropdown-menu">
-              <li class="name-admin"><i class="icon-add fa fa-user"></i>Bonjour {{(app.user.name)}}</li>
-               <li role="separator" class="divider"></li>
-              <li class="infos-compte" data-toggle="modal" data-target="#myModal"><a href="{{path("editUser",{"id":app.user.id})}}"><i class="icon-add fa fa-pencil-square-o"></i>Edit profil</a></li>
+             {# <li class="name-admin"><i class="icon-add fa fa-user"></i>Bonjour {{(app.user.name)}}</li>
+               <li role="separator" class="divider"></li>#}
+              {#<li class="infos-compte" data-toggle="modal" data-target="#myModal"><a href="{{path("editUser",{"id":app.user.id})}}"><i class="icon-add fa fa-pencil-square-o"></i>Edit profil</a></li>#}
+               <li class="infos-compte"><a href="{{path("editUser",{"id":app.user.id})}}"><i class="icon-add fa fa-pencil-square-o"></i>Edit profil</a></li>
           </ul>
         </div>
          </div>
@@ -80,18 +81,34 @@
         
               <h3 class="title-rubrique-nav"><i class="icon-dashboard fa fa-dashboard"></i>Dasboard</h3>
               
-              <li class="retour-home"><a href="{{path('admin')}}"><i class="icon-home fa fa-home"></i>home</a></li>  
-              <li class="txt-nav-add"><a href="{{path("form")}}"><i class="icon-add fa fa-desktop"></i>travaux web</a></li>
-            
-               <li class="txt-nav-add"><a href="{{path("formprint")}}"><i class="icon-add fa fa-pencil"></i>travaux print</a></li>
-               <li class="txt-nav-add"><a href="{{path("formcaroussel")}}"><i class="icon-add fa fa-picture-o"></i>slider</a></li>
-               <li class="no-border txt-nav-add"><a href="{{path("formgalerie")}}"><i class="icon-add fa fa-cloud-download"></i>galerie</a></li>
-               {#<h3 class="title-rubrique-nav">Mes Listes</h3>#}
-               <li class="txt-nav-add"><a href="{{path("listeweb")}}"><i class="icon-add fa fa-bars"></i>Liste travaux web</a></li>
-               <li class="txt-nav-add"><a href="{{path("listeprint")}}"><i class="icon-add fa fa-bars"></i>Liste travaux print</a></li>
-               <li class="no-border txt-nav-add"><a href="{{path("listegal")}}"><i class="icon-add fa fa-bars"></i>Liste galerie</a></li>
+              <li class="retour-home"><a href="{{path('admin')}}"><i class="icon-home fa fa-home"></i>home</a></li> 
               
+                <li class="txt-nav-add dropdown">
+          <a href="#" class="dropdown-toggle dropdown-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-add fa fa-download"></i>Travaux <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+                <li class="txt-nav-add"><a href="{{path("form")}}"><i class="icon-add fa fa-desktop"></i>travaux web</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("formprint")}}"><i class="icon-add fa fa-pencil"></i>travaux print</a></li>
             
+          </ul>
+        </li>
+                   {#<h3 class="title-rubrique-nav">Mes Listes</h3>#}
+                <li class="txt-nav-add dropdown">
+          <a href="#" class="dropdown-toggle dropdown-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-add fa fa-download"></i>Images <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               <li class="txt-nav-add"><a href="{{path("formcaroussel")}}"><i class="icon-add fa fa-picture-o"></i>slider</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("formgalerie")}}"><i class="icon-add fa fa-picture-o"></i>galerie</a></li>
+          </ul>
+        </li>
+
+               {#<h3 class="title-rubrique-nav">Mes Listes</h3>#}
+          
+               <li class="txt-nav-add"><a href="{{path("textes")}}"><i class="icon-add fa fa-font"></i>Textes</a></li>
+               <li class="txt-nav-add"><a href="{{path("listeweb")}}"><i class="icon-add fa fa-bars"></i>Liste web</a></li>
+               <li class="txt-nav-add"><a href="{{path("listeprint")}}"><i class="icon-add fa fa-bars"></i>Liste print</a></li>
+               <li class="no-border txt-nav-add"><a href="{{path("listegal")}}"><i class="icon-add fa fa-bars"></i>Liste galerie</a></li>
+            
+        
+     
       <div class="logo-hl-admin">
               <img src="{{ asset('./images/minlogo-hl.png') }}"/>
           </div>
@@ -234,7 +251,7 @@
                             </div>
                          <p class="name-img-header">Image: {{projetcaroussel.images}}</p>
                          <div class="btn-edit-header col-md-12">
-                         <a class="btn btn-primary" href="{{path("modifcaroussel",{"id":projetcaroussel.id})}}">Modifier</a>
+                         <a class="btn btn-primary" href="{{path("modifcaroussel",{"id":projetcaroussel.id})}}">Editer</a>
                          </div>
            </div>      
             </div>
@@ -271,13 +288,9 @@
     
     
 
-        <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
-         <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./vendor/jquery.min.js')}}"></script>
+         <script type="text/javascript" src="{{asset('./vendor/bootstrap.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/underscore-min.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/moment-2.2.1.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/clndr.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/site.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         
 

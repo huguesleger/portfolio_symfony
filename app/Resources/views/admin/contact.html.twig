@@ -1,0 +1,111 @@
+{% extends ":admin:index.html.twig"%}
+
+{% block body %}
+          {% block nb %}   
+      {% endblock%}
+     <div class="project-content">
+     
+          {% block ariane %}
+             <ol class=" ariane-admin breadcrumb">
+  <li><a href="{{path('admin')}}">Home</a></li>
+  <li  class="active">Contact</li>
+</ol>
+             {% endblock %}
+             <div class="container-fluid">
+   <div class="container project-admin">
+       
+         
+        <div class="row">
+     <div class="col-md-12">
+              <h3>Infos</h3>  
+         <a class="add-btn fa fa-download fa-5x" href="{{path("formcontact")}}"></a>
+         <p class="add-txt">add</p>
+   </div>
+          {% for contact in contacts %}
+      <div class="col-md-12 project-description-textes">
+          <table class="table">
+              <thead> <tr>
+              <th class="col-md-3">email site</th>
+              <th class="col-md-3">email pro</th>
+              <th class="col-md-2">code postal</th>
+              <th class="col-md-2">ville</th>
+               <th class="col-md-3 text-right">actions</th>
+          </tr>
+         
+            <td>{{contact.emailSite}}</td>
+            <td>{{contact.emailPro}}</td>
+            <td>{{contact.codePostal}}</td>
+            <td>{{contact.ville}}</td>
+              <td class="col-md-6 btn-action-contact">
+            <a class="btn btn-primary" href="{{path("modifcontact",{"id":contact.id})}}">Editer</a>
+           {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
+            <a class="btn btn-danger" href="{{path("delatecontact",{"id":contact.id})}}"data-confirm="Tes sur de vouloir supprimer ?">Suppr</a>
+            </td>  
+             
+         </thead>
+          
+  </table>
+               
+    </div>
+      
+    
+{% endfor %} 
+
+                
+ 
+
+
+ </div>
+
+                
+         <div class="row">
+           <div class="col-md-12">
+              <h3 class="title-social">Social</h3>  
+         <a class="add-btn fa fa-download fa-5x" href="{{path("formsocial")}}"></a>
+         <p class="add-txt">add</p>
+   </div>
+          {% for social in social %}
+      <div class="col-md-12 project-description-textes">
+         <table class="table">
+      <thead> <tr>
+              <th class="col-md-3">nom</th>
+              <th class="col-md-3">icon</th>
+              <th class="col-md-3">lien</th>
+              <th class="col-md-3 text-right">actions</th>
+          </tr>
+         
+            <td>{{social.nom}}</td>
+            <td><i class="fa {{social.icon}}"></i></td>
+            <td>{{social.lien}}</td>
+              <td class="col-md-6 btn-action-contact">
+            <a class="btn btn-primary" href="{{path("modifsocial",{"id":social.id})}}">Editer</a>
+           {# <a class="btn btn-warning" href="{{path("suppweb",{"id":projet.id})}}">Enlever</a>#}
+            <a class="btn btn-danger" href="{{path("delatesocial",{"id":social.id})}}"data-confirm="Tes sur de vouloir supprimer ?">Suppr</a>
+            </td>  
+             
+         </thead>
+          
+  </table>
+        {#  <div class="col-md-4">    
+        <p class="">{{social.nom}}</p>
+        <a class="social-contact" href="{{social.lien}}" target="new"><i class="fa {{social.icon}}"></i></a>
+          </div>#}
+             
+    </div>
+      {% endfor %} 
+ 
+    
+         </div>
+
+         
+</div>
+             </div>
+
+     </div>
+{% endblock%}
+     {% block workweb %}
+        {% endblock%}
+      {% block workprint %}
+        {% endblock%}
+ {% block workgalerie %}
+        {% endblock%}

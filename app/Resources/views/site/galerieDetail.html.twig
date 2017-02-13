@@ -1,0 +1,34 @@
+{% extends ":site:index.html.twig"%}
+
+{% block title %} | Galerie{% endblock %}
+
+{% block section %}
+   {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  {#<li><a href="{{path('travauxweb')}}">Travaux Web</a></li>#}
+  <li class="active">Détail</li>
+</ol>{% endblock %}
+
+       {% for galerie in projectsgal %}
+
+         <div class="col-sm-6 col-md-12">
+    <div class="detail-work">
+       <img src="{{asset('uploads/img/')~galerie.imageDetail}}" class="img-responsive img col-md-12">
+       <div class="container">
+        <h2 class="">{{galerie.titre}}</h2>
+        <p>{{galerie.technique}}</p>
+         <img src="{{asset('uploads/img/')~galerie.imageDetail1}}" class="img-responsive img">
+        <p>{{galerie.texte}}</p>
+       <img src="{{asset('uploads/img/')~galerie.imageDetail2}}" class="img-responsive img">
+      
+      </div>
+    </div>
+    
+ 
+ {% endfor %}
+  </div>
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}
+
+
