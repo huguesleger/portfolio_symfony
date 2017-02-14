@@ -251,17 +251,6 @@ $(function(){
 //    $('.boutonCompte').show();
 });
 
- $('#edit-compte-close').click(function(){
-         var $groupe = document.getElementById('appbundle_imgprofil_image'); 
-    $groupe.disabled = !false; 
-    
-    });
-    
-     $('#edit-pass-close').click(function(){
-         var $groupe = document.getElementById('appbundle_imgprofil_image'); 
-    $groupe.disabled = !false; 
-//    $('.boutonCompte').show();
-});
  
   });
   

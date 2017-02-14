@@ -2014,6 +2014,9 @@ input[type=date].form-control, input[type=time].form-control, input[type=datetim
 .carousel-control {
   font-size: 50px;
   text-shadow: none;
+  width: 5%;
+  margin-right: 20px;
+  margin-left: 20px;
   z-index: 2; }
   .carousel-control:hover {
     opacity: 0.5; }
