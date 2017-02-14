@@ -13,7 +13,7 @@
               {% block ariane %}
              <ol class=" ariane-admin breadcrumb">
   <li><a href="{{path('admin')}}">Home</a></li>
-  <li  class="active">Travaux Print</li>
+  <li  class="active">Travaux print</li>
 </ol>
              {% endblock %}
    <<div class="container-fluid">
@@ -21,10 +21,15 @@
         <div class="row">
        {% for projetprint in projectsprint %}
             <div class="project-img">
-      <div class="col-md-4">
-      <img src="{{asset('uploads/img/')~projetprint.images}}" class="thumbnail-project img-responsive">
+      <div class="col-md-3">
+          <div class="thumbnail-project-print">
+      <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive">
+       <div class="caption">
+      <p class="name-img-projets-print">{{projetprint.images|truncate(10, false)}}</p>
       </div>
-      <div class="col-md-8 project-description">
+      </div>
+      </div>
+      <div class="col-md-8 project-description-print">
           <table class="table">
          <thead> 
          <tr>

@@ -11,9 +11,17 @@
         {% endblock%}
 
      <div class="project-content">
-     
-         
-   <div class="container project">
+       {% block ariane %}
+             <ol class=" ariane-admin breadcrumb">
+  <li><a href="{{path('admin')}}">Home</a></li>
+  <li><a href="{{path('projects')}}">Travaux web</a></li>
+    {% for projet in projects %}
+  <li  class="active">Détail {{projet.titre}}</li>
+</ol>
+ {% endfor %}
+             {% endblock %}
+       <div class="container-fluid">  
+   <div class="container project-admin">
        
          
         <div class="row">
@@ -46,7 +54,7 @@
  
  {% endfor %}
  
-
+        </div>
  </div>
 </div>
 
