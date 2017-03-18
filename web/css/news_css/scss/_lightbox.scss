@@ -212,8 +212,7 @@ body:after {
 
 
 
- .project,
- .col-sm-4  {
+ .project .col-sm-4  {
   overflow: hidden;
   padding: 0;
   
@@ -223,6 +222,7 @@ body:after {
 
  .folio-item {
   position: relative;
+
 }
 
  .overlay {
@@ -245,6 +245,7 @@ body:after {
   width: 100%;
 
 }
+
 
 .overlay .overlay-text {
   display: table-cell;

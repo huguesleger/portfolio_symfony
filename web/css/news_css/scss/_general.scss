@@ -10,16 +10,103 @@ overflow-x: hidden;
 background-color: #fff;
 }
 
-
+ a:hover{
+    text-decoration: none;
+}
 
 #container{
   width: 100%;
   margin: 0;
   padding: 0;
+/*  opacity: 0;*/
   transition: margin-left 0.4s;
+
+/*  animation-delay: 500ms;*/
 }
 
 
+
+#svg{
+  background: url('../../images/logo-hl.svg');
+  width: 200px;
+  height: 200px;
+	background-repeat: no-repeat;
+  position: absolute;
+	top: 45%;
+	left: 45%;
+}
+
+#loader {
+  width: 130px;
+  height: 130px;
+  border-style: solid;
+  border-top-color: #f7ab35;
+  border-right-color:#f7ab35;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotate 3s infinite, borderloader 4000ms infinite ;
+  transform: rotate(-200deg);
+	position: absolute;
+	top: -9%;
+	left: -9%;
+
+}
+
+
+
+@keyframes rotate {
+
+   25% { border-width: 3px; }
+   50% {
+     transform: rotate(115deg);
+
+   }
+   75% { border-width: 3px;}
+}
+
+
+
+
+
+@keyframes borderloader {
+0%     {  border-top-color: #f7ab35; border-right-color: #f7ab35; }
+16.6%  {  border-top-color: #d86043; border-right-color: #d86043; }
+33.33% {  border-top-color: #f0951f; border-right-color: #f0951f; }
+49.8%  {  border-top-color: #44b57d; border-right-color: #44b57d; }
+66.4%  {  border-top-color: #3a9fd3; border-right-color: #3a9fd3; }
+83%    {  border-top-color: #687480; border-right-color: #687480; }
+100%   {  border-top-color: #f7ab35; border-right-color: #f7ab35; }
+}
+
+
+
+/* ====  Preloader styles ==== */
+#hola{
+    width: 100%;
+    height: 100vh;
+    background-color: #130C1C;
+    position: fixed;
+    z-index: 104;
+}
+
+
+@media screen and(max-width: 320px){
+    #svg {
+  left: 36%;
+  top: 40%;
+
+}
+}
+
+@media screen and(min-width: 375px)and(max-width: 414px){
+    #svg {
+  left: 40%;
+  top: 45%;
+
+}
+}
  /*-------------footer---------------*/
 
  
@@ -100,7 +187,7 @@ padding-bottom: 35px;
 .breadcrumb {
   padding: 20px 15px;
   margin-bottom: 0px;
-  margin-top: 50px;
+/*  margin-top: 50px;*/
   list-style: none;
   background-color: #130C1B;
   border-radius: 0px;

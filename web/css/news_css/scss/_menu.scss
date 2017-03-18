@@ -174,7 +174,7 @@
     	position: relative;
 /* 	height:100%;
  	width:100%;*/
-        z-index: 100;
+        z-index: 103;
  	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
  	&.push{
  		margin-left:50%;
@@ -182,24 +182,7 @@
  	}
 }
 
-.navbar-brand {
-    font-family: "Inflecto", 'Open Sans', sans-serif;
-    float: left;
-    height: 50px;
-    padding: 15px 45px;
-    font-size: 22px;
-    line-height: 65px;
-    color: #000;
-    &:hover{
-      color: #000;
-    }
 
-}
-.white{
-    color:#fff;
-    transition: 0.7s;
-    position: fixed;
-}
 /*.push-main {
     height: 100%;
     width: 50%;
@@ -230,9 +213,7 @@
 		left:0;
 	}
 }
-.menu-tint{
-   
-}
+
 }
 @media screen and(min-width: 768px){
 .menu{
@@ -308,6 +289,9 @@
 .menu-type{
     text-align: center;
 }
+
+
+
 }
 /*.is-open-test{
 transition: 0.5s;
@@ -315,6 +299,21 @@ height: 105%;
 width: 50%;
 overflow: hidden;
 }*/
+
+
+   .navbar-brand {
+    font-family: "Inflecto", 'Open Sans', sans-serif;
+    float: left;
+    height: 50px;
+    font-size: 22px;
+    line-height: 65px;
+    color: #000;
+    &:hover{
+      color: #000;
+    }
+
+} 
+
 
 @media screen and(min-width: 300px)and(max-width: 767px){
     .push-main {
@@ -354,7 +353,7 @@ margin-bottom: 0;
 .navbar-default .navbar-nav > li > a {
   color: #818181;
   transition: 0.3s;
-  font-size: 35px;
+  font-size: 28px;
   text-align: center;
 }
 
@@ -366,23 +365,39 @@ margin-bottom: 0;
 
 
 
-.btn-print{
+/*.btn-print{
      transition: 0.4s;
     &:hover{
         background-color: rgba(46, 204, 113, 0.3);
          transition: 0.4s;
     }
-}
+}*/
 
-.btn-work{
+/*.btn-work{
      transition: 0.4s;
     &:hover{
         background-color: rgba(27, 163, 156, 0.3);
          transition: 0.4s;
     }
-}
+}*/
 
-.btn-portfolio{
+
+ .navbar-nav .btn-rubrique a::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    height: 2px;
+    background-color: #fff;
+    width: 0px;
+    margin-left: -10px;
+    z-index: 1;
+    left: 41%;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+ }
+ 
+
+/*.btn-portfolio{
      transition: 0.4s;
     &:hover{
         background-color: rgba(231, 76, 60, 0.3);
@@ -404,7 +419,7 @@ margin-bottom: 0;
         background-color: rgba(247, 171, 53, 0.3);
          transition: 0.4s;
     }
-}
+}*/
 
 .navbar-default.admin .navbar-nav .connect {
     color: #fff;
@@ -414,10 +429,27 @@ margin-bottom: 0;
 }
 
 
-.navbar-default .navbar-nav > li > a:hover{
-  color: $violet;
+.navbar-default .navbar-nav li > a:hover{
+  color: #fff;
   transition: 0.3s;
 }
+
+  .navbar-nav .btn-rubrique a:hover::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    height: 2px;
+    background-color: #fff;
+    width: 190px;
+    padding-right: 100px;
+    margin-left: -10px;
+    z-index: 1;
+    left: 41%;
+/*    transition: 0.37s cubic-bezier(0.52, 0.01, 0.16, 1);
+    transform: scaleX(0);
+    transform-origin: 0 0;*/
+ }
+
 
 .navbar-default.admin .navbar-nav > li > a:hover{
   color: $violet;
@@ -443,12 +475,65 @@ margin-bottom: 0;
     
 }
 
+@media screen and(min-width: 320px)and(max-width:414px){
 .rubrique{
-    padding-top: 40px;
-    padding-bottom: 40px; 
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
 }
 
+@media screen and(min-width: 568px)and(max-width:736px){
+.rubrique{
+    padding-top: 0;
+    padding-bottom: 0; 
+}
+}
 
+@media screen and(min-width: 767px){
+.rubrique{
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+}
+
+@media screen and(min-width: 1024px){
 .primary{
-    margin-top: 20%;
+    top: 35%;
+}
+}
+@media screen and(min-width: 320px)and(max-width: 767px){
+    .primary{
+    top: 20%;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #818181;
+  transition: 0.3s;
+  font-size: 20px;
+  text-align: center;
+}
+
+.navbar-brand {
+    padding: 15px 5px;
+}
+
+}
+
+@media screen and(min-width: 768px){
+   .navbar-brand {
+    padding: 15px 45px;
+
+} 
+}
+
+@media screen and(min-width: 768px)and(max-width: 1023px){
+    .primary{
+    top: 25%;
+}
+
+}
+
+.white{
+    color:#fff;
+    transition: 0.7s;
+    position: fixed;
 }

@@ -1,15 +1,15 @@
-a:hover{
+/*a:hover{
   text-decoration: none;
   color: #130C1C;
 }
 
 
 .thumb-work{
-/*width: 400px;*/
+width: 400px;
 height: 490px;
 margin-top: 100px;
 overflow: hidden;
-/*margin-left: 90px;*/
+margin-left: 90px;
 
 }
 
@@ -74,4 +74,473 @@ transition: 0.6s;
 
 .detail-work{
     padding-top: 50px;
+}*/
+
+/*.content-thumb{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
+.thumb-bg{
+    width: 100%;
+    height: 100%;
+     background-color: #c1c1c1;
+     margin-bottom: 10px;
+     margin-top: 10px;
+}
+
+.content-thumb{
+    .col-sm-6, .col-md-3{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.thumb-image{
+    min-height: 450px;
+}
+
+.thumb-align{
+    margin: auto;
+    max-height: 350px;
+    padding: 10px;
+}
+
+.thumb-txt{
+    background-color: #c1c1c1;
+    width: 100%;
+    height: 100px;
+}*/
+
+
+//test gal 2///////////
+
+/*.gal-position{
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.thumb-gal{
+    overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+
+.overlay-web{
+  background-color: #000;
+  color: #fff;
+  left: -100%;
+  top:0;
+  height: 85.2%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  opacity:0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.folio-image-web{
+    margin-bottom:-50px;
+}
+
+.folio-image-web img {
+  width: 100%;
+}
+
+
+ .folio-item-web {
+  position: relative;
+  padding: 30px;
+border-right: 1px solid #c4c4c4;
+  overflow: hidden;
+}
+
+
+
+.folio-info-web{
+    margin-top: 50px;
+}
+
+.overlay-web .overlay-web-content {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+}
+
+.overlay-web .overlay-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+
+
+.overlay-web .folio-info-web h3 {
+  margin-top: 0;
+  color: #fff;
+  opacity: 1;
+}
+
+.folio-item-web:hover .overlay-web {
+  opacity: 0.7;
+  top: 0;
+  height: 85.2%;
+  left: 0;
+  
+}
+
+.folio-image-web, .folio-overview .folio-expand {
+  -webkit-transition: transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+}
+
+ .folio-item-web:hover .folio-image-web {
+  opacity: 0.7;
+  -webkit-transform: scale(2.5);
+  transform: scale(2.5);
+  
+}
+
+
+
+.folio-item-web:hover .overlay-web{
+  margin-bottom:0;
+  margin-top:0;
+}
+
+
+.txt-left{
+    text-align: left;
+    padding-right: 5;
+}
+
+ h4::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 1px;
+    background-color: #27282e;
+    width: 7px;
+}*/
+
+
+
+.block-web .col-md-6{
+    padding-right: 10px;
+    padding-left: 0px;
+    margin-top: 10px;
+    max-height: 667px;
+    overflow: hidden;
+}
+
+.thumb-web{
+    position: relative;
+    overflow: hidden;
+}
+
+.content-txt-web{
+    width: 100%;
+    position: absolute;
+    background-color: #c4c4c4;
+/*    right: -245px;*/
+    right: -409px; //big format//
+    z-index: 2;
+/*    top: 245px;*/
+    top: 260px; //big format//
+    padding-left: 35px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    transform: rotate(-90deg);
+    bottom: 0;
+    height: 80px;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    
+}
+
+
+
+.change-color-1{
+    background-color: red;
+}
+
+.change-color-2{
+    background-color: blue;
+}
+
+.change-color-3{
+    background-color: purple;
+}
+
+.change-color-4{
+    background-color: greenyellow;
+}
+
+.change-color-5{
+    background-color: palegreen;
+}
+
+.change-color-6{
+    background-color: orange;
+}
+
+.change-color-7{
+    background-color: yellow;
+}
+
+/*.folio-link-web{
+   height: 400px;
+   width: 400px;
+    position: absolute;
+    top: 280px;
+    top: 100px; //big format//
+    right: -110px;
+    right: 350px; //big format//
+    bottom: 0;
+    
+}*/
+
+
+
+
+ h4.title-client::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    height: 1px;
+    background-color: #27282e;
+    width: 17px;
+    padding-right: 80px;
+    margin-left: -10px;
+     -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+ }
+ 
+  h4.title-description::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    height: 1px;
+    background-color: #27282e;
+    width: 17px;
+    padding-right: 80px;
+    margin-left: -10px;
+     -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+ }
+ 
+ 
+ 
+ 
+
+ 
+ .title-client, .title-description {
+   padding-left: 10px;
+   font-weight: 600;
+}
+.title-client{
+     margin-left: 70px;
+     text-align: right;     
+}
+
+
+
+.txt-client, .txt-description{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.thumb-item-web{
+    position: relative;
+    max-height: 667px;
+}
+
+
+
+.thumb-web {
+    top: 0;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+ .thumb-item-web:hover .thumb-web {
+  opacity: 0.3;
+  -webkit-transform: scale(0.80);
+  transform: scale(0.80);
+  top: -60px;
+}
+
+.thumb-item-web:hover .txt-description {
+  padding-left: 5px;
+}
+
+
+
+.thumb-item-web:hover .content-txt-web{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    top: 0;
+    padding-left: 75px;
+/*    padding-top: 10px;*/ //big format//
+    padding-bottom: 20px;
+/*    margin-right: 80px;*/
+    bottom: 0;
+    height: 100%;
+    opacity: 0.6;
+    color: #fff;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+        h4::before {
+        content: '';
+        position: absolute;
+        top: 11px;
+        background-color: #fff;
+        padding-right: 80px;
+        margin-left: -10px;
+     }
+}
+
+
+
+
+.thumb-item-web:hover .folio-overview-web{
+  margin-right: 0px;
+  left: 200px;
+   -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.overlay-link-web{
+    position: absolute;
+    width: 100%;
+    top: 280px;
+    text-align: center;
+    font-size: 35px;   
+}
+
+
+.folio-link-web {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+/*    top: -100px;*/
+    top: 100px; //big format//
+/*    right: 250px;*/
+    right: 350px; //big format//
+    transform: rotate(90deg);
+    font-size: 75px;
+    font-weight: 700;
+    text-decoration: none;
+     color: #fff; 
+}
+.folio-read-more-web {
+   color: #fff;
+   -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.folio-read-more-web:hover {
+   color: #000;
+   &::before{
+         background-color: #000;
+   }
+}
+
+.folio-link-web a::before{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    height: 1px;
+    background-color: #fff;
+    width: 193px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.txt-projet-web{
+/*    font-size: 15px;  */
+      font-size: 17px; //big format//
+      margin-right: -90px;
+     margin-top: 145px;
+}
+
+
+.thumb-item-web:hover .description-web{
+   margin-right: -15px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.description-web{
+    float: right;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+/*.rotate-txt{
+    position: absolute;
+    transform: rotate(-90deg);
+    bottom: 0;
+}
+
+.client-web{
+    margin-right: -250px;
+    margin-top: 10px;
+    float: left;
+    margin-left: 20px;
+}
+
+
+
+.title-client{
+    margin-right: 10px;
+    float: left;
+}
+
+.txt-client{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.description-web{
+    float: right;
+    margin-right: -250px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.title-description{
+    margin-right: -90px;
+    float: left;
+}
+
+.txt-description{
+    padding-top: 10px;
+    margin-right: -155px;
+    float: right;
+}
+
+ h4::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: #27282e;
+    width: 17px;
+    margin-top: 10px;
+    margin-left: -25px;
+}*/

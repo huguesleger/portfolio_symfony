@@ -1,4 +1,89 @@
+$(window).load(function(){
+            setTimeout(function(){
+                $('#svg').velocity({
+                    opacity : 0.1,
+                    translateY: "-80px"
+                }, {
+                    duration: 600,
+                    complete: function(){
+                    $('#hola').velocity({
+                    opacity : 0
+
+                }, {
+                    duration: 600,
+                    easing: [0.7,0,0.3,1],
+                    complete: function(){
+                        $('.home').addClass('animate-border divide');
+                        $('#hola').hide();
+                    }
+                });
+                    }
+                });
+            },1500);
+        });
+
+
+//
+////$(window).load(function(){
+//     //Preloader
+//
+//
+//		            setTimeout(function(){
+//                $('#svg').velocity({
+//                    opacity : 0.1,
+//                    translateY: "-80px"
+//                }, {
+//                    duration: 600,
+//                    complete: function(){
+//                   
+//                    $('#hola').velocity({
+//                    opacity : "0"
+//                    
+//
+//                }, {
+//                    duration: 600,
+//                    easing: [0.7,0,0.3,1],
+//                    complete: function(){
+//                        $('#container').css('opacity','1');
+//                        $('#hola').hide();
+//                    }
+//                });
+//                    }
+//                });
+//            },3000);
+//});
+
+
+
 $(document).ready(function() {
+    
+       
+       
+//		 setTimeout(function(){
+//                $('#preloader').velocity({
+//                    opacity : 0.1,
+//                    translateY: "-80px"
+//                }, {
+//                    duration: 600,
+//                    complete: function(){
+//                   
+//                    $('#hola').velocity({
+//                    opacity : "0"
+//                    
+//
+//                }, {
+//                    duration: 600,
+//                    easing: [0.7,0,0.3,1],
+//                    complete: function(){
+//                        $('#container').css('opacity','1');
+//                        $('#hola').hide();
+//                    }
+//                });
+//                    }
+//                });
+//            },2300);
+    
+    
         var windowHeight = $(document).innerHeight();
 //        var navHeight = $('.project-content').height();
 //	$('.nav-add').css('min-height', windowHeight);
@@ -26,8 +111,10 @@ $(document).ready(function() {
 
 
 
-$(document).ready(function(){ 
+$(document).ready(function(){
+    $('.menu-tint').hide();
 $('.main-icon').click(function(){
+     $('.menu-tint').show();
     $('.menu-type').toggleClass('open');
     
      var wH= $(window).width();
@@ -64,6 +151,10 @@ $('.main-icon').click(function(){
          });
      });
                 }
+                
+                if(wH < 767){
+                    $('.navbar-brand').addClass('white');
+                }
      
 
 $this = $(this);
@@ -71,9 +162,10 @@ if($this.hasClass('is-open')){
 	$this.addClass('is-close').removeClass('is-open , is-open-color');
       $('body').css('overflowY','visible');
          $('.main-content').show();
-         $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
+//         $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
          $('.navbar-brand').removeClass('white');
          $('#big').removeClass('animated fadeIn big-logo');
+         $('.menu-tint').hide(410);
 //         $('#container').css({width: "100%", marginLeft: "0%"});
 //         $('#carousel-example-generic').css({visibility: "visible"});
 //         $('.anim-title').css({visibility: "visible", marginLeft:"0%", opacity:"1"});
@@ -145,20 +237,20 @@ if($this.hasClass('is-open')){
 //	} 
 //        });
         
-$(function(){
-        $('.mail').click(function(){
-                    $('.navbar-default').css({marginTop: "-6.5%", transition :"0.4s"});
-
-                    
-                });
-                
-        $('.envoyer').click(function(){
-            $('.main-content').show();
-            $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
-             $('.contact-me').css({marginTop: "32%", transition :"0.4s"});
-        });
-
-});
+//$(function(){
+//        $('.mail').click(function(){
+//                    $('.navbar-default').css({marginTop: "-6.5%", transition :"0.4s"});
+//
+//                    
+//                });
+//                
+//        $('.envoyer').click(function(){
+//            $('.main-content').show();
+//            $('.navbar-default').css({marginTop: "20%", transition :"0.4s"});
+//             $('.contact-me').css({marginTop: "32%", transition :"0.4s"});
+//        });
+//
+//});
 	//close nav left
 });
 
@@ -283,10 +375,47 @@ $('.count').each(function () {
         }
     });
 });
-        
- 
- 
-  });
-  
+     
+    
+//  $(function(){
+//   
+//       $('#1 .folio-item-web').css('border-bottom','1px solid #c4c4c4');
+//      $("#1").hover(function(){
+//         $(".overlay-web").css('background-color','red');
+//      });
+//       $('#4 .folio-item-web').css('border-bottom','1px solid #c4c4c4');
+//       $("#4").hover(function(){
+//         $(".overlay-web").css('background-color','blue');
+//      });
+//       $('#5 .folio-item-web').css('border-bottom','1px solid #c4c4c4');
+//       $("#5").hover(function(){
+//         $(".overlay-web").css('background-color','purple');
+//      });
+//      $('#6 .folio-item-web').css('border-right','transparent solid 1px');
+//      $('#6 .folio-item-web').css('border-bottom','1px solid #c4c4c4');
+//      $("#6").hover(function(){
+//         $(".overlay-web").css('background-color','green');
+//      });
+//       $("#7").hover(function(){
+//         $(".overlay-web").css('background-color','yellow');
+//      });
+//      $("#8").hover(function(){
+//         $(".overlay-web").css('background-color','red');
+//      });
+//       $("#9").hover(function(){
+//         $(".overlay-web").css('background-color','#c4c4c4');
+//      });
+//  });
 
-   
+
+$( "#1 .content-txt-web" ).addClass('change-color-1');
+$( "#4 .content-txt-web" ).addClass('change-color-2');
+$( "#5 .content-txt-web" ).addClass('change-color-3');
+$( "#6 .content-txt-web" ).addClass('change-color-4');
+$( "#7 .content-txt-web" ).addClass('change-color-5');
+$( "#8 .content-txt-web" ).addClass('change-color-6');
+$( "#9 .content-txt-web" ).addClass('change-color-7');
+
+
+
+  });

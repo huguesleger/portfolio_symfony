@@ -41,6 +41,7 @@ class VueController extends Controller {
     public function Projets(){
        
         return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findByPublier(1));
+        
     }
     
      /**

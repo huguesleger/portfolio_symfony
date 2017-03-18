@@ -11,9 +11,22 @@
          <link rel="stylesheet" type="text/css" href="{{asset('./css/animate.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
+        
+       
   </head>
 
     <body>
+ 
+
+<div id="hola">
+  <div id="svg">
+    <div id="loader"> </div>
+  </div>
+
+</div>
+
+
+        
 <div id="container">
  <div class="container-fluid">
      <div class="logo-home" id="logo">
@@ -48,11 +61,11 @@
         </div>#}
           <nav class="navbar navbar-default primary">
             <ul class="nav navbar-nav">
-              <li class="col-sm-12 col-md-12 btn-work rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
-              <li class="col-sm-12 col-md-12 btn-print rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-              <li class="col-sm-12 col-md-12 btn-portfolio rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
-              <li class="col-sm-12 col-md-12 btn-moi rubrique"><a href="#">A Propos</a></li>
-              <li class="mail col-sm-12 col-md-12 btn-contactmoi rubrique"><a href="{{path('contact')}}">Contact</a></li>
+              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
+              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
+              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
+              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="#">A Propos</a></li>
+              <li class="mail col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('contact')}}">Contact</a></li>
             </ul>
           </nav>
        
@@ -79,15 +92,15 @@
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol> #}
 
-             <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="550ms">
-        <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="650ms">web designer</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="850ms">dév web</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1050ms">graphiste</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="1250ms">illustrateur</p>
-      <div class="icon-me col-md-10 wow bounceInUp" data-wow-duration="1000ms" data-wow-delay="1750ms">
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1850ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="1950ms" src="{{ asset('./images/deglingos.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="2050ms" src="{{ asset('./images/logo-pale.png') }}"/>
+             <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="4000ms">
+        <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4100ms">web designer</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4300ms">dév web</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4500ms">graphiste</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4700ms">illustrateur</p>
+      <div class="icon-me col-md-10 wow bounceInUp" data-wow-duration="1000ms" data-wow-delay="4900ms">
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5000ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5100ms" src="{{ asset('./images/deglingos.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5200ms" src="{{ asset('./images/logo-pale.png') }}"/>
             
     </div>
     
@@ -295,7 +308,8 @@
         {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
         {% endblock %}
-        <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+           <script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>
+            <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
         

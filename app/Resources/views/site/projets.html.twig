@@ -1,4 +1,4 @@
-{% extends ":site:index.html.twig"%}
+{#{% extends ":site:index.html.twig"%}
 
 {% block title %} | Travaux web{% endblock %}
 
@@ -15,7 +15,7 @@
 
       <div class="col-sm-6 col-md-4">
     <div class="thumb-work">
-      <img src="{{asset('uploads/img/')~projet.images}}" class="thumb-img">
+      <img src="{{asset('uploads/img/')~projet.images}}" class="thumb-img img-responsive">
       <div class="thumb-effect">
         <p class="thumb-title">{{projet.titre}}</p>
       </div>
@@ -34,3 +34,111 @@
  {% block javascript %}
      {% endblock%}
 {% endblock%}
+#}
+
+
+{#{% extends ":site:index.html.twig"%}
+
+{% block title %} | Travaux web{% endblock %}
+
+{% block section %}
+    
+              {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  <li  class="active">Travaux Web</li>
+</ol>{% endblock %}
+
+    <div class="container-fluid gal-position">
+       
+       {% for projet in projects %}
+           
+             <div class="col-sm-4 col-md-3">
+                 <div class="thumb-gal" id="{{projet.id}}">
+    <div class="folio-item-web">
+      <div class="folio-image-web">
+          <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive">
+           </div>
+           
+               <div class="overlay-web">
+            <div class="overlay-web-content">
+              <div class="overlay-web-text">
+               
+                <div class="folio-overview">
+                    <span class="folio-link"><a class="folio-read-more" href="{{path("detailprojets",{"id":projet.id})}}"><i class="fa fa-link"></i></a></span>
+                </div>
+              </div>
+                
+            </div>
+                </div>
+                 <div class="folio-info-web">
+                     <div class="col-md-6">
+                         <h4>client</h4>
+                  <p>{{projet.titre}}<p>
+                     </div>
+                     <div class="col-md-6">
+                         <h4>description</h4>
+                  <p>{{projet.descriptif}}</p>
+                     </div>
+                </div>
+    </div>
+                     
+      </div>
+    </div>
+ 
+ {% endfor %}
+    </div>
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}#}
+
+
+
+{% extends ":site:index.html.twig"%}
+
+{% block title %} | Travaux web{% endblock %}
+
+{% block section %}
+    
+              {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  <li  class="active">Travaux Web</li>
+</ol>{% endblock %}
+
+    <div class="container-fluid block-web">
+       
+       {% for projet in projects %}
+           <div id="{{projet.id}}">
+         <div class="col-sm-6 col-md-6">
+             <div class="thumb-item-web">
+             <div class="thumb-web">
+             <img src="{{asset('uploads/img/')~projet.images}}" class="img-responsive">
+             </div>
+             <div class="content-txt-web">
+     
+
+                     <div class="client-web col-md-6">
+                         <h4 class="title-client col-md-3">client</h4>
+                  <p class="txt-client col-md-5">{{projet.titre}}<p>
+                     </div>
+                     <div class="description-web col-md-6">
+                         <h4 class="title-description col-md-3">works</h4>
+                  <p class="txt-description col-md-6">{{projet.descriptif}}</p>
+                     </div>
+                      <div class="overlay-link-web">
+                     {#<span class="folio-link-web"><a class="folio-read-more" href="{{path("detailprojets",{"id":projet.id})}}"><i>{{projet.id}}</i></a></span>#}
+                     <p class="txt-projet-web">projet</p>
+                     <p class="folio-link-web"><a class="folio-read-more-web" href="{{path("detailprojets",{"id":projet.id})}}">{{projet.id}}</a></p>
+                    </div>
+             </div>
+             </div>
+                    
+         </div>
+           </div>
+ 
+ {% endfor %}
+    </div>
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}
+
+
