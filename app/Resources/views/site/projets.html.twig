@@ -93,10 +93,10 @@
 
 
 
-{% extends ":site:index.html.twig"%}
+{#{% extends ":site:index.html.twig"%}
 
 {% block title %} | Travaux web{% endblock %}
-
+{% block loader %}{% endblock %}
 {% block section %}
     
               {% block ariane %}<ol class="breadcrumb">
@@ -125,7 +125,7 @@
                   <p class="txt-description col-md-6">{{projet.descriptif}}</p>
                      </div>
                       <div class="overlay-link-web">
-                     {#<span class="folio-link-web"><a class="folio-read-more" href="{{path("detailprojets",{"id":projet.id})}}"><i>{{projet.id}}</i></a></span>#}
+ 
                      <p class="txt-projet-web">projet</p>
                      <p class="folio-link-web"><a class="folio-read-more-web" href="{{path("detailprojets",{"id":projet.id})}}">{{projet.id}}</a></p>
                     </div>
@@ -136,6 +136,59 @@
            </div>
  
  {% endfor %}
+    </div>
+ {% block javascript %}
+     {% endblock%}
+{% endblock%}
+
+
+#}{% extends ":site:index.html.twig"%}
+
+{% block title %} | Travaux web{% endblock %}
+{% block loader %}{% endblock %}
+
+
+
+{% block section %}
+    
+              {% block ariane %}<ol class="breadcrumb light degrader">
+  <li><a href="{{path('home')}}">Home</a></li>
+  <li  class="active">Travaux Web</li>
+</ol>{% endblock %}
+
+    <div class="container-fluid" id="workWeb">
+       
+        <div class="title-rubrique">
+            <h2>Web</h2>
+            <p> sdfghgf </p>
+        </div>
+        
+       {% for projet in projects %}
+           
+          <div class="panel">
+            
+        <div class="p_inside">
+            <div class="line-projet"><p class="number-projet">{{projet.id}}</div>
+            <img class="panel-img" src="{{asset('uploads/img/')~projet.images}}" data-adaptive-background>
+            <div class="overdark">
+           </div>
+            
+            <a class="folio-read-more-web" href="{{path("detailprojets",{"id":projet.id})}}"><i class="link-web fa fa-camera-retro" aria-hidden="true"></i></a>
+            
+                <div class="infos-web">
+                <h2 class="infos-web-title">{{projet.titre}}</h2>
+                <p class="infos-web-desc">{{projet.descriptif}}</p>
+                <i class="diamond fa fa-diamond"></i>
+                
+                </div>
+                
+                    </div>
+                
+
+    </div> 
+ 
+ {% endfor %}
+ <div class="cleared"></div>
     </div>
  {% block javascript %}
      {% endblock%}

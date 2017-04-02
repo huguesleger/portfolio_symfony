@@ -17,18 +17,18 @@
 
     <body>
  
-
+{#{% block loader %}
 <div id="hola">
   <div id="svg">
-    <div id="loader"> </div>
+    <div id="loader"></div>
   </div>
 
 </div>
-
-
+{% endblock %}#}
         
 <div id="container">
- <div class="container-fluid">
+{# <div class="container-fluid">#}
+
      <div class="logo-home" id="logo">
      {% if is_granted("ROLE_ADMIN") %}
 <i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
@@ -37,11 +37,13 @@
     {% endif %}
 
     <div class="main-icon">
-      <span></span>
+      <span class="hamb"></span>
+     
     </div>
-     </div>
+    
  </div>
 
+{# </div>#}
 {#<div class="type-js headline">
     <h1 class="text-js">Color Your Life</h1>
 </div>#}
@@ -50,8 +52,8 @@
     <img src="{{asset('images/big-logoX2.png')}}"class=""></a>
 </div>#}
 
-<div id="big">
-</div>
+{#<div id="big">
+</div>#}
 
     <div class="menu-tint menu-type"></div>
     {#<div id="pushMain" class="push-main">#}
@@ -59,7 +61,21 @@
          {# <div class="logo">
           <img src="{{asset('images/minlogo-hl.png')}}"></a>
         </div>#}
-          <nav class="navbar navbar-default primary">
+          <div class="clip-img">
+        <!-- <img alt="#" src="images/screenshot.png" class="zoom"> -->
+        <!-- <video autoplay loop muted id="myVideo">
+			<source src="./images/Ground-Zero.mp4" type="video/mp4">
+			<source src="./images/Ground-Zero.webm" type="video/webm">
+		</video> -->
+
+    <video autoplay loop muted id="myVideo2">
+  <source src="{{ asset('./images/Office_Perks.mp4')}}" type="video/mp4">
+  <source src="{{ asset('./images/Office_Perks.webm')}}" type="video/webm">
+</video>
+  <div class="line"></div>
+       </div>
+       
+          {#<nav class="navbar navbar-default primary">
             <ul class="nav navbar-nav">
               <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
               <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
@@ -67,9 +83,19 @@
               <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="#">A Propos</a></li>
               <li class="mail col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('contact')}}">Contact</a></li>
             </ul>
+          </nav>#}
+          <div class="wrapper">
+          <nav class="navbar navbar-default">
+            <ul class="nav clip-text">
+              <li class=" btn-rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
+              <li class=" btn-rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
+              <li class=" btn-rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
+              <li class=" btn-rubrique"><a href="#">A Propos</a></li>
+              <li class=" btn-rubrique"><a href="{{path('contact')}}">Contact</a></li>
+            </ul>
           </nav>
        
-             
+          </div>
      
            {# <div class="contact-me">
                 <p>Mon profil vous intéresse ? Envie de collaborer sur un projet ?
@@ -80,7 +106,7 @@
 {% block section %}
     {% block ariane %}{% endblock %}
 
-    <div id="content">
+  {#  <div id="content">#}
        <section id="home">
     <div class="container-fluid">
       
@@ -92,21 +118,9 @@
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol> #}
 
-             <div class="anim-title wow fadeInLeft" data-wow-duration="800ms" data-wow-delay="4000ms">
-        <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4100ms">web designer</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4300ms">dév web</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4500ms">graphiste</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4700ms">illustrateur</p>
-      <div class="icon-me col-md-10 wow bounceInUp" data-wow-duration="1000ms" data-wow-delay="4900ms">
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5000ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5100ms" src="{{ asset('./images/deglingos.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5200ms" src="{{ asset('./images/logo-pale.png') }}"/>
             
-    </div>
-    
-  </div>
 
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner wow fadeInRight" data-wow-duration="1200ms" data-wow-delay=" 600ms" role="listbox">
         {% for projetcaroussel in projectscaroussel[0:] %}
       
       <div class="item{%if loop.index == 1%} active {%endif%}">
@@ -125,7 +139,28 @@
   </a>
          
 </div>
-           
+
+        
+          {#<img class="anim-title2 wow fadeIn" data-wow-duration="1800ms" data-wow-delay="4500ms" src="{{ asset('./images/biglogo-hl.png') }}"/>#}
+          <div class="anim-title wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="600ms">
+        
+      {#<p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4300ms">dév web</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4500ms">graphiste</p>
+      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4700ms">illustrateur</p>
+      <div class="icon-me col-md-10 wow bounceInUp" data-wow-duration="1000ms" data-wow-delay="4900ms">
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5000ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5100ms" src="{{ asset('./images/deglingos.png') }}"/>
+                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5200ms" src="{{ asset('./images/logo-pale.png') }}"/>
+            
+    </div>#}
+    
+  </div> 
+
+        
+      
+     
+    
+   
       </div>  
     
     </div>
@@ -146,7 +181,7 @@
 
 </section>
     
-      <div class="container icon-present">
+      <div class="container icon-present" id="iconMe">
     <div class="row">
         <div class="background-mobile color-mobile">
     <div class="col-sm-6 col-md-3">
@@ -202,7 +237,7 @@
     
 <div class="container-fluid">
     
-<section class="services">
+<section class="services" id="service">
 <div id="particle-canvas">
 <div class="container">
   <div class="title-services">
@@ -288,7 +323,7 @@
 
 {% endblock %}
 
-      <footer class="footer">
+      <footer class="footer" id="Footer">
         <div class="container">
           <div class="credit">
             <p>HL Developerz &copy 2017 Tous droits réservés</p>
@@ -300,18 +335,21 @@
 </div>
         </div>
       </footer>
-</div>
+{#</div><!-----------div content------------>#}
       </div>
 
-        <script type="text/javascript" src="{{asset('./vendor/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./vendor/jquery.js')}}"></script>
        <script type="text/javascript" src="{{asset('./vendor/bootstrap.min.js')}}"></script>
         {% block javascript %}
          <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
         {% endblock %}
            <script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>
+           <script type="text/javascript" src="{{asset('./js/jquery.adaptive-backgrounds.js')}}"></script>
             <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+
         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
+         
         
        
 </body>

@@ -301,13 +301,14 @@ height: 60px;
 .anim-title{
 position: absolute;
 top: 0%;
-left: 10%;
+left: 105%;
 font-size: 45px;
-color: rgba(255, 255, 255, 1);
+/*color: rgba(255, 255, 255, 1);*/
 text-transform: uppercase;
 font-weight: 800;
-background-color: rgba(255, 255, 255, 0.5);
+background-color: rgba(0, 0, 0, 0.7);
 height: 100%;
+width: 70%;
 padding-top: 70px;
 padding-left: 3%;
 padding-right: 3%;
@@ -319,6 +320,23 @@ bottom: 0;
 padding-bottom: 50px;
 }
 }
+.anim-title2{
+position: absolute;
+top: 40%;
+left: 12%;
+font-size: 30px;
+color: rgba(255, 255, 255, 1);
+text-transform: uppercase;
+font-weight: 800;
+/*background-color: rgba(255, 255, 255, 0.5);*/
+
+padding-top: 30px;
+/*padding-left: 3%;
+padding-right: 3%;*/
+overflow: hidden;
+
+}
+
 .icon-present{
     padding-left: 50px;
 }
