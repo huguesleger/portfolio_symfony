@@ -75,7 +75,7 @@
           </tr>
          
             <td>{{social.nom}}</td>
-            <td><i class="fa {{social.icon}}"></i></td>
+            <td><i class="fa {{'fa-'~social.icon}}"></i></td>
             <td>{{social.lien}}</td>
               <td class="col-md-6 btn-action-contact">
             <a class="btn btn-primary" href="{{path("modifsocial",{"id":social.id})}}">Editer</a>

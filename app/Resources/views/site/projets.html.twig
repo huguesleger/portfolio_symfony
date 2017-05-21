@@ -151,45 +151,49 @@
 
 {% block section %}
     
-              {% block ariane %}<ol class="breadcrumb light degrader">
-  <li><a href="{{path('home')}}">Home</a></li>
-  <li  class="active">Travaux Web</li>
-</ol>{% endblock %}
+  
 
-    <div class="container-fluid" id="workWeb">
+   
        
-        <div class="title-rubrique">
-            <h2>Web</h2>
-            <p> sdfghgf </p>
+        <div class="title-rubrique swatches-primary padd-sm mg-bottom-xl">
+            <h2 class="txt-color no-mg">Web</h2>
+            <p class="txt-color-dark no-mg"> sdfghgf </p>
         </div>
-        
+     <div class="container-fluid" id="workWeb">
+        {#<div id="Panel">#}
        {% for projet in projects %}
-           
           <div class="panel">
             
         <div class="p_inside">
             <div class="line-projet"><p class="number-projet">{{projet.id}}</div>
+                <a class="overdark" href="{{path("detailprojets",{"id":projet.id})}}"></a>
             <img class="panel-img" src="{{asset('uploads/img/')~projet.images}}" data-adaptive-background>
-            <div class="overdark">
-           </div>
+           
             
-            <a class="folio-read-more-web" href="{{path("detailprojets",{"id":projet.id})}}"><i class="link-web fa fa-camera-retro" aria-hidden="true"></i></a>
-            
+           {# <a class="folio-read-more-web" href="{{path("detailprojets",{"id":projet.id})}}"><i class="link-web fa fa-camera-retro" aria-hidden="true"></i></a>#}
+             <a href="{{path("detailprojets",{"id":projet.id})}}"><img src="{{ asset('./images/diamond.svg')}}" class="icon-diamond"></a>
+
                 <div class="infos-web">
-                <h2 class="infos-web-title">{{projet.titre}}</h2>
+                    <div class="infos-web-title">
+                <h2 class="line-title-web">{{projet.titre}}</h2>
+                    </div>
                 <p class="infos-web-desc">{{projet.descriptif}}</p>
                 <i class="diamond fa fa-diamond"></i>
-                
                 </div>
-                
+        </div>
                     </div>
                 
-
-    </div> 
+  
+   
  
  {% endfor %}
+</div>
  <div class="cleared"></div>
-    </div>
+ 
+    
+
+
+
  {% block javascript %}
      {% endblock%}
 {% endblock%}

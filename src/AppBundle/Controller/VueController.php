@@ -50,7 +50,10 @@ class VueController extends Controller {
      */
     public function ProjetsPrint(){
        
-        return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findByPublier(1));
+        return array (
+            'projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findByPublier(1),
+            'projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findBy(array('publier' => '1'),  array('id'=>'DESC'), 2),
+                );
         
     }
 

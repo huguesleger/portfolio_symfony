@@ -26,6 +26,10 @@
     }
 }
 
+
+
+
+
 .carousel-control.left {
   background-image: none;
   background-image:  none;
@@ -42,6 +46,70 @@
   background-repeat: no-repeat;
   filter:  none;
 }
+
+.sr-only-left {
+    position: absolute;
+    font-size: 18px;
+    transform: rotate(-90deg);
+    top: 330px;
+    left: -70px;
+    transition: 0.3s ease-in-out;
+    &::before {
+        content:'';
+        position: absolute;
+        width: 40px;
+        left: 22%;
+        top: 50px;
+        height: 2px;
+        background-color: #f94545;
+        transform: rotate(90deg);
+        transition: 0.3s ease-in-out;
+        
+    }
+}
+
+.carousel-control:hover .sr-only-left {
+    left: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.carousel-control:hover .sr-only-left:before {
+    top: -20px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.sr-only-right {
+    position: absolute;
+    font-size: 18px;
+    transform: rotate(-90deg);
+    top: 330px;
+    right: -60px;
+    transition: 0.3s ease-in-out;
+    &::before {
+        content:'';
+        position: absolute;
+        width: 40px;
+        right: 2%;
+        top: -32px;
+        height: 2px;
+        background-color: #f94545;
+        transform: rotate(90deg);
+        transition: 0.3s ease-in-out;
+    }
+}
+
+.carousel-control:hover .sr-only-right {
+    right: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.carousel-control:hover .sr-only-right:before {
+    top: 47px;
+    transition: 0.3s ease-in-out;
+    
+}
+
 
 
 .carousel-control .icon-prev,

@@ -84,6 +84,93 @@ a:focus, a:hover{
 
 
 
+.swatches-primary {
+    background-color: #130C1C;
+}
+
+.swatches-secondary {
+    background-color: #ff8668;
+}
+
+.swatches-secondary-dark {
+    background-color: #f94545;
+}
+
+.swatches-degraded {
+    background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
+}
+
+.swatches-grey {
+    background-color: #F2F1EF;
+}
+
+
+.no-margin {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.no-mg {
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+.padd-xs {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.padd-sm {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.padd-md {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.padd-xl {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.mg-bottom-sm {
+    margin-bottom: 20px;
+}
+
+.mg-bottom-md {
+    margin-bottom: 30px;
+}
+
+.mg-bottom-xl {
+    margin-bottom: 50px;
+}
+
+
+.degrader{
+    background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,  #f94545 ,#ff8668); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,   #f94545, #ff8668); /* Standard syntax */
+}
+
+.txt-color {
+    color: #ff8668;
+}
+
+.txt-color-dark {
+    color: #f94545;
+}
+
+
+.title-rubrique{
+    text-align: center;
+}
+
 #svg{
   background: url('../../images/logo-hl.svg');
   width: 200px;
@@ -112,7 +199,12 @@ a:focus, a:hover{
 
 }
 
-
+.min-logo {
+position: absolute;
+width: 50px;
+top: 35px;
+left: 190px;
+}
 
 @keyframes rotate {
 
@@ -174,6 +266,7 @@ a:focus, a:hover{
 background-color: #F2F1EF;
 padding-top:30px;
 padding-bottom: 35px;
+margin-top: 50px;
 
 }
 
@@ -251,6 +344,14 @@ padding-bottom: 35px;
   border-radius: 0px;
 }
 
+.breadcrumb>li{
+    color: #fff;
+}
+
+.breadcrumb>.active {
+    color: #ff8668;
+}
+
  .light > .active {
     color: #fff;
 }
@@ -261,13 +362,6 @@ padding-bottom: 35px;
     content: "/\00a0";
 }
 
-
-.degrader{
-    background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right,  #f94545 ,#ff8668); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right,   #f94545, #ff8668); /* Standard syntax */
-}
 
 
 
@@ -511,8 +605,3 @@ padding-bottom: 35px;
 }*/
 /////////////////
 ////////////////
-
-
-.title-rubrique{
-    text-align: center;
-}

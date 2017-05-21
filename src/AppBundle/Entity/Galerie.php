@@ -250,11 +250,11 @@ class Galerie
         $this->texte = $texte;
     }
 
-    function setImageDetail1(UploadedFile $imageDetail1) {
+    function setImageDetail1($imageDetail1) {
         $this->imageDetail1 = $imageDetail1;
     }
 
-    function setImageDetail2(UploadedFile $imageDetail2) {
+    function setImageDetail2($imageDetail2) {
         $this->imageDetail2 = $imageDetail2;
     }
 

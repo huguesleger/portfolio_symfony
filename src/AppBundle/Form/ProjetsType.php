@@ -20,17 +20,17 @@ class ProjetsType extends AbstractType
         $d = date('Y-m-d');
         $builder
             ->add('titre')
-            ->add('images', FileType::class, array('data_class' => null))
+            ->add('images', FileType::class, array('data_class' => null,'required' => false))
             ->add('descriptif')
-             ->add('imgPresentation', FileType::class, array('data_class' => null))
+             ->add('imgPresentation', FileType::class, array('data_class' => null,'required' => false))
                 ->add('descriptionSociete')
                 ->add('annee', DateType::class, array(
                    'widget' => 'single_text',
                     'input' => 'datetime',
                    'attr' => ['max' => $d,'min' => '']))
                 ->add('realisations')
-                ->add('imgLogo', FileType::class, array('data_class' => null))
-                ->add('imgTemplate', FileType::class, array('data_class' => null))
+                ->add('imgLogo', FileType::class, array('data_class' => null,'required' => false))
+                ->add('imgTemplate', FileType::class, array('data_class' => null,'required' => false))
                 ->add('descriptionTemplate')
                 ->add('lienSite') 
             ->add('publier')

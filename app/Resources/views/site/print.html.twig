@@ -2,19 +2,21 @@
 {% block loader %}{% endblock %}
 {% block section %}
     <div class="container-fluid image-print">
-        <div class="row">
+        <div class="row" id="projectprint">
        {% for projetprint in projectsprint %}
   
       <div class="col-sm-12 col-md-12">
-    
+       <div class="txt-present-print">
       <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive">
-     
-        <p class="thumb-title">{{projetprint.titre}}</p>
-
-      
-      <p class="thumb-title">{{projetprint.description}}</p>
-      <a class="fa fa-plus-circle" href="{{path("detailprint",{"id":projetprint.id})}}">En voir +</a>
-    
+         <div class="col-md-10 txt-print">
+        <h3 class="{% if loop.index is divisible by(2) %}thumb-title line-projet-print txt-print-black{% else %}thumb-title line-projet-print {% endif %}">{{projetprint.name}}</h3>
+        <p class="{% if loop.index is divisible by(2) %}thumb-desc txt-print-black{% else %}thumb-desc{% endif %}">{{projetprint.description|truncate(60, true, ' ...')}}</p>
+         </div>
+         <div id="plus" class="{% if loop.index is divisible by(2) %}col-md-2 btn-print-detail txt-print-black{% else %}col-md-2 btn-print-detail{% endif %}">
+         <a href="{{path("detailprint",{"id":projetprint.id})}}"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk"></a><span class="envoirplus">Project</span>
+             
+      </div>
+       </div>
     </div>
    
  
@@ -24,9 +26,53 @@
   </div>
 
 </div>
+  <div class="container-fluid">
+         {% for galerie in projectsgal %}
+             <div id="illu">
+         <div class="{% if loop.index is divisible by(2) %}panel-proto-right{% else %}panel-proto{% endif %}">
+            
+        <div class="">
+            
+            {#<img class="panel-img-proto" src="{{asset('uploads/img/')~galerie.imageDetail}}">#}
+            <a href="{{asset('uploads/img/')~galerie.imageDetail}}" data-lightbox="portfolio"><img class="panel-img-proto" src="{{asset('uploads/img/')~galerie.imageDetail}}"></a>
+                    </div>
+    </div> 
+             <div class="{% if loop.index is divisible by(2) %}content-panel-proto{% else %}content-panel-proto-right{% endif %}">
+                 <div class="p_inside-proto">
+                 <div class="line-illu"></div>
+                <h2 class="title-illu">{{galerie.titre}}</h2>
+                {#<div class="txt-blabla"id="testing">
+                    <p>DIGITAL ART</p>
+                    <p>ILLUSTRATIONS</p>
+                     </div>#}
+                     <div class="txt-illu">
+                     {#<p>{{galerie.texte}}</p>#}
+                    <p>Description: {{galerie.description}}</p>
+                    <p>Techniques: {{galerie.technique}}</p>
+                </div>
+                {#<span class="link-illu"><a class="folio-read-more" href="{{path("detailgalerie",{"id":galerie.id})}}"><i class="fa fa-link"></i></a></span>#}
+                 <div class="link-illu">
+                    <a class="btn btn-illu" href="{{path("detailgalerie",{"id":galerie.id})}}" role="button"><i class="fa fa-angle-right" aria-hidden="true"></i>Project</a>
+                    </div>
+                </div>
+               
+             </div> 
+             </div>
+ 
+ {% endfor %}
+  </div>
 
-
+  <div class="all-galerie wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="700ms">
+      <div class="btn-lien-galerie">
+      <a class="btn btn-galerie" href="{{path('travauxgalerie')}}" role="button">En voir +</a>
+      </div>
+  </div>
+  
+  
   {% block javascript %}
      {% endblock%}
      
 {% endblock%}
+
+
+     

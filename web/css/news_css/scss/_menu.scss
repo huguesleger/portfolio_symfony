@@ -37,11 +37,18 @@
           height: 2px;
 /*          margin-top: -5px;*/
           background-color: $violet;
-            transform: translateY(-10px);
+          transform: translateY(-10px);
           transition: transform 0.3s;
         }
         
+        &::before {
+            width: 50px;
+            left: -10px;
+        }
+        
         &::after{
+            width: 30px;
+            left: 10px;
           transform: translateY(10px);
 /*          margin-top: 5px;*/
         }
@@ -78,7 +85,14 @@
           transition: transform 0.3s;
         }
         
+        &::before {
+            width: 50px;
+            left: -10px;
+        }
+        
         &::after{
+            width: 30px;
+            left: 10px;
           transform: translateY(10px);
 /*          margin-top: 5px;*/
         }
@@ -100,6 +114,7 @@
            .hamb::after{
               transform: translateY(12px);
             }
+            
         }
 
         &.is-open{
@@ -109,15 +124,19 @@
               background: transparent;
             }
              .hamb::before{
-              transform: translateY(0) rotate(45deg);
+               width: 40px;
+               left: 0;
+               transform: translateY(0) rotate(45deg);
                background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
                background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
                background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
                background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
             }
             .hamb::after{
-              transform: translateY(0) rotate(-45deg);
-               background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+                width: 40px;
+                left: 0;
+                transform: translateY(0) rotate(-45deg);
+                background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
                 background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
                 background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
                 background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
@@ -125,16 +144,27 @@
             &:hover{
               transition: 0.7s;
             }
+            .txt-hamb {
+                display: none;
+            }
         }
         &.is-open-color{
           border: 1px solid #fff;
           background-color: transparent;
           
-          
-
         }
 }
 }
+
+.txt-hamb {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    font-size: 12px;
+}
+
+
 @media screen and(min-width: 300px)and(max-width: 768px){
 .main-icon{
   z-index: 2000;
@@ -145,7 +175,7 @@
   width: 44px;
   height: 44px;
   background-color: $violet;
-    border-radius: 50%;
+  border-radius: 50%;
   cursor: pointer;
   right: 20px;
 
@@ -296,8 +326,10 @@
         overflow: hidden;
 	background: rgba(19, 12, 28, 1);
 	transition: all 0.9s cubic-bezier(.77,.06,.28,.85);
+        
 	&.open{
             top:0;
+           
            .clip-text{
              transition: animation 3s;
              -webkit-animation: bounceInUp 2000ms;
@@ -383,8 +415,9 @@ overflow: hidden;
 }*/
 
 
+.clip-img {
 
-
+}
 
 
 
@@ -396,7 +429,7 @@ overflow: hidden;
   		position: absolute;
   		right: 0;
   		bottom: 0;
-      left: -50%;
+                left: 0%;
   		top:0;
   		width: 100%;
   		height: 100%;
@@ -406,6 +439,9 @@ overflow: hidden;
     		-moz-background-position: center center;
     		-moz-background-size: contain;
      		-moz-object-fit: cover; /*cover video background */
+                -webkit-background-position: center center;
+    		-webkit-background-size: contain;
+     		-webkit-object-fit: cover; /*cover video background */
         background-position: center center;
     		background-size: contain;
      		object-fit: cover; /*cover video background */
@@ -472,7 +508,6 @@ overflow: hidden;
     &:hover{
       color: #818181;
     }
-
 } 
 .navbar-brand::before{
     content: '';
@@ -501,7 +536,7 @@ overflow: hidden;
     background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
-    width: 12%;
+    width: 30px;
 /*    padding-right: 100px;*/
     z-index: 1;
     left: 0%;
@@ -750,4 +785,5 @@ margin-bottom: 0;
     transition: 0.7s;
     position: fixed;
 }
+
 

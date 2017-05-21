@@ -2,19 +2,24 @@
 {% block loader %}{% endblock %}
 {% block section %}
 
-  {% block ariane %}<ol class="breadcrumb">
+  {% block ariane %}
+      <ol class="breadcrumb light degrader ">
   <li><a href="{{path('home')}}">Home</a></li>
   <li><a href="{{path('travauxweb')}}">Travaux Web</a></li>
   <li class="active">Détail</li>
-</ol>{% endblock %}
-    
-      
+</ol>
+       {% endblock %}
+      <div class="container-fluid">
        {% for projet in projects %}
-      <div class="col-sm-6 col-md-12">
+           
+      <div class="row">
     <div class="detail-work">
+        <div class="img-header">
        <img src="{{asset('uploads/img/')~projet.imgPresentation}}" class="img-responsive img">
-       <div class="container">
+        </div>
+       <div class="container title-header-print">
         <h2 class="">{{projet.descriptionSociete}}</h2>
+        </div>
      <p class="">{{projet.titre}}</p>
       <p class="">{{projet.annee|date('d/m/y')}}</p>
        <p class="">{{projet.realisations}}</p>
@@ -23,13 +28,13 @@
          <p class="">{{projet.descriptionTemplate}}</p>
           <p class="">{{projet.lienSite}}</p>
       
-      </div>
+
     </div>
     
- 
+   </div>
  {% endfor %}
-  </div>
 
+      </div>
 
  {% block javascript %}
      {% endblock%}

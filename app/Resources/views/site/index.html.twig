@@ -32,13 +32,15 @@
      <div class="logo-home" id="logo">
      {% if is_granted("ROLE_ADMIN") %}
 <i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+<img src="{{ asset('./images/logo-hl.svg')}}" class="min-logo">
 {% else %}
     <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+    <img src="{{ asset('./images/logo-hl.svg')}}" class="min-logo">
     {% endif %}
 
     <div class="main-icon">
       <span class="hamb"></span>
-     
+      <p class="txt-hamb">menu</p>
     </div>
     
  </div>
@@ -84,6 +86,7 @@
               <li class="mail col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('contact')}}">Contact</a></li>
             </ul>
           </nav>#}
+
           <div class="wrapper">
           <nav class="navbar navbar-default">
             <ul class="nav clip-text">
@@ -127,17 +130,18 @@
         <img src="{{asset('uploads/img/')~projetcaroussel.images}}">
        
       </div>
+        
            {% endfor %} 
          <!-- Controls -->
   <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="fa fa-angle-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    {#<span class="fa fa-angle-left" aria-hidden="true"></span>#}
+    
+    <span class="sr-only-left">Previous</span>
   </a>
   <a class="right carousel-control" data-target="#carousel-example-generic" role="button" data-slide="next">
-    <span class="fa fa-angle-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-         
+    {#<span class="fa fa-angle-right" aria-hidden="true"></span>#}
+    <span class="sr-only-right">Next</span>
+  </a>         
 </div>
 
         

@@ -67,9 +67,10 @@ textarea, input.form-control-mail{
     width: 100%;
     
 }
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+/*::-webkit-input-placeholder {  Chrome/Opera/Safari 
   color: #fff;
-}
+}*/
 
 .contact-me{
  font-size: 12px;
@@ -207,7 +208,7 @@ animation: bounce 3000ms infinite;
 
 .project-description-textes{
     background-color: #fff;
-    padding-bottom: 10px;
+/*    padding-bottom: 10px;*/
 /*    border-bottom: 1px dashed #CCCCCC;*/
 /*    height: 190px;*/
     margin-bottom: 10px;/*

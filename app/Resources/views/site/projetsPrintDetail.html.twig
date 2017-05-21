@@ -7,28 +7,68 @@
   <li><a href="{{path('travauxprint')}}">Travaux Print</a></li>
   <li class="active">Détail</li>
 </ol>{% endblock %}
-    
-      
+        <div class="container-fluid">
        {% for projetprint in projectsprint %}
-      <div class="col-sm-6 col-md-12">
+            
+      <div class="row">
     <div class="detail-work">
-        <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive img col-md-5">
+        <div class="img-header">
+        <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive col-md-12">
+        </div>
+      <div class="container title-header-print">
       <h2 class="">{{projetprint.titre}}</h2>
-      <p class="">{{projetprint.description}}</p>
-      <a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>
-      <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive img col-md-5">
-      <p class="">{{projetprint.technique}}</p>
-      <img src="{{asset('uploads/img/')~projetprint.image2}}" class="img-responsive img col-md-5">
-      <p class="">{{projetprint.descriptionImg2}}</p>
-      <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive img col-md-5">
-       <p class="">{{projetprint.descriptionImg3}}</p>
-      
+       </div>
+       <div class="container-fluid infos-project-single">
+       <div class="col-md-3">
+        <h3 class="txt-rea">Réalisation pour {{projetprint.name}}</h3>
+         </div>
+         <div class="col-md-5 border-left border-right">
+             <h3 class="meta-txt">Description<span class="txt-print-single">: {{projetprint.description}}</span></h3>
+         </div>
+         <div class="col-md-4 ">
+             <h3 class="meta-txt">Technique<span class="txt-print-single">: {{projetprint.technique}}</span></h3>
+         </div>
+       </div>
+      {#<a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>#}
+      <div class="col-md-2"><p class="text-deco">i <span class="line-through-1">conceptartist photoshop</span> love graphisme <span class="line-through-2">inspiration</span>
+              and design <span class="line-through-3">affiche art print photomontage retouche</span> l'illustration
+              <span class="line-through-4">icon vecteur pao</span> c'est cool <span class="line-through-5">illustrator <span class="line-through-11">adobe</span></span> aussi <span class="line-through-6">picto</span> <span class="line-through-12">logo</span> <span class="line-through-13">cmjn pantone</span> <span class="line-through-14">photos images</span>
+              contact me <span class="line-through-7">creation</span> <span class="line-through-15">charte</span> <span class="line-through-16">for a job</span> <span class="line-through-8"><span class="line-through-17">visuel</span> <span class="line-through-18">300dpi</span>
+                  <span class="line-through-19">impression</span> <span class="line-through-20">tablette</span>  <span class="line-through-21">graphique</span></span> color <span class="line-through-9"><span class="line-through-22">conceptart</span></span>
+                  your life <span class="line-through-10"><span class="line-through-23">digital</span> <span class="line-through-24">creatif</span> <span class="line-through-25">painting</span> <span class="line-through-26">dessin line</span> <span class="line-through-27">painting</span></span> hl</p>
+          <p class="over-txt">* over the text</p>
       </div>
+     
+              
+      <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive col-md-10 print-img-fat">
+
+       <div class="col-md-12 img-print-resize print-img-fat">
+       <div class="over-img-print"></div>
+      <img src="{{asset('uploads/img/')~projetprint.image2}}" class="img-responsive col-md-8 no-margin">
+      <div class="col-md-4">
+      <p class="txt-desc-single">{{projetprint.descriptionImg2}}</p>
+       </div>
+       </div>
+       <div class="col-md-12 img-print-resize">
+         <div class="over-img-print-left"></div>
+       <div class="col-md-4">
+            <p class="txt-desc-single right">{{projetprint.descriptionImg3}}</p>
+      </div>
+        <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive col-md-8 no-margin">
+        </div>
     </div>
-    
- 
+      </div>
+
+           
+     
+      <div class="col-md-12 icon-cmyk-lien">
+          <a href="{{'http://www.'~projetprint.liens~'.com'}}" target="new"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk-md"></a>
+       <p>{{projetprint.liens}}</p>
+      </div>
+     
+     
  {% endfor %}
-  </div>
+        </div>
 
 
  {% block javascript %}

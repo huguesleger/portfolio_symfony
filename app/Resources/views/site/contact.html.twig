@@ -11,9 +11,9 @@
 </ol>{% endblock %}#}
    
    <div class="header-contact" id="HeaderContact">
-       <img src="../images/contact-header.jpg" class="img-responsive">
+       <img src="./images/contact-header.jpg" class="img-responsive">
        <div class="cloud-contact anim">
-           <img src="../images/nuage-contact.png">
+           <img src="./images/nuage-contact.png">
        </div>
        <div class="title-contact" id="txtHeaderContact">
            <h2>contact<span class="grey">|hello</span></h2>
@@ -50,7 +50,7 @@
     </div>
 {% endfor %}
         
-                <div id="form-contact">
+             <div id="form-contact">
             <form action="{{path('contact')}}" id="contact" method="POST" class="contact-form-mail">
             <div class="form-group-mail">
             <input id="nom" type="text" name="nom" class="form-control-mail" placeholder="Nom" required="required">
@@ -100,7 +100,7 @@
             <h4 class="title-social-contact"> Social</h4>
             <div class="icon-social-contact">
                {% for social in social %}
-            <a class="social-contact" href="{{social.lien}}" target="new"><i class="fa {{social.icon}}"></i></a>
+            <a class="social-contact" href="{{'http://www.'~social.lien}}" target="new"><i class="fa {{'fa-'~social.icon}}"></i></a>
        {#     <a class="social-contact" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-instagram"></i></a>
             <a class="social-contact" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-behance"></i></a>
             <a class="social-contact" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-pinterest"></i></a>

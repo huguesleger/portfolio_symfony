@@ -29,12 +29,20 @@ class ProjetsPrint
      * @ORM\Column(name="Titre", type="string", length=255)
      */
     private $titre;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Name", type="string", length=255)
+     */
+    private $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="Description", type="string", length=512)
      */
+    
     private $description;
 
     /**
@@ -148,7 +156,16 @@ class ProjetsPrint
     {
         return $this->titre;
     }
+    
+    function getName() {
+        return $this->name;
+    }
 
+    function setName($name) {
+        $this->name = $name;
+    }
+
+    
     /**
      * Set description
      *

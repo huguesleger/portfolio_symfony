@@ -16,7 +16,7 @@
   <li  class="active">Travaux print</li>
 </ol>
              {% endblock %}
-   <<div class="container-fluid">
+   <div class="container-fluid">
    <div class="container project-admin">  
         <div class="row">
        {% for projetprint in projectsprint %}
@@ -43,18 +43,18 @@
           <div class="col-md-1">
               <p class="id-project">{{projetprint.id}}</p>
           </div>
-          <div class="col-md-2 btn-action-publier">
+          <div class="col-md-3">
       <h2 class="">{{projetprint.titre}}</h2>
-      <p class="">{{projetprint.description}}</p>
+      <p class="">{{projetprint.description|truncate(40, true, ' ...')}}</p>
           </div>
           
       {% if projetprint.publier ==[1] %}
-           <div class="col-sm-6 col-md-4">
+           <div class="col-sm-6 col-md-3">
  <div class= "alert alert-success" role= "alert" > <strong> Ok </strong> bien publié
 </div>
 </div>
      {% else %}
-                         <div class="col-sm-6 col-md-4">
+                         <div class="col-sm-6 col-md-3">
  <div class= "alert alert-danger" role= "alert" > <strong> Oups! </strong> non publié 
  </div>
 </div>
@@ -80,4 +80,5 @@
  </div>
    </div>
 </div>
+         </div>
 {% endblock%}
