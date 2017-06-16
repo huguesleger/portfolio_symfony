@@ -108,7 +108,7 @@ class Projets
 
     /**
      * @var UploadedFile
-     *
+ 
      * @ORM\Column(name="ImgLogo", type="string", length=512)
      * @File(mimeTypes={"image/jpeg"})
      */

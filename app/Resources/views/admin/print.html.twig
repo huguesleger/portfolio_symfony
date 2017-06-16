@@ -12,7 +12,7 @@
          <div class="project-content">  
               {% block ariane %}
              <ol class=" ariane-admin breadcrumb">
-  <li><a href="{{path('admin')}}">Home</a></li>
+  <li class="txt-color-primary"><a href="{{path('admin')}}">Home</a></li>
   <li  class="active">Travaux print</li>
 </ol>
              {% endblock %}
@@ -33,17 +33,17 @@
           <table class="table">
          <thead> 
          <tr>
-             <th class="col-md-1">id</th>
-              <th class="col-md-2 title-nom-project">Nom</th>
-              <th class="col-md-4 sep-status">Status</th>
+             <th class="col-md-1">date</th>
+              <th class="col-md-3 title-nom-project">Nom</th>
+              <th class="col-md-3 sep-status">Status</th>
               <th class="col-md-5 action-project">Actions</th>
           </tr>
          </thead>
           </table>
           <div class="col-md-1">
-              <p class="id-project">{{projetprint.id}}</p>
+              <p class="id-project">{{projetprint.annee|date('j/m/y')}}</p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 txt-center">
       <h2 class="">{{projetprint.titre}}</h2>
       <p class="">{{projetprint.description|truncate(40, true, ' ...')}}</p>
           </div>

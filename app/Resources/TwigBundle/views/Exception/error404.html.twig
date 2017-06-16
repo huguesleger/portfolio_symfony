@@ -1,0 +1,24 @@
+{% extends ":site:index.html.twig"%}
+
+{% block section %}
+
+   <div class="row">
+    <div class="col-md-12 mg-bottom-xl">
+  
+        <div class="col-md-6 message-error">
+            <h1 class="txt-error"><span class="error-color">Oops!</span><br>
+                <span class="txt-error-light">cette</span> page <br>
+                <span class="txt-error-light">n'</span>existe<br>
+                pas</h1>   
+                </div>
+     <div class="col-md-6">
+               <h2 class="big-error">{{ status_code }}</h2>
+                </div>
+                
+
+</div>
+</div>
+    
+    {% endblock %}
+
+

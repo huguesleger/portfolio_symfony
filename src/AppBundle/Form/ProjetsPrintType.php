@@ -3,6 +3,8 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,10 +18,20 @@ class ProjetsPrintType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $d = date('Y-m-d');
         $builder
                 ->add('name')
                 ->add('titre')
                 ->add('description')
+                ->add('colorTxt', ChoiceType::class, array(
+                    'choices'  => array(
+                        'white' => 'white',
+                        'dark' => 'dark',
+                    ),))
+                ->add('annee', DateType::class, array(
+                   'widget' => 'single_text',
+                    'input' => 'datetime',
+                   'attr' => ['max' => $d,'min' => '']))
                 ->add('images', FileType::class, array('data_class' => null,'required' => false))
                 ->add('image1', FileType::class, array('data_class' => null,'required' => false))
                 ->add('technique')

@@ -226,7 +226,7 @@ body:after {
 }
 
  .overlay {
-  background-color: #000;
+background-color: #130C1C;
   color: #fff;
   left: 0;
   right:0;
@@ -272,22 +272,24 @@ body:after {
     text-align: center;
 }
 .folio-overview a {
-  font-size: 18px;
-  color: #333;
+  font-size: 35px;
+  color: #f94545;
   height: 50px;
   width: 50px;
   line-height: 50px;
-  border-radius: 50%;
-  background-color: #fff;
+  border-radius: 0;
+  border: 2px solid  #f94545;
+  background-color: transparent;
   display: inline-block;
   margin-top: 20px;
   margin-right: 5px;
-  transition: 0.3s
+  transition: all 0.3s ease-in-out;
 }
 
 .folio-overview a:hover {
-  color: red;
-  transition: 0.3s
+  color: #fff;
+  border: 2px solid  #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .folio-overview .folio-expand {
@@ -355,4 +357,18 @@ body:after {
   margin-left: -17px;
 }
 
-
+.line-title-gal {
+    text-transform: capitalize;
+    &::before {
+        content:'';
+         position: absolute;
+        width: 45%;
+        height: 2px;
+        left: 0;
+        top: 170px;
+        background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+        background: -o-linear-gradient(right,  #f94545, #ff8668);  
+        background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+        background: linear-gradient(to right,  #f94545, #ff8668);
+    }
+}

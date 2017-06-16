@@ -155,23 +155,24 @@
 
    
        
-        <div class="title-rubrique swatches-primary padd-sm mg-bottom-xl">
-            <h2 class="txt-color no-mg">Web</h2>
-            <p class="txt-color-dark no-mg"> sdfghgf </p>
+        <div class="title-rubrique padd-sm mg-bottom-xl">
+            <h2 class="txt-color-web big-title no-mg">work</h2>
+            <p class="txt-color-primary no-mg">Web/Front & Back</p>
         </div>
-     <div class="container-fluid" id="workWeb">
+     <div class="container-fluid mg-bottom-xl" id="workWeb" data-midnight="color-hamb">
         {#<div id="Panel">#}
        {% for projet in projects %}
           <div class="panel">
             
         <div class="p_inside">
-            <div class="line-projet"><p class="number-projet">{{projet.id}}</div>
+            <div class="line-projet"><p class="number-projet">{{projet.annee|date('/Y')}}</div>
                 <a class="overdark" href="{{path("detailprojets",{"id":projet.id})}}"></a>
             <img class="panel-img" src="{{asset('uploads/img/')~projet.images}}" data-adaptive-background>
            
             
            {# <a class="folio-read-more-web" href="{{path("detailprojets",{"id":projet.id})}}"><i class="link-web fa fa-camera-retro" aria-hidden="true"></i></a>#}
-             <a href="{{path("detailprojets",{"id":projet.id})}}"><img src="{{ asset('./images/diamond.svg')}}" class="icon-diamond"></a>
+             {#<a href="{{path("detailprojets",{"id":projet.id})}}"><img src="{{ asset('./images/diamond.svg')}}" class="icon-diamond"></a>#}
+             <a href="{{path("detailprojets",{"id":projet.id})}}"></a>
 
                 <div class="infos-web">
                     <div class="infos-web-title">

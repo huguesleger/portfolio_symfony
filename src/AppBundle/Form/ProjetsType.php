@@ -32,7 +32,7 @@ class ProjetsType extends AbstractType
                 ->add('imgLogo', FileType::class, array('data_class' => null,'required' => false))
                 ->add('imgTemplate', FileType::class, array('data_class' => null,'required' => false))
                 ->add('descriptionTemplate')
-                ->add('lienSite') 
+                ->add('lienSite')
             ->add('publier')
             ->add('sauvegarder', SubmitType::class)
         ;

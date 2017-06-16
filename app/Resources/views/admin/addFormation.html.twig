@@ -19,8 +19,8 @@
 <div class="bg-form">
          {% block ariane %}
              <ol class=" ariane-admin breadcrumb">
-  <li><a href="{{path('admin')}}">Home</a></li>
-  <li><a href="{{path('textes')}}">Textes</a></li>
+  <li class="txt-color-primary"><a href="{{path('admin')}}">Home</a></li>
+  <li class="txt-color-primary"><a href="{{path('textes')}}">Textes</a></li>
   <li  class="active"> Edit</li>
 </ol>
              {% endblock %}
@@ -38,13 +38,13 @@
 <div class="col-sm-6 col-md-12 col-md-offset-1">
 
 
-    <h1 class="title-form"><i class="icon-add-form fa fa-camera-retro"></i>Contact</h1>
-<div class="input-group col-md-12"><span class="input-group-addon">Email Site</span>{{form_widget(formFormation.annee,{'attr':{'class':('form-control')}})}}<span class="input-group-addon">
+    <h1 class="title-form"><i class="icon-add-form fa fa-camera-retro"></i>Formation</h1>
+<div class="input-group col-md-12"><span class="input-group-addon">Année</span>{{form_widget(formFormation.annee,{'attr':{'class':('form-control')}})}}<span class="input-group-addon">
                         <span class="fa fa-calendar"></span>
                     </span></div>
-<div class="input-group col-md-12"><span class="input-group-addon">Lien Site</span>{{form_widget(formFormation.titre,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Ecole</span>{{form_widget(formFormation.titre,{'attr':{'class':('form-control')}})}}</div>
 
-   <div class="input-group col-md-12"><span class="input-group-addon">Email Pro</span>{{form_widget(formFormation.texte,{'attr':{'class':('form-control')}})}}</div>
+   <div class="input-group col-md-12"><span class="input-group-addon">Cursus</span>{{form_widget(formFormation.texte,{'attr':{'class':('form-control')}})}}</div>
   
 
 </div>

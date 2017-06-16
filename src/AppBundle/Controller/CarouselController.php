@@ -119,7 +119,7 @@ class CarouselController extends Controller {
         if ($request->getMethod() == 'POST') {
           
             $imagesNew = $em->find('AppBundle:ImagesCaroussel', $id);
-            $f = $this->createForm(ImagesCaroussel::class, $imagesNew);
+            $f = $this->createForm(ImagesCarousselType::class, $imagesNew);
             
             $f->handleRequest($request);
             

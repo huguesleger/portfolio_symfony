@@ -8,9 +8,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Projets;
 use AppBundle\Form\ProjetsType;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
-use AppBundle\Entity\Projets;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -31,7 +31,7 @@ class ProjetsWebController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
         $rsm = new ResultSetMappingBuilder($em);
         $rsm->addRootEntityFromClassMetadata('AppBundle:Projets', 'projets');
-        $query = $em->createNativeQuery("select * from projets", $rsm);
+        $query = $em->createNativeQuery("select * from projets ORDER BY annee DESC", $rsm);
         $project = $query->getResult();
         return array ('projects' => $project);
     }

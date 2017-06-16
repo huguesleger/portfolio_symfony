@@ -1,39 +1,95 @@
 {% extends ":site:index.html.twig"%}
 {% block loader %}{% endblock %}
+
+
+
 {% block section %}
-    <div class="container-fluid image-print">
-        <div class="row" id="projectprint">
-       {% for projetprint in projectsprint %}
-  
-      <div class="col-sm-12 col-md-12">
+    
+     <div class="title-rubrique padd-sm mg-bottom-xl">
+            <h2 class="txt-color-webdesign big-title no-mg">work</h2>
+            <p class="txt-color-primary no-mg">Webdesign & Graphisme</p>
+        </div>
+    
+    <div class="image-print">
+        <div class="" id="projectprint">
+       {% for projetprint in projectsprint [0:] %}
+           {% if loop.index == 1 %}
+      <div class="container-fluid" data-midnight="color-hamb">
        <div class="txt-present-print">
       <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive">
          <div class="col-md-10 txt-print">
-        <h3 class="{% if loop.index is divisible by(2) %}thumb-title line-projet-print txt-print-black{% else %}thumb-title line-projet-print {% endif %}">{{projetprint.name}}</h3>
-        <p class="{% if loop.index is divisible by(2) %}thumb-desc txt-print-black{% else %}thumb-desc{% endif %}">{{projetprint.description|truncate(60, true, ' ...')}}</p>
+             <span class="new new-{{projetprint.colorTxt}}">new</span>
+        <h3 class="thumb-title line-projet-print txt-print-{{projetprint.colorTxt}}">{{projetprint.name}}
+         <span class="thumb-desc txt-print-{{projetprint.colorTxt}}">{{projetprint.annee|date('Y')}}</span></h3>
+        <p class="thumb-desc txt-print-{{projetprint.colorTxt}}">{{projetprint.description|truncate(60, true, ' ...')}}</p>
          </div>
-         <div id="plus" class="{% if loop.index is divisible by(2) %}col-md-2 btn-print-detail txt-print-black{% else %}col-md-2 btn-print-detail{% endif %}">
-         <a href="{{path("detailprint",{"id":projetprint.id})}}"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk"></a><span class="envoirplus">Project</span>
+         <div id="plus" class="col-md-2 btn-print-detail txt-print-{{projetprint.colorTxt}}">
+         <a href="{{path("detailprint",{"id":projetprint.id})}}"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk"></a><span class="envoirplus">View project</span>
              
       </div>
        </div>
     </div>
-   
+         {% elseif loop.index <= 5 %}
+             <div class="container-fluid wow slideInUp" data-wow-duration="1200ms" data-wow-delay="700ms">
+          <div class="padd-big-xl {% if loop.index is divisible by(2) %}swatches-grey{% else %}swatches-white{% endif %}" {% if loop.index is divisible by(2) %}data-midnight="color-hamb"{% else %}{% endif %}>
+              <div class="img-shadow-print {% if loop.index is divisible by(2) %}img-present-print-left{% else %}img-present-print-right{% endif %}">
+         <img src="{{asset('uploads/img/')~projetprint.images}}"class="img-responsive">
  
+         <div class="{% if loop.index is divisible by(2) %}info-content-print{% else %}info-content-print-right{% endif %}">
+             
+             <h3 class="wrap-print-name txt-color-white">{{projetprint.name}}</h3>
+             <p class="thumb-desc txt-print txt-color-white">{{projetprint.annee|date('Y')}}</p>
+             <p class="wrap-meta-txt-print txt-color-white">{{projetprint.description|truncate(25, true, ' ...')}}</p>
+      
+                    <a class="btn-link-more-print txt-color-white" href="{{path("detailprint",{"id":projetprint.id})}}" role="button">View <span class="link-view-print">project</span></a>
+                    
+             
+             </div>
 
+
+              </div>
+              
+          </div>
+             </div>
+     
+      
+        {% elseif loop.index > 5 %}
+           <div id="moreThumb">
+           <div class="container-fluid wow slideInUp" data-wow-duration="1200ms" data-wow-delay="700ms">
+          <div class="padd-big-xl {% if loop.index is divisible by(2) %}swatches-grey{% else %}swatches-white{% endif %}"{% if loop.index is divisible by(2) %}data-midnight="color-hamb"{% else %}{% endif %}>
+              <div class="img-shadow-print {% if loop.index is divisible by(2) %}img-present-print-left{% else %}img-present-print-right{% endif %}">
+         <img src="{{asset('uploads/img/')~projetprint.images}}"class="img-responsive">
  
+         <div class="{% if loop.index is divisible by(2) %}info-content-print{% else %}info-content-print-right{% endif %}">
+             
+             <h3 class="wrap-print-name txt-color-white">{{projetprint.name}}</h3>
+             <p class="thumb-desc txt-print txt-color-white">{{projetprint.annee|date('Y')}}</p>
+             <p class="wrap-meta-txt-print txt-color-white">{{projetprint.description|truncate(25, true, ' ...')}}</p>
+      
+                    <a class="btn-link-more-print txt-color-white" href="{{path("detailprint",{"id":projetprint.id})}}" role="button">View <span class="link-view-print">project</span></a>
+                    
+             
+             </div>
+
+
+              </div>
+              
+          </div>
+             </div>
+           </div>
+        
+  {% endif %}
  {% endfor %}
   </div>
+    </div>
 
-</div>
-  <div class="container-fluid">
+{#  <div class="container-fluid">
          {% for galerie in projectsgal %}
              <div id="illu">
          <div class="{% if loop.index is divisible by(2) %}panel-proto-right{% else %}panel-proto{% endif %}">
             
         <div class="">
             
-            {#<img class="panel-img-proto" src="{{asset('uploads/img/')~galerie.imageDetail}}">#}
             <a href="{{asset('uploads/img/')~galerie.imageDetail}}" data-lightbox="portfolio"><img class="panel-img-proto" src="{{asset('uploads/img/')~galerie.imageDetail}}"></a>
                     </div>
     </div> 
@@ -41,16 +97,12 @@
                  <div class="p_inside-proto">
                  <div class="line-illu"></div>
                 <h2 class="title-illu">{{galerie.titre}}</h2>
-                {#<div class="txt-blabla"id="testing">
-                    <p>DIGITAL ART</p>
-                    <p>ILLUSTRATIONS</p>
-                     </div>#}
+              
                      <div class="txt-illu">
-                     {#<p>{{galerie.texte}}</p>#}
+                  
                     <p>Description: {{galerie.description}}</p>
                     <p>Techniques: {{galerie.technique}}</p>
                 </div>
-                {#<span class="link-illu"><a class="folio-read-more" href="{{path("detailgalerie",{"id":galerie.id})}}"><i class="fa fa-link"></i></a></span>#}
                  <div class="link-illu">
                     <a class="btn btn-illu" href="{{path("detailgalerie",{"id":galerie.id})}}" role="button"><i class="fa fa-angle-right" aria-hidden="true"></i>Project</a>
                     </div>
@@ -60,11 +112,13 @@
              </div>
  
  {% endfor %}
-  </div>
+  </div>#}
 
-  <div class="all-galerie wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="700ms">
-      <div class="btn-lien-galerie">
-      <a class="btn btn-galerie" href="{{path('travauxgalerie')}}" role="button">En voir +</a>
+    
+
+  <div class="all-galerie wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="700ms" id="btnMoreThumb">
+      <div class="btn-lien-all">
+      <a class="btn btn-all-print" role="button">En voir +</a>
       </div>
   </div>
   

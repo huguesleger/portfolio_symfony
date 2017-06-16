@@ -21,9 +21,7 @@
     margin-right: 20px;
     margin-left: 20px;
     z-index: 2;
-    &:hover{
-        opacity: 0.5;
-    }
+    opacity: 1;
 }
 
 
@@ -62,7 +60,8 @@
         top: 50px;
         height: 2px;
         background-color: #f94545;
-        transform: rotate(90deg);
+        -webkit-animation: rubberBand 3000ms infinite;
+        animation: rubberBand 3000ms infinite;
         transition: 0.3s ease-in-out;
         
     }
@@ -94,7 +93,9 @@
         top: -32px;
         height: 2px;
         background-color: #f94545;
-        transform: rotate(90deg);
+/*        transform: rotate(90deg);*/
+         -webkit-animation: rubberBand 3000ms infinite;
+        animation: rubberBand 3000ms infinite;
         transition: 0.3s ease-in-out;
     }
 }

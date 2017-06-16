@@ -31,9 +31,12 @@ class ProjetsPrintController extends Controller{
         $em = $this->getDoctrine()->getEntityManager();
         $rsm = new ResultSetMappingBuilder($em);
         $rsm->addRootEntityFromClassMetadata('AppBundle:ProjetsPrint', 'projetsprint');
-        $query = $em->createNativeQuery("select * from projets_print", $rsm);
+        $query = $em->createNativeQuery("select * from projets_print ORDER BY annee DESC", $rsm);
         $projectprint = $query->getResult();
-        return array ('projectsprint' => $projectprint);
+        return array ('projectsprint' => $projectprint
+
+ 
+            );
     }
 
     
@@ -197,6 +200,7 @@ class ProjetsPrintController extends Controller{
          $this->createForm(ProjetsPrintType::class, $niouzes);
          
           $niouzes->setPublier(1);
+
           
          $em->merge($niouzes);
          $em->flush();

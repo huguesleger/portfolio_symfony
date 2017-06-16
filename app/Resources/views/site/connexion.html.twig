@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <div class="header-conect">
+{#        <div class="header-conect">
             <div class="container-fluid">
                 <div class="logo">
                     <img src="{{ asset('./images/logo-pale.png') }}"/>
@@ -43,15 +43,6 @@
                                     <input type="password" name="_password" class="form-control-connect" id="inputPassword3" placeholder="Mot de passe">
                                 </div>
                             </div>
-                          {# <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="_remember_me" checked > Se souvenir de moi
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>#}
                            <br><br><br><br>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
@@ -74,12 +65,72 @@
                 <img src="{{ asset('./images/minlogo-hl.png') }}"/>
                 <img src="{{ asset('./images/deglingos.png') }}"/>
             </div>
-       
+       #}
+
+
+<div class="row">
+    <div class="col-md-12">
+    <div class="bg-connect left-connect">
+        <div class="title mg-top-big-xl">
+                    <h1>Connexion</h1>
+                </div>
+         <form class="form-horizontal" action="{{path('loginCheck',{}) }}"method="post">
+                        
+   
+                        <div class="form-group">
+                            <label for="inputEmail3" class="control-label"></label>
+                            <div class="col-sm-12  mg-top-md">
+                                <div class="input-group">
+                                    <span class="input-group-addon-connect"><i class="fa fa-user txt-color-primary"></i></span>
+                                    <input type="text" name="_username" class="form-control-connect" id="inputEmail3" placeholder="Pseudo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="control-label"></label>
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon-connect"><i class="fa fa-unlock-alt"></i></span>
+                                    <input type="password" name="_password" class="form-control-connect" id="inputPassword3" placeholder="Mot de passe">
+                                </div>
+                            </div>
+                           <br><br><br><br>
+                            <div class="form-group">
+                                <div class="col-sm-12 txt-center mg-top-big-xl">
+                                    <input type="submit" class="btn btn-connect" value="connexion" />
+                                </div>
+                            </div>
+                            </div>
+                    </form>
+    </div>
+<div class="bg-connect right-connect swatches-primary">
+     <div class="logo-connect mg-top-big-xl">
+                     <img src="{{ asset('./images/big-logoX2.png') }}"/>
+                </div>
+                  <div class="copy-propuls txt-color-white">
+                <p>Site propulsé par HL Developerz</p>
+            </div>
+                
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
     
      <footer class="footer">
         <div class="container">
           <div class="credit">
-            <p>HL Developerz &copy 2016 Tous droits réservés</p>
+            <p>HL Developerz &copy 2017 Tous droits réservés</p>
           </div>
           <div class="social-content">
             <a class="social" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>

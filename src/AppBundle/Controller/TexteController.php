@@ -145,6 +145,7 @@ class TexteController extends Controller{
     public function formFormation() {
         //on créé un objet vide
         $formation = new Formation();
+        
         //on lie un formulaire avec l'objet créé
         $form= $this->createForm(FormationType::class, $formation);
  

@@ -151,7 +151,10 @@ margin-top: 30px;
   text-transform: capitalize;
   text-align: center;
   color: #fff;
-  font-weight: 500;
+  h1{
+      font-weight: 800;
+      font-size: 40px;
+  }
 }
 
 
@@ -182,18 +185,22 @@ margin-top: 30px;
   text-align: center;
   z-index: 5;
   color: #fff;
+  h3{
+      font-weight: 600;
+  }
 }
 
 .icon-services {
   margin-top: 20px;
   margin-bottom:10px; /*-----reglage position txt-------*/
   font-size: 60px;  /*-----reglage size icon-------*/
-  color:#696969; /*-----color icon-------*/
+  color:#fff; /*-----color icon-------*/
   display: block;
   width: 90px; /*-----------taille background icon--------*/
   height:90px;
   border-radius: 5px;
   background-color: #130C1B;
+/*  background: -webkit-linear-gradient(30deg,rgba(249, 69, 69, 0.6), rgba(255, 134, 104, 0.8));*/
   margin-left: auto;
   margin-right: auto;
   text-align: center;

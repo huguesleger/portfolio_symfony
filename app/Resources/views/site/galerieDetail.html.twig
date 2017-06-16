@@ -3,13 +3,10 @@
 {% block title %} | Galerie{% endblock %}
 {% block loader %}{% endblock %}
 {% block section %}
-   {% block ariane %}<ol class="breadcrumb">
-  <li><a href="{{path('home')}}">Home</a></li>
-  {#<li><a href="{{path('travauxweb')}}">Travaux Web</a></li>#}
-  <li class="active">Détail</li>
-</ol>{% endblock %}
+    
+ 
 
-       {% for galerie in projectsgal %}
+{#       {% for galerie in projectsgal %}
 
          <div class="col-sm-6 col-md-12">
     <div class="detail-work">
@@ -23,10 +20,129 @@
       
       </div>
     </div>
-    
+      </div>
  
+ {% endfor %}#}
+
+        <div class="container-fluid">
+       {% for galerie in projectsgal %}
+            
+      <div class="row">
+    <div class="detail-work">
+        <div class="img-header scrolling-post"
+        style="background-image: url({{asset('uploads/img/')~galerie.imageDetail}})">
+        </div>
+        
+        <div class="content" data-midnight="color-hamb">
+            
+              {% block ariane %}<ol class="breadcrumb">
+  <li><a href="{{path('home')}}">Home</a></li>
+  {#<li><a href="{{path('travauxweb')}}">Travaux Web</a></li>#}
+  <li class="active">Détail</li>
+</ol>{% endblock %}
+            
+       <div class="container-fluid infos-project-single">
+            <div class="col-md-3 border-right">
+           <h3 class="meta-txt-print bordered">Titre</h3>
+           <p class="txt-name-single">{{galerie.titre}}</p>
+         </div>
+         <div class="col-md-5">
+             <h3 class="meta-txt-print bordered">Description</h3>
+             <p class="txt-post-single">{{galerie.description}}</p>
+         </div>
+         <div class="col-md-4 border-left">
+             <h3 class="meta-txt-print bordered">Technique</h3>
+             <p class="txt-post-single">{{galerie.technique}}</p>
+         </div>
+       </div>
+
+         
+         
+      <div class="row swatches-grey">
+       <div class="full-img-screenshot padd-big-xl">
+
+      <img src="{{asset('uploads/img/')~galerie.imageDetail1}}" class="full-img-row-gal full-img-single-post img-shadow">
+       </div>
+      </div>
+       <div class="row swatches-primary" data-midnight="color-hamb">
+       <div class="full-img-screenshot padd-big-xl">
+
+      <img src="{{asset('uploads/img/')~galerie.imageDetail2}}" class="full-img-row-gal full-img-single-post img-shadow">
+       </div>
+      </div>
+       
+       
+        {% for galerie in projectsgal %}
+           
+
+
+       <div class="nav-project">
+           {% if galerie.id == 1 %}
+         <div class="col-md-12">
+            <a class="btn-nav-project-right" href="{{path("detailgalerie",{"id":galerie.id +1})}}" role="button"><img src="{{ asset('./images/right-chevron.svg')}}" class="next-post"><span class="next-txt">next</span></a>
+            </div>
+         {% endif %}
+        {%if galerie.id > 1 and galerie.id < nb3 %}
+            <div class="col-md-6">
+                <a class="btn-nav-project-left" href="{{path("detailgalerie",{"id":galerie.id -1})}}" role="button"><span class="prev-txt">previous</span><img src="{{ asset('./images/arrow-pointing-left.svg')}}" class="prev-post"></a>
+            </div>
+          
+            <div class="col-md-6">
+            <a class="btn-nav-project-right" href="{{path("detailgalerie",{"id":galerie.id +1})}}" role="button"><img src="{{ asset('./images/right-chevron.svg')}}" class="next-post"><span class="next-txt">next</span></a>
+            </div>
+          {% endif %}
+            {%if galerie.id == nb3 %}
+              <div class="col-md-12">
+                <a class="btn-nav-project-left" href="{{path("detailgalerie",{"id":galerie.id -1})}}" role="button"><span class="prev-txt">previous</span><img src="{{ asset('./images/arrow-pointing-left.svg')}}" class="prev-post"></a>
+            </div>
+              {% endif %}
+       </div>
+        {% endfor %}
+      
+       
+       
+       
+          <div class="col-md-12 swatches-primary mg-top-xl contact-single-post">
+          <div class="container">
+           <div class="col-md-3">
+          <p class="txt-color-white padd-top-md">travaillons ensemble ?</p>
+          <a class="btn-link-contact"href="{{path('contact')}}"><h3 class="meta-txt-print txt-color-white bordered-white info-compte-single-post border-right no-mg-border mg-bottom-md">ecrivez-moi</h3></a>
+           </div>
+              <div class="col-md-1">
+              <img class="icon-smile" src="{{ asset('images/smiling-emoticon-square-face.png')}}">
+              </div>
+              <div class="col-md-3 padd-top-md email-single-post">
+                  
+                  <a class="txt-color-white" href="mailto:hugueslegerdevweb@gmail.com">hugueslegerdevweb@gmail.com</a>
+                  <a class="txt-color-white" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>
+              </div>
+              <div class="col-md-3 mg-top-xl">
+            <a class="social-contact-single-post" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
+            <a class="social-contact-single-post" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-twitter"></i></a>
+            <a class="social-contact-single-post" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-instagram"></i></a>
+          </div>
+           
+              {#<div class="col-md-2 mg-top-xl">
+                  <img src="{{ asset('./images/minlogo-hl.png')}}" class="min-logo-single-post">
+                  <p class="txt-color-white txt-right padd-top-md">&copy HL Developerz</p>
+              </div>#}
+      </div>
+      
+    </div>
+       
+    </div>
+       
+      </div>
+
+         
+      </div>
  {% endfor %}
-  </div>
+        </div>
+        
+  
+  
+  {% block footer %}
+      {% endblock%}  
  {% block javascript %}
      {% endblock%}
 {% endblock%}

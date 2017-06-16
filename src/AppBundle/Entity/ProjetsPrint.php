@@ -110,6 +110,40 @@ class ProjetsPrint
      */
     private $descriptionImg3;
     
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ColorTxt", type="text")
+     */
+    private $colorTxt;
+    
+    
+     /**
+     * Set colorTxt
+     *
+     * @param string $colorTxt
+     *
+     * @return ProjetsPrint
+     */
+    public function setColorTxt($colorTxt)
+    {
+        $this->colorTxt = $colorTxt;
+
+        return $this;
+    }
+    
+     /**
+     * Get colorTxt
+     *
+     * @return string
+     */
+    public function getColortxt()
+    {
+        return $this->colorTxt;
+    }
+    
+    
      /**
      * @var bool
      * @ORM\Column(name="Publier", type="boolean") 
@@ -122,6 +156,37 @@ class ProjetsPrint
     function setPublier($publier) {
         $this->publier = $publier;
     }
+    
+    
+    /**
+     * @var DateTime
+     *
+     * @ORM\Column(name="Annee", type="date")
+     */
+    private $annee;
+    
+     /**
+     * Get annee
+     *
+     * @return string
+     */
+    function getAnnee() {
+        return $this->annee;
+    }
+    
+      /**
+     * Set annee
+     *
+     * @param string $annee
+     *
+     * @return Projets
+     */
+    function setAnnee($annee) {
+        $this->annee = $annee;
+    }
+    
+    
+    
 
         /**
      * Get id

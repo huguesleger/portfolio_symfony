@@ -8,7 +8,9 @@
 
 namespace AppBundle\Controller;
 
-
+use AppBundle\Entity\Galerie;
+use AppBundle\Entity\Projets;
+use AppBundle\Entity\ProjetsPrint;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Swift_Message;
@@ -35,25 +37,29 @@ class VueController extends Controller {
     }
     
     /**
-     * @Route("/projets", name="travauxweb");
+     * @Route("/web", name="travauxweb");
      * @Template(":site:projets.html.twig");
      */
     public function Projets(){
-       
-        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findByPublier(1));
+      
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findBy(array('publier' => '1'),
+                
+        //filtrage par post du plus recent
+        array('annee'=>'DESC'))
+            );
+
+        
+      
         
     }
     
      /**
-     * @Route("/print", name="travauxprint");
+     * @Route("/webdesign-graphisme", name="travauxprint");
      * @Template(":site:print.html.twig");
      */
     public function ProjetsPrint(){
-       
         return array (
-            'projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findByPublier(1),
-            'projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findBy(array('publier' => '1'),  array('id'=>'DESC'), 2),
-                );
+            'projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findBy(array('publier' => '1'),array('annee'=>'DESC')));
         
     }
 
@@ -66,34 +72,71 @@ class VueController extends Controller {
         return array ('projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findByPublier(1));
         
     }
+    
+     /**
+     * @Route("/a-propos", name="apropos");
+     * @Template(":site:aPropos.html.twig");
+     */
+    public function infosMe(){
+       
+        return array (
+            'textes' => $this->getDoctrine()->getRepository('AppBundle:Apropos')->findAll(),
+            'formation' =>$this->getDoctrine()->getRepository('AppBundle:Formation')->findAll(), array('annee'=>'DESC')
+                );
+        
+    }
 
     
     
     
      /**
-     * @Route("/projets/detail/{id}", name="detailprojets")
+     * @Route("/web/{id}", name="detailprojets")
      * @Template(":site:projetsDetail.html.twig");
      */
-    public function ProjetsDetail($id){
-        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findById($id));
+    public function ProjetsDetail(Projets $id){
+        
+        $em = $this->getDoctrine()->getManager();
+        $locationRepo = $em->getRepository('AppBundle:Projets');
+        $nb = $locationRepo->getNb();
+        
+        
+        
+        return array ('projects' => $this->getDoctrine()->getRepository('AppBundle:Projets')->findById($id),
+                      'nb' => $nb,
+
+                );
         
     }
     
     /**
-     * @Route("/projets/detail/print/{id}", name="detailprint")
+     * @Route("/webdesign-graphisme/{id}", name="detailprint")
      * @Template(":site:projetsPrintDetail.html.twig");
      */
-    public function ProjetsDetailPrint($id){
-        return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findById($id));
+    public function ProjetsDetailPrint(ProjetsPrint $id){
+        $em = $this->getDoctrine()->getManager();
+        $locationRepo = $em->getRepository('AppBundle:ProjetsPrint');
+        $nb2 = $locationRepo->getNb2();
+
+        return array ('projectsprint' => $this->getDoctrine()->getRepository('AppBundle:ProjetsPrint')->findById($id),
+            'nb2' => $nb2,
+            );
         
     }
     
+    
+    
      /**
-     * @Route("/galerie/detail/{id}", name="detailgalerie")
+     * @Route("/galerie/{id}", name="detailgalerie")
      * @Template(":site:galerieDetail.html.twig");
      */
-    public function DetailGalerie($id){
-        return array ('projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findById($id));
+    public function DetailGalerie(Galerie $id){
+        $em = $this->getDoctrine()->getManager();
+        $locationRepo = $em->getRepository('AppBundle:Galerie');
+        $nb3 = $locationRepo->getNb3();
+        
+        return array ('projectsgal' => $this->getDoctrine()->getRepository('AppBundle:Galerie')->findById($id),
+            'nb3' => $nb3,
+                );
         
     }
 
@@ -130,7 +173,8 @@ class VueController extends Controller {
      */
   public function contactAction(Request $request)
 {
-        
+      
+              
         
       if ($request->getMethod()=='POST')
       {
@@ -141,25 +185,26 @@ class VueController extends Controller {
           $message = $request->get('message');
           
           
+
+       
           
     $contact = Swift_Message::newInstance();
         $contact->toString();
         $contact->setSubject($nom);
         $contact->setFrom($email);
-        $contact->setTo('contact@hl-developerz.com');
+        $contact->setTo('contactme@hl-developerz.com');
         $contact->setReplyTo($email);
         $contact->setBody($message);
                     
     $this->get('mailer')->send($contact);
     
-    
-    
+        
     $this->addFlash(
             'succesmail',
             'Email envoyé avec succés'
         );
     
-
+        
 }
 
  return $this->render(':site:contact.html.twig',
@@ -173,7 +218,6 @@ class VueController extends Controller {
 
         
 }
-
 
     
 }

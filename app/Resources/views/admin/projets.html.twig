@@ -7,7 +7,7 @@
      
           {% block ariane %}
              <ol class=" ariane-admin breadcrumb">
-  <li><a href="{{path('admin')}}">Home</a></li>
+  <li class="txt-color-primary"><a href="{{path('admin')}}">Home</a></li>
   <li  class="active">Travaux web</li>
 </ol>
              {% endblock %}
@@ -30,27 +30,27 @@
           <table class="table">
          <thead> 
          <tr>
-             <th class="col-md-1">id</th>
-              <th class="col-md-2 title-nom-project">Nom</th>
-              <th class="col-md-4 sep-status">Status</th>
+             <th class="col-md-1">date</th>
+              <th class="col-md-3 title-nom-project">Nom</th>
+              <th class="col-md-3 sep-status">Status</th>
               <th class="col-md-5 action-project">Actions</th>
           </tr>
          </thead>
           </table>
            <div class="col-md-1">    
-        <p class="id-project">{{projet.id}}</p>
+        <p class="id-project">{{projet.annee|date ('j/m/y')}}</p>
           </div>
-          <div class="col-md-2 btn-action-publier">    
+          <div class="col-md-3 txt-center">    
         <h2 class="">{{projet.titre}}</h2>
       <p class="">{{projet.descriptif}}</p>
           </div>
              {% if projet.publier ==[1] %}
-           <div class="col-sm-6 col-md-4">
+           <div class="col-sm-6 col-md-3">
  <div class= "alert alert-success" role= "alert" > <strong> Ok </strong> bien publié
 </div>
 </div>
            {% else %}
-                         <div class="col-sm-6 col-md-4">
+                         <div class="col-sm-6 col-md-3">
  <div class= "alert alert-danger" role= "alert" > <strong> Oups! </strong> non publié 
 </div>
 </div>

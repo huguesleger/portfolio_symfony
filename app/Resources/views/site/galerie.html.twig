@@ -3,9 +3,16 @@
 {% block title %} | Galerie{% endblock %}
 {% block loader %}{% endblock %}
 {% block section %}
-    <section id="portfolio">
-    <div class="container project">
-        <div class="row">
+    
+     <div class="title-rubrique padd-sm mg-bottom-xl">
+            <h2 class="txt-color-gal big-title no-mg">work</h2>
+            <p class="txt-color-primary no-mg">Illustrations & Inspirations</p>
+        </div>
+    
+    
+    <section id="portfolio" data-midnight="color-hamb">
+    <div class="project mg-bottom-xl">
+        <div class="container-fluid">
 
        {% for galerie in projectsgal %}
 
@@ -18,12 +25,13 @@
             <div class="overlay-content">
               <div class="overlay-text">
                 <div class="folio-info">
-                  <h3>{{galerie.titre}}</h3>
-                  <p>{{galerie.description}}</p>
-                  <p>{{galerie.technique}}</p>
+                  <h3 class="line-title">{{galerie.titre}}</h3>
+                  {#<p>{{galerie.description}}</p>
+                  <p>{{galerie.technique}}</p>#}
                 </div>
                 <div class="folio-overview">
-                 <span class="folio-link"><a class="folio-read-more" href="{{path("detailgalerie",{"id":galerie.id})}}"><i class="fa fa-link"></i></a></span> <span class="folio-expand"><a href="{{asset('uploads/img/')~galerie.imageDetail}}" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                 <span class="folio-link"><a class="folio-read-more" href="{{path("detailgalerie",{"id":galerie.id})}}">    +</a></span>
+                 {#<span class="folio-expand"><a href="{{asset('uploads/img/')~galerie.imageDetail}}" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>#}
                 </div>
               </div>
             </div>

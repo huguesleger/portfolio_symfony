@@ -17,8 +17,8 @@
 <div class="bg-form">
              {% block ariane %}
              <ol class=" ariane-admin breadcrumb">
-  <li><a href="{{path('admin')}}">Home</a></li>
-  <li><a href="{{path('projectsprint')}}">Travaux print</a></li>
+  <li class='txt-color-primary'><a href="{{path('admin')}}">Home</a></li>
+  <li class='txt-color-primary'><a href="{{path('projectsprint')}}">Travaux print</a></li>
   <li  class="active"> Edit</li>
 </ol>
              {% endblock %}
@@ -37,9 +37,12 @@
     <h1 class="title-form"><i class="icon-add-form fa fa-camera-retro"></i>Miniature</h1>
  <div class="input-group col-md-12"><span class="input-group-addon">Name</span>{{form_widget(formNewsPrint.name,{'attr':{'class':('form-control')}})}}</div>
 <div class="input-group col-md-12"><span class="input-group-addon">Titre</span>{{form_widget(formNewsPrint.titre,{'attr':{'class':('form-control')}})}}</div>
+<div class="input-group col-md-12"><span class="input-group-addon">Année</span>{{form_widget(formNewsPrint.annee,{'attr':{'class':('form-control')}})}}<span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span></div>
 
    <div class="input-group col-md-12"><span class="input-group-addon">Description</span>{{form_widget(formNewsPrint.description,{'attr':{'class':('form-control')}})}}</div>
-
+<div class="input-group col-md-12"><span class="input-group-addon">Couleur-txt</span>{{form_widget(formNewsPrint.colorTxt,{'attr':{'class':('form-control')}})}}</div>
 
 <div class="input-group col-md-12"><span class="input-group-addon">Thumbnail<span class="info-size">height:830px</span></span>{{form_widget(formNewsPrint.images,{'attr':{'class':('form-control')}})}}</div>
 

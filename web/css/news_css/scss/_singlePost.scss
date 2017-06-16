@@ -1,0 +1,1086 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 mai 2017, 09:29:44
+    Author     : hugues
+*/
+
+.img-header {
+/*     height: 468px;*/
+     position: fixed;
+     /*overflow: hidden;*/
+      top: 0;
+      width: 100%;
+      height: 70vh;
+    width: 100vw;
+       background-size: cover;
+       &:before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      height: 70vh;
+      width: 100vw;
+/*      background: -webkit-radial-gradient(circle, #4B217F,  #130C1C); 
+    background: -o-radial-gradient(circle, #4B217F,  #130C1C);  
+    background: -moz-radial-gradient(circle, #4B217F,  #130C1C);  
+    background: radial-gradient(to circle, #4B217F,  #130C1C);*/
+    background-color: #130C1C; 
+    background-attachment: fixed;
+      position: absolute;
+      opacity: 0.4;
+    }
+    
+    h2{
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        margin: 30vh auto 0;
+        font-size: 35px;
+        font-weight: 300;
+        text-transform: capitalize;
+    }
+}
+
+
+/*.img-header img {
+    padding-top: 200px;
+}*/
+
+.content {
+    position: absolute;
+    top: 70vh;
+      background: #fff;
+      height: 100em;
+      width: 100vw;
+}
+
+
+.img-header img{
+    position: absolute;
+    margin-top: -300px;
+}
+
+.title-header-single-post {
+    position: absolute;
+    z-index: 20;
+    color: #fff;
+    top: 220px;
+    font-weight: 700;
+    font-family: "Inflecto", 'Open Sans', sans-serif;
+    letter-spacing : 5px;
+    text-align: center;
+    width: 100%;
+/*    &::before {
+        content:'';
+        position: absolute;
+        height: 1px;
+        background-color: #fff;
+        width: 100%;
+        top: 85px;
+    }*/
+    h2 {
+        font-size: 60px;
+    }
+}
+
+.nav-project {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.btn-nav-project-left {
+    width: 150px;
+    display: block;
+}
+
+
+.btn-nav-project-right {
+    width: 150px;
+    display: block;
+    float: right;
+}
+
+
+.prev-post {
+    width: 50px;
+    border-left: 1px solid #ff8668;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transition: all 0.2s ease-in-out;
+/*    &:hover{
+        transition: all 0.2s ease-in-out;
+        margin-left: -120px;
+    }*/
+}
+
+
+.btn-nav-project-left:hover .prev-post {
+    transition: all 0.2s ease-in-out;
+        background-color: #f94545;     
+}
+
+
+
+.next-post {
+    width: 50px;
+    border-right: 1px solid #ff8668;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-nav-project-right:hover .next-post {
+    transition: all 0.2s ease-in-out;
+        background-color: #f94545;     
+}
+
+
+
+.prev-txt {
+padding-right: 10px;
+}
+
+.next-txt {
+padding-left: 10px;
+}
+
+.top-txt {
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+
+.btn-top {
+position: fixed;
+bottom: 40px;
+right: 40px;
+padding-top: 4px;
+padding-left: 15px;
+ background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
+width: 50px;
+height: 50px;
+cursor: pointer;
+font-size: 30px;
+color: #fff;
+text-decoration: none;
+transition: 0.2s ease-out;
+opacity: 0;
+}
+
+.btn-top.show {
+    opacity: 1;
+}
+
+/*-------------detail-project-print-------------*/
+
+
+
+.infos-print {
+    width: 50%;
+    display: inline-block;
+}
+
+.content-infos-print {
+    margin-left: 15px;
+}
+
+.infosplus-print {
+    width: 50%;
+    float: right;
+}
+
+.icon-cmyk-lien {
+    text-align: center;
+}
+
+.icon-cmyk-md {
+  width : 20%;
+  transition: 0.3s ease-in-out;
+  &:hover {
+     opacity: 0.7;
+     transition: 0.2s ease-in-out;
+  }
+}
+
+.text-deco {
+    font-size: 11px;
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    width: 170px;
+    font-family: "Inflecto", 'Open Sans', sans-serif;
+    letter-spacing: 8px;
+    z-index: 10;
+    opacity: 0.8;
+    color:#f94545;
+    transition: 0.2s ease-in-out;
+     
+}
+
+.over-txt {
+    position: absolute;
+    top: 505px;
+    left: 0;
+    font-size: 10px;
+    transform: rotate(-90deg);
+}
+
+/*.line-through-1:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 22px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-1:before {
+     width: 100%;
+     transition: 0.2s ease-in-out;
+}
+
+.line-through-2:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 37px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-2:before {
+     width: 72%;
+     transition: 0.2s ease-in-out;
+}
+
+
+
+.line-through-3:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 85px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-3:before {
+     width: 82%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-4:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 116px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-4:before {
+     width: 84%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-5:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 132px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-5:before {
+     width: 40%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-6:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 148px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-6:before {
+     width: 100%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-7:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 163px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-7:before {
+     width: 65%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-8:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 196px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-8:before {
+     width: 100%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-9:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 212px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-9:before {
+     width: 27%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-10:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 243px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-10:before {
+     width: 87%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-11:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 259px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-11:before {
+     width: 42%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-12:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 274px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-12:before {
+     width: 77%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-13:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 290px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-13:before {
+     width: 100%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-14:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width:0;
+    top: 305px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-14:before {
+     width: 100%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-15:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 337px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-15:before {
+     width: 63%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-16:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 352px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-16:before {
+     width: 50%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-17:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 368px;
+    left: 42px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-17:before {
+     width: 46%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-18:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 383px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-18:before {
+     width: 47%;
+     transition: 0.2s ease-in-out;
+}
+
+
+
+.line-through-19:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 400px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-19:before {
+     width: 80%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-20:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 415px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-20:before {
+     width: 66%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-21:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 432px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-21:before {
+     width: 70%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-22:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 463px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-22:before {
+     width: 80%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-23:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 493px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-23:before {
+     width: 54%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-24:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 510px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-24:before {
+     width: 55%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-25:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    top: 526px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-25:before {
+     width: 62%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-26:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 542px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-26:before {
+     width: 82%;
+     transition: 0.2s ease-in-out;
+}
+
+
+.line-through-27:before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+     width: 0;
+    top: 557px;
+    left: -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.text-deco:hover .line-through-27:before {
+     width: 62%;
+     transition: 0.2s ease-in-out;
+}*/
+
+.text-deco:hover span {
+    text-decoration: line-through;
+    color: #000;
+    transition: 0.2s ease-in-out;
+}
+
+.print-img-fat {
+    padding-bottom: 50px;
+}
+
+
+.over-img-print {
+    position: absolute;
+    top: 40px;
+    bottom: 90px;
+    left: 49%;
+    width: 30%;
+    z-index: 10;
+    background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
+    opacity: 0.7;
+    
+}
+
+.over-img-print-left {
+    position: absolute;
+    top: -142px;
+    bottom: 0px;
+    right: 10%;
+    width: 30%;
+    z-index: 10;
+    height: 340px;
+    background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
+    opacity: 0.9;
+    
+}
+
+.big-name-single-post {
+    font-size: 30em;
+    font-family: "Inflecto", 'Open Sans', sans-serif;
+    overflow: hidden;
+    margin-top: -90px;
+    top: 160px;
+    
+}
+
+
+
+.img-print-resize img {
+    max-height: 700px;
+}
+
+.infos-project-single {
+    padding-bottom:40px;
+    padding-top: 30px;
+}
+
+.txt-desc-single {
+    font-size: 19px;
+    padding-top: 30px;
+    max-width: 80%;
+    text-align: justify;
+    line-height: 1.7em;
+}
+
+.txt-rea {
+    line-height: 1.4em;
+/*    &::before {
+        content:'';
+        position: absolute;
+        background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+        background: -o-linear-gradient(right,  #f94545, #ff8668);  
+        background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+        background: linear-gradient(to right,  #f94545, #ff8668);
+        height: 4px;
+        width: 50px;
+        top: 50px;
+    }*/
+}
+
+.txt-post-single {
+    font-size: 17px;
+    line-height: 1.8em;
+}
+
+.txt-name-single {
+    font-size: 22px;
+    line-height: 1.8em;
+    margin-bottom: 0;
+}
+
+.meta-txt {
+    text-align: justify;
+    font-size: 55px;
+    font-weight: 900;
+    
+}
+
+.meta-txt-big {
+    text-align: left;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.fixe-txt {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.link-site {
+    padding-left: 8px;
+}
+
+.meta-txt-print {
+    text-align: justify;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 44px;
+}
+
+
+.border-right {
+    border-right: 2px solid #e8e8e8;
+}
+
+.border-left {
+    border-left: 2px solid #e8e8e8;
+}
+
+.lego-picto {
+    width: 20%;
+    left: 40%;
+    top: 13em;
+    transition:  0.3s ease-in-out;
+    position: absolute;
+    &:hover {
+        width: 22%;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+
+.link-print-single-post {
+    text-align: center;
+    font-size: 44px;
+    font-weight: 100;
+    display: block;
+    transition: 0.2s ease-in-out;
+}
+
+/*.link-print-single-post::before {
+    content: '';
+    position: absolute;
+    top: 33px;
+    height: 4px;
+    background: -webkit-linear-gradient(left, #f94545, #ff8668);  For Safari 5.1 to 6.0 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  For Opera 11.1 to 12.0 
+    background: -moz-linear-gradient(right,  #f94545, #ff86683);  For Firefox 3.6 to 15 
+    background: linear-gradient(to right,  #f94545, #ff8668);  Standard syntax 
+    width: 0px;
+    z-index: 1;
+    left: 30%;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}*/
+
+.link-print-single-post:hover {
+   color: #f94545;
+   transition: 0.2s ease-in-out;
+ }
+ 
+
+.fixe-link-txt {
+    font-weight: 700;
+    color: #333;
+}
+
+.link-print-single-post:hover .fixe-link-txt {
+    color: #333;
+}
+
+.info-compte-single-post {
+    margin-top: -20px;
+}
+
+.email-single-post {
+    padding-top: 50px;
+}
+
+.icon-smile {
+    padding-top: 45px;
+    width: 50px;
+    margin-left: 10px;
+}
+
+.btn-link-contact .txt-color-white {
+    transition: 0.2s ease-in-out;
+    &.bordered-white:after{
+        transition: 0.2s ease-in-out;
+}
+}
+
+
+.btn-link-contact .txt-color-white:hover {
+    color: #ff8668 !important;
+    transition: 0.2s ease-in-out;
+    &.bordered-white:after{
+        background-color: #ff8668;
+        transition: 0.2s ease-in-out;
+        left: 78%;
+}
+}
+
+.email-single-post a {
+    transition: 0.2s ease-in-out;
+}
+
+
+.email-single-post a:hover {
+    color: #ff8668 !important;
+    transition: 0.2s ease-in-out;
+}
+
+.social-contact-single-post{
+  display: block;
+  background-color: #fff;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  color: #130C1C;
+  font-size: 13px;
+  padding-top: 5px;
+  margin-left: 30px;
+  margin-top: 5px;
+  transition: 0.4s;
+  float: left;
+}
+
+.social-contact-single-post:hover{
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: 0.4s;
+    color: #fff;
+}
+
+.min-logo-single-post {
+        position: absolute;
+    width: 30px;
+    top: 35px;
+    left: 190px;
+}
+
+.contact-single-post {
+    z-index: 10;
+}
+
+.box-mg {
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+
+////////////////////////////////////
+////////////////////////////////////
+
+/*-------------detail-project-web-------------*/
+
+.scrolling-post{
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.detail-work {
+ 
+}
+
+
+.logo-single-post {
+    text-align: center;
+    padding-top: 50px;
+    transition: all 0.3s ease-in-out;
+    .panel-img{
+       opacity: 1;
+    }
+}
+
+
+
+.link-web-single-post {
+    padding-top: 20px;
+}
+
+.border-single-post {
+    border-bottom-left-radius: 20%;
+}
+
+.txt-objectif-single-post {
+/*white-space: pre;  */
+}
+
+.block-present-single-post {
+/*    height: 600px;*/
+}
+
+.full-img-screenshot {
+    width: 100%;
+}
+
+.full-img-screenshot-bg {
+    width: 100%;
+margin-top: 350px;
+position: absolute;
+left: 0;
+}
+
+.full-img-screenshot-bg-dark {
+    width: 100%;
+margin-top: -60px;
+position: absolute;
+left: 0;
+}
+
+.full-img-screenshot-pos {
+max-height: 3270px;
+min-height: 1580px;
+ background: -webkit-radial-gradient(circle, #4B217F,  #130C1C); 
+    background: -o-radial-gradient(circle, #4B217F,  #130C1C);  
+    background: -moz-radial-gradient(circle, #4B217F,  #130C1C);  
+    background: radial-gradient(to circle, #4B217F,  #130C1C);
+}
+
+.full-img-screenshot-pos-dark {
+/*max-height: 3250px;*/
+min-height: 1420px;
+ background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,  #f94545 ,#ff8668); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,   #f94545, #ff8668); /* Standard syntax */
+width: 50%;
+float: right;
+}
+
+
+.full-img-row {
+    width: 760px;
+    margin: auto;
+}
+
+
+.full-img-single-post {
+    display: block;
+    position: relative;
+}
+
+.img-shadow {
+    box-shadow: 0 -10px 25px 0 rgba(0,0,0,.5);
+}
+
+/*-------------galerie-----------*/
+
+.full-img-row-gal {
+    max-height: 800px;
+    margin: auto;
+}
+
+
+/*body {
+  .hero {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom:  0;
+    left: 0;
+    right: 0;
+    height: 170vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+  */
+/*  .content {
+      position: absolute;
+    }*/

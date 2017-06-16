@@ -25,20 +25,61 @@
 
 </div>
 {% endblock %}#}
-        
+
+{#{% block loader %}
+<div id="hola">
+<div id="loaders">  
+</div>
+</div>
+{% endblock %}#}
 <div id="container">
 {# <div class="container-fluid">#}
 
      <div class="logo-home" id="logo">
      {% if is_granted("ROLE_ADMIN") %}
 <i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
-<img src="{{ asset('./images/logo-hl.svg')}}" class="min-logo">
+    <div id="colorLogo">
+   <svg version="1.1"
+	 width="50" height="50" viewBox="0 0 100 100" id="iconSvg">
+
+<path   d="M35.336,27.604c0.249,0.564,0.581,1.059,0.999,1.477s0.904,0.75,1.459,0.998
+	c0.553,0.246,1.15,0.368,1.789,0.368h5.351c0.783-2.316,1.212-4.794,1.212-7.376C46.146,10.331,35.815,0,23.073,0
+	C10.331,0,0,10.331,0,23.071c0,12.744,10.331,23.074,23.073,23.074c8.115,0,15.248-4.193,19.362-10.53h-2.853
+	c-1.354,0-2.628-0.258-3.821-0.774c-1.193-0.518-2.231-1.219-3.119-2.105c-0.887-0.885-1.581-1.924-2.085-3.119
+	c-0.137-0.322-0.251-0.651-0.35-0.986v6.985h-5.169v-9.782v-0.038c0-0.638-0.123-1.236-0.37-1.788
+	c-0.246-0.556-0.577-1.042-0.996-1.46s-0.912-0.75-1.477-0.996c-0.567-0.249-1.169-0.37-1.81-0.37c-0.64,0-1.236,0.122-1.79,0.37
+	c-0.554,0.246-1.039,0.578-1.458,0.996s-0.751,0.91-0.997,1.478c-0.246,0.564-0.369,1.168-0.369,1.809v9.782h-5.169V10.844h5.169
+	v6.313c1.402-0.763,2.939-1.144,4.614-1.144c1.353,0,2.628,0.252,3.82,0.756c1.193,0.504,2.234,1.2,3.12,2.085
+	c0.887,0.887,1.588,1.927,2.104,3.12c0.146,0.334,0.265,0.679,0.369,1.026V10.844h5.169v14.951
+	C34.969,26.437,35.091,27.039,35.336,27.604 M19.15,24.576c0.332-0.319,0.732-0.479,1.2-0.479c0.492,0,0.911,0.159,1.255,0.479
+	c0.343,0.321,0.517,0.728,0.517,1.219c0,0.469-0.174,0.874-0.517,1.219c-0.345,0.345-0.764,0.517-1.255,0.517
+	c-0.467,0-0.868-0.172-1.2-0.517s-0.499-0.75-0.499-1.219C18.651,25.304,18.818,24.897,19.15,24.576"/>
+</svg>
+    </div>
 {% else %}
     <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
-    <img src="{{ asset('./images/logo-hl.svg')}}" class="min-logo">
+    {#<img src="{{ asset('./images/logo-hl.svg')}}" class="min-logo">#}
+    <div id="colorLogo">
+   <svg version="1.1"
+	 width="50" height="50" viewBox="0 0 100 100" id="iconSvg">
+
+<path   d="M35.336,27.604c0.249,0.564,0.581,1.059,0.999,1.477s0.904,0.75,1.459,0.998
+	c0.553,0.246,1.15,0.368,1.789,0.368h5.351c0.783-2.316,1.212-4.794,1.212-7.376C46.146,10.331,35.815,0,23.073,0
+	C10.331,0,0,10.331,0,23.071c0,12.744,10.331,23.074,23.073,23.074c8.115,0,15.248-4.193,19.362-10.53h-2.853
+	c-1.354,0-2.628-0.258-3.821-0.774c-1.193-0.518-2.231-1.219-3.119-2.105c-0.887-0.885-1.581-1.924-2.085-3.119
+	c-0.137-0.322-0.251-0.651-0.35-0.986v6.985h-5.169v-9.782v-0.038c0-0.638-0.123-1.236-0.37-1.788
+	c-0.246-0.556-0.577-1.042-0.996-1.46s-0.912-0.75-1.477-0.996c-0.567-0.249-1.169-0.37-1.81-0.37c-0.64,0-1.236,0.122-1.79,0.37
+	c-0.554,0.246-1.039,0.578-1.458,0.996s-0.751,0.91-0.997,1.478c-0.246,0.564-0.369,1.168-0.369,1.809v9.782h-5.169V10.844h5.169
+	v6.313c1.402-0.763,2.939-1.144,4.614-1.144c1.353,0,2.628,0.252,3.82,0.756c1.193,0.504,2.234,1.2,3.12,2.085
+	c0.887,0.887,1.588,1.927,2.104,3.12c0.146,0.334,0.265,0.679,0.369,1.026V10.844h5.169v14.951
+	C34.969,26.437,35.091,27.039,35.336,27.604 M19.15,24.576c0.332-0.319,0.732-0.479,1.2-0.479c0.492,0,0.911,0.159,1.255,0.479
+	c0.343,0.321,0.517,0.728,0.517,1.219c0,0.469-0.174,0.874-0.517,1.219c-0.345,0.345-0.764,0.517-1.255,0.517
+	c-0.467,0-0.868-0.172-1.2-0.517s-0.499-0.75-0.499-1.219C18.651,25.304,18.818,24.897,19.15,24.576"/>
+</svg>
+    </div>
     {% endif %}
 
-    <div class="main-icon">
+    <div class="main-icon" id="Hamb">
       <span class="hamb"></span>
       <p class="txt-hamb">menu</p>
     </div>
@@ -56,10 +97,28 @@
 
 {#<div id="big">
 </div>#}
-
+              
     <div class="menu-tint menu-type"></div>
     {#<div id="pushMain" class="push-main">#}
+ 
     <div class="menu menu-type">
+                <div id="bg-menu">
+                    <div class="bg-color bg-color-web" name="bg-web">
+                        <img class="bg-img-color" src="{{asset('images/immeuble.jpg')}}"/>
+                    </div>
+                    <div class="bg-color bg-color-webdesign" name="bg-webdesign">
+                        <img class="bg-img-color" src="{{asset('images/platine.jpg')}}"/>
+                    </div>
+                    <div class="bg-color bg-color-galerie" name="bg-galerie">
+                        <img class="bg-img-color" src="{{asset('images/skate.jpg')}}"/>
+                    </div>
+                    <div class="bg-color bg-color-me" name="bg-me">
+                        <img class="bg-img-color" src="{{asset('images/img-fond-slide.jpg')}}"/>
+                    </div>
+                    <div class="bg-color bg-color-contact" name="bg-contact">
+                        <img class="bg-img-color" src="{{asset('images/archi.jpg')}}"/>
+                    </div>
+                </div>
          {# <div class="logo">
           <img src="{{asset('images/minlogo-hl.png')}}"></a>
         </div>#}
@@ -70,10 +129,10 @@
 			<source src="./images/Ground-Zero.webm" type="video/webm">
 		</video> -->
 
-    <video autoplay loop muted id="myVideo2">
+  {#  <video autoplay loop muted id="myVideo2">
   <source src="{{ asset('./images/Office_Perks.mp4')}}" type="video/mp4">
   <source src="{{ asset('./images/Office_Perks.webm')}}" type="video/webm">
-</video>
+</video>#}
   <div class="line"></div>
        </div>
        
@@ -88,16 +147,16 @@
           </nav>#}
 
           <div class="wrapper">
+
           <nav class="navbar navbar-default">
             <ul class="nav clip-text">
-              <li class=" btn-rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
-              <li class=" btn-rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-              <li class=" btn-rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
-              <li class=" btn-rubrique"><a href="#">A Propos</a></li>
-              <li class=" btn-rubrique"><a href="{{path('contact')}}">Contact</a></li>
+              <li class=" btn-rubrique"><a class="" href="{{path('travauxweb')}}" name="bg-web">Travaux Web</a></li>
+              <li class=" btn-rubrique"><a class="" href="{{path('travauxprint')}}" name="bg-webdesign">Travaux Print</a></li>
+              <li class=" btn-rubrique"><a class="" href="{{path('travauxgalerie')}}" name="bg-galerie">Galerie</a></li>
+              <li class=" btn-rubrique"><a class="" href="{{path('apropos')}}" name="bg-me">A Propos</a></li>
+              <li class=" btn-rubrique"><a class="" href="{{path('contact')}}" id="bg-white" name="bg-contact">Contact</a></li>
             </ul>
           </nav>
-       
           </div>
      
            {# <div class="contact-me">
@@ -106,11 +165,12 @@
             </div>    #}
     </div>
 
+
 {% block section %}
     {% block ariane %}{% endblock %}
 
   {#  <div id="content">#}
-       <section id="home">
+       <section id="home" data-midnight="color-hamb">
     <div class="container-fluid">
       
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -239,13 +299,13 @@
 </div>
 
     
-<div class="container-fluid">
+<div class="container-fluid mg-bottom-xl">
     
 <section class="services" id="service">
-<div id="particle-canvas">
+<div id="particle-canvas" data-midnight="color-hamb">
 <div class="container">
   <div class="title-services">
-    <h1>mes services</h1>
+    <h1>mes compétences</h1>
   </div>
   <div class="row">
     <div class="col-sm-6 col-md-4">
@@ -326,7 +386,8 @@
 
 
 {% endblock %}
-
+    
+     {% block footer %}
       <footer class="footer" id="Footer">
         <div class="container">
           <div class="credit">
@@ -339,6 +400,7 @@
 </div>
         </div>
       </footer>
+               {% endblock %}
 {#</div><!-----------div content------------>#}
       </div>
 
@@ -349,10 +411,12 @@
         {% endblock %}
            <script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>
            <script type="text/javascript" src="{{asset('./js/jquery.adaptive-backgrounds.js')}}"></script>
+           <script type="text/javascript" src="{{asset('./js/midnight.jquery.min.js')}}"></script>
             <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
 
         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
+          
          
         
        
