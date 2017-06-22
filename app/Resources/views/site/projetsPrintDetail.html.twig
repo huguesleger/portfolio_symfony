@@ -1,168 +1,141 @@
 {% extends ":site:index.html.twig"%}
-    
+
+{% block title %}{% for projetprint in projectsprint %}Work {{projetprint.titre}}{% endfor %}{% endblock %}
 {% block section %}
 {% block loader %}{% endblock %}
 
+<div class="container-fluid">
+    {% for projetprint in projectsprint %}           
+        <div class="row">
+            <div class="detail-work">
+                <div id="headerEffect" class="img-header"
+                     style="background-image: url({{asset('uploads/img/')~projetprint.images}})">
+                    <h2 class="">{{projetprint.titre}}</h2>
+                </div>
+                <div class="content" data-midnight="color-hamb">
 
-        <div class="container-fluid">
-       {% for projetprint in projectsprint %}
-            
-      <div class="row">
-    <div class="detail-work">
+                    {% block ariane %}<ol class="breadcrumb" id="bread">
+                            <li><a href="{{path('home')}}">Home</a></li>
+                            <li><a href="{{path('travauxprint')}}">Travaux Print</a></li>
 
-        <div id="headerEffect" class="img-header"
-         style="background-image: url({{asset('uploads/img/')~projetprint.images}})">
-            <h2 class="">{{projetprint.titre}}</h2>
-        </div>
+                            {% for projetprint in projectsprint %}
+                                <li class="active">{{projetprint.name}}</li>
+                            </ol>
+                        {% endfor %}
+                    {% endblock %}
 
-    {#  <div class="container title-header-single-post">
-      <h2 class="">{{projetprint.titre}}</h2>
-       </div>#}
+                    <div class="container-fluid infos-project-single mg-top-md">
+                        <div class="col-md-3 col-md-offset-2 border-right">
+                            <h3 class="meta-txt-print bordered">réalisation pour</h3>
+                            <p class="txt-post-single">{{projetprint.name}}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h3 class="meta-txt-print bordered">description</h3>
+                            <p class="txt-post-single">{{projetprint.description}}</p>
+                        </div>
+                        <div class="col-md-3 border-left">
+                            <h3 class="meta-txt-print bordered">technique</h3>
+                            <p class="txt-post-single">{{projetprint.technique}}</p>
+                        </div>
+                    </div>
 
-        <div class="content" data-midnight="color-hamb">
-                  {% block ariane %}<ol class="breadcrumb" id="bread">
-  <li><a href="{{path('home')}}">Home</a></li>
-  <li><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-  {% for projetprint in projectsprint %}
-  <li class="active">{{projetprint.name}}</li>
-</ol>
-     {% endfor %}
-  {% endblock %}
-       <div class="container-fluid infos-project-single mg-top-md">
-       <div class="col-md-3 col-md-offset-2 border-right">
-           <h3 class="meta-txt-print bordered">réalisation pour</h3>
-           <p class="txt-post-single">{{projetprint.name}}</p>
-          {# <h3 class="meta-txt-print bordered no-mg-top">Titre</h3>
-           <p class="txt-name-single">{{projetprint.titre}}</p>#}
-         </div>
-         <div class="col-md-3">
-             <h3 class="meta-txt-print bordered">description</h3>
-             <p class="txt-post-single">{{projetprint.description}}</p>
-         </div>
-         <div class="col-md-3 border-left">
-             <h3 class="meta-txt-print bordered">technique</h3>
-             <p class="txt-post-single">{{projetprint.technique}}</p>
-         </div>
-       </div>
-       
-      {#<a class="fa fa-plus-circle" href="{{projetprint.liens}}" target="new">En voir +</a>#}
-      <div class="container-fluid mg-top-big-xl mg-bottom-xl">
-      <div class="col-md-2"><p class="text-deco">i <span class="line-through-1">conceptartist photoshop</span> love graphisme <span class="line-through-2">inspiration</span>
-              and design <span class="line-through-3">affiche art print photomontage retouche</span> l'illustration
-              <span class="line-through-4">icon vecteur pao</span> c'est cool <span class="line-through-5">illustrator <span class="line-through-11">adobe</span></span> aussi <span class="line-through-6">picto</span> <span class="line-through-12">logo</span> <span class="line-through-13">cmjn pantone</span> <span class="line-through-14">photos images</span>
-              contact me <span class="line-through-7">creation</span> <span class="line-through-15">charte</span> for a job <span class="line-through-8"><span class="line-through-17">visuel</span> <span class="line-through-18">300dpi</span>
-                  <span class="line-through-19">impression</span> <span class="line-through-20">tablette</span>  <span class="line-through-21">graphique</span></span> color <span class="line-through-9"><span class="line-through-22">conceptart</span></span>
-                  your life <span class="line-through-10"><span class="line-through-23">digital</span> <span class="line-through-24">creatif</span> <span class="line-through-25">painting</span> <span class="line-through-26">dessin line</span> <span class="line-through-27">painting</span></span> hl</p>
-          <p class="over-txt">* over the text</p>
-      </div>
-     
-              
-      <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive col-md-10 print-img-fat">
-      </div>
-      <div class="row swatches-grey">
-       <div class="full-img-screenshot padd-big-xl" id="sizeBackground">
-                <div class="full-img-screenshot-bg-dark" data-midnight="color-hamb">
-                    <div class="full-img-screenshot-pos-dark" id="imgSize">
+                    <div class="container-fluid mg-top-big-xl mg-bottom-xl">
+                        <div class="col-md-2"><p class="text-deco">i <span class="line-through-1">conceptartist photoshop</span> love graphisme <span class="line-through-2">inspiration</span>
+                                and design <span class="line-through-3">affiche art print photomontage retouche</span> l'illustration
+                                <span class="line-through-4">icon vecteur pao</span> c'est cool <span class="line-through-5">illustrator <span class="line-through-11">adobe</span></span> aussi <span class="line-through-6">picto</span> <span class="line-through-12">logo</span> <span class="line-through-13">cmjn pantone</span> <span class="line-through-14">photos images</span>
+                                contact me <span class="line-through-7">creation</span> <span class="line-through-15">charte</span> for a job <span class="line-through-8"><span class="line-through-17">visuel</span> <span class="line-through-18">300dpi</span>
+                                <span class="line-through-19">impression</span> <span class="line-through-20">tablette</span>  <span class="line-through-21">graphique</span></span> color <span class="line-through-9"><span class="line-through-22">conceptart</span></span>
+                                your life <span class="line-through-10"><span class="line-through-23">digital</span> <span class="line-through-24">creatif</span> <span class="line-through-25">painting</span> <span class="line-through-26">dessin line</span> <span class="line-through-27">painting</span></span> hl</p>
+                            <p class="over-txt">* over the text</p>
+                        </div>
+                        <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive col-md-10 print-img-fat">
+                    </div>
+
+                    <div class="row swatches-grey">
+                        <div class="full-img-screenshot padd-big-xl" id="sizeBackground">
+                            <div class="full-img-screenshot-bg-dark" data-midnight="color-hamb">
+                                <div class="full-img-screenshot-pos-dark" id="imgSize">
+                                </div>
+                            </div>
+                            <img src="{{asset('uploads/img/')~projetprint.image2}}" class="full-img-row full-img-single-post img-shadow mg-bottom-print">
+                        </div>
+                    </div>
+
+                    <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive col-md-8 no-margin img-mobile">
+                    <div class="col-md-4 concept-mobile">
+                        <h3 class="meta-txt-print txt-color-white color-dark-mobile bordered-white bordered-color mg-top-md">concept</h3>
+                        <p class="txt-desc-single">{{projetprint.descriptionImg2}}</p>
+                    </div>
+
+                    <div class="col-md-12 img-print-resize mg-bottom-xl">
+                        <div class="over-img-print-left">
+                            <p class="big-name-single-post txt-color-white">{{projetprint.name}}</p>
+                        </div>
+                        <div class="col-md-4 col-md-offset-2 mg-top-xl">
+                            <a class="link-print-single-post mg-bottom-xl" href="http://www.{{projetprint.liens}}" target="new"><span class="fixe-link-txt">Visitez</span> {{projetprint.liens}}</a>
+                        </div>
+                    </div>
+
+                    {% for projetprint in projectsprint %}
+                        <div class="nav-project">
+                            {% if projetprint.id == 1 %}
+                                <div class="col-md-12">
+                                    <a class="btn-nav-project-right" href="{{path("detailprint",{"id":projetprint.id +1})}}" role="button"><img src="{{ asset('./images/right-chevron.svg')}}" class="next-post"><span class="next-txt">next</span></a>
+                                </div>
+                            {% endif %}
+
+                            {%if projetprint.id > 1 and projetprint.id < nb2 %}
+                                <div class="col-xs-6 col-md-6">
+                                    <a class="btn-nav-project-left" href="{{path("detailprint",{"id":projetprint.id -1})}}" role="button"><span class="prev-txt">previous</span><img src="{{ asset('./images/arrow-pointing-left.svg')}}" class="prev-post"></a>
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <a class="btn-nav-project-right" href="{{path("detailprint",{"id":projetprint.id +1})}}" role="button"><img src="{{ asset('./images/right-chevron.svg')}}" class="next-post"><span class="next-txt">next</span></a>
+                                </div>
+                            {% endif %}
+
+                            {%if projetprint.id == nb2 %}
+                                <div class="col-md-12">
+                                    <a class="btn-nav-project-left" href="{{path("detailprint",{"id":projetprint.id -1})}}" role="button"><span class="prev-txt">previous</span><img src="{{ asset('./images/arrow-pointing-left.svg')}}" class="prev-post"></a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    {% endfor %}
+
+                    <div class="col-md-12 swatches-primary mg-top-xl contact-single-post">
+                        <div class="container">
+                            <div class="col-md-3">
+                                <p class="txt-color-white padd-top-md">travaillons ensemble ?</p>
+                                <a class="btn-link-contact"href="{{path('contact')}}"><h3 class="meta-txt-contact-me txt-color-white bordered-white info-compte-single-post border-right no-mg-border mg-bottom-md">ecrivez-moi</h3></a>
+                            </div>
+                            <div class="col-md-1">
+                                <img class="icon-smile" src="{{ asset('images/smiling-emoticon-square-face.png')}}">
+                            </div>
+                            <div class="col-md-3 padd-top-md email-single-post">   
+                                <a class="txt-color-white" href="mailto:hugueslegerdevweb@gmail.com">hugueslegerdevweb@gmail.com</a>
+                                <a class="txt-color-white" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>
+                            </div>
+                            <div class="col-md-3 mg-top-xl social-center-mobile">
+                                <a class="social-contact-single-post" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
+                                <a class="social-contact-single-post" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-twitter"></i></a>
+                                <a class="social-contact-single-post" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                             <div class="col-md-2">
+                            <div id="back-to-top">
+                                <a class="btn-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-      <img src="{{asset('uploads/img/')~projetprint.image2}}" class="full-img-row full-img-single-post img-shadow mg-bottom-print">
-       </div>
-      </div>
-       <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive col-md-8 no-margin">
-        <div class="col-md-4">
-       <h3 class="meta-txt-print txt-color-white bordered-white mg-top-md">concept</h3>
-      <p class="txt-desc-single">{{projetprint.descriptionImg2}}</p>
-       </div>
-       <div class="col-md-12 img-print-resize mg-bottom-xl">
-           <div class="over-img-print-left">
-             {#   <div class="col-md-12 icon-cmyk-lien">
-                <a href="http://www.{{projetprint.liens}}" target="new"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk-md"></a>
-           </div>#}
-             <p class="big-name-single-post txt-color-white">{{projetprint.name}}</p>
-           </div>
-          <div class="col-md-4 col-md-offset-2 mg-top-xl">
-              <a class="link-print-single-post mg-bottom-xl" href="http://www.{{projetprint.liens}}" target="new"><span class="fixe-link-txt">Visitez</span> {{projetprint.liens}}</a>
-            {#<p class="txt-desc-single">{{projetprint.descriptionImg3}}</p>#}
-      </div>
+            </div>
+
         </div>
-      
-      
-      
-      {% for projetprint in projectsprint %}
-           
+    {% endfor %}
+</div>
 
+{% block footer %}{% endblock%}  
+{% block javascript %}{% endblock%}
 
-       <div class="nav-project">
-           {% if projetprint.id == 1 %}
-         <div class="col-md-12">
-            <a class="btn-nav-project-right" href="{{path("detailprint",{"id":projetprint.id +1})}}" role="button"><img src="{{ asset('./images/right-chevron.svg')}}" class="next-post"><span class="next-txt">next</span></a>
-            </div>
-         {% endif %}
-        {%if projetprint.id > 1 and projetprint.id < nb2 %}
-            <div class="col-md-6">
-                <a class="btn-nav-project-left" href="{{path("detailprint",{"id":projetprint.id -1})}}" role="button"><span class="prev-txt">previous</span><img src="{{ asset('./images/arrow-pointing-left.svg')}}" class="prev-post"></a>
-            </div>
-          
-            <div class="col-md-6">
-            <a class="btn-nav-project-right" href="{{path("detailprint",{"id":projetprint.id +1})}}" role="button"><img src="{{ asset('./images/right-chevron.svg')}}" class="next-post"><span class="next-txt">next</span></a>
-            </div>
-          {% endif %}
-            {%if projetprint.id == nb2 %}
-              <div class="col-md-12">
-                <a class="btn-nav-project-left" href="{{path("detailprint",{"id":projetprint.id -1})}}" role="button"><span class="prev-txt">previous</span><img src="{{ asset('./images/arrow-pointing-left.svg')}}" class="prev-post"></a>
-            </div>
-              {% endif %}
-       </div>
-        {% endfor %}
-      
-      
-        
-        
-      <div class="col-md-12 swatches-primary mg-top-xl contact-single-post">
-          <div class="container">
-           <div class="col-md-3">
-          <p class="txt-color-white padd-top-md">travaillons ensemble ?</p>
-          <a class="btn-link-contact"href="{{path('contact')}}"><h3 class="meta-txt-print txt-color-white bordered-white info-compte-single-post border-right no-mg-border mg-bottom-md">ecrivez-moi</h3></a>
-           </div>
-              <div class="col-md-1">
-              <img class="icon-smile" src="{{ asset('images/smiling-emoticon-square-face.png')}}">
-              </div>
-              <div class="col-md-3 padd-top-md email-single-post">
-                  
-                  <a class="txt-color-white" href="mailto:hugueslegerdevweb@gmail.com">hugueslegerdevweb@gmail.com</a>
-                  <a class="txt-color-white" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>
-              </div>
-              <div class="col-md-3 mg-top-xl">
-            <a class="social-contact-single-post" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
-            <a class="social-contact-single-post" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-twitter"></i></a>
-            <a class="social-contact-single-post" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-instagram"></i></a>
-          </div>
-           
-              {#<div class="col-md-2 mg-top-xl">
-                  <img src="{{ asset('./images/minlogo-hl.png')}}" class="min-logo-single-post">
-                  <p class="txt-color-white txt-right padd-top-md">&copy HL Developerz</p>
-              </div>#}
-      </div>
-      
-    </div>
-      </div>
-       </div>
-           
-     
-     {# <div class="col-md-12 icon-cmyk-lien">
-          <a href="http://www.{{projetprint.liens}}" target="new"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk-md"></a>
-       <p>{{projetprint.liens}}</p>
-      </div>#}
-
-         
-      </div>
- {% endfor %}
-        </div>
-        
-        
-
-    {% block footer %}
-      {% endblock%}  
- {% block javascript %}
-     {% endblock%}
 {% endblock%}

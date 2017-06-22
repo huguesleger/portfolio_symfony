@@ -10,11 +10,17 @@
    opacity: 0.5;
 }
 
-@media screen and(min-width: 300px)and(max-width: 768px){
+@media screen and(min-width: 300px)and(max-width: 767px){
 
 canvas{
     display: none;
 }
+}
 
+@media screen and(min-width: 768px)and(max-width: 1023px){
 
+canvas{
+    height: 873px;
+    margin-top: -900px;
+}
 }

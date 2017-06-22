@@ -1,271 +1,12 @@
 @import "_variable.scss";
 
-@media screen and(min-width: 769px){
-.main-icon{
-  z-index: 5000;
-  margin-top: 20px;
-  margin-right: 0px;
-  position: fixed;
-  transition: transform 0.5s;
-  width: 65px;
-  height: 58px !important;
-/*  background-color: rgba(255, 255, 255, 0.5);*/
-/*  border-radius: 50%;*/
-  cursor: pointer;
-  right: 50px !important;
-  left: inherit !important;
-  
-
-
-     .hamb{
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40px;
-      height: 2px;
-      background-color: $violet;
-      transform: translateX(-50%) translateY(-50%);
-      
-
-        &::before, &::after{
-          content:'';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 40px;
-          height: 2px;
-/*          margin-top: -5px;*/
-          background-color: $violet;
-          transform: translateY(-10px);
-          transition: transform 0.3s;
-        }
-        
-        &::before {
-            width: 50px;
-            left: -10px;
-        }
-        
-        &::after{
-            width: 30px;
-            left: 10px;
-          transform: translateY(10px);
-/*          margin-top: 5px;*/
-        }
-    }
-    
-.hamb-color{
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40px;
-      height: 2px;
-      background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to right, #f94545, #ff8668); /* Standard syntax */
-      transform: translateX(-50%) translateY(-50%);
-      
-
-        &::before, &::after{
-          content:'';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 40px;
-          height: 2px;
-/*          margin-top: -5px;*/
-          background-color: red;background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
-            background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
-            transform: translateY(-10px);
-          transition: transform 0.3s;
-        }
-        
-        &::before {
-            width: 50px;
-            left: -10px;
-        }
-        
-        &::after{
-            width: 30px;
-            left: 10px;
-          transform: translateY(10px);
-/*          margin-top: 5px;*/
-        }
-    }
-
-    
-    
-
-        &:hover{
-
-          .hamb{
-            transition: background 0.1s;
-          }
-
-             .hamb::before{
-              transform: translateY(-12px);
-            }
-
-           .hamb::after{
-              transform: translateY(12px);
-            }
-            
-        }
-
-        &.is-open{
-
-/*            transform: rotate(180deg);*/
-             .hamb{
-              background: transparent !important;
-            }
-             .hamb::before{
-               width: 40px;
-               left: 0;
-               transform: translateY(0) rotate(45deg);
-               background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
-               background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
-               background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
-               background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
-            }
-            .hamb::after{
-                width: 40px;
-                left: 0;
-                transform: translateY(0) rotate(-45deg);
-                background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
-                background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
-                background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
-                background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
-            }
-            &:hover{
-              transition: 0.7s;
-            }
-            .txt-hamb {
-                display: none;
-            }
-        }
-        &.is-open-color{
-          border: 1px solid #fff;
-          background-color: transparent;
-          
-        }
-        &.border-dark {
-          border: 1px solid #000;
-          background-color: transparent;  
-        }
-}
-}
-
-.txt-hamb {
-    transform: rotate(-90deg);
-    position: absolute;
-    right: -12px;
-    top: 20px;
-    font-size: 12px;
-    color: #130C1C;
-}
-
-
-@media screen and(min-width: 300px)and(max-width: 768px){
-.main-icon{
-  z-index: 2000;
-  margin-top: 25px;
-  margin-right: 0px;
-  position: fixed;
-  transition: transform 0.5s;
-  width: 44px;
-  height: 44px;
-  background-color: $violet;
-  border-radius: 50%;
-  cursor: pointer;
-  right: 20px;
-
-
-    span{
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 18px;
-      height: 2px;
-      background-color: #fff;
-      transform: translateX(-50%) translateY(-50%);
-
-        &::before, &::after{
-          content:'';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 18px;
-          height: 2px;
-          background-color: #fff;
-          transform: translateY(-6px);
-          transition: transform 0.3s;
-        }
-        &::after{
-          transform: translateY(6px);
-        }
-    }
-
-        &:hover{
-
-          span{
-            transition: background 0.5s;
-          }
-
-            span::before{
-              transform: translateY(-8px);
-            }
-
-            span::after{
-              transform: translateY(8px);
-            }
-        }
-
-        &.is-open{
-
-            transform: rotate(180deg);
-            span{
-              background: transparent;
-            }
-            span::before{
-              transform: translateY(0) rotate(45deg);
-            }
-            span::after{
-              transform: translateY(0) rotate(-45deg);
-            }
-            &:hover{
-              transition: 0.7s;
-            }
-        }
-        &.is-open-color{
-          border: 1px solid #fff;
-          background-color: transparent;
-
-        }
-}
-}
-
-/*.container-fluid .navbar-brand{
-    height: 100px;
-}*/
-
 .logo-home{
     width: 100%;
     height: 90px;
-/*    background-color: #fff;*/
 }
 
 #logo{
     	position: relative;
-/* 	height:100%;
- 	width:100%;*/
         z-index: 103;
  	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
  	&.push{
@@ -274,56 +15,6 @@
  	}
 }
 
-
-/*.push-main {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 50;
-    top: 0;
-    left:0;
-    background-color: rgba(19, 12, 28, 1);
-    overflow-x: hidden;
-    padding-top: 60px;
-    text-align:center;
-    display: none;
-    transition: 0.5s;
-
-}*/
-@media screen and(min-width: 320px)and(max-width: 767px){
-.menu{
-	position:fixed;
-	top:0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	z-index: 102;
-        overflow: hidden;
-	background: rgba(19, 12, 28, 1);
-	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
-	&.open{
-		left:0;
-	}
-}
-
-}
-@media screen and(min-width: 768px){
-/*.menu{
-	position:fixed;
-	top:0;
-	left: -50%;
-	width: 50%;
-	height: 100%;
-	z-index: 98;
-        overflow: hidden;
-	background: rgba(19, 12, 28, 1);
-	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
-	&.open{
-		left:0;
-                
-	}
-}*/
-
 .menu{
 	position:fixed;
 	top:0;
@@ -331,31 +22,19 @@
 	height: 100%;
 	z-index: 98;
         overflow: hidden;
-/*	background: rgba(19, 12, 28, 1);*/
-/*        background: #130C1C;*/
-         background: -webkit-linear-gradient(30deg, #4B217F, #130C1C); 
-         background: -o-linear-gradient(30deg,  #4B217F, #130C1C);  
-    background: -moz-linear-gradient(30deg,  #4B217F, #130C1C);  
-    background: linear-gradient(30deg,  #4B217F, #130C1C);
+        background: -webkit-linear-gradient(30deg, #4B217F, #130C1C); 
+        background: -o-linear-gradient(30deg,  #4B217F, #130C1C);  
+        background: -moz-linear-gradient(30deg,  #4B217F, #130C1C);  
+        background: linear-gradient(30deg,  #4B217F, #130C1C);
 	transition: all 0.9s cubic-bezier(.77,.06,.28,.85);
         opacity: 0;
         visibility:hidden;
         
 	&.open{
-/*            top:0;*/
             opacity: 1;
             visibility: visible;
-            
-           
-           .clip-text{
-/*             transition: animation 3s;
-             -webkit-animation: bounceInUp 2000ms;
-             animation: bounceInUp 2000ms;
-             -moz-animation: bounceInUp 2000ms;*/
-    }        
 	}
 }
-
 
 
 .bg-color {
@@ -372,10 +51,6 @@
     opacity: 1;
 }
 
-/*.bg-color-web, .bg-color.web {
-    background-image: linear-gradient(30deg,#16d6d9,#96cc29);
-}*/
-
 .bg-color-web {
         background-image:linear-gradient(30deg,#96e0e1,#4222f1);
 }
@@ -390,21 +65,17 @@
 
 .bg-color-me {
         	background-image:linear-gradient(30deg,#F5D76E,#F64747);
-/*                background-image:linear-gradient(30deg,#ead470,#fa9669);*/
 }
 
 .bg-color-contact {
-/*        	background-image:linear-gradient(30deg,#ead470,#fa9669);*/
                 background:#fff;
 }
+
 
 .bg-img-color {
     width: 100%;
     opacity: 0.2;
 }
-
-
-
 
 .bg-color-hover-txt {
     font-size: 150px;
@@ -415,121 +86,14 @@
     right: 0;
     top: 120px;
     overflow:hidden;
-    opacity: 0.2;
-    
-    
+    opacity: 0.2;   
 }
-
-/*.menu-tint{
-	position: fixed;
-	width:100%;
-	height:100%;
-	background: #52b3d9;
-        background-color: #f7ab35;
-    animation: bg 8s infinite alternate;
-    -webkit-animation: bg 8s infinite alternate;
-  -moz-animation: bg 8s infinite alternate;
-  -o-animation: bg 8s infinite alternate;
-	opacity:0;
-	z-index: -1;
-        top: 0;
-         overflow: hidden;
-	transition: all 0.5s cubic-bezier(.77,.06,.28,.85);
-	&.open{
-		opacity:1;
-		z-index: 97;
-                overflow: hidden;
-	}
-}*/
-
-/*@keyframes bg {
-  0% { background-color: #f7ab35; }
-    32% { background-color: #e74c3c; }
-    55% { background-color: #130c1c; }
-    76% { background-color: #16a085; }
-    100% { background-color: #2ecc71; }
-}
-
-@-webkit-keyframes bg {
-    0% { background-color: #f7ab35;}
-    32% { background-color: #e74c3c; }
-    55% { background-color: #130c1c; }
-    76% { background-color: #16a085; }
-    100% { background-color: #2ecc71; }
-}
-
-@-moz-keyframes bg {
-     0% { background-color: #f7ab35; }
-    32% { background-color: #e74c3c; }
-    55% { background-color: #130c1c; }
-    76% { background-color: #16a085; }
-    100% { background-color: #2ecc71; }
-}
-
-@-o-keyframes bg {
-     0% { background-color: #f7ab35; }
-    32% { background-color: #e74c3c; }
-    55% { background-color: #130c1c; }
-    76% { background-color: #16a085; }
-    100% { background-color: #2ecc71; }
-}*/
 
 .menu-type{
     text-align: center;
 }
 
-
-
-}
-  
-
-
-/*.is-open-test{
-transition: 0.5s;
-height: 105%;
-width: 50%;
-overflow: hidden;
-}*/
-
-
-.clip-img {
-
-}
-
-
-
-
-
-
-
-#myVideo2{
-  		position: absolute;
-  		right: 0;
-  		bottom: 0;
-                left: 0%;
-  		top:0;
-  		width: 100%;
-  		height: 100%;
-  		background-size: 100% 100%;
-   		background-color: black; /* in case the video doesn't fit the whole page*/
-    	  // background-image: url('../../images/flowers.mp4');
-    		-moz-background-position: center center;
-    		-moz-background-size: contain;
-     		-moz-object-fit: cover; /*cover video background */
-                -webkit-background-position: center center;
-    		-webkit-background-size: contain;
-     		-webkit-object-fit: cover; /*cover video background */
-        background-position: center center;
-    		background-size: contain;
-     		object-fit: cover; /*cover video background */
-     		z-index:3;
-        opacity: 0.3;
-        // border-right: 1px solid #fff;
-
-  	}
-
-        
-  .line{
+.line{
       content:'';
       position: absolute;
       width: 1px;
@@ -551,7 +115,6 @@ overflow: hidden;
             z-index: 2;
         width:100%;
       transition: 0.3s ease-out;
-
     }
 
 .wrapper{
@@ -569,13 +132,13 @@ overflow: hidden;
    font-weight: 800;
 }
 
-
-   .navbar-brand {
+ .navbar-brand {
     font-family: "Inflecto", 'Open Sans', sans-serif;
     float: left;
     height: 50px;
     font-size: 25px;
     line-height: 65px;
+    padding: 15px 45px;
     color: #000;
     &:hover{
       color: #000;
@@ -609,18 +172,9 @@ overflow: hidden;
     background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
     width: 30px;
-/*    padding-right: 100px;*/
     z-index: 1;
     left: 0%;
 }
-
-@media screen and(min-width: 300px)and(max-width: 767px){
-    .push-main {
-    width: 100%;
-    }
-
-}
-
 
 .navbar {
     margin-bottom: 8px;
@@ -633,21 +187,11 @@ overflow: hidden;
   border: 0;
   display: flex;
   justify-content: center;
-/*  margin-top: 20%;*/
+}
 
-}
-@media screen and(min-width: 568px)and(max-width: 736px){
-.navbar-default {
-  overflow: scroll;
-  margin-top: 0;
-  height: 100%;
-}
-}
 .navbar-default.admin {
-/*  margin-top: 10%;*/
 margin-bottom: 0;
 }
-
 
 .navbar-default .navbar-nav > li > a {
   color: #818181;
@@ -657,71 +201,13 @@ margin-bottom: 0;
 }
 
 .navbar-default.admin .navbar-nav > li > a {
-  color: #818181;
+  color: #fff;
   transition: 0.3s;
   font-size: 14px;
 }
 
 
 
-/*.btn-print{
-     transition: 0.4s;
-    &:hover{
-        background-color: rgba(46, 204, 113, 0.3);
-         transition: 0.4s;
-    }
-}*/
-
-/*.btn-work{
-     transition: 0.4s;
-    &:hover{
-        background-color: rgba(27, 163, 156, 0.3);
-         transition: 0.4s;
-    }
-}*/
-
-
- .clip-text .btn-rubrique a::before {
-    content: '';
-    position: absolute;
-    top: 50px;
-    height: 6px;
-    background-color: #fff;
-    background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right,   #f94545, #ff86688); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
-    width: 0px;
-    z-index: 1;
-    left: 0%;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
- }
- 
-
-/*.btn-portfolio{
-     transition: 0.4s;
-    &:hover{
-        background-color: rgba(231, 76, 60, 0.3);
-         transition: 0.4s;
-    }
-}
-
-.btn-moi{
-     transition: 0.4s;
-    &:hover{
-        background-color: rgba(27, 163, 156, 0.3);
-         transition: 0.4s;
-    }
-}
-
-.btn-contactmoi{
-     transition: 0.4s;
-    &:hover{
-        background-color: rgba(247, 171, 53, 0.3);
-         transition: 0.4s;
-    }
-}*/
 
 .navbar-default.admin .navbar-nav .connect {
     color: #fff;
@@ -740,7 +226,27 @@ margin-bottom: 0;
     text-decoration: none;
     background-color: transparent;
 }
-
+@media screen and(min-width: 768px){
+    
+     .clip-text .btn-rubrique a::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    height: 6px;
+    background-color: #fff;
+    background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,   #f94545, #ff86688); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
+    width: 0px;
+    z-index: 1;
+    left: 0%;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+ }
+ 
+    
+    
   .clip-text .btn-rubrique a:hover::before {
     content: '';
     position: absolute;
@@ -752,14 +258,10 @@ margin-bottom: 0;
     background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right,   #f94545, #ff8668); /* Standard syntax */
     width: 100%;
-/*    padding-right: 100px;*/
-/*    margin-left: 10px;*/
     z-index: 1;
     left: 0%;
-/*    transition: 0.37s cubic-bezier(0.52, 0.01, 0.16, 1);
-    transform: scaleX(0);
-    transform-origin: 0 0;*/
  }
+}
  
  
 
@@ -769,19 +271,12 @@ margin-bottom: 0;
   transition: 0.3s;
 }
 
-/*.navbar-default .navbar-nav > li > a:focus {
-    color: #818181;
-}*/
 
 .nav>li>a {
     position: relative;
     display: block;
-/*    padding: 5px 15px;*/
-/*    padding-top: 40px;
-    padding-bottom: 40px;*/
     transition: 0.3s;
     &:hover, &:focus{
-/*    padding: 15px 15px ;*/
     transition: 0.3s; 
     }
     
@@ -792,72 +287,8 @@ margin-bottom: 0;
     transition: 0.2s ease-in-out;
 }
 
-/*.nav>.btn-rubrique>a:hover{
-    color: #818181;
-    
-}*/
-
-@media screen and(min-width: 320px)and(max-width:414px){
-.rubrique{
-    padding-top: 10px;
-    padding-bottom: 10px; 
-}
-}
-
-@media screen and(min-width: 568px)and(max-width:736px){
-.rubrique{
-    padding-top: 0;
-    padding-bottom: 0; 
-}
-}
-
-@media screen and(min-width: 767px){
-.rubrique{
-    padding-top: 10px;
-    padding-bottom: 10px; 
-}
-}
-
-@media screen and(min-width: 1024px){
-.primary{
-    top: 35%;
-}
-}
-@media screen and(min-width: 320px)and(max-width: 767px){
-    .primary{
-    top: 20%;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #818181;
-  transition: 0.3s;
-  font-size: 20px;
-  text-align: center;
-}
-
-.navbar-brand {
-    padding: 15px 5px;
-    transition: 0.3s ease-in-out;
-}
-
-}
-
-@media screen and(min-width: 768px){
-   .navbar-brand {
-    padding: 15px 45px;
-
-} 
-}
-
-@media screen and(min-width: 768px)and(max-width: 1023px){
-    .primary{
-    top: 25%;
-}
-
-}
-
 .white{
     color:#fff;
-/*    transition: 0.7s;*/
     position: fixed;
 }
 
@@ -892,4 +323,284 @@ margin-bottom: 0;
 
 .midnightHeader.color-hamb .txt-hamb {
         color :#fff;
+}
+
+
+.txt-hamb {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: -12px;
+    top: 20px;
+    font-size: 12px;
+    color: #130C1C;
+}
+
+
+@media screen and(min-width: 768px){
+.main-icon{
+  z-index: 5000;
+  margin-top: 20px;
+  margin-right: 0px;
+  position: fixed;
+  transition: transform 0.5s;
+  width: 65px;
+  height: 58px !important;
+  cursor: pointer;
+  right: 50px !important;
+  left: inherit !important;
+  
+     .hamb{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 2px;
+      background-color: $violet;
+      transform: translateX(-50%) translateY(-50%);
+      
+
+        &::before, &::after{
+          content:'';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40px;
+          height: 2px;
+          background-color: $violet;
+          transform: translateY(-10px);
+          transition: transform 0.3s;
+        }
+        
+        &::before {
+            width: 50px;
+            left: -10px;
+        }
+        
+        &::after{
+            width: 30px;
+            left: 10px;
+          transform: translateY(10px);
+        }
+    }
+
+        &:hover{
+
+          .hamb{
+            transition: background 0.1s;
+          }
+
+             .hamb::before{
+              transform: translateY(-12px);
+            }
+
+           .hamb::after{
+              transform: translateY(12px);
+            }
+            
+        }
+
+        &.is-open{
+
+             .hamb{
+              background: transparent !important;
+            }
+             .hamb::before{
+               width: 40px;
+               left: 0;
+               transform: translateY(0) rotate(45deg);
+               background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+               background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
+               background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+               background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
+            }
+            .hamb::after{
+                width: 40px;
+                left: 0;
+                transform: translateY(0) rotate(-45deg);
+                background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
+            }
+            &:hover{
+              transition: 0.7s;
+            }
+            
+            .txt-hamb {
+                display: none;
+            }
+        }
+        
+        &.is-open-color{
+          border: 1px solid #fff;
+          background-color: transparent;
+          
+        }
+        &.border-dark {
+          border: 1px solid #000;
+          background-color: transparent;  
+        }
+} /*----end-main-icon-min-768px--*/
+}
+
+@media screen and(min-width: 300px)and(max-width: 767px){
+.main-icon{
+  width: 45px;
+  height: 45px !important;
+  z-index: 5000;
+  margin-top: 5px;
+  margin-right: 0px;
+  position: fixed;
+  transition: transform 0.5s;
+  cursor: pointer;
+  right: 10px !important;
+  left: inherit !important;
+  
+   .hamb{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 2px;
+      background-color: $violet;
+      transform: translateX(-50%) translateY(-50%);
+      
+        &::before, &::after{
+          content:'';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -10px;
+          width: 40px;
+          height: 2px;
+          background-color: $violet;
+          transform: translateY(-8px);
+          transition: transform 0.3s;
+        }
+        
+        &::after{
+            width: 20px;
+            left: 10px;
+          transform: translateY(8px);
+        }
+    }
+
+         &:hover{
+
+          .hamb{
+            transition: background 0.1s;
+          }
+
+             .hamb::before{
+              transform: translateY(-8px);
+            }
+
+           .hamb::after{
+              transform: translateY(8px);
+            }    
+        }
+
+         &.is-open{
+
+             .hamb{
+              background: transparent !important;
+            }
+             .hamb::before{
+               width: 40px;
+               left: 0;
+               transform: translateY(0) rotate(45deg);
+               background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+               background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
+               background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+               background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
+            }
+            .hamb::after{
+                width: 40px;
+                left: 0;
+                transform: translateY(0) rotate(-45deg);
+                background: -webkit-linear-gradient(left, #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right,  #f94545, #ff8668); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right,  #f94545, #ff8668); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right,  #f94545, #ff8668); /* Standard syntax */
+            }
+            &:hover{
+              transition: 0.7s;
+            }
+        }
+        
+        &.is-open-color{
+          border: none;
+          background-color: transparent;
+          
+        }
+      
+} /*----end-main-icon-max-767px--*/
+
+.txt-hamb {
+    display: none;
+}
+
+#logo {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo-home {
+    width: 100%;
+    height: 50px;
+}
+
+.menu{
+	top:50px;
+}
+
+.line {
+    display: none;
+}
+
+
+.wrapper {
+    width: 100%;
+    top: 0;
+    margin: 2em auto;
+}
+
+.clip-text {
+    font-size: 1.5em;
+    transition: 0.5s ease all;
+    z-index: 20;
+    font-weight: 800;
+}
+
+.navbar-default {
+    display: inherit;
+}
+
+.navbar-brand {
+    font-family: "Inflecto", 'Open Sans', sans-serif;
+    float: left;
+    height: 50px;
+    font-size: 25px;
+    line-height: 65px;
+    color: #000;
+    display: none;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 15px;
+}
+
+} /*----end-min-300px-max-767px--*/
+
+@media screen and(min-width: 300px)and(max-width: 1299px){
+    .bg-img-color {
+        opacity: 0.2;
+        width: inherit;
+    }
 }

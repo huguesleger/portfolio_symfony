@@ -1,164 +1,132 @@
 {% extends ":site:index.html.twig" %}
+{% block title %}A propos{% endblock %}
 {% block loader %}{% endblock %}
 {% block section %}
-          
-     <div class="title-rubrique padd-sm mg-bottom-xl">
-            <h2 class="txt-color-me big-title hello no-mg">hello</h2>
-            <p class="txt-color-primary no-mg">Cursus & Compétences</p>
-        </div>
-    
+<div class="pos-mobile">
+    <div class="title-rubrique padd-sm mg-bottom-xl">
+        <h2 class="txt-color-me big-title hello no-mg">hello</h2>
+        <p class="txt-color-primary no-mg">Cursus & Compétences</p>
+    </div>
+
     <div class="swatches-degraded-dark-bis padd-big-xl" data-midnight="color-hamb">
         <div class="items-img__inner-img" id="js-scene-img">
-         <img src="{{asset('images/apropos.png')}}"class="full-img-row-me full-img-me-bg items-img__layer layer" data-depth="0.10">
+            <img src="{{asset('images/apropos.png')}}"class="full-img-row-me full-img-me-bg items-img__layer layer" data-depth="0.10">
         </div>
-                            <div class="items__inner" id="js-scene">
-                        <div class="items__layer layer" data-depth="0.45">
-           {% for formation in formation [0:] %}
-               {% if loop.index == 1 %}
-               
-                <div class="txt-color-white infos-left wow zoomIn" data-wow-duration="800ms" data-wow-delay="750ms">
-                    <div class="txt-infos-me">
-                        <p class="txt-year">{{formation.annee|date('Y')}}</p>
-                    <p class="txt-cursus">{{formation.titre}}</p>
-                    <p class="txt-cursus-content">{{formation.texte}}</p>
-                    </div>
-                </div>
-                 
-                {% endif %}
-                {% if loop.index == 2 %}
-                <div class="txt-color-white infos-left-bottom  wow zoomIn" data-wow-duration="800ms" data-wow-delay="850ms">
-                     <div class="txt-infos-me-bottom">
-                         <p class="txt-year">{{formation.annee|date('Y')}}</p>
-                    <p class="txt-cursus">{{formation.titre}}</p>
-                    <p class="txt-cursus-content">{{formation.texte}}</p>
-                     </div>
-                </div>
-                {% endif %}
-                  {% if loop.index == 3 %}
-                   <div class="txt-color-white infos-right  wow zoomIn" data-wow-duration="800ms" data-wow-delay="950ms">
-                    <div class="txt-infos-me-right">
-                        <p class="txt-year">{{formation.annee|date('Y')}}</p>
-                    <p class="txt-cursus">{{formation.titre}}</p>
-                    <p class="txt-cursus-content-right">{{formation.texte}}</p>
-                </div>
-                </div>    
-                {% endif %}
-                  
+
+        <div class="items__inner" id="js-scene">
+            <div class="items__layer layer" data-depth="0.45">
+                {% for formation in formation [0:] %}
+                    {% if loop.index == 1 %}
+
+                        <div class="txt-color-white infos-left wow zoomIn" data-wow-duration="800ms" data-wow-delay="750ms">
+                            <div class="txt-infos-me">
+                                <p class="txt-year">{{formation.annee|date('Y')}}</p>
+                                <p class="txt-cursus">{{formation.titre}}</p>
+                                <p class="txt-cursus-content">{{formation.texte}}</p>
+                            </div>
+                        </div>
+
+                    {% endif %}
+                    {% if loop.index == 2 %}
+                        <div class="txt-color-white infos-left-bottom  wow zoomIn" data-wow-duration="800ms" data-wow-delay="850ms">
+                            <div class="txt-infos-me-bottom">
+                                <p class="txt-year">{{formation.annee|date('Y')}}</p>
+                                <p class="txt-cursus">{{formation.titre}}</p>
+                                <p class="txt-cursus-content">{{formation.texte}}</p>
+                            </div>
+                        </div>
+
+                    {% endif %}
+                    {% if loop.index == 3 %}
+                        <div class="txt-color-white infos-right  wow zoomIn" data-wow-duration="800ms" data-wow-delay="950ms">
+                            <div class="txt-infos-me-right">
+                                <p class="txt-year">{{formation.annee|date('Y')}}</p>
+                                <p class="txt-cursus">{{formation.titre}}</p>
+                                <p class="txt-cursus-content-right">{{formation.texte}}</p>
+                            </div>
+                        </div> 
+
+                    {% endif %}
                 {% endfor %} 
+            </div>
+        </div>
+
+        {% for apropos in textes %}
+            <div class="container">
+                <p class="col-md-8 col-md-offset-2 txt-present-me txt-color-white">{{apropos.texte}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="container-fluid" id="iconLang">
+        <h2 class="title-competences padd-big-xl">compétences</h2>
+        <div class="icon-prog">
+            <div class="col-md-12">
+                <h3>Graphic design</h3>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/ps.png')}}" class="icon-size"/>
+                    <p>photoshop</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/ai.png')}}" class="icon-size"/>
+                    <p>illustrator</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/indesign.png')}}" class="icon-size"/>
+                    <p>indesign</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/xd.png')}}" class="icon-size"/>
+                    <p>exp design</p>
+                </div>
+            </div>
+            <div class="col-md-12 padd-top-md">
+                <h3>Web</h3>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/html5.png')}}" class="icon-size"/>
+                    <p>html5</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/css3.png')}}" class="icon-size"/>
+                    <p>css3</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/sass.png')}}" class="icon-size"/>
+                    <p>sass</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/js.png')}}" class="icon-size"/>
+                    <p>javascript</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/jquery.png')}}" class="icon-size"/>
+                    <p>jquery</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/php.png')}}" class="icon-size"/>
+                    <p>php</p>
+                </div>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/bootstrap.png')}}" class="icon-size"/>
+                    <p>bootstrap</p>
+                </div> 
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/symfony.png')}}" class="icon-size"/>
+                    <p>symfony</p>
+                </div>
+            </div>
+            <div class="col-md-12 padd-top-md">
+                <h3>Versioning</h3>
+                <div class="icon-content">
+                    <img src="{{asset('./images/iconProg/github.png')}}" class="icon-size"/>
+                    <p>github</p>
+                </div>
+            </div>
         </div>
     </div>
-        
-         {% for apropos in textes %}
-        <div class="container">
-            <p class="col-md-8 col-md-offset-2 txt-present-me txt-color-white">{{apropos.texte}}</p>
-        </div>
-            {% endfor %}
-        </div>
-         
-
-        <div class="container-fluid" id="iconLang">
-            <h2 class="title-competences padd-big-xl">compétences</h2>
-        <div class="icon-prog">
-             <div class="col-md-12">
-            <h3>Graphic design</h3>
-            <div class="icon-content">
-            <img src="{{asset('./images/iconProg/ps.png')}}" class="icon-size"/>
-            <p>photoshop</p>
-            </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/ai.png')}}" class="icon-size"/>
-            <p>illustrator</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/indesign.png')}}" class="icon-size"/>
-            <p>indesign</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/xd.png')}}" class="icon-size"/>
-            <p>exp design</p>
-             </div>
-        </div>
-            
-            <div class="col-md-12 padd-top-md">
-             <h3>Web</h3>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/html5.png')}}" class="icon-size"/>
-            <p>html5</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/css3.png')}}" class="icon-size"/>
-            <p>css3</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/sass.png')}}" class="icon-size"/>
-            <p>sass</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/js.png')}}" class="icon-size"/>
-            <p>javascript</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/jquery.png')}}" class="icon-size"/>
-            <p>jquery</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/php.png')}}" class="icon-size"/>
-            <p>php</p>
-             </div>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/bootstrap.png')}}" class="icon-size"/>
-            <p>bootstrap</p>
-             </div> 
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/symfony.png')}}" class="icon-size"/>
-            <p>symfony</p>
-             </div>
-            </div>
-            <div class="col-md-12 padd-top-md">
-            <h3>Versioning</h3>
-             <div class="icon-content">
-            <img src="{{asset('./images/iconProg/github.png')}}" class="icon-size"/>
-            <p>github</p>
-             </div>
-        </div>
-        </div>
-        </div>
-        
-           
-      
-{#        <div class="col-md-12 swatches-primary contact-single-post">
-          <div class="container">
-           <div class="col-md-3">
-          <p class="txt-color-white padd-top-md">travaillons ensemble ?</p>
-          <a class="btn-link-contact"href="{{path('contact')}}"><h3 class="meta-txt-print txt-color-white bordered-white info-compte-single-post border-right mg-bottom-md">ecrivez-moi</h3></a>
-           </div>
-              <div class="col-md-1">
-              <img class="icon-smile" src="{{ asset('images/smiling-emoticon-square-face.png')}}">
-              </div>
-              <div class="col-md-3 padd-top-md email-single-post">
-                  
-                  <a class="txt-color-white" href="mailto:hugueslegerdevweb@gmail.com">hugueslegerdevweb@gmail.com</a>
-                  <a class="txt-color-white" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>
-              </div>
-              <div class="col-md-3 mg-top-xl">
-            <a class="social-contact-single-post" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
-            <a class="social-contact-single-post" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-twitter"></i></a>
-            <a class="social-contact-single-post" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-instagram"></i></a>
-          </div>
-
-      </div>
-      
-    </div>#}
-            
-            
-            
-    
-{#   {% block footer %}
-      {% endblock%}  #}
- 
-
+</div>
 {% endblock %}
 {% block javascript %}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
-<script type="text/javascript" src="{{asset('./js/main-me.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
+    <script type="text/javascript" src="{{asset('./js/main-me.js')}}"></script>
 {% endblock %}

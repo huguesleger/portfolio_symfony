@@ -1,107 +1,73 @@
 <!DOCTYPE html>
-  <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <title>{% block title %}HL Developerz{% endblock %}</title>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block title %}HL Developerz{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('./images/minlogo-black-hl.png') }}" />
         <link rel="stylesheet" type="text/css" href="{{asset('./vendor/bootstrap.min.css')}}"/>
-         <link rel="stylesheet" type="text/css" href="{{asset('./css/animate.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/animate.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
-        
-       
-  </head>
+        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>    
+    </head>
 
     <body>
- 
-{#{% block loader %}
-<div id="hola">
-  <div id="svg">
-    <div id="loader"></div>
-  </div>
 
-</div>
-{% endblock %}#}
+        <div id="container">
+            <div class="logo-home" id="logo">
+                {% if is_granted("ROLE_ADMIN") %}
+                    <i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+                    <div id="colorLogo">
+                        <svg version="1.1"
+                              viewBox="0 0 100 100" id="iconSvg">
+                        <path d="M35.336,27.604c0.249,0.564,0.581,1.059,0.999,1.477s0.904,0.75,1.459,0.998
+                              c0.553,0.246,1.15,0.368,1.789,0.368h5.351c0.783-2.316,1.212-4.794,1.212-7.376C46.146,10.331,35.815,0,23.073,0
+                              C10.331,0,0,10.331,0,23.071c0,12.744,10.331,23.074,23.073,23.074c8.115,0,15.248-4.193,19.362-10.53h-2.853
+                              c-1.354,0-2.628-0.258-3.821-0.774c-1.193-0.518-2.231-1.219-3.119-2.105c-0.887-0.885-1.581-1.924-2.085-3.119
+                              c-0.137-0.322-0.251-0.651-0.35-0.986v6.985h-5.169v-9.782v-0.038c0-0.638-0.123-1.236-0.37-1.788
+                              c-0.246-0.556-0.577-1.042-0.996-1.46s-0.912-0.75-1.477-0.996c-0.567-0.249-1.169-0.37-1.81-0.37c-0.64,0-1.236,0.122-1.79,0.37
+                              c-0.554,0.246-1.039,0.578-1.458,0.996s-0.751,0.91-0.997,1.478c-0.246,0.564-0.369,1.168-0.369,1.809v9.782h-5.169V10.844h5.169
+                              v6.313c1.402-0.763,2.939-1.144,4.614-1.144c1.353,0,2.628,0.252,3.82,0.756c1.193,0.504,2.234,1.2,3.12,2.085
+                              c0.887,0.887,1.588,1.927,2.104,3.12c0.146,0.334,0.265,0.679,0.369,1.026V10.844h5.169v14.951
+                              C34.969,26.437,35.091,27.039,35.336,27.604 M19.15,24.576c0.332-0.319,0.732-0.479,1.2-0.479c0.492,0,0.911,0.159,1.255,0.479
+                              c0.343,0.321,0.517,0.728,0.517,1.219c0,0.469-0.174,0.874-0.517,1.219c-0.345,0.345-0.764,0.517-1.255,0.517
+                              c-0.467,0-0.868-0.172-1.2-0.517s-0.499-0.75-0.499-1.219C18.651,25.304,18.818,24.897,19.15,24.576"/>
+                        </svg>
+                    </div>
 
-{#{% block loader %}
-<div id="hola">
-<div id="loaders">  
-</div>
-</div>
-{% endblock %}#}
-<div id="container">
-{# <div class="container-fluid">#}
+                {% else %}
+                    <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
+                    <div id="colorLogo">
+                        <a href="{{path('home')}}"><svg version="1.1"
+                             viewBox="0 0 100 100" id="iconSvg">
+                        <path d="M35.336,27.604c0.249,0.564,0.581,1.059,0.999,1.477s0.904,0.75,1.459,0.998
+                              c0.553,0.246,1.15,0.368,1.789,0.368h5.351c0.783-2.316,1.212-4.794,1.212-7.376C46.146,10.331,35.815,0,23.073,0
+                              C10.331,0,0,10.331,0,23.071c0,12.744,10.331,23.074,23.073,23.074c8.115,0,15.248-4.193,19.362-10.53h-2.853
+                              c-1.354,0-2.628-0.258-3.821-0.774c-1.193-0.518-2.231-1.219-3.119-2.105c-0.887-0.885-1.581-1.924-2.085-3.119
+                              c-0.137-0.322-0.251-0.651-0.35-0.986v6.985h-5.169v-9.782v-0.038c0-0.638-0.123-1.236-0.37-1.788
+                              c-0.246-0.556-0.577-1.042-0.996-1.46s-0.912-0.75-1.477-0.996c-0.567-0.249-1.169-0.37-1.81-0.37c-0.64,0-1.236,0.122-1.79,0.37
+                              c-0.554,0.246-1.039,0.578-1.458,0.996s-0.751,0.91-0.997,1.478c-0.246,0.564-0.369,1.168-0.369,1.809v9.782h-5.169V10.844h5.169
+                              v6.313c1.402-0.763,2.939-1.144,4.614-1.144c1.353,0,2.628,0.252,3.82,0.756c1.193,0.504,2.234,1.2,3.12,2.085
+                              c0.887,0.887,1.588,1.927,2.104,3.12c0.146,0.334,0.265,0.679,0.369,1.026V10.844h5.169v14.951
+                              C34.969,26.437,35.091,27.039,35.336,27.604 M19.15,24.576c0.332-0.319,0.732-0.479,1.2-0.479c0.492,0,0.911,0.159,1.255,0.479
+                              c0.343,0.321,0.517,0.728,0.517,1.219c0,0.469-0.174,0.874-0.517,1.219c-0.345,0.345-0.764,0.517-1.255,0.517
+                              c-0.467,0-0.868-0.172-1.2-0.517s-0.499-0.75-0.499-1.219C18.651,25.304,18.818,24.897,19.15,24.576"/>
+                        </svg></a>
+                    </div>
+                {% endif %}
 
-     <div class="logo-home" id="logo">
-     {% if is_granted("ROLE_ADMIN") %}
-<i class="icon-connect fa fa-user"></i><a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
-    <div id="colorLogo">
-   <svg version="1.1"
-	 width="50" height="50" viewBox="0 0 100 100" id="iconSvg">
+                <div class="main-icon" id="Hamb">
+                    <span class="hamb"></span>
+                    <p class="txt-hamb">menu</p>
+                </div>
+            </div>
 
-<path   d="M35.336,27.604c0.249,0.564,0.581,1.059,0.999,1.477s0.904,0.75,1.459,0.998
-	c0.553,0.246,1.15,0.368,1.789,0.368h5.351c0.783-2.316,1.212-4.794,1.212-7.376C46.146,10.331,35.815,0,23.073,0
-	C10.331,0,0,10.331,0,23.071c0,12.744,10.331,23.074,23.073,23.074c8.115,0,15.248-4.193,19.362-10.53h-2.853
-	c-1.354,0-2.628-0.258-3.821-0.774c-1.193-0.518-2.231-1.219-3.119-2.105c-0.887-0.885-1.581-1.924-2.085-3.119
-	c-0.137-0.322-0.251-0.651-0.35-0.986v6.985h-5.169v-9.782v-0.038c0-0.638-0.123-1.236-0.37-1.788
-	c-0.246-0.556-0.577-1.042-0.996-1.46s-0.912-0.75-1.477-0.996c-0.567-0.249-1.169-0.37-1.81-0.37c-0.64,0-1.236,0.122-1.79,0.37
-	c-0.554,0.246-1.039,0.578-1.458,0.996s-0.751,0.91-0.997,1.478c-0.246,0.564-0.369,1.168-0.369,1.809v9.782h-5.169V10.844h5.169
-	v6.313c1.402-0.763,2.939-1.144,4.614-1.144c1.353,0,2.628,0.252,3.82,0.756c1.193,0.504,2.234,1.2,3.12,2.085
-	c0.887,0.887,1.588,1.927,2.104,3.12c0.146,0.334,0.265,0.679,0.369,1.026V10.844h5.169v14.951
-	C34.969,26.437,35.091,27.039,35.336,27.604 M19.15,24.576c0.332-0.319,0.732-0.479,1.2-0.479c0.492,0,0.911,0.159,1.255,0.479
-	c0.343,0.321,0.517,0.728,0.517,1.219c0,0.469-0.174,0.874-0.517,1.219c-0.345,0.345-0.764,0.517-1.255,0.517
-	c-0.467,0-0.868-0.172-1.2-0.517s-0.499-0.75-0.499-1.219C18.651,25.304,18.818,24.897,19.15,24.576"/>
-</svg>
-    </div>
-{% else %}
-    <a class="navbar-brand" href="{{path('home')}}">HL Developerz</a>
-    {#<img src="{{ asset('./images/logo-hl.svg')}}" class="min-logo">#}
-    <div id="colorLogo">
-   <svg version="1.1"
-	 width="50" height="50" viewBox="0 0 100 100" id="iconSvg">
+            <div class="menu-tint menu-type"></div>
+            <div class="menu menu-type">
 
-<path   d="M35.336,27.604c0.249,0.564,0.581,1.059,0.999,1.477s0.904,0.75,1.459,0.998
-	c0.553,0.246,1.15,0.368,1.789,0.368h5.351c0.783-2.316,1.212-4.794,1.212-7.376C46.146,10.331,35.815,0,23.073,0
-	C10.331,0,0,10.331,0,23.071c0,12.744,10.331,23.074,23.073,23.074c8.115,0,15.248-4.193,19.362-10.53h-2.853
-	c-1.354,0-2.628-0.258-3.821-0.774c-1.193-0.518-2.231-1.219-3.119-2.105c-0.887-0.885-1.581-1.924-2.085-3.119
-	c-0.137-0.322-0.251-0.651-0.35-0.986v6.985h-5.169v-9.782v-0.038c0-0.638-0.123-1.236-0.37-1.788
-	c-0.246-0.556-0.577-1.042-0.996-1.46s-0.912-0.75-1.477-0.996c-0.567-0.249-1.169-0.37-1.81-0.37c-0.64,0-1.236,0.122-1.79,0.37
-	c-0.554,0.246-1.039,0.578-1.458,0.996s-0.751,0.91-0.997,1.478c-0.246,0.564-0.369,1.168-0.369,1.809v9.782h-5.169V10.844h5.169
-	v6.313c1.402-0.763,2.939-1.144,4.614-1.144c1.353,0,2.628,0.252,3.82,0.756c1.193,0.504,2.234,1.2,3.12,2.085
-	c0.887,0.887,1.588,1.927,2.104,3.12c0.146,0.334,0.265,0.679,0.369,1.026V10.844h5.169v14.951
-	C34.969,26.437,35.091,27.039,35.336,27.604 M19.15,24.576c0.332-0.319,0.732-0.479,1.2-0.479c0.492,0,0.911,0.159,1.255,0.479
-	c0.343,0.321,0.517,0.728,0.517,1.219c0,0.469-0.174,0.874-0.517,1.219c-0.345,0.345-0.764,0.517-1.255,0.517
-	c-0.467,0-0.868-0.172-1.2-0.517s-0.499-0.75-0.499-1.219C18.651,25.304,18.818,24.897,19.15,24.576"/>
-</svg>
-    </div>
-    {% endif %}
-
-    <div class="main-icon" id="Hamb">
-      <span class="hamb"></span>
-      <p class="txt-hamb">menu</p>
-    </div>
-    
- </div>
-
-{# </div>#}
-{#<div class="type-js headline">
-    <h1 class="text-js">Color Your Life</h1>
-</div>#}
-
-{#<div class="big-logo" id="big">
-    <img src="{{asset('images/big-logoX2.png')}}"class=""></a>
-</div>#}
-
-{#<div id="big">
-</div>#}
-              
-    <div class="menu-tint menu-type"></div>
-    {#<div id="pushMain" class="push-main">#}
- 
-    <div class="menu menu-type">
                 <div id="bg-menu">
                     <div class="bg-color bg-color-web" name="bg-web">
                         <img class="bg-img-color" src="{{asset('images/immeuble.jpg')}}"/>
@@ -119,307 +85,211 @@
                         <img class="bg-img-color" src="{{asset('images/archi.jpg')}}"/>
                     </div>
                 </div>
-         {# <div class="logo">
-          <img src="{{asset('images/minlogo-hl.png')}}"></a>
-        </div>#}
-          <div class="clip-img">
-        <!-- <img alt="#" src="images/screenshot.png" class="zoom"> -->
-        <!-- <video autoplay loop muted id="myVideo">
-			<source src="./images/Ground-Zero.mp4" type="video/mp4">
-			<source src="./images/Ground-Zero.webm" type="video/webm">
-		</video> -->
 
-  {#  <video autoplay loop muted id="myVideo2">
-  <source src="{{ asset('./images/Office_Perks.mp4')}}" type="video/mp4">
-  <source src="{{ asset('./images/Office_Perks.webm')}}" type="video/webm">
-</video>#}
-  <div class="line"></div>
-       </div>
-       
-          {#<nav class="navbar navbar-default primary">
-            <ul class="nav navbar-nav">
-              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxweb')}}">Travaux Web</a></li>
-              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxprint')}}">Travaux Print</a></li>
-              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('travauxgalerie')}}">Galerie</a></li>
-              <li class="col-sm-12 col-md-12 btn-rubrique rubrique"><a href="#">A Propos</a></li>
-              <li class="mail col-sm-12 col-md-12 btn-rubrique rubrique"><a href="{{path('contact')}}">Contact</a></li>
-            </ul>
-          </nav>#}
+                <div class="clip-img">
+                    <div class="line"></div>
+                </div>
 
-          <div class="wrapper">
+                <div class="wrapper">
+                    <nav class="navbar navbar-default">
+                        <ul class="nav clip-text">
+                            <li class=" btn-rubrique"><a class="" href="{{path('travauxweb')}}" name="bg-web">Travaux Web</a></li>
+                            <li class=" btn-rubrique"><a class="" href="{{path('travauxprint')}}" name="bg-webdesign">Travaux Print</a></li>
+                            <li class=" btn-rubrique"><a class="" href="{{path('travauxgalerie')}}" name="bg-galerie">Galerie</a></li>
+                            <li class=" btn-rubrique"><a class="" href="{{path('apropos')}}" name="bg-me">A Propos</a></li>
+                            <li class=" btn-rubrique"><a class="" href="{{path('contact')}}" id="bg-white" name="bg-contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-          <nav class="navbar navbar-default">
-            <ul class="nav clip-text">
-              <li class=" btn-rubrique"><a class="" href="{{path('travauxweb')}}" name="bg-web">Travaux Web</a></li>
-              <li class=" btn-rubrique"><a class="" href="{{path('travauxprint')}}" name="bg-webdesign">Travaux Print</a></li>
-              <li class=" btn-rubrique"><a class="" href="{{path('travauxgalerie')}}" name="bg-galerie">Galerie</a></li>
-              <li class=" btn-rubrique"><a class="" href="{{path('apropos')}}" name="bg-me">A Propos</a></li>
-              <li class=" btn-rubrique"><a class="" href="{{path('contact')}}" id="bg-white" name="bg-contact">Contact</a></li>
-            </ul>
-          </nav>
-          </div>
-     
-           {# <div class="contact-me">
-                <p>Mon profil vous intéresse ? Envie de collaborer sur un projet ?
-                    Pour toute demande contactez-moi.</p>
-            </div>    #}
-    </div>
-
-
-{% block section %}
-    {% block ariane %}{% endblock %}
-
-  {#  <div id="content">#}
-       <section id="home" data-midnight="color-hamb">
-    <div class="container-fluid">
-      
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-{#  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol> #}
-
-            
-
-    <div class="carousel-inner wow fadeInRight" data-wow-duration="1200ms" data-wow-delay=" 600ms" role="listbox">
-        {% for projetcaroussel in projectscaroussel[0:] %}
-      
-      <div class="item{%if loop.index == 1%} active {%endif%}">
-        <img src="{{asset('uploads/img/')~projetcaroussel.images}}">
-       
-      </div>
-        
-           {% endfor %} 
-         <!-- Controls -->
-  <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
-    {#<span class="fa fa-angle-left" aria-hidden="true"></span>#}
-    
-    <span class="sr-only-left">Previous</span>
-  </a>
-  <a class="right carousel-control" data-target="#carousel-example-generic" role="button" data-slide="next">
-    {#<span class="fa fa-angle-right" aria-hidden="true"></span>#}
-    <span class="sr-only-right">Next</span>
-  </a>         
-</div>
-
-        
-          {#<img class="anim-title2 wow fadeIn" data-wow-duration="1800ms" data-wow-delay="4500ms" src="{{ asset('./images/biglogo-hl.png') }}"/>#}
-          <div class="anim-title wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="600ms">
-        
-      {#<p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4300ms">dév web</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4500ms">graphiste</p>
-      <p class="wow bounceInLeft" data-wow-duration="1000ms" data-wow-delay="4700ms">illustrateur</p>
-      <div class="icon-me col-md-10 wow bounceInUp" data-wow-duration="1000ms" data-wow-delay="4900ms">
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5000ms" src="{{ asset('./images/minlogo-hl.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5100ms" src="{{ asset('./images/deglingos.png') }}"/>
-                <img class="wow bounceIn" data-wow-duration="1000ms" data-wow-delay="5200ms" src="{{ asset('./images/logo-pale.png') }}"/>
-            
-    </div>#}
-    
-  </div> 
-
-        
-      
-     
-    
-   
-      </div>  
-    
-    </div>
-    {#<div class="opaque">
-      <p class="txt-bienvenue">welcome :)</p><br>
-      <p>web design</p>
-      <p>dév web</p>
-      <p>graphisme</p>
-      <p>illustration</p>
-         <div class="icon-me">
-                <img src="{{ asset('./images/minlogo-hl.png') }}"/>
-                <img src="{{ asset('./images/deglingos.png') }}"/>
-                <img src="{{ asset('./images/logo-pale.png') }}"/>
             </div>
-  </div>#}
-    
 
+            {% block section %}
+            {% block ariane %}{% endblock %}
+            <section id="home" data-midnight="color-hamb">
+                <div class="container-fluid">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner wow fadeInRight" data-wow-duration="1200ms" data-wow-delay=" 600ms" role="listbox">
+                            {% for projetcaroussel in projectscaroussel[0:] %}
+                                <div class="item{%if loop.index == 1%} active {%endif%}">
+                                    <img src="{{asset('uploads/img/')~projetcaroussel.images}}">
+                                </div>
+                            {% endfor %} 
 
-</section>
-    
-      <div class="container icon-present" id="iconMe">
-    <div class="row">
-        <div class="background-mobile color-mobile">
-    <div class="col-sm-6 col-md-3">
-  <div class="present">
-  <div class="creatif">
-    <h2>créatif</h2>
-    <div class="icon">
-      <i class="fa fa-lightbulb-o"></i>
-    </div>
-  </div>
-</div>
-    </div>
-</div>
-        <div class="background-mobile">
-<div class="col-sm-6 col-md-3">
-  <div class="present">
-  <div class="reactif">
-    <h2>réactif</h2>
-    <div class="icon">
-      <i class="fa fa-bolt"></i>
-    </div>
-  </div>
-</div>
-</div>
-        </div>
-        <div class="background-mobile color-mobile">
-<div class="col-sm-6 col-md-3">
-<div class="present">
-<div class="colaboratif">
-  <h2>colaboratif</h2>
-  <div class="icon">
-    <i class="fa fa-thumbs-o-up"></i>
-  </div>
-</div>
-</div>
-</div>
-        </div>
-        <div class="background-mobile">
-<div class="col-sm-6 col-md-3">
-  <div class="present">
-  <div class="tif">
-    <h2>j'ai plus de tif</h2>
-    <div class="icon">
-      <i class="fa fa-scissors"></i>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-    </div>
-</div>
+                            <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="sr-only-left">Previous</span></a>
+                            <a class="right carousel-control" data-target="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="sr-only-right">Next</span></a>         
+                        </div>
 
-    
-<div class="container-fluid mg-bottom-xl">
-    
-<section class="services" id="service">
-<div id="particle-canvas" data-midnight="color-hamb">
-<div class="container">
-  <div class="title-services">
-    <h1>mes compétences</h1>
-  </div>
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="icon-services">
-          <i class="fa fa-code"></i>
-        </div>
-        <div class="caption">
-          <h3>Développement Front</h3>
-          <p>intégration</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="icon-services">
-          <i class="fa fa-laptop"></i>
-        </div>
-        <div class="caption">
-          <h3>Web Design</h3>
-          <p>...</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="icon-services">
-          <i class="fa fa-mobile"></i>
-        </div>
-        <div class="caption">
-          <h3>Responsive</h3>
-          <p>...</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="icon-services">
-          <i class="fa fa-pencil"></i>
-        </div>
-        <div class="caption">
-          <h3>Illustrations / Graphisme</h3>
-          <p>...</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="icon-services">
-          <i class="fa fa-cogs"></i>
-        </div>
-        <div class="caption">
-          <h3>Développement Web</h3>
-          <p>...</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="icon-services">
-          <i class="fa fa-line-chart"></i>
-        </div>
-        <div class="caption">
-          <h3>Réferencement Naturel </h3>
-          <p>...</p>
-        </div>
-      </div>
-    </div>
+                        <div class="anim-title wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="600ms">
+                        </div> 
+                    </div>  
+                </div>
+            </section>
 
-  </div>
-</div>
+            <div class="container" id="iconMe">
+                <div class="row">
+                    <div class="background-mobile mg-top-icon-me color-mobile">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="present">
+                                <div class="creatif">
+                                    <h2>créatif</h2>
+                                    <div class="icon">
+                                        <i class="fa fa-lightbulb-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="background-mobile">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="present">
+                                <div class="reactif">
+                                    <h2>réactif</h2>
+                                    <div class="icon">
+                                        <i class="fa fa-bolt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="background-mobile color-mobile">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="present">
+                                <div class="colaboratif">
+                                    <h2>colaboratif</h2>
+                                    <div class="icon">
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="background-mobile">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="present">
+                                <div class="tif">
+                                    <h2>j'ai plus de tif</h2>
+                                    <div class="icon">
+                                        <i class="fa fa-scissors"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</div>
-</section>
-
-</div>
-   
-
-
-{% endblock %}
-    
-     {% block footer %}
-      <footer class="footer" id="Footer">
-        <div class="container">
-          <div class="credit">
-            <p>HL Developerz &copy 2017 Tous droits réservés</p>
-          </div>
-          <div class="social-content">
-            <a class="social" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
-      <a class="social" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-twitter"></i></a>
-  <a class="social" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-linkedin"></i></a>
-</div>
-        </div>
-      </footer>
-               {% endblock %}
-{#</div><!-----------div content------------>#}
-      </div>
-
-        <script type="text/javascript" src="{{asset('./vendor/jquery.js')}}"></script>
-       <script type="text/javascript" src="{{asset('./vendor/bootstrap.min.js')}}"></script>
-        {% block javascript %}
-         <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
+            <div class="container-fluid mg-bottom-xl">
+                <section class="services" id="service">
+                    <div id="particle-canvas" data-midnight="color-hamb">
+                        <div class="container">
+                            <div class="title-services">
+                                <h1>mes compétences</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <div class="icon-services">
+                                            <i class="fa fa-code"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3>Développement Front</h3>
+                                            <p>intégration</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <div class="icon-services">
+                                            <i class="fa fa-laptop"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3>Web Design</h3>
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <div class="icon-services">
+                                            <i class="fa fa-mobile"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3>Responsive</h3>
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <div class="icon-services">
+                                            <i class="fa fa-pencil"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3>Illustrations & Com visuelle</h3>
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <div class="icon-services">
+                                            <i class="fa fa-cogs"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3>Développement Web</h3>
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <div class="icon-services">
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3>Réferencement Naturel </h3>
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         {% endblock %}
-           <script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>
-           <script type="text/javascript" src="{{asset('./js/jquery.adaptive-backgrounds.js')}}"></script>
-           <script type="text/javascript" src="{{asset('./js/midnight.jquery.min.js')}}"></script>
-            <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
 
-        <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
-          
-         
-        
-       
+        {% block footer %}
+            <footer class="footer" id="Footer">
+                <div class="container">
+                    <div class="credit">
+                        <p>HL Developerz &copy 2017 Tous droits réservés</p>
+                    </div>
+                    <div class="social-content">
+                        <a class="social" href="https://www.facebook.com/profile.php?id=100012393211839" target="new"><i class="fa fa-facebook"></i></a>
+                        <a class="social" href="https://twitter.com/hugueslegerweb" target="new"><i class="fa fa-twitter"></i></a>
+                        <a class="social" href="https://www.behance.net/pale34b48d" target="new"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
+    </div>
+
+    <script type="text/javascript" src="{{asset('./vendor/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('./vendor/bootstrap.min.js')}}"></script>
+    {% block javascript %}
+        <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
+    {% endblock %}
+    <script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('./js/jquery.adaptive-backgrounds.js')}}"></script>
+    <script type="text/javascript" src="{{asset('./js/midnight.jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
+
 </body>
 
 </html>
