@@ -372,3 +372,10 @@ background-color: #130C1C;
         background: linear-gradient(to right,  #f94545, #ff8668);
     }
 }
+
+@media screen and(min-width: 320px) and (max-width: 767px){
+.folio-item {
+    position: relative;
+    padding-bottom: 10px;
+}
+}

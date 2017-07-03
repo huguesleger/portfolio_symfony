@@ -15,6 +15,12 @@
     </head>
 
     <body>
+{#{% block loader %}
+<div id="hola">
+<div id="loaders">  
+</div>
+</div>
+{% endblock %}#}
 
         <div id="container">
             <div class="logo-home" id="logo">
@@ -58,7 +64,6 @@
                         </svg></a>
                     </div>
                 {% endif %}
-
                 <div class="main-icon" id="Hamb">
                     <span class="hamb"></span>
                     <p class="txt-hamb">menu</p>
@@ -283,12 +288,15 @@
     {% block javascript %}
         <script type="text/javascript" src="{{asset('./js/parallax.js')}}"></script>
     {% endblock %}
-    <script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>
+     {#<script type="text/javascript" src="{{asset('./js/progressbar.min.js')}}"></script>#}
+    {#<script type="text/javascript" src="{{asset('./js/velocity.min.js')}}"></script>#}
     <script type="text/javascript" src="{{asset('./js/jquery.adaptive-backgrounds.js')}}"></script>
     <script type="text/javascript" src="{{asset('./js/midnight.jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
     <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('./js/lightbox.min.js')}}"></script>
+    {% block js %}
+    {% endblock %}
+ 
 
 </body>
 

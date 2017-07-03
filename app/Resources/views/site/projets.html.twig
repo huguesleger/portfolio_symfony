@@ -11,7 +11,7 @@
 
     <div class="container-fluid mg-bottom-xl" id="workWeb" data-midnight="color-hamb">
         {% for projet in projects %}
-            <div class="panel">       
+            <div class="panel-web">       
                 <div class="p_inside">
                     <div class="line-projet"><p class="number-projet">{{projet.annee|date('/Y')}}</div>
                     <a class="overdark" href="{{path("detailprojets",{"id":projet.id})}}"></a>

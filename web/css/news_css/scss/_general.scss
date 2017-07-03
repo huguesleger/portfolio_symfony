@@ -407,6 +407,16 @@ a:focus, a:hover{
 
 }
 
+
+#hola{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    z-index: 104;
+}
+
+
  #iconSvg {
 position: absolute;
 width: 50px;
@@ -415,6 +425,16 @@ top: 35px;
 left: 190px;
 z-index: 100;
 fill: #000;
+}
+
+ #iconSvgWhite {
+position: absolute;
+width: 50px;
+height: 50px;
+top: 35px;
+left: 190px;
+z-index: 100;
+fill: #fff;
 }
 
  /*-------------footer---------------*/
@@ -585,11 +605,49 @@ top: 310px;
 }
 
 .breadcrumb {
- display: none;
+ padding: 2px 30px;
+ font-size: 11px;
 }
 
 .mg-top-big-xl {
     margin-top: 0;
 }
 
+.txt-error {
+       font-size: 70px;
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: -5px;
+    line-height: 65px;
+}
+.error-color {
+    color: #f94545;
+    transform: rotate(-90deg);
+    position: absolute;
+    text-transform: uppercase;
+    left: -80px;
+    top: 140px;
+}
+
+.message-error {
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+
+.big-error {
+    font-size: 120px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 8px 5px 15px rgba(0, 0, 0, 0.5);
+}
+}
+
+@media screen and(min-width: 768px)and(max-width: 1366px){
+   .big-error {
+    font-size: 350px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 8px 5px 15px rgba(0, 0, 0, 0.5);
+} 
 }

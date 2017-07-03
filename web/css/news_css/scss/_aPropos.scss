@@ -218,3 +218,263 @@ and open the template in the editor.
     width: 80px;
     height: 80px;
 }
+
+
+
+@media screen and(min-width: 320px) and (max-width: 413px){
+.full-img-row-me {
+    width: 300px;
+    margin: auto;
+    opacity: 0.9;
+}
+}
+@media screen and(min-width: 414px) and (max-width: 767px){
+.full-img-row-me {
+    width: 350px;
+    margin: auto;
+    opacity: 0.9;
+}
+}
+
+@media screen and(min-width: 768px) and (max-width: 1023px){
+.full-img-row-me {
+    width: 650px;
+    margin: auto;
+    opacity: 0.9;
+}
+}
+
+@media screen and(min-width: 1024px) and (max-width: 1365px){
+.full-img-row-me {
+    width: 850px;
+    margin: auto;
+    opacity: 0.9;
+}
+}
+
+@media screen and(min-width: 320px) and (max-width: 767px){
+    
+    .txt-present-me {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 200;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+   .infos-left {
+    position: absolute;
+    top: 540px;
+    left: 0px;
+    &::after {
+       display: none;
+    }
+}
+
+.infos-left-bottom {
+    position: absolute;
+    left: 0px;
+    top: 730px;
+    &::after {
+       display: none;
+    }
+}
+
+.infos-right {
+    position: absolute;
+   right: 0px;
+   left:0;
+    top: 250px;
+    &::before {
+        display: none;
+    }
+} 
+
+.txt-infos-me-right {
+    position: relative;
+    margin-top: 55px;
+    margin-right: 0px;
+        margin-left: 15px;
+}
+
+.txt-infos-me-bottom {
+    position: relative;
+     margin-left: 15px; 
+    margin-top: 0;
+}
+
+.txt-cursus-content-right {
+    max-width: 200px;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 8px 8px 1px rgba(0, 0, 0, 0.9);
+    font-size: 16px;
+    margin-right: 0;
+}
+
+.txt-infos-me {
+    position: relative;
+    margin-top: 0;
+     margin-left: 15px;
+}
+.items__inner {
+    position: relative;
+    width: 100%;
+    height: 900px;
+     margin-top: 0; 
+    background: transparent;
+}
+    
+.items-img__inner-img {
+    position: relative;
+    width: 100%;
+    height: 0;
+    background: transparent;
+}
+}
+
+
+@media screen and(min-width: 768px) and (max-width: 1023px){
+   .infos-left {
+    position: absolute;
+    top: 790px;
+    left: 150px;
+    &::after {
+       display: none;
+    }
+}
+
+.infos-left-bottom {
+    position: absolute;
+    left: 350px;
+    top: 980px;
+    &::after {
+       display: none;
+    }
+}
+
+.infos-right {
+    position: absolute;
+   right: 0px;
+   left:0;
+    top: 500px;
+    &::before {
+        display: none;
+    }
+} 
+
+.txt-infos-me-right {
+    position: relative;
+    margin-top: 55px;
+    margin-right: 0px;
+        margin-left: 30px;
+}
+
+.txt-infos-me-bottom {
+    position: relative;
+     margin-left: 30px; 
+    margin-top: 0;
+}
+
+.txt-cursus-content-right {
+    max-width: 200px;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 8px 8px 1px rgba(0, 0, 0, 0.9);
+    font-size: 16px;
+    margin-right: 0;
+}
+
+.txt-infos-me {
+    position: relative;
+    margin-top: 0;
+     margin-left: 30px;
+}
+.items__inner {
+    position: relative;
+    width: 100%;
+        height: 1200px;
+     margin-top: 0; 
+    background: transparent;
+}
+    
+.items-img__inner-img {
+    position: relative;
+    width: 100%;
+    height: 0;
+    background: transparent;
+}
+}
+
+
+@media screen and(min-width: 1024px) and (max-width: 1365px){
+   .infos-left {
+    position: absolute;
+    top: 850px;
+    left: 250px;
+    &::after {
+       display: none;
+    }
+}
+
+.infos-left-bottom {
+    position: absolute;
+    left: 550px;
+    top: 980px;
+    &::after {
+       display: none;
+    }
+}
+
+.infos-right {
+    position: absolute;
+   right: 0px;
+   left:0;
+    top: 650px;
+    &::before {
+        display: none;
+    }
+} 
+
+.txt-infos-me-right {
+    position: relative;
+    margin-top: 55px;
+    margin-right: 0px;
+        margin-left: 30px;
+}
+
+.txt-infos-me-bottom {
+    position: relative;
+     margin-left: 30px; 
+    margin-top: 0;
+}
+
+.txt-cursus-content-right {
+    max-width: 200px;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 8px 8px 1px rgba(0, 0, 0, 0.9);
+    font-size: 16px;
+    margin-right: 0;
+}
+
+.txt-infos-me {
+    position: relative;
+    margin-top: 0;
+     margin-left: 30px;
+}
+.items__inner {
+    position: relative;
+    width: 100%;
+        height: 1200px;
+     margin-top: 0; 
+    background: transparent;
+}
+    
+.items-img__inner-img {
+    position: relative;
+    width: 100%;
+    height: 0;
+    background: transparent;
+}
+}

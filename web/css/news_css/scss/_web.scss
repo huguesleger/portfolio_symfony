@@ -559,7 +559,7 @@ border-right: 1px solid #c4c4c4;
 
 
 
-.panel {
+.panel-web {
     float: left;
     width: 25%;
     text-align: center;
@@ -610,13 +610,13 @@ border-right: 1px solid #c4c4c4;
 
 
 
-.panel:hover .overdark {
+.panel-web:hover .overdark {
   opacity: 0.7;
   bottom: 0;
   height: 100%;
   width: 100%;
 }
-.panel:hover .panel-img{
+.panel-web:hover .panel-img{
     opacity: 0.5;
     transition: all 0.3s ease-in-out;
 }
@@ -652,7 +652,7 @@ border-right: 1px solid #c4c4c4;
     transition: all 0.5s ease-in-out;
 }
 
-.panel:hover .line-projet{
+.panel-web:hover .line-projet{
     background-color: #000;
     transition: all 0.5s ease-in-out;
 /*    .number-projet{
@@ -741,7 +741,7 @@ height: 80px;
 }
 
 
-.panel:hover .icon-diamond {
+.panel-web:hover .icon-diamond {
   width: 10%;
   bottom: 55%;
   transition: all 0.5s ease-in-out;
@@ -767,7 +767,7 @@ height: 80px;
 
 @media screen and(min-width: 300px)and(max-width: 767px){
     
-.panel {
+.panel-web {
     float: left;
     width: 100%;
     text-align: center;
@@ -782,7 +782,7 @@ height: 80px;
 
 @media screen and(min-width: 768px)and(max-width: 1023px){
     
-.panel {
+.panel-web {
     float: left;
     width: 50%;
     text-align: center;
@@ -797,7 +797,7 @@ height: 80px;
 
 @media screen and(min-width: 1024px)and(max-width: 1200px){
     
-.panel {
+.panel-web {
     float: left;
     width: 33.2%;
     text-align: center;

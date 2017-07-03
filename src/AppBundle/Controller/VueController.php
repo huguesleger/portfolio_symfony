@@ -37,7 +37,7 @@ class VueController extends Controller {
     }
     
     /**
-     * @Route("/web", name="travauxweb");
+     * @Route("/work-web", name="travauxweb");
      * @Template(":site:projets.html.twig");
      */
     public function Projets(){
@@ -54,7 +54,7 @@ class VueController extends Controller {
     }
     
      /**
-     * @Route("/webdesign-graphisme", name="travauxprint");
+     * @Route("/work-webdesign-graphisme", name="travauxprint");
      * @Template(":site:print.html.twig");
      */
     public function ProjetsPrint(){
@@ -90,7 +90,7 @@ class VueController extends Controller {
     
     
      /**
-     * @Route("/web/{id}", name="detailprojets")
+     * @Route("/work-web/{id}", name="detailprojets")
      * @Template(":site:projetsDetail.html.twig");
      */
     public function ProjetsDetail(Projets $id){
@@ -109,7 +109,7 @@ class VueController extends Controller {
     }
     
     /**
-     * @Route("/webdesign-graphisme/{id}", name="detailprint")
+     * @Route("/work-webdesign-graphisme/{id}", name="detailprint")
      * @Template(":site:projetsPrintDetail.html.twig");
      */
     public function ProjetsDetailPrint(ProjetsPrint $id){

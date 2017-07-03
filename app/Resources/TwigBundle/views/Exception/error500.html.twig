@@ -1,9 +1,9 @@
 {% extends ":site:index.html.twig"%}
 
 {% block section %}
-    <div class="row">
+    <div class="container-fluid">
         <div class="col-md-12 mg-bottom-xl">
-            <div class="col-md-6 message-error">
+            <div class="col-md-12 col-lg-6 message-error">
                 <h1 class="txt-error"><span class="error-color">Oops!</span><br>
                     <span class="txt-error-light">une</span> erreur<br>
                     <span class="txt-error-light">est</span> sur-<br>
@@ -14,4 +14,5 @@
             </div>
         </div>
     </div>
+                {% block javascript %}{% endblock %}
 {% endblock %}

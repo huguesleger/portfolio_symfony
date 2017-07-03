@@ -1,9 +1,9 @@
 {% extends ":site:index.html.twig"%}
 
 {% block section %}
-    <div class="row">
+    <div class="container-fluid">
         <div class="col-md-12 mg-bottom-xl">
-            <div class="col-md-6 message-error">
+            <div class="col-md-12 col-lg-6 message-error">
                 <h1 class="txt-error"><span class="error-color">Oops!</span><br>
                     <span class="txt-error-light">cette</span> page <br>
                     <span class="txt-error-light">n'</span>existe<br>pas</h1>   
@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>  
+                {% block javascript %}{% endblock %}
 {% endblock %}
 
 

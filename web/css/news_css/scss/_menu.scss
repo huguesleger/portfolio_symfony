@@ -308,14 +308,25 @@ margin-bottom: 0;
      
 }
 .midnightHeader.color-hamb .hamb {
-    background-color: red;
+    background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
         &::before {
-       background-color: red;
+      background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
         }
         &::after {
-            background-color: red;
+           background: -webkit-linear-gradient(left, #f94545, #ff8668); 
+    background: -o-linear-gradient(right,  #f94545, #ff8668);  
+    background: -moz-linear-gradient(right,  #f94545, #ff8668);  
+    background: linear-gradient(to right,  #f94545, #ff8668);
         }
 }
+
+
 
 .midnightHeader.default .txt-hamb{
      color :#130C1C;
@@ -324,6 +335,7 @@ margin-bottom: 0;
 .midnightHeader.color-hamb .txt-hamb {
         color :#fff;
 }
+
 
 
 .txt-hamb {
@@ -593,7 +605,7 @@ margin-bottom: 0;
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 5px 15px;
+    padding: 8px 15px;
 }
 
 } /*----end-min-300px-max-767px--*/

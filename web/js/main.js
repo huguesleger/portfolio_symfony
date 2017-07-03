@@ -1,3 +1,45 @@
+//$(document).ready(function(){
+//     var line = new ProgressBar.Line('#loaders', {
+//        color: '#FCB03C',
+//        duration: 3000,
+//        strokeWidth: 1,
+//        easing: 'easeInOut',
+//            from: { color: '#f94545' },
+//            to: { color: '#ff8668' },
+//    step: function(state, line, attachment) {
+//        line.path.setAttribute('stroke', state.color);
+//    }
+//    
+//    });
+//    line.animate(1);
+//   setTimeout(function(){
+//               $('#loaders').velocity({
+//                    opacity : 1  
+//               }, {
+//                    duration: 1600,
+//                  complete: function(){
+//                  $('#loaders').velocity({
+//                    opacity : 0
+//                });
+//                     $('#hola').velocity({
+//                          opacity:0,
+//                          zIndex: -1
+//                          
+//                       });
+//                        
+//               }
+//               
+//               });
+//            
+//           },1200);
+//        
+//        });
+
+
+
+
+
+
 
 
 $(document).ready(function(){
@@ -167,65 +209,67 @@ $('#home .container-fluid').css( { marginLeft : "15px", marginRight : "15px"} );
 });
 
 
-$(document).ready(function(){
-	$('a[data-confirm]').click(function(ev) {
-		var href = $(this).attr('href');
-		
-		if (!$('#dataConfirmModal').length) {
-			$('body').append('<div id="dataConfirmModal" class="modal" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close confirm" data-dismiss="modal" aria-hidden="true">×</button><h3 id="dataConfirmLabel">Confirmation</h3></div><div class="modal-body-confirm"></div><div class="modal-footer"><a class="btn fa fa-check" id="dataConfirmOK"></a><a class="btn fa fa-times" data-dismiss="modal" aria-hidden="true"></a></div></div></div></div>');
-		}
-		$('#dataConfirmModal').find('.modal-body-confirm').text($(this).attr('data-confirm'));
-		$('#dataConfirmOK').attr('href', href);
-		$('#dataConfirmModal').modal({show:true});
-		
-		return false;
-	});
-        });
+
+
+//$(document).ready(function(){
+//	$('a[data-confirm]').click(function(ev) {
+//		var href = $(this).attr('href');
+//		
+//		if (!$('#dataConfirmModal').length) {
+//			$('body').append('<div id="dataConfirmModal" class="modal" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close confirm" data-dismiss="modal" aria-hidden="true">×</button><h3 id="dataConfirmLabel">Confirmation</h3></div><div class="modal-body-confirm"></div><div class="modal-footer"><a class="btn fa fa-check" id="dataConfirmOK"></a><a class="btn fa fa-times" data-dismiss="modal" aria-hidden="true"></a></div></div></div></div>');
+//		}
+//		$('#dataConfirmModal').find('.modal-body-confirm').text($(this).attr('data-confirm'));
+//		$('#dataConfirmOK').attr('href', href);
+//		$('#dataConfirmModal').modal({show:true});
+//		
+//		return false;
+//	});
+//        });
 
 
 
 
 
-$(document).ready(function(){
- 
-    $('#edit-compte').click(function(){
-         var $groupe = document.getElementById('appbundle_user_name'); 
-    $groupe.disabled = !true; 
-    
-    });
-    
-     $('#edit-pass').click(function(){
-         var $groupe = document.getElementById('appbundle_user_pass'); 
-    $groupe.disabled = !true; 
-//    $('.boutonCompte').show();
-
-});
- 
-  });
+//$(document).ready(function(){
+//    $('#edit-compte').click(function(){
+//         var $groupe = document.getElementById('appbundle_user_name'); 
+//    $groupe.disabled = !true; 
+//
+//    
+//    });
+//    
+//     $('#edit-pass').click(function(){
+//         var $groupe = document.getElementById('appbundle_user_pass'); 
+//    $groupe.disabled = !true; 
+////    $('.boutonCompte').show();
+//
+//});
+// 
+//  });
+//  
+//  
+// $(document).ready(function(){
+// 
+//    $('#edit-compte-close').click(function(){
+//         var $groupe = document.getElementById('appbundle_user_name'); 
+//    $groupe.disabled = !false; 
+//    
+//    });
+//    
+//     $('#edit-pass-close').click(function(){
+//         var $groupe = document.getElementById('appbundle_user_pass'); 
+//    $groupe.disabled = !false; 
+////    $('.boutonCompte').show();
+//});
+//
+// 
+//  });
   
-  
- $(document).ready(function(){
- 
-    $('#edit-compte-close').click(function(){
-         var $groupe = document.getElementById('appbundle_user_name'); 
-    $groupe.disabled = !false; 
-    
-    });
-    
-     $('#edit-pass-close').click(function(){
-         var $groupe = document.getElementById('appbundle_user_pass'); 
-    $groupe.disabled = !false; 
-//    $('.boutonCompte').show();
-});
 
- 
-  });
-  
-
-$(document).ready(function(){
-$('#myModal').modal('show');
-
-});
+//$(document).ready(function(){
+//$('#myModal').modal('show');
+//
+//});
   
 
 
@@ -274,8 +318,8 @@ function parallax(){
    
 $(window).on('scroll', function(){
     var windowW = $(window).width();
+    var heightbread = $('.img-header').outerHeight();
   if(windowW > 767){
-   var heightbread = $('.img-header').outerHeight();
 	if( $(window).scrollTop() >(heightbread)){
                 
 		$('.breadcrumb').addClass('fixed-bread padd-top-lg');
@@ -288,8 +332,23 @@ $(window).on('scroll', function(){
                 $('.infos-project-single').css('padding-top','30px');
                 
                 
-       }
+       } 
+   } else if (windowW < 767){
+	if( $(window).scrollTop() >(heightbread)){
+            $('.breadcrumb').addClass('fixed-bread');
+                $('.breadcrumb').css({opacity:'0.9' , top:'50px'});
+               
+                
+        } else {
+		$('.breadcrumb').removeClass('fixed-bread');
+                $('.breadcrumb').css({opacity:'0.9' , top:'0'});
+               
+                
+                
+       } 
    }
+   
+   
       
 });
 
@@ -322,14 +381,6 @@ if ($('#back-to-top').length) {
 
 });
 
-  
-$(document).ready(function(){
-    var windowW = $(window).width();
-  if(windowW >= 1024){
-document.getElementById('imgSize').style.height=document.getElementById('sizeBackground').offsetHeight +200+"px";
-  }
-});
-
 
 $(document).ready(function(){
 $(function() {
@@ -341,8 +392,35 @@ $('#btnMoreThumb').hide();
 });
 });
 
+
+//$(document).ready(function(){
+//    var windowW = $(window).width();
+//  if(windowW >= 1024){
+//document.getElementById('imgSize').style.height=document.getElementById('sizeBackground').offsetHeight +200+"px";
+//
+//  }
+//});
+
 //header image effect sur logo 
 
     
 
 
+//$(document).ready(function(){
+// var windowW = $(window).width();
+//// var bgGrey = $('#sizeBackground').outerHeight();
+//   
+//if (windowW > 1023){
+////    $('.full-img-screenshot-pos-dark').css({
+//////        height: ($('.full-img-screenshot').outerHeight()+200)
+////        height: (bgGrey +200)
+////        
+////    });
+//    
+//     $('#Img-pos').insertBefore('#concept-mobile');
+// } else {
+////     $('.full-img-screenshot-pos-dark').removeClass();
+//   $('#concept-mobile').append($('#Img-pos'));
+// }
+//
+//});

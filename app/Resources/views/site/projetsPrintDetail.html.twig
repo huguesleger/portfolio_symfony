@@ -1,12 +1,11 @@
 {% extends ":site:index.html.twig"%}
-
 {% block title %}{% for projetprint in projectsprint %}Work {{projetprint.titre}}{% endfor %}{% endblock %}
 {% block section %}
 {% block loader %}{% endblock %}
 
-<div class="container-fluid">
-    {% for projetprint in projectsprint %}           
-        <div class="row">
+<div id="row-mobile">
+    {% for projetprint in projectsprint %}
+        <div class="">
             <div class="detail-work">
                 <div id="headerEffect" class="img-header"
                      style="background-image: url({{asset('uploads/img/')~projetprint.images}})">
@@ -39,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="container-fluid mg-top-big-xl mg-bottom-xl">
+                    <div class="container-fluid mg-top-big-xl mg-bottom-xl" data-midnight="color-hamb">
                         <div class="col-md-2"><p class="text-deco">i <span class="line-through-1">conceptartist photoshop</span> love graphisme <span class="line-through-2">inspiration</span>
                                 and design <span class="line-through-3">affiche art print photomontage retouche</span> l'illustration
                                 <span class="line-through-4">icon vecteur pao</span> c'est cool <span class="line-through-5">illustrator <span class="line-through-11">adobe</span></span> aussi <span class="line-through-6">picto</span> <span class="line-through-12">logo</span> <span class="line-through-13">cmjn pantone</span> <span class="line-through-14">photos images</span>
@@ -51,18 +50,19 @@
                         <img src="{{asset('uploads/img/')~projetprint.image1}}" class="img-responsive col-md-10 print-img-fat">
                     </div>
 
-                    <div class="row swatches-grey">
+                    <div class="swatches-grey" id="bg-full-img">
                         <div class="full-img-screenshot padd-big-xl" id="sizeBackground">
-                            <div class="full-img-screenshot-bg-dark" data-midnight="color-hamb">
+                           {# <div class="full-img-screenshot-bg-dark" data-midnight="color-hamb">#}
                                 <div class="full-img-screenshot-pos-dark" id="imgSize">
                                 </div>
-                            </div>
+                            {#</div>#}
                             <img src="{{asset('uploads/img/')~projetprint.image2}}" class="full-img-row full-img-single-post img-shadow mg-bottom-print">
                         </div>
                     </div>
-
-                    <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive col-md-8 no-margin img-mobile">
-                    <div class="col-md-4 concept-mobile">
+                        <div id="Img-pos">
+                    <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive col-md-8 no-margin" data-midnight="color-hamb">
+                        </div>
+                    <div class="col-md-4" id="concept-mobile">
                         <h3 class="meta-txt-print txt-color-white color-dark-mobile bordered-white bordered-color mg-top-md">concept</h3>
                         <p class="txt-desc-single">{{projetprint.descriptionImg2}}</p>
                     </div>
@@ -136,6 +136,10 @@
 </div>
 
 {% block footer %}{% endblock%}  
-{% block javascript %}{% endblock%}
+{% block javascript %}
+{% endblock%}
 
+{% endblock%}
+{% block js %}
+          <script type="text/javascript" src="{{asset('./js/resize.js')}}"></script>
 {% endblock%}

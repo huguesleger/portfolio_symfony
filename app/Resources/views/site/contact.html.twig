@@ -7,7 +7,7 @@
 <div class="pos-mobile">
     <div class="title-rubrique padd-sm mg-bottom-xl">
         <h2 class="txt-color-primary big-title no-mg">Contact</h2>
-        <p class="txt-color-primary no-mg">Webdesign & Graphisme</p>
+        {#<p class="txt-color-primary no-mg">Ecrivez-moi, je vous répond au plus vite</p>#}
     </div>
 
     <div class="container-fluid" data-midnight="color-hamb">
@@ -19,7 +19,7 @@
                     <i class="fa fa-cloud" aria-hidden="true"></i>
                 </div>
 
-                <div class="form-content col-sm-12 col-md-5">
+                <div class="form-content col-sm-12 col-lg-5">
 
                     {% for flash_message in app.session.flashBag.get('succesmail') %}
                         <div class="alert alert-success">

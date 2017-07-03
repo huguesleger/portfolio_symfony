@@ -15,7 +15,7 @@
         <div class="" id="projectprint">
             {% for projetprint in projectsprint [0:] %}
                 {% if loop.index == 1 %}
-                    <div class="container-fluid" data-midnight="color-hamb">
+                    <div class="container-fluid">
                         <div class="txt-present-print">
                             <img src="{{asset('uploads/img/')~projetprint.images}}" class="img-responsive">
                             <div class="col-md-10 txt-print">
@@ -32,7 +32,7 @@
 
                 {% elseif loop.index <= 5 %}
                     <div class="container-fluid wow slideInUp" data-wow-duration="1200ms" data-wow-delay="700ms">
-                        <div class="padd-big-xl {% if loop.index is divisible by(2) %}swatches-grey{% else %}swatches-white{% endif %}" {% if loop.index is divisible by(2) %}data-midnight="color-hamb"{% else %}{% endif %}>
+                        <div class="padd-big-xl {% if loop.index is divisible by(2) %}swatches-grey{% else %}swatches-white {% endif %}" >
                             <div class="img-shadow-print {% if loop.index is divisible by(2) %}img-present-print-left{% else %}img-present-print-right{% endif %}">
                                 <img src="{{asset('uploads/img/')~projetprint.images}}"class="img-responsive"> 
                                 <div class="{% if loop.index is divisible by(2) %}info-content-print{% else %}info-content-print-right{% endif %}">             
@@ -48,7 +48,7 @@
                 {% elseif loop.index > 5 %}
                     <div id="moreThumb">
                         <div class="container-fluid wow slideInUp" data-wow-duration="1200ms" data-wow-delay="700ms">
-                            <div class="padd-big-xl {% if loop.index is divisible by(2) %}swatches-grey{% else %}swatches-white{% endif %}"{% if loop.index is divisible by(2) %}data-midnight="color-hamb"{% else %}{% endif %}>
+                            <div class="padd-big-xl {% if loop.index is divisible by(2) %}swatches-grey{% else %}swatches-white{% endif %}"{#{% if loop.index is divisible by(2) %}data-midnight="color-hamb"{% else %}{% endif %}#}>
                                 <div class="img-shadow-print {% if loop.index is divisible by(2) %}img-present-print-left{% else %}img-present-print-right{% endif %}">
                                     <img src="{{asset('uploads/img/')~projetprint.images}}"class="img-responsive">
                                     <div class="{% if loop.index is divisible by(2) %}info-content-print{% else %}info-content-print-right{% endif %}">  
