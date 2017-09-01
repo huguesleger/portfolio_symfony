@@ -1,22 +1,4 @@
 
-/*@media screen and(min-width: 768px){
-#content{
-    	position: relative;
- 	height:100%;
- 	width:100%;
-        z-index: 0;
- 	transition: all 0.7s cubic-bezier(.77,.06,.28,.85);
-        overflow:hidden;
-        left: 0;
-        opacity: 1;
- 	&.push-content{
-            position: fixed;
-            left: 10%;
-            opacity: 0;
- 	}
-}
-}*/
-
 @media screen and(min-width: 769px){
 .tif h2{
     width: 160px;
@@ -88,15 +70,9 @@ margin-top: 30px;
 
 
 .services{
-/*  background-image: url('../../images/nuages.jpg');*/
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 30px;
-/*  padding-bottom: 50px;*/
-/*  margin-bottom: 190px;*/
-
-
-  
+  padding-top: 30px; 
 }
 
 .title-services{
@@ -178,7 +154,6 @@ position: absolute;
 top: 0%;
 left: 105%;
 font-size: 45px;
-/*color: rgba(255, 255, 255, 1);*/
 text-transform: uppercase;
 font-weight: 800;
 background-color: rgba(0, 0, 0, 0.7);

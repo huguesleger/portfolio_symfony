@@ -30,7 +30,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "twbs/bootstrap" : "^3.3",
         "twig/extensions" : "^1.2",
-        "paragonie/random_compat": "~1.4"
+        "paragonie/random_compat": "~1.4",
+        "symfony/assetic-bundle": "^2.8"
          
     },
     "require-dev": {

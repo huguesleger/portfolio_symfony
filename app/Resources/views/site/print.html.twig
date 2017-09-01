@@ -25,7 +25,7 @@
                                 <p class="thumb-desc txt-print-{{projetprint.colorTxt}}">{{projetprint.description|truncate(60, true, ' ...')}}</p>
                             </div>
                             <div id="plus" class="col-md-2 btn-print-detail txt-print-{{projetprint.colorTxt}}">
-                                <a href="{{path("detailprint",{"id":projetprint.id})}}"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk"></a><span class="envoirplus">View project</span>            
+                                <a href="{{path("detailprint",{"id":projetprint.id})}}"><img src="{{ asset('./images/cmyk.svg')}}" class="icon-cmyk"><span class="envoirplus">View <span class="link-view-print">project</span></span></a>            
                             </div>
                         </div>
                     </div>
@@ -72,8 +72,7 @@
         </div>
     </div>
 </div>
-    {% block javascript %}
-    {% endblock%}
+   
 
 {% endblock%}
 

@@ -51,13 +51,14 @@
                     </div>
 
                     <div class="swatches-grey" id="bg-full-img">
-                        <div class="full-img-screenshot padd-big-xl" id="sizeBackground">
+                        <div class="full-img-screenshot padd-big-xl">
                            {# <div class="full-img-screenshot-bg-dark" data-midnight="color-hamb">#}
                                 <div class="full-img-screenshot-pos-dark" id="imgSize">
                                 </div>
                             {#</div>#}
-                            <img src="{{asset('uploads/img/')~projetprint.image2}}" class="full-img-row full-img-single-post img-shadow mg-bottom-print">
+                            
                         </div>
+                            <img src="{{asset('uploads/img/')~projetprint.image2}}" class="full-img-row full-img-single-post img-shadow mg-bottom-print" id="sizeBackground">
                     </div>
                         <div id="Img-pos">
                     <img src="{{asset('uploads/img/')~projetprint.image3}}" class="img-responsive col-md-8 no-margin" data-midnight="color-hamb">
@@ -136,10 +137,14 @@
 </div>
 
 {% block footer %}{% endblock%}  
-{% block javascript %}
+{% block javascripts %}
+    {{ parent() }}
+ {% javascripts
+
+            'js/resize.js'
+         filter='yui_js' %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+         {% endjavascripts %}
 {% endblock%}
 
-{% endblock%}
-{% block js %}
-          <script type="text/javascript" src="{{asset('./js/resize.js')}}"></script>
 {% endblock%}

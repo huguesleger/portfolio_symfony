@@ -8,7 +8,6 @@
 var canvasDiv = document.getElementById('particle-canvas');
 var options = {
   particleColor: '#fff',
-//  background: 'https://raw.githubusercontent.com/huguesleger/portfolio_symfony/master/web/images/nuages.jpg',
   background: './images/nuages.jpg',
   interactive: true,
   speed: 'medium',

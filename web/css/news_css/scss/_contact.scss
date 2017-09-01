@@ -7,10 +7,8 @@
 }
 @media screen and(min-width: 768px) {
 .form-content{
-/*    background-color:#f7ab35;*/
-   
     padding-left: 80px;
-      position: absolute;
+    position: absolute;
     z-index: 10;
     top: 150px;
 }
@@ -84,10 +82,6 @@ textarea, input.form-control-mail{
     
 }
 
-/*::-webkit-input-placeholder {  Chrome/Opera/Safari 
-  color: #fff;
-}*/
-
 .contact-me{
  font-size: 12px;
  margin-top: 21%;
@@ -103,16 +97,6 @@ textarea, input.form-control-mail{
 
 .header-contact{
     padding-bottom: 40px;
-/*margin-bottom: 50px;*/
-/* height: 500px;*/
-/* background-size: cover;
- background-attachment: fixed;
-background-image: url(../../images/cell-phone.jpg);*/
-/* opacity: 0.8;*/
-/*overflow: hidden;*/
-/*img{
-    margin-top: -400px;
-}*/
 }
 
 .title-contact{
@@ -152,9 +136,6 @@ color: rgba(255, 255, 255, 0.1);
     
 }
 
-/*.header-contact > .cloud-contact{
-    position: fixed;
-}*/
 
 .infos-contact{
     padding-top: 20px;
@@ -224,10 +205,6 @@ animation: bounce 3000ms infinite;
     top: 0;
     bottom: 0;
     width: 100%;
-/*    background: -webkit-radial-gradient(circle, #4B217F, #130C1C);
-background: -o-radial-gradient(circle, #4B217F, #130C1C);
-background: -moz-radial-gradient(circle, #4B217F, #130C1C);
-background: radial-gradient(to circle, #4B217F, #130C1C);*/
 background: #130C1C;
 background-attachment: fixed;
     opacity: 0.8;
@@ -245,12 +222,7 @@ background-attachment: fixed;
     padding-left: 20px;
     padding-right: 20px;
     transition: all 0.4s ease-in-out;
-    /*    animation: wow bounceInUp 2200ms;*/
     &:hover{
-/*        background: -webkit-linear-gradient(left, #f94545, #ff8668); 
-        background: -o-linear-gradient(right,  #f94545, #ff8668);  
-        background: -moz-linear-gradient(right,  #f94545, #ff8668);  
-        background: linear-gradient(to right,  #f94545, #ff8668);*/
         color: #fff;
         border: 2px solid  #fff;
         transition: all 0.4s ease-in-out;
@@ -280,12 +252,7 @@ background-attachment: fixed;
 
 .project-description-textes{
     background-color: #fff;
-/*    padding-bottom: 10px;*/
-/*    border-bottom: 1px dashed #CCCCCC;*/
-/*    height: 190px;*/
-    margin-bottom: 10px;/*
-    margin-right: 5px;*/
-/*    width: 100%;*/
+    margin-bottom: 10px;
 }
 
 .tex-right{

@@ -15,24 +15,16 @@ and open the template in the editor.
 
 
 .img-header {
-/*     height: 468px;*/
      position: fixed;
-     /*overflow: hidden;*/
       top: 0;
       width: 100%;
       height: 70vh;
-/*      width: 100vw;*/
        background-size: cover;
        &:before {
       content: '';
       height: 100%;
       width: 100%;
       height: 70vh;
-/*      width: 100vw;*/
-/*      background: -webkit-radial-gradient(circle, #4B217F,  #130C1C); 
-    background: -o-radial-gradient(circle, #4B217F,  #130C1C);  
-    background: -moz-radial-gradient(circle, #4B217F,  #130C1C);  
-    background: radial-gradient(to circle, #4B217F,  #130C1C);*/
     background-color: #130C1C; 
     background-attachment: fixed;
       position: absolute;
@@ -50,11 +42,6 @@ and open the template in the editor.
         text-transform: capitalize;
     }
 }
-
-
-/*.img-header img {
-    padding-top: 200px;
-}*/
 
 
 .content {
@@ -81,14 +68,6 @@ and open the template in the editor.
     letter-spacing : 5px;
     text-align: center;
     width: 100%;
-/*    &::before {
-        content:'';
-        position: absolute;
-        height: 1px;
-        background-color: #fff;
-        width: 100%;
-        top: 85px;
-    }*/
     h2 {
         font-size: 60px;
     }
@@ -118,10 +97,6 @@ and open the template in the editor.
     padding-top: 30px;
     padding-bottom: 30px;
     transition: all 0.2s ease-in-out;
-/*    &:hover{
-        transition: all 0.2s ease-in-out;
-        margin-left: -120px;
-    }*/
 }
 
 
@@ -241,465 +216,6 @@ opacity: 0;
     transform: rotate(-90deg);
 }
 
-/*.line-through-1:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 22px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-1:before {
-     width: 100%;
-     transition: 0.2s ease-in-out;
-}
-
-.line-through-2:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 37px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-2:before {
-     width: 72%;
-     transition: 0.2s ease-in-out;
-}
-
-
-
-.line-through-3:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 85px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-3:before {
-     width: 82%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-4:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 116px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-4:before {
-     width: 84%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-5:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 132px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-5:before {
-     width: 40%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-6:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 148px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-6:before {
-     width: 100%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-7:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 163px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-7:before {
-     width: 65%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-8:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 196px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-8:before {
-     width: 100%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-9:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 212px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-9:before {
-     width: 27%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-10:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 243px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-10:before {
-     width: 87%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-11:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 259px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-11:before {
-     width: 42%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-12:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 274px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-12:before {
-     width: 77%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-13:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 290px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-13:before {
-     width: 100%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-14:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width:0;
-    top: 305px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-14:before {
-     width: 100%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-15:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 337px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-15:before {
-     width: 63%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-16:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 352px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-16:before {
-     width: 50%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-17:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 368px;
-    left: 42px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-17:before {
-     width: 46%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-18:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 383px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-18:before {
-     width: 47%;
-     transition: 0.2s ease-in-out;
-}
-
-
-
-.line-through-19:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 400px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-19:before {
-     width: 80%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-20:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 415px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-20:before {
-     width: 66%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-21:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 432px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-21:before {
-     width: 70%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-22:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 463px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-22:before {
-     width: 80%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-23:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 493px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-23:before {
-     width: 54%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-24:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 510px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-24:before {
-     width: 55%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-25:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    width: 0;
-    top: 526px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-25:before {
-     width: 62%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-26:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 542px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-26:before {
-     width: 82%;
-     transition: 0.2s ease-in-out;
-}
-
-
-.line-through-27:before{
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-     width: 0;
-    top: 557px;
-    left: -8px;
-    transition: 0.2s ease-in-out;
-}
-
-.text-deco:hover .line-through-27:before {
-     width: 62%;
-     transition: 0.2s ease-in-out;
-}*/
-
 .text-deco:hover span {
     text-decoration: line-through;
     color: #000;
@@ -772,17 +288,6 @@ opacity: 0;
 
 .txt-rea {
     line-height: 1.4em;
-/*    &::before {
-        content:'';
-        position: absolute;
-        background: -webkit-linear-gradient(left, #f94545, #ff8668); 
-        background: -o-linear-gradient(right,  #f94545, #ff8668);  
-        background: -moz-linear-gradient(right,  #f94545, #ff8668);  
-        background: linear-gradient(to right,  #f94545, #ff8668);
-        height: 4px;
-        width: 50px;
-        top: 50px;
-    }*/
 }
 
 .txt-post-single {
@@ -862,21 +367,6 @@ opacity: 0;
     transition: 0.2s ease-in-out;
 }
 
-/*.link-print-single-post::before {
-    content: '';
-    position: absolute;
-    top: 33px;
-    height: 4px;
-    background: -webkit-linear-gradient(left, #f94545, #ff8668);  For Safari 5.1 to 6.0 
-    background: -o-linear-gradient(right,  #f94545, #ff8668);  For Opera 11.1 to 12.0 
-    background: -moz-linear-gradient(right,  #f94545, #ff86683);  For Firefox 3.6 to 15 
-    background: linear-gradient(to right,  #f94545, #ff8668);  Standard syntax 
-    width: 0px;
-    z-index: 1;
-    left: 30%;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}*/
 
 .link-print-single-post:hover {
    color: #f94545;
@@ -1010,13 +500,6 @@ opacity: 0;
     border-bottom-left-radius: 20%;
 }
 
-.txt-objectif-single-post {
-/*white-space: pre;  */
-}
-
-.block-present-single-post {
-/*    height: 600px;*/
-}
 
 .full-img-screenshot {
     width: 100%;
@@ -1038,7 +521,6 @@ left: 0;
 
 @media screen and(min-width: 1024px){
 .full-img-screenshot-pos-dark {
-/*max-height: 3250px;*/
 min-height: 800px;
  background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right,  #f94545 ,#ff8668); /* For Opera 11.1 to 12.0 */
@@ -1053,7 +535,6 @@ position: absolute;
 
 @media screen and(min-width: 300px) and (max-width: 1023px){
 .full-img-screenshot-pos-dark {
-/*max-height: 3250px;*/
 height: auto;
  background: -webkit-linear-gradient(left,  #f94545, #ff8668); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right,  #f94545 ,#ff8668); /* For Opera 11.1 to 12.0 */
@@ -1074,17 +555,6 @@ min-height: 1580px;
     background: -moz-radial-gradient(circle, #4B217F,  #130C1C);  
     background: radial-gradient(to circle, #4B217F,  #130C1C);
 }
-
-/*.full-img-screenshot-pos-dark {
-max-height: 3250px;
-min-height: 500px;
- background: -webkit-linear-gradient(left,  #f94545, #ff8668);  For Safari 5.1 to 6.0 
-    background: -o-linear-gradient(right,  #f94545 ,#ff8668);  For Opera 11.1 to 12.0 
-    background: -moz-linear-gradient(right,  #f94545, #ff8668);  For Firefox 3.6 to 15 
-    background: linear-gradient(to right,   #f94545, #ff8668);  Standard syntax 
-width: 50%;
-float: right;
-}*/
 
 
 .full-img-row {
@@ -1122,18 +592,6 @@ min-height: 390px;
     background: radial-gradient(to circle, #4B217F,  #130C1C);
 }
 
-/*.full-img-screenshot-pos-dark {
-max-height: 3250px;
-min-height: 539px;
- background: -webkit-linear-gradient(left,  #f94545, #ff8668);  For Safari 5.1 to 6.0 
-    background: -o-linear-gradient(right,  #f94545 ,#ff8668);  For Opera 11.1 to 12.0 
-    background: -moz-linear-gradient(right,  #f94545, #ff8668);  For Firefox 3.6 to 15 
-    background: linear-gradient(to right,   #f94545, #ff8668);  Standard syntax 
-width: 53%;
-margin-right: -15px;
-float: right;
-}*/
-
 
 .full-img-row {
     width: 290px;
@@ -1152,19 +610,6 @@ min-height: 490px;
     background: radial-gradient(to circle, #4B217F,  #130C1C);
 }
 
-/*.full-img-screenshot-pos-dark {
-max-height: 3250px;
-min-height: 595px;
- background: -webkit-linear-gradient(left,  #f94545, #ff8668);  For Safari 5.1 to 6.0 
-    background: -o-linear-gradient(right,  #f94545 ,#ff8668);  For Opera 11.1 to 12.0 
-    background: -moz-linear-gradient(right,  #f94545, #ff8668);  For Firefox 3.6 to 15 
-    background: linear-gradient(to right,   #f94545, #ff8668);  Standard syntax 
-width: 53%;
-margin-right: -15px;
-float: right;
-}*/
-
-
 .full-img-row {
     width: 330px;
     margin: auto;
@@ -1181,17 +626,6 @@ min-height: 1290px;
     background: -moz-radial-gradient(circle, #4B217F,  #130C1C);  
     background: radial-gradient(to circle, #4B217F,  #130C1C);
 }
-
-/*.full-img-screenshot-pos-dark {
-max-height: 3250px;
-min-height: 1059px;
- background: -webkit-linear-gradient(left,  #f94545, #ff8668);  For Safari 5.1 to 6.0 
-    background: -o-linear-gradient(right,  #f94545 ,#ff8668);  For Opera 11.1 to 12.0 
-    background: -moz-linear-gradient(right,  #f94545, #ff8668);  For Firefox 3.6 to 15 
-    background: linear-gradient(to right,   #f94545, #ff8668);  Standard syntax 
-width: 50%;
-float: right;
-}*/
 
 
 .full-img-row {
@@ -1245,26 +679,6 @@ float: right;
     max-height: 800px;
     margin: auto;
 }
-
-
-/*body {
-  .hero {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    bottom:  0;
-    left: 0;
-    right: 0;
-    height: 170vh;
-    width: 100vw;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
-  */
-/*  .content {
-      position: absolute;
-    }*/
 
 @media screen and(min-width: 300px) and (max-width: 768px){
     

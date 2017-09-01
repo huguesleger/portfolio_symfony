@@ -1,7 +1,6 @@
 /*nav---------admin----------------------*/
 .navbar {
   position: relative;
-/*  max-height: 50px;*/
   margin-bottom: 20px;
   border: 0;
 }
@@ -9,9 +8,6 @@
 
 .navbar-admin{
     background-color: #111;
-/*    padding-top: 10px;
-    padding-bottom: 30px;*/
-/*    margin-top: -70px;*/
 text-transform: uppercase;
     
 }
@@ -24,10 +20,8 @@ text-transform: uppercase;
     background-color: #130c1c;
     position: fixed;
     height: auto;
-/*    min-height: 100%;*/
     float: left;
     margin-top: 50px;
-/*    border-top: 2px solid #fff;*/
     top: 0;
     bottom: 0;
 }
@@ -37,7 +31,6 @@ text-transform: uppercase;
     position: relative;
     display: block;
     padding: 20px 15px;
-/*    padding-right: 20px;*/
     transition: 0.4s;
 }
 
@@ -55,7 +48,6 @@ text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     text-align: right;
-/*    padding-right: 20px;*/
     width: 100%;
     border-bottom: 1px solid #666;
     padding-bottom: 30px;
@@ -69,7 +61,6 @@ text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     text-align: center;
-/*    padding-right: 20px;*/
     width: 100%;
     border-bottom: 1px solid #666;
     padding-bottom: 20px;
@@ -157,13 +148,11 @@ text-transform: uppercase;
     padding-bottom: 17px;
     padding-top: 16px;
     color: #fff;
-/*    background-color: #F7AB35;*/
     text-align: center;
     font-size: 15px;
     text-transform: none;
       padding-right: 10px;
       opacity: 0.8;
-/*    padding-left: 10px;*/
 transition: 0.4s;
     &:hover{
         opacity: 1;
@@ -174,18 +163,12 @@ transition: 0.4s;
 .icon-add{
 float: left;
 color: #f7ab35;
-/*padding: 10px 10px;*/
 margin-left: 5px;
 margin-top: 3px;
-/*padding-right: 10px;*/
 }
 
 .icon-home{
-/*float: left;*/
 color: #f7ab35;
-/*padding: 10px 10px;*/
-/*margin-left: 5px;*/
-/*margin-top: 3px;*/
 padding-right: 10px;
 font-size: 22px;
 }
@@ -201,17 +184,7 @@ padding-right: 10px;
 }
 
 
-/*@media screen and(min-width: 300px)and(max-width: 768px){
-  .logo{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 15px;
-    opacity: 0.5;
-  }
-
-}*/
-
-.moncompte{
+.moncompte {
  display: block;
 position: absolute;
 right: 0;
@@ -230,7 +203,6 @@ float: right;
     width: 50px;
     display: block;
 position: absolute;
-/*background: #EEEEEE;*/
 right: 0;
 float: right;
 margin-right: 190px;
@@ -255,7 +227,6 @@ padding-right: 240px;
 }
 
 .title-hello{
-/*   display: inline-block;*/
    padding-left: 50px;
    color: #fff;
    background-color: #transparent;

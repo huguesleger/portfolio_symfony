@@ -6,10 +6,21 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
      <title>Admin</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('./images/minlogo-black-hl.png') }}" />
-        <link rel="stylesheet" type="text/css" href="{{asset('./vendor/bootstrap.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
+        {% block stylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/minlogo-black-hl.png') }}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}"/>
+        
+        {% stylesheets
+
+        
+
+            'css/news_css/main.css'
+         filter='cssrewrite, yui_css' %}
+         <link rel="stylesheet" href="{{ asset_url }}" />
+         {% endstylesheets %}
+        {% endblock %}
         
   </head>
 
@@ -287,11 +298,19 @@
     {% endblock %}
     
     
-
+         {% block javascripts %}
         <script type="text/javascript" src="{{asset('./vendor/jquery.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('./vendor/bootstrap.min.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/wow.min.js')}}"></script>
-         <script type="text/javascript" src="{{asset('./js/confirm.js')}}"></script>
+         
+          {% javascripts
+
+            
+            'js/wow.min.js'
+            'js/confirm.js'
+         filter='yui_js' %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+         {% endjavascripts %}
+          {% endblock %}
         
 
         

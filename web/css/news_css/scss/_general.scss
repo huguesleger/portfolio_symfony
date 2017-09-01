@@ -5,12 +5,11 @@
 
 @font-face {
     font-family: "Inflecto";
-    src: url("../../fonts/Inflecto.otf");
+    src: url("../../web/fonts/Inflecto.otf");
 }
 
 body{
 font-family: 'Raleway', 'Open Sans', sans-serif;
-/*overflow-y: visible;*/
 overflow-x: hidden;
 background-color: #fff;
 
@@ -35,10 +34,7 @@ a:focus, a:hover{
   width: 100%;
   margin: 0;
   padding: 0;
-/*  opacity: 0;*/
   transition: all 0.4s ease-in-out;
-
-/*  animation-delay: 500ms;*/
 }
 
 .right{

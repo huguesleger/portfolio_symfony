@@ -1,0 +1,1 @@
+$(document).ready(function(){var c=document.getElementById("js-scene");var d=document.getElementById("js-scene-img");var b=new Parallax(c);var a=new Parallax(d)});

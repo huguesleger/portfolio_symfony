@@ -19,13 +19,7 @@
 .btn-projet{
     padding-top: 30px;
  padding-bottom: 60px;
-/*    margin-left: 40px;*/
-/*    margin-right: -25px;
-    margin-top: -65px;*/
-/*    float: right;*/
-    text-align: right;
-/*    width: 45%;*/
-        
+    text-align: right;       
 }
 
 .btn-left{
@@ -74,15 +68,11 @@
 .project-description{
     background-color: #fff;
     padding-bottom: 55px;
-/*    border-bottom: 1px dashed #CCCCCC;*/
-/*    height: 190px;*/
     margin-bottom: 7px;
 }
 
 .project-description-print{
     background-color: #fff;
-/*    border-bottom: 1px dashed #CCCCCC;*/
-/*    height: 190px;*/
     padding-bottom: 10px;
 }
 
@@ -91,11 +81,6 @@
     text-align: right;
     border-left: 2px solid #ddd;
 }
-
-
-/* .vignette{
-    padding-bottom: 10px;
-}*/
 
 .btn-action-publier{
     float: left;
@@ -112,7 +97,6 @@
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
-/*    padding-right: 20px;*/
 }
 
 .id-project{
@@ -128,7 +112,6 @@
     max-width:150px;
     float: right;
     position: relative;
-z-index: 2;
 display: block;
 padding: 4px 4px 0;
 margin-bottom: 20px;
@@ -152,15 +135,11 @@ border-radius: 0;
 }
 
 .name-img-projets{
-/*   position: absolute;
-    margin-top: -50px;*/
 padding-left: 20px;
 padding-top: 10px;
 }
 
 .name-img-projets-print{
-/*   position: absolute;
-    margin-top: -50px;*/
 padding-left: 20px;
 padding-top: 20px;
 padding-bottom: 26px;

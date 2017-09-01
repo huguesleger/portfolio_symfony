@@ -3,16 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
+   
+   $(document).ready(function () {
+
+   var windowW = $(window).width();
+   if (windowW > 1023){
+      $('.full-img-screenshot-pos-dark').show();  
+    $('.full-img-screenshot-pos-dark').css({
+        height: ($('#sizeBackground').height() + 480 )
+    });
+   }else 
+         if (windowW < 1023){
+        $('.full-img-screenshot-pos-dark').hide();
+    }
 
 
-  $(document).ready(function(){
-    var windowW = $(window).width();
-  if(windowW >= 1024){
-document.getElementById('imgSize').style.height=document.getElementById('sizeBackground').offsetHeight +200+"px";
-  $('#Img-pos').insertBefore('#concept-mobile');
-  
- } else {
-//     $('.full-img-screenshot-pos-dark').removeClass();
-   $('#concept-mobile').append($('#Img-pos'));
- }
-});
+    $(window).resize(function () {
+        var windowW = $(window).width();
+         if (windowW > 1023){
+        $('.full-img-screenshot-pos-dark').show();     
+        $('.full-img-screenshot-pos-dark').css({
+        height: ($('#sizeBackground').height() + 480 )
+        });
+    } else 
+         if (windowW < 1023){
+        $('.full-img-screenshot-pos-dark').hide();
+    }
+    
+    });
+      });
